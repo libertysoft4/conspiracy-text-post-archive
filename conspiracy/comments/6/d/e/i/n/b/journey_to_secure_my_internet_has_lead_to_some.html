@@ -1,0 +1,1087 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../../../../../../../../static/css/lato.css">
+    <link rel="stylesheet" href="../../../../../../../../static/css/bootstrap-superhero.min.css">
+    <link rel="stylesheet" href="../../../../../../../../static/css/archive.css">
+    <title>r/conspiracy: Journey to secure my Internet has lead to some surprises</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+        <a class="navbar-brand" href="../../../../../../../../conspiracy/index.html">r/conspiracy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index.html">score</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index-comments/index.html">comments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index-date/index.html">date</a>
+            </li>
+            <li class="nav-item ###URL_SEARCH_CSS###">
+              <a class="nav-link" href="../../../../../../../../conspiracy/search.html">search</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">subreddits</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="../../../../../../../../index.html">All</a>
+                <a class="dropdown-item" href="../../../../../../../../conspiracy/index.html">conspiracy</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main role="main" class="container-fluid">
+      <div class="submission pt-3" data-id="6deinb">
+        <h3 class="title">Journey to secure my Internet has lead to some surprises</h3>
+        <p><span class="badge badge-primary">131</span>&nbsp;&nbsp;2017-05-26 by <a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a></p>
+        <div class="card bg-dark mb-3"><div class="card-body md"><p>This won&#39;t be short, but I&#39;ll try to be on point, and I&#39;m not going to fill in every blank. I&#39;m not providing links. This was my journey. I attest to truth within. If you want TLDR, look elsewhere. This is for thinkers and those who care about privacy.</p>
+
+<p>This all started, because a couple years ago I noticed a lot of my traffic going through akamaitechnologies.com. It turns out that this is one of a few major companies responsible for publishing &quot;The Internet&quot; for us consumers along with amazonaws, 1e100.net (google), and others.</p>
+
+<p>Every search I look into on this gives the same dead end which is: If you block them most of the Internet won&#39;t work, so don&#39;t worry about it. They&#39;re just hosting copies closer to you to help reduce traffic bloat.</p>
+
+<p>Note that I am here posting this with full blocking in effect. Many sites are inaccessible, and for this I am thankful. You will see why.</p>
+
+<p>I had let all this slide until recently. With it being legal for a certain 3 letter group to hack anyone in the US as of last December, my paranoia got piqued. That alone didn&#39;t push me into action, but it did cause me to watch my netstat more frequently.</p>
+
+<p>It was FireFox that really got me going. I check my netstat regularly, and I saw that it has two localhost connections upon loading. No big deal right? Of course the public Internet and the mozilla forum says this is no big deal. It&#39;s basically a necessity due to Windows not handling Unix code as well.</p>
+
+<p>I did find one conspiratorial post out there though, calling this a stack intercept. It got me wondering about Odin&#39;s Eye, and how that alleged secondary processor would be able to intercept traffic without some method of communication with the primary CPU.</p>
+
+<p>After some more digging I stumbled upon a little program called TCPView. I live by this now. It is everything you see in netstat, but real time. You see a lot more.</p>
+
+<p>With this I began to see FireFox making active connections upon loading it, even if I didn&#39;t go anywhere.</p>
+
+<p>Some of this I was able to attribute to add-ons, particularly NoScript due to some advanced settings (I can elaborate on this if asked), but there were connections occurring independently of all that.</p>
+
+<p>The main culprit was the site of map2.hwcdn.com which is owned by Highwinds Content Delivery Network - another one of those companies responsible for publishing &quot;The Internet&quot;, and is apparently owned by Akamai. Full circle now. Coincidence?</p>
+
+<p>Going a step further, Highwinds is based out of Phoenix, Arizona. Ever heard about those massive data centers in the AZ desert having to do with Echelon? I&#39;ll bet it&#39;s these guys.</p>
+
+<p>I&#39;ve proceeded to block out every IP block owned by every snooping corporation that has been cited thus far in my post with my router access list. This can be confirmed by connections marked as SYN_SENT instead of ESTABLISHED.</p>
+
+<p>It doesn&#39;t stop here though. Upon review of my router&#39;s IP connection tracker, I found more established connections even when getting a fresh IP address, and not accessing anything.</p>
+
+<p>So it seems my router may also be hacked, even though it is a security focused firewall router.</p>
+
+<p>Here are the IP addresses that it showed as being connected to at some point even when not using the connection.</p>
+
+<p>216.99.133.23 is the most persistent offender. It pops up with some regularity. I couldn&#39;t trace it to anything in particular, but the nearest IP that I could resolve to it was 216.99.131.3 which is in03.sjc.mx.trendmicro.com.</p>
+
+<p>TrendMicro, OK that sounds familiar. Apparently it&#39;s a multinational security company based out of Japan. Very interesting.</p>
+
+<p>The next unsoliticed IP I came across was from my ISP in a neighboring state. I&#39;ve seen that one a few times as well. Neither of these IPs seem to change either.</p>
+
+<p>The third and most recent was 216.218.206.114. It took me a minute to figure this out, but it&#39;s in the same IP block as <a href="http://www.startpage.com">www.startpage.com</a> the alleged safe and private search engine recommended by Snowden, who was obviously in my mind co-opted long before Assange was last year.</p>
+
+<p>startpage.com resolves to 216.218.239.62 and 216.218.239.142. Not a dead ringer, but darn close.</p>
+
+<p>You might say, but you went to that site purposefully, and that was true, but that was before I changed my IP address the last time (change router&#39;s MAC address clone while modem offline to do this) which suggests that startpage hacked my modem simply by going there, even with all this other IP blocking going on.</p>
+
+<p>Getting back to the big companies delivering the Internet to us, I went through the trouble of pinging every single OCSP site (for publishing certificates which handle trust relationships on your browser), and about half of them resolved to Akamai. I suspect this is a means of certificate hijack for compromising operating systems.</p>
+
+<p>I can only hope that only allowing connections to valid sites going forward will do the trick. There&#39;s not much else I can do besides reformat everything.</p>
+
+<p>Finally, I seem to be at the point where both TCPView and my router logs indicate no unsolicited connections, but I am not confident that will remain the case.</p>
+
+<p>If you are not security conscious, accept that you are most likely compromised.</p>
+
+<p>I&#39;m happy to provide my block list if anyone is interested.</p>
+</div></div>
+      </div>
+      <div class="comments">
+        <h5>58 comments</h5>
+        <div class="comment mb-3 ml-0" data-depth="0" data-id="di21z3y">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Plz_Pm_Me_Cute_Fish.html">Plz_Pm_Me_Cute_Fish</a> 2017-05-26</p>
+    <div class="md"><p>Your earlier post got deleted within the first 6 minutes, someone trying to stop this from getting out.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="di228ak">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>No no, I deleted it. I didn&#39;t want any asterisk after editing. Thank you for being vigilant.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="di2jb3v">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/WippleDippleDoo.html">WippleDippleDoo</a> 2017-05-26</p>
+    <div class="md"><p>Facepalm.jpg</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="di2296r">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/RhinoJeep.html">RhinoJeep</a> 2017-05-26</p>
+    <div class="md"><p>I&#39;m interested in your list. Thanks for the post. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="di22uju">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>Disclaimer: Blocking all these will break the majority of your Internet connectivity. You may need to unblock certain ranges to restore functionality. Some of these ranges are based on whois info, but others are the result of my own prodding with nslookup, so this may not be all encompassing, and it may have omissions, but it has sufficed to secure everything desired in my TCPView. This does not include the specific IPs in my post above.</p>
+
+<p>2.16.0.0 - 2.16.255.255
+2.22.230.0 - 2.22.230.255
+23.0.0.0 - 23.79.255.255
+23.192.0.0 - 23.223.255.255
+31.13.64.0 - 31.13.95.255
+35.156.0.0 - 35.198.255.255
+50.159.42.0 - 50.159.43.255
+50.16.0.0 - 50.19.255.255
+52.0.0.0 - 52.92.0.255
+52.216.64.0 - 52.216.70.255
+54.144.0.0 - 54.255.255.255
+54.182.0.0 - 54.255.255.255
+63.250.192.0 - 63.250.223.255
+69.147.64.0 - 69.147.127.255
+69.16.174.0 - 69.16.177.255
+69.195.158.0 - 69.195.158.255
+74.125.0.0 - 74.125.255.255
+95.100.0.0 - 95.101.255.255
+96.16.0.0 - 96.17.255.255
+96.7.0.0 - 96.7.255.255
+98.136.0.0 - 98.139.255.255
+104.0.0.0 - 104.127.255.255
+107.20.0.0 - 107.23.255.255
+108.177.96.0 - 108.177.98.255
+13.32.205.0 - 13.32.205.255
+172.217.0.0 - 172.217.30.255
+172.224.0.0 - 172.239.255.255
+173.194.192.0 - 173.194.223.255
+178.255.80.0 - 178.255.87.255
+184.24.0.0 - 184.87.255.255
+193.108.91.0 - 193.108.91.255
+205.185.192.0 - 205.185.223.255
+205.251.201.0 - 205.251.216.255
+206.190.32.0 - 206.190.63.255
+208.71.40.0 - 208.71.47.255
+209.197.0.0 - 209.197.31.255
+209.202.251.0 - 209.202.254.255
+216.115.96.0 - 216.115.111.255
+216.137.32.0 - 216.137.63.255
+216.156.0.0 - 216.156.255.255
+216.218.192.0 - 216.218.255.255
+216.58.192.0 - 216.58.222.255
+216.99.128.0 - 216.99.143.255</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="di23pm4">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>Disclaimer: Blocking all these will break the majority of your Internet connectivity. You may need to unblock certain ranges to restore functionality. I didn&#39;t track what every block was for, so you may need to do some DNS comparisons to figure out what&#39;s what.</p>
+
+<p>Some of these ranges are based on whois info, but others are the result of my own prodding with nslookup, so this may not be all encompassing, and it may have omissions, but it has sufficed to secure everything desired in my TCPView.</p>
+
+<p>This does not include the specific IPs in my post above. I also targeted Yahoo, Facebook, and Google specifically for blocking, but not Bing because it didn&#39;t get invasive.</p>
+
+<p>2.16.0.0 - 2.16.255.255</p>
+
+<p>2.22.230.0 - 2.22.230.255</p>
+
+<p>13.32.205.0 - 13.32.205.255</p>
+
+<p>23.0.0.0 - 23.79.255.255</p>
+
+<p>23.192.0.0 - 23.223.255.255</p>
+
+<p>31.13.64.0 - 31.13.95.255</p>
+
+<p>35.156.0.0 - 35.198.255.255</p>
+
+<p>50.159.42.0 - 50.159.43.255</p>
+
+<p>50.16.0.0 - 50.19.255.255</p>
+
+<p>52.0.0.0 - 52.92.0.255</p>
+
+<p>52.216.64.0 - 52.216.70.255</p>
+
+<p>54.144.0.0 - 54.255.255.255</p>
+
+<p>54.182.0.0 - 54.255.255.255</p>
+
+<p>63.250.192.0 - 63.250.223.255</p>
+
+<p>69.147.64.0 - 69.147.127.255</p>
+
+<p>69.16.174.0 - 69.16.177.255</p>
+
+<p>69.195.158.0 - 69.195.158.255</p>
+
+<p>74.125.0.0 - 74.125.255.255</p>
+
+<p>95.100.0.0 - 95.101.255.255</p>
+
+<p>96.16.0.0 - 96.17.255.255</p>
+
+<p>96.7.0.0 - 96.7.255.255</p>
+
+<p>98.136.0.0 - 98.139.255.255</p>
+
+<p>104.0.0.0 - 104.127.255.255</p>
+
+<p>107.20.0.0 - 107.23.255.255</p>
+
+<p>108.177.96.0 - 108.177.98.255</p>
+
+<p>172.217.0.0 - 172.217.30.255</p>
+
+<p>172.224.0.0 - 172.239.255.255</p>
+
+<p>173.194.192.0 - 173.194.223.255</p>
+
+<p>178.255.80.0 - 178.255.87.255</p>
+
+<p>184.24.0.0 - 184.87.255.255</p>
+
+<p>193.108.91.0 - 193.108.91.255</p>
+
+<p>205.185.192.0 - 205.185.223.255</p>
+
+<p>205.251.201.0 - 205.251.216.255</p>
+
+<p>206.190.32.0 - 206.190.63.255</p>
+
+<p>208.71.40.0 - 208.71.47.255</p>
+
+<p>209.197.0.0 - 209.197.31.255</p>
+
+<p>209.202.251.0 - 209.202.254.255</p>
+
+<p>216.115.96.0 - 216.115.111.255</p>
+
+<p>216.137.32.0 - 216.137.63.255</p>
+
+<p>216.156.0.0 - 216.156.255.255</p>
+
+<p>216.218.192.0 - 216.218.255.255</p>
+
+<p>216.58.192.0 - 216.58.222.255</p>
+
+<p>216.99.128.0 - 216.99.143.255</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="di24mcz">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>Here is the most updated information I can provide.</p>
+
+<p>Disclaimer: Blocking all these will break the majority of your Internet connectivity. You may need to unblock certain ranges to restore functionality. I didn&#39;t track what every block was for, so you may need to do some DNS comparisons to figure out what&#39;s what.</p>
+
+<p>Some of these ranges are based on whois info, but others are the result of my own prodding with nslookup, so this may not be all encompassing, and it may have omissions, but it has sufficed to secure everything desired in my TCPView.</p>
+
+<p>This does not include the specific IPs in my post above. I also targeted Yahoo, Facebook, and Google specifically for blocking, but not Bing because it didn&#39;t get invasive.</p>
+
+<p>2.16.0.0 - 2.16.255.255 :: AkamiTechnologies</p>
+
+<p>2.22.230.0 - 2.22.230.255 :: AkamiTechnologies</p>
+
+<p>13.32.205.0 - 13.32.205.255 :: AmazonAWS</p>
+
+<p>23.0.0.0 - 23.79.255.255 :: AkamiTechnologies</p>
+
+<p>23.192.0.0 - 23.223.255.255 :: AkamiTechnologies</p>
+
+<p>31.13.64.0 - 31.13.95.255 :: Facebook</p>
+
+<p>35.156.0.0 - 35.198.255.255 :: AmazonAWS</p>
+
+<p>50.16.0.0 - 50.19.255.255 :: AmazonAWS</p>
+
+<p>52.0.0.0 - 52.92.0.255 :: AmazonAWS</p>
+
+<p>52.216.64.0 - 52.216.70.255 :: AmazonAWS</p>
+
+<p>54.144.0.0 - 54.255.255.255 :: AmazonAWS</p>
+
+<p>54.182.0.0 - 54.255.255.255 :: CloudFront</p>
+
+<p>63.250.192.0 - 63.250.223.255 :: Yahoo</p>
+
+<p>69.147.64.0 - 69.147.127.255 :: Yahoo</p>
+
+<p>69.16.174.0 - 69.16.177.255 :: Highwinds (Akamai)</p>
+
+<p>69.195.158.0 - 69.195.158.255 :: Not sure what this was for</p>
+
+<p>74.125.0.0 - 74.125.255.255 :: Google</p>
+
+<p>95.100.0.0 - 95.101.255.255 :: AkamiTechnologies</p>
+
+<p>96.16.0.0 - 96.17.255.255 :: AkamiTechnologies</p>
+
+<p>96.7.0.0 - 96.7.255.255 :: AkamiTechnologies</p>
+
+<p>98.136.0.0 - 98.139.255.255 :: Yahoo</p>
+
+<p>104.64.0.0 - 104.127.255.255 :: AkamiTechnologies</p>
+
+<p>107.20.0.0 - 107.23.255.255 :: AmazonAWS</p>
+
+<p>108.177.96.0 - 108.177.98.255 :: Google</p>
+
+<p>172.217.0.0 - 172.217.30.255 :: 1e100 (Google)</p>
+
+<p>172.224.0.0 - 172.239.255.255 :: AkamaiTechnologies</p>
+
+<p>173.194.192.0 - 173.194.223.255 :: 1e100 (Google)</p>
+
+<p>178.255.80.0 - 178.255.87.255 :: Includes alleged fraudulent Comodo OCSP certs</p>
+
+<p>184.24.0.0 - 184.87.255.255 :: AkamaiTechnologies</p>
+
+<p>193.108.91.0 - 193.108.91.255 :: AkamaiTechnologies</p>
+
+<p>205.185.192.0 - 205.185.223.255 :: Highwinds (Akamai)</p>
+
+<p>205.251.201.0 - 205.251.216.255 :: CloudFront</p>
+
+<p>206.190.32.0 - 206.190.63.255 :: Yahoo</p>
+
+<p>208.71.40.0 - 208.71.47.255 :: Yahoo</p>
+
+<p>209.197.0.0 - 209.197.31.255 :: Highwinds (Akamai)</p>
+
+<p>209.202.251.0 - 209.202.254.255 :: Lycos</p>
+
+<p>216.115.96.0 - 216.115.111.255 :: Yahoo</p>
+
+<p>216.137.32.0 - 216.137.63.255 :: CloudFront</p>
+
+<p>216.156.0.0 - 216.156.255.255 :: XO Communications (can&#39;t remember why I blocked this one)</p>
+
+<p>216.58.192.0 - 216.58.222.255 :: 1e100 (Google)</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="di25kif">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/aleister.html">aleister</a> 2017-05-26</p>
+    <div class="md"><p><a href="https://gist.github.com/larsadler/08f50ffdb666aca6b92c3c79d37d932e">https://gist.github.com/larsadler/08f50ffdb666aca6b92c3c79d37d932e</a></p>
+
+<p>Thanks. I&#39;ll get it reformatted in CIDR shortly.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="di22fvd">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/krulos.html">krulos</a> 2017-05-26</p>
+    <div class="md"><p>Excellent post!  I work in the networking field. There are most definitely backdoors written into switches and routers :)</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="di25umo">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Making_Butts_Hurt.html">Making_Butts_Hurt</a> 2017-05-26</p>
+    <div class="md"><p>Have you found any companies that haven&#39;t bent the knee? </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="di2n1z9">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/civilized_gent.html">civilized_gent</a> 2017-05-26</p>
+    <div class="md"><p>Have you done any research with any of your hardware to confirm? Also a networking guy. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="di22h7c">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/WizardHobo.html">WizardHobo</a> 2017-05-26</p>
+    <div class="md"><p>Always interested </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="di23l52">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/aleister.html">aleister</a> 2017-05-26</p>
+    <div class="md"><p>Have you considered putting your list on github? That might make it easier to distribute to those that are technical enough to care. </p>
+
+<p>I could even post it and give you a link if you didn&#39;t want to deal with the hassle of creating an account.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="di23tmq">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>I don&#39;t have an account, and pastebin is blocked =] but I posted it as a reply to another comment if you want to grab it and put it somewhere. I should probably dictate what each block is representative of if we&#39;re going to disemminate it though. I guess I&#39;ll get on that.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="di23y8g">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/aleister.html">aleister</a> 2017-05-26</p>
+    <div class="md"><p>Standing by.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="di24vjm">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>I replied to an earlier comment with all the info I can gather and recall.</p>
+
+<p><a href="https://www.reddit.com/r/conspiracy/comments/6deinb/journey_to_secure_my_internet_has_lead_to_some/di24mcz/">https://www.reddit.com/r/conspiracy/comments/6deinb/journey_to_secure_my_internet_has_lead_to_some/di24mcz/</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="di24cor">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Making_Butts_Hurt.html">Making_Butts_Hurt</a> 2017-05-26</p>
+    <div class="md"><p>What&#39;s your Hardware and software? Intel or amd?  Have you access to any older chips that don&#39;t have these?  Do you only use Firefox and windows  ? Why not tails and tails browser? Router brand and os? Were your tests done on a clean install or over a dirty install? </p>
+
+<p>I&#39;d love to see these tests on hand built, store bought computers running a secure Linux distribution compiled from signed source. </p>
+
+<hr/>
+
+<p>This presents a problem. How can we ascertain any distribution downloaded has not been compromised when we cannot be sure the sites we&#39;re accessing are what we intend to over connections that have not been compromised on hardware that is not compromised? </p>
+
+<p>The only absolute way would be to fab our own silicone in house, print our boards and chips, write our microcode, and audit or write our own operating systems from source, which would still require the use of compromised systems that would have be too destroyed to dust after their use in an extremely secure facility. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="di24su4">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>It is a stale Windows OS with Intel i5. Only the browser and my router were compromised, not the OS.</p>
+
+<p>The router is my bigger concern. I am reluctant to say what it is, but it has not been eligible for firmware updates for over 5 years so that is worth noting and likely the reason it was compromised.</p>
+
+<p>It&#39;s not clear to me whether Firefox is compromised natively or because of browsing, but I suspect browsing. Although that does not close the loop on the potential stack intercept I mentioned.</p>
+
+<p>I have not heard of Tails, will give it a look. Thank you.</p>
+
+<p>The way you can tell if a distribution download has been compromised is by wathcing your TCPView to see what it is doing out of the box.</p>
+
+<p>I find the router connection logs to be much more valuable though, because they show anything your computer is trying to send out even if your computer isn&#39;t disclosing it.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="di251yf">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>It is a stale Windows OS with Intel i5. I&#39;m not convinced the OS is compromised, but FireFox is.</p>
+
+<p>I think the router is the bigger issue. I am reluctant to say what it is, but it has not been eligible for firmware updates for over 5 years so that is worth noting and likely the reason it was compromised.</p>
+
+<p>It&#39;s not clear to me whether Firefox is compromised natively or because of browsing, but I suspect browsing. Although that does not close the loop on the potential stack intercept I mentioned.</p>
+
+<p>I have not heard of Tails, will give it a look. Thank you.</p>
+
+<p>The way you can tell if a distribution download has been compromised is by wathcing your TCPView to see what it is doing out of the box.</p>
+
+<p>I find the router connection logs to be much more valuable though, because they show anything your computer is trying to send out even if your computer isn&#39;t disclosing it.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="di258am">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>It is a stale Windows OS with Intel i5. I&#39;m not convinced the OS is compromised, but FireFox is.</p>
+
+<p>I think the router is the bigger issue. I am reluctant to say what it is, but it has not been eligible for firmware updates for over 5 years so that is worth noting and likely the reason it was compromised.</p>
+
+<p>It&#39;s not clear to me whether Firefox is compromised natively or because of browsing, but I suspect browsing. Although that does not close the loop on the potential stack intercept I mentioned.</p>
+
+<p>I have not heard of Tails, will give it a look. Thank you.</p>
+
+<p>The way you can tell if a distribution download has been compromised is by watching your TCPView to see what it is doing out of the box.</p>
+
+<p>I find the router connection logs to be much more valuable though, because they show anything your computer is trying to send out even if your computer isn&#39;t disclosing it.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="di25p7h">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Making_Butts_Hurt.html">Making_Butts_Hurt</a> 2017-05-26</p>
+    <div class="md"><blockquote>
+<p>It is a stale Windows OS with Intel i5. Only the browser and my router were compromised, not the OS.</p>
+</blockquote>
+
+<p>I see. It&#39;s possible that Windows is natively compromised. You would need to control for your other hw (router) to be sure. </p>
+
+<blockquote>
+<p>The router is my bigger concern. I am reluctant to say what it is, but it has not been eligible for firmware updates for over 5 years so that is worth noting and likely the reason it was compromised.</p>
+</blockquote>
+
+<p>That&#39;s fine. I strongly encourage you to upgrade though. I can&#39;t make any recommendations as the go to company I use for work was fully compromised by the CIA as exposed by wikileaks this year. Like you I&#39;m hesitant to name, but they have rolled patches quickly for that and countless other problems.  </p>
+
+<p>Your opsec may be lacking, maintaining good opsec is one of the hardest things to accomplish. I&#39;m happy to talk more about this if you&#39;re interested. </p>
+
+<blockquote>
+<p>It&#39;s not clear to me whether Firefox is compromised natively or because of browsing, but I suspect browsing. Although that does not close the loop on the potential stack intercept I mentioned.</p>
+</blockquote>
+
+<p>Try a different browser on a clean Unix or Linux system and see that persists. </p>
+
+<blockquote>
+<p>I have not heard of Tails, will give it a look. Thank you.</p>
+</blockquote>
+
+<p>It&#39;s probably been compromised. For most people it&#39;s strong enough. If you&#39;re trying to avoid data collection, tracking, and malware its ample. If you&#39;re trying to protect yourself from nation states I suggest you get the out of whatever you&#39;re in because you&#39;re not prepared for that in any way. No offense. </p>
+
+<blockquote>
+<p>The way you can tell if a distribution download has been compromised is by wathcing your TCPView to see what it is doing out of the box.</p>
+</blockquote>
+
+<p>That&#39;s assuming your os or router is not compromised. </p>
+
+<blockquote>
+<p>I find the router connection logs to be much more valuable though, because they show anything your computer is trying to send out even if your computer isn&#39;t disclosing it. </p>
+</blockquote>
+
+<p>Again, this assumes that it is not compromised. To test this fully would be difficult. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="di25vvy">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>I appreciate your insight. I am not under delusions of being secure from a persistent hacker.</p>
+
+<p>My goals were two fold:</p>
+
+<ul>
+<li><p>Stop all the auto-tracking that occurs when you visit a web site (TCPView easily shows which sites invasively hammer you even if you have them blocked)</p></li>
+<li><p>Stop all connections I can see in TCPView and the router logs that I did not initiate.</p></li>
+</ul>
+
+<p>Beyond that, yes I need to use Linux, get a new router, and should ideally run a VM for all web browsing so I can restore it without saving anything to it.</p>
+
+<p>For now I am OK with just blocking and watching traffic, and get some info out there. I also leave my modem unplugged when I&#39;m not using it.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="di269i4">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Making_Butts_Hurt.html">Making_Butts_Hurt</a> 2017-05-26</p>
+    <div class="md"><p>Another tool you may find useful is something like deep freeze. It allows temporary changes to a system for the current session but reverts to the original state after logout. It&#39;s also available on Linux. Using that, on the os on the metal then on the VM would increase your protection if you need a persistent environment. If you don&#39;t need a persistent environment then running the latest tails on a non rewritable CD or DVD offers the best protection from all but micro code attacks. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-5 op" data-depth="5" data-id="di26iff">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>So best of all worlds would be accessing a non-RW CD on a VM running on an OS (never enabling autoplay) with Deep Freeze, with the OS drive never being C: after getting a new router, maintaining my block list, and reformatting my PC after wiping the master boot record. And also not installing any OS that is TCP enabled. They don&#39;t make it easy do they.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="di26dvm">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Making_Butts_Hurt.html">Making_Butts_Hurt</a> 2017-05-26</p>
+    <div class="md"><p>Another Avenue to pursue is compartmentalizing your network. Eg</p>
+
+<p>If you need a persistent environment for work or gaming you could dedicate a PC to that, with a modified block list that only allows the services you can&#39;t live without when you&#39;re using them.  </p>
+
+<p>Then a more restricted PC for all other uses that don&#39;t require compromised connections. </p>
+
+<p>The same can be said of wireless networks that should be restricted from your secure network if it&#39;s impossible to dedicate a line to them. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-5 op" data-depth="5" data-id="diayzyn">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>This post has 1 point and I upvoted it which means there are downvotes.</p>
+
+<p>C&#39;mon reddit, upvote this guy. This is obviously a great suggestion.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="di2jhjw">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/WippleDippleDoo.html">WippleDippleDoo</a> 2017-05-26</p>
+    <div class="md"><p>Windows operating systems have telemetry and many background processes that try to reach out to the internet by default.</p>
+
+<p>Many times these cannot even be blocked as it breaks windows which is highly suspicious in itself.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0 op" data-depth="0" data-id="di25c1r">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><blockquote>
+<p>216.99.133.23 is the most persistent offender. It pops up with some regularity. I couldn&#39;t trace it to anything in particular, but the nearest IP that I could resolve to it was 216.99.131.3 which is in03.sjc.mx.trendmicro.com.</p>
+
+<p>TrendMicro, OK that sounds familiar. Apparently it&#39;s a multinational security company based out of Japan. Very interesting.</p>
+</blockquote>
+
+<p>To elaborate on this, the connection is trying to use port 443 which is Trivial File Transfer Protocol, and it was originating from my ISP provided IP address to that IP address, not from my internal IP address which tells me that it was likely my cable modem actually doing this, not my router.</p>
+
+<p>So it&#39;s possible maybe my router was never compromised, but rather my cable modem, which is in fact new.</p>
+
+<p>Furthermore TrendMicro provides security for cloud hosting services such as, guess who, AmazonAWS.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="di25wti">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Making_Butts_Hurt.html">Making_Butts_Hurt</a> 2017-05-26</p>
+    <div class="md"><p>Does your ISP offer bundled antivirus? </p>
+</div>
+</div>
+<div class="comment mb-3 ml-2 op" data-depth="2" data-id="di25xkw">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>I&#39;m not sure about that, but I don&#39;t openly accept anything from them. I only run what I deliberately installed.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="di26j1l">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Making_Butts_Hurt.html">Making_Butts_Hurt</a> 2017-05-26</p>
+    <div class="md"><p>If they do and you&#39;re using a modem provided by them this could explain that connection. They may have modified the software of the modem for some reason to support that offering. </p>
+
+<p>I hope you&#39;re not using a provided modem... </p>
+</div>
+</div>
+<div class="comment mb-3 ml-4 op" data-depth="4" data-id="di26k57">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>No it is my own modem, but they of course have a compatibility list.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="di27jjh">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Making_Butts_Hurt.html">Making_Butts_Hurt</a> 2017-05-26</p>
+    <div class="md"><p>Interesting. Try shooting off an email to the mfg. You might get lucky and get a good response. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="di27zhw">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/SoaringMoon.html">SoaringMoon</a> 2017-05-26</p>
+    <div class="md"><p>Trend micro owns alot of cool tools that are generally useful. I consider them to be a mostly white hat entity.</p>
+
+<p>The manufacture malwarebytes, house call, rkill, adware cleaner, ccleaner, combofix, defragler... Etc. They bond monitoring to threats to a serv host... That is probably what you are seeing... Might even be in the goats file.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2 op" data-depth="2" data-id="di2838u">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>I have a well maintained and extensive block list in my hosts file, nothing out of wack there.</p>
+
+<p>I have used MalwareBytes in the past, and immediately uninstalled it. Otherwise no other tools of theirs on this PC.</p>
+
+<p>My concern is that my router saw this connection but my PC did not. The connection originated from my outward facing IP, not my internal IP, which means that either my computer was stealthing it or that it was actually my cable modem making the connection. In either case, that is not whitehat behavior.</p>
+
+<p>However, it can be reasonably surmised that the IP is not TrendMicro, since I had to look elsehwere in the IP block to find that name resolution.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="di2j2nm">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DuplexFields.html">DuplexFields</a> 2017-05-26</p>
+    <div class="md"><p>TrendMicro owns Malwarebytes? That&#39;s the sound of my heart breaking.</p>
+
+<p>Well, since I use my work computer for most things, and the Deep State is focused on keeping the tax machinery (ie, me) going, I&#39;m mostly okay with this.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="di265wi">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/PFAAC.html">PFAAC</a> 2017-05-26</p>
+    <div class="md"><p>They don&#39;t need an IP address to monitor our traffic. They just fork it and sniff transparently.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="di268ky">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>Right, and there&#39;s ARP spoofing potentially, or outright looking at the ISP logs which would show what sites you are connecting to unless you are using a VPN. This is only a small step.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="di26dlk">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/PFAAC.html">PFAAC</a> 2017-05-26</p>
+    <div class="md"><p>You just split the signal. There&#39;s no traditional hacking involved when they have physical access. They go to somewhere that&#39;s a key hub, install their black box and that&#39;s it.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="di26rpx">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>If you have a secure VPN connection, there&#39;d be nothing legible to sniff though, because it&#39;s all encrypted traffic right? All they&#39;d see is the site you are communicating with?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="di279yg">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/PFAAC.html">PFAAC</a> 2017-05-26</p>
+    <div class="md"><p>There is a huge amount of data (can be too much to process heavily or store) yet they don&#39;t get all of it. It&#39;s still plenty. It&#39;s a complicated subject and while I&#39;m aware of their mystery boxes (taps) I can only speculate on the metrics including coverage, collection, storage capacity, retention, filtering, processing capacity, selection, etc. Where possible you might want to rely on external retention instead and having access when you need it with live monitoring helping to steer you towards what to requisition. It&#39;s not simple. There are hundreds of things to consider.</p>
+
+<p>It depends on the VPN connection. In theory an onion network should be best and/or mesh network.</p>
+
+<p>You can actually gleam a fair amount from encrypted traffic from a log of packet sizes and timestamps alone and basic statistical analysis although it&#39;s not likely they would be looking at you or put in the effort.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5 op" data-depth="5" data-id="di27g0x">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>I don&#39;t really like the idea of TOR for security because you are going through someone else&#39;s connection who may not actually be secure, but for anonymity sure.</p>
+
+<p>Your last remark about not likely being looked at is where I am kind of going with this. If anyone were being looked at deliberately, there is practically no way to be secure on the Internet. But if I can block the automated systems, that&#39;s a win.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="di27pyb">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/PFAAC.html">PFAAC</a> 2017-05-26</p>
+    <div class="md"><p>Just encryption/SSL tends to do that if they don&#39;t have the immediate keys especially. Even when they can exploit it or even have the private keys it isn&#39;t cheap. Automated systems already have difficulty even if nothing were encrypted. These agents have for a very long time had very good systems merely for analysing who talks to who without having the content. Graph theory.</p>
+
+<p>Onion networks with enough nodes and users are close to impossible to crack. The problem is the latency is really high as well. It&#39;s really wasteful.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-7" data-depth="7" data-id="di2i67u">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/jimmydorry.html">jimmydorry</a> 2017-05-26</p>
+    <div class="md"><p>TOR is pretty much pwned though, with the alphabets running enough nodes to comprimise it.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="di27eti">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Telenerd.html">Telenerd</a> 2017-05-26</p>
+    <div class="md"><p>Have you run Hijackthis? Trendmicro publishes that and it&#39;s a common tool people use to check for hijacking. It mignt autorun in the background. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="di27h9x">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>I used to use that back in the day, but have not on this particular computer. It&#39;s a neat tool for sure.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="di28jw2">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/benjamindees.html">benjamindees</a> 2017-05-26</p>
+    <div class="md"><p>Yep, content &quot;accellerators,&quot; &quot;ddos protection&quot; services, certificate hijacking, compromised ad networks.  It&#39;s all an enormous clusterfuck, and most sites go right along with this stuff voluntarily.</p>
+
+<p>My first &quot;surprise&quot; was a few years back when I got fed up with strange connections, fired up Dillo on an old bootable cdrom and <em>lo and behold</em> started immediately getting advertisements to <em>join Mossad</em>.  No shit.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="di28qxb">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/romanticreptilian.html">romanticreptilian</a> 2017-05-26</p>
+    <div class="md"><p>So, did you join? </p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="di2957g">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/benjamindees.html">benjamindees</a> 2017-05-26</p>
+    <div class="md"><p>Yes, duh.  I&#39;ve since re-evaluated my views and it turns out that 9/11 wasn&#39;t an inside job, after all.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="di2bfwf">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/d3rr.html">d3rr</a> 2017-05-26</p>
+    <div class="md"><p>CDNs do not generally serve/host the content of the page you are reading, or set/check browser cookies. Amazon cozying up to the govt is concerning, they actually do &quot;publish the internet&quot;.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="diaz7vd">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>Right, but that is basically my point. They don&#39;t host the originating content. They host a copy so that traffic doesn&#39;t have to travel as many hops. This opens the door for possibility of that copy being modified by a middle man.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="di2coyu">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/FaJiTa-SalesmeN.html">FaJiTa-SalesmeN</a> 2017-05-26</p>
+    <div class="md"><p>Forgive me but the lack of technical understanding in your post is pretty staggering, I am not sure where to begin.</p>
+
+<p>Rather than savage it piece-by-piece I think it would be better for me to say that not a single thing you’ve done has increased your security or privacy. All you’ve done is made yourself paranoid, wasted your time, and inconvenienced your internet experience. It might have been worth it had you achieved a false sense of security, but if you’re going to continue looking through router logs then you haven’t succeeded at that.</p>
+
+<p>You can harden your usual OS and internet access methods, but not in the manner you describe. There are a load of options and considerations depending on you needs.</p>
+
+<p>However, if you care this much then you would probably be better of with an OS like Tails and/or accessing the internet using Tor. But remember that you can still expose/deanonymise yourself through your own actions.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="di2exv4">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/LittleBigTroll.html">LittleBigTroll</a> 2017-05-26</p>
+    <div class="md"><p><em>deru kui wa utareru</em></p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="diayoyz">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>I can only speculate why you are being so toxic toward me, but that tells me all I need to know about you. There is no love in your heart, and therefore the truth does not reside within.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="diayu2b">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>Feel free to savage it. I like to learn. So far, you&#39;ve taught me nothing other than reddit is toxic.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="diaz34r">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>You came to <a href="/r/conspiracy">/r/conspiracy</a>. If you don&#39;t like what you found, I&#39;m sure there are other like minded toxic individuals you can confer with elsewhere that would be more receptive to your condescension.</p>
+
+<p>No love in your heart. No truth within. Your true colors are blazing.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="di2csht">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Electric_Socket.html">Electric_Socket</a> 2017-05-26</p>
+    <div class="md"><p>P.S. these probably change from ISP to isp</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="di2f6lz">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/streaky81.html">streaky81</a> 2017-05-26</p>
+    <div class="md"><blockquote>
+<p>The main culprit was the site of map2.hwcdn.com which is owned by Highwinds Content Delivery Network - another one of those companies responsible for publishing &quot;The Internet&quot;, and is apparently owned by Akamai. Full circle now. Coincidence?</p>
+</blockquote>
+
+<p>Highwinds is owned by stackpath which friends of mine work for and I have second level links with the owner of. Definitely not Akamai. Definitely not the NSA or any other TLA. FWIW Akamai isn&#39;t a TLA either but I&#39;m on this train of thought..</p>
+
+<blockquote>
+<p>Going a step further, Highwinds is based out of Phoenix, Arizona. Ever heard about those massive data centers in the AZ desert having to do with Echelon? I&#39;ll bet it&#39;s these guys.</p>
+</blockquote>
+
+<p>Tinfoil hat. Our company has a DC parked right next to the NSA&#39;s in Utah and we&#39;re still not the NSA. These DCs you can walk around if you have space there. I have walked around these DC&#39;s myself. They might have a back room but they&#39;re not full fledged intel centres and you&#39;d be nuts to assume they are.</p>
+
+<blockquote>
+<p>I suspect this is a means of certificate hijack for compromising operating systems.</p>
+</blockquote>
+
+<p>This is <em>not</em> how PKI works. You want OCSP results delivered by a reliable vendor in reasonable wall time. OCSP cannot hijack your cert chains in that manner, it only lists revocations.</p>
+
+<p>If you think this is scary go look at your browser&#39;s root cert store. You&#39;ll piss yourself.</p>
+
+<blockquote>
+<p>I can only hope that only allowing connections to valid sites going forward will do the trick. There&#39;s not much else I can do besides reformat everything.</p>
+</blockquote>
+
+<p>Just use a text based browser if you&#39;re this paranoid. You&#39;ll still probably need connections to akamai and cert revocation lists but you&#39;ll be much more secure. Course your UX will be dog turd but using a full-featured browser isn&#39;t compatible with the way you think the internet works.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="di3q0do">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/wreck_a_nice_beach.html">wreck_a_nice_beach</a> 2017-05-26</p>
+    <div class="md"><p>If you really believe every data center on the planet is not already infected by NSA, then you need to open this pdf of the declassifed FISA order from yesterday and search it for this one word: &quot;facilities&quot;</p>
+
+<p>Now tell me, what does facilities mean in the context of where it appears? The number of facilities which NSA UPSTREAM has wiretapped is redacted.</p>
+
+<p>Don&#39;t stop believing that 3rd parties are secure at your own peril.</p>
+
+<p><a href="https://www.dni.gov/files/documents/icotr/51117/2016_Cert_FISC_Memo_Opin_Order_Apr_2017.pdf">https://www.dni.gov/files/documents/icotr/51117/2016_Cert_FISC_Memo_Opin_Order_Apr_2017.pdf</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="di40lbq">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/streaky81.html">streaky81</a> 2017-05-26</p>
+    <div class="md"><p>Maybe in the US.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="diaygb0">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>I&#39;m not scared. It&#39;s being vigilant.</p>
+
+<p>And Highwinds is owned by Akamai according to its whois information. A simple lookup could have saved you some time and some face.</p>
+
+<p>I&#39;ll take facts over hearsay any day.</p>
+
+<p>See the Owner Website information here:</p>
+
+<p><a href="https://myip.ms/info/whois/205.185.216.10/k/1293351578/website/map2.hwcdn.net">https://myip.ms/info/whois/205.185.216.10/k/1293351578/website/map2.hwcdn.net</a></p>
+
+<p>I said in my original post that I attest to truth within. You&#39;ve outed yourself as a falsifier.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="dib9ycu">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/streaky81.html">streaky81</a> 2017-05-26</p>
+    <div class="md"><p>The information on that page is <em>simply wrong</em>. The site you linked even states this &quot;The website of the company is obtained automatically from the whois system and sometimes it may be wrong. In such cases please use Google search to confirm correct website of company name&quot;</p>
+
+<blockquote>
+<p>You&#39;ve outed yourself as a falsifier and an insider</p>
+</blockquote>
+
+<p>Industry insider sure. Falsifier, I&#39;m bringing truth to your unhappy world of confusion about technical issues.</p>
+
+<p>You&#39;re welcome.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="dkoja5n">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>It may very well be wrong, but it may also be worth consideration that Google is one of the specific entities I am attempting to avoid. If they are the only source you can provide, then no perceptions change.</p>
+
+<p>Frankly I don&#39;t care which is true, because the fact of the matter is that there were unsolicited connections being made to map2.hwcdn.com. If they are on the up and up, I fail to see any logic in why this would have occurred.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="dkpklou">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/streaky81.html">streaky81</a> 2017-05-26</p>
+    <div class="md"><p>Now here&#39;s a thread from the past.</p>
+
+<blockquote>
+<p>it may also be worth consideration that Google is one of the specific entities I am attempting to avoid. If they are the only source of truth, then no perceptions change on my end</p>
+</blockquote>
+
+<p>It&#39;s not like google is the only source of accurate information (I could say a lot about google but they&#39;re perfectly competent in search regardless).</p>
+
+<blockquote>
+<p>The fact of the matter is that there were unsolicited connections being made to map2.hwcdn.com</p>
+
+<p>I fail to see any logic in why this would have occurred.</p>
+</blockquote>
+
+<p>The site itself stated that they can be incorrect, and they are.</p>
+
+<p>The same site also states that hwng.net is owned by feedingbrooklynpotatoes.com and it plainly isn&#39;t. By the site&#39;s own (incorrect) logic it&#39;s owned by akamai so..</p>
+
+<p>The correct answer to the question is the raw whois information from the whois system itself:</p>
+
+<pre><code>No match for &quot;MAP2.HWCDN.COM&quot;.
+</code></pre>
+
+<p>The real problem here is the server record doesn&#39;t exist which imho is causing a badly handled feedback loop in their whois logic - I can make any domain look like it&#39;s owned by Akamai by your and that site&#39;s logic. Take for example the site of the <a href="https://myip.ms/info/whois/205.185.216.10/k/607329078/website/thisisnonsense.korea-dpr.com">People&#39;s Republic of Korea</a>. Basically the site you linked is broken and makes no effort to handle errors.</p>
+
+<p>The information you&#39;re <em>actually</em> looking for is available from the state of Florida&#39;s <a href="http://search.sunbiz.org/Inquiry/CorporationSearch/SearchResultDetail?inquirytype=EntityName&amp;amp;directionType=Initial&amp;amp;searchNameOrder=HIGHWINDSNETWORKGROUP%20P060000556390&amp;amp;aggregateId=domp-p06000055639-9a0303f6-9a52-43ab-a8d9-00d35eb023ee&amp;amp;searchTerm=highwinds&amp;amp;listNameOrder=HIGHWINDS%20L150001832650">website</a>.</p>
+
+<p>Relying on a barely competent third party that&#39;s giving you invalid data to tell you about some conspiracy of lizard people that&#39;s running all the CDN&#39;s on the planet is a bad idea. All this information is available from reliable sources if you go looking. Plus again I know people who know Lance Crosby and I know people who work for HW via industry connections.. I wouldn&#39;t rule out (or in) Akamai buying HWCDN by any stretch but they don&#39;t own it today.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5 op" data-depth="5" data-id="dkqcmrx">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>I&#39;m not relying on anything. I thought I saw a connection, it may or may not be reliable, and as I&#39;ve already stated, it means nothing. You&#39;re wasting your time nitpicking a sidebar that means nothing, because the owner of the website is irrelevant, and changes nothing about the observed behavior.</p>
+
+<p>Yes, the site doesn&#39;t resolve, but that doesn&#39;t mean it hasn&#39;t resolved in the past or that it won&#39;t resolve in the future.</p>
+
+<p>Your continued efforts only showcase your desperation, and your mockery of inserting and unrelated topic about lizard people showcases your lack of class. If you want people to really listen to you, try being likeable.</p>
+
+<p>Please do not look forward to any further reply.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5 op" data-depth="5" data-id="dkqcr9y">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>I&#39;m not relying on anything. I thought I saw a connection, it may or may not be reliable, and as I&#39;ve already stated, it means nothing. You&#39;re wasting your, my, and everyone&#39;s time nitpicking a sidebar that means nothing (deflection tactic), because the owner of the site is irrelevant, and changes nothing about the observed behavior.</p>
+
+<p>Yes, the site doesn&#39;t resolve, but that doesn&#39;t mean it hasn&#39;t resolved in the past or that it won&#39;t resolve in the future.</p>
+
+<p>Your continued efforts only showcase your desperation, and your mocking me by inserting and unrelated topic about lizard people showcases your lack of class. If you want people to really listen to you, try leaving out the unnecessary insults.</p>
+
+<p>Please do not look forward to any further reply.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5 op" data-depth="5" data-id="dkqcwse">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>I&#39;m not relying on anything. I thought I saw a connection, it may or may not be reliable, and as I&#39;ve already stated, it means nothing. You&#39;re wasting your, my, and everyone&#39;s time nitpicking a sidebar that means nothing (deflection tactic), because the owner of the site is irrelevant, and changes nothing about the observed behavior.</p>
+
+<p>Yes, the site doesn&#39;t resolve, but that doesn&#39;t mean it hasn&#39;t resolved in the past or that it won&#39;t resolve in the future. Whether it is owned by Akamai or not doesn&#39;t change that fact that <em>HWCDN</em> has hijacked my browser.</p>
+
+<p>Your continued efforts only showcase your desperation, and your mocking me by inserting an unrelated topic about lizard people showcases your lack of class. If you want people to really listen to you, try leaving out the unnecessary insults.</p>
+
+<p>Please do not look forward to any further reply.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="dkqdtqz">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/streaky81.html">streaky81</a> 2017-05-26</p>
+    <div class="md"><p>Shall we start again.</p>
+
+<blockquote>
+<p>HWCDN has hijacked my browser</p>
+</blockquote>
+
+<p>Unlikely. More likely is somebody using their services has. You could report it to HWCDN but I don&#39;t think this is likely either. You&#39;re seeing traffic go to systems they own - that doesn&#39;t really mean your browser is &quot;hijacked&quot; - browsers legitimately do things like update checks, check for phishing attempts and more.</p>
+
+<p>If you block things like CDNs aside from the internet looking fairly crappy at lots of major sites you&#39;ll do things like block cert revocations that are revoked often because they&#39;ve been compromised and block updates and open yourself up to the TLAs you seek to avoid.</p>
+
+<p>There are many complicated interactions with the internet and the best way to stay secure is certainly to reduce your attack surface; but there&#39;s reducing your attack surface and being paranoid. Again as I said before if you really care use a simpler browser and/or a more secure OS.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-7 op" data-depth="7" data-id="dkqe1se">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>Your post is entirely hypothetical. That&#39;s not a good way to make a convincing argument.</p>
+
+<p>&quot;Unlikely&quot;</p>
+
+<p>&quot;They can hide&quot;</p>
+
+<p>Pure speculation. Piss off. I don&#39;t need your &quot;advice&quot;.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-7 op" data-depth="7" data-id="dkqembg">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>Selling a service isn&#39;t the same thing as selling a domain name.</p>
+
+<p>I wonder if you believe people can buy domains that end in godaddy.com too just because godaddy sells domain names.</p>
+
+<p>Your post is riddled with unfounded speculation.</p>
+
+<p>&quot;Unlikely&quot; - means nothing.</p>
+
+<p>&quot;they can hide&quot; - they can also not hide.</p>
+
+<p>I already know how my browser was compromised, but I&#39;m not interested in entertaining you any longer.</p>
+
+<p>I&#39;m aware of what blocking CDNs does. I&#39;ve been browsing that way for a while now. I can access plenty of other OCSPs that aren&#39;t run by unwanted middlemen.</p>
+
+<p>Just because a corporation may have some bad eggs doesn&#39;t mean everyone is bad. The people you know, you yourself, may all be very well intentioned and goodhearted folk, and I would not be the least bit surprised. However, I have no comfort level with my traffic being intercepted.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-7 op" data-depth="7" data-id="dkqer4v">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>Selling a service isn&#39;t the same thing as selling a domain name.</p>
+
+<p>I wonder if you believe people can buy domains that end in godaddy.com too just because godaddy sells domain names.</p>
+
+<p>Your post has too much speculation to make a convincing argument, for me personally.</p>
+
+<p>&quot;Unlikely&quot; - means nothing.</p>
+
+<p>&quot;they can hide&quot; - they can also not hide.</p>
+
+<p>I already know how my browser was compromised, but I&#39;m not interested in giving out any more info.</p>
+
+<p>I&#39;m aware of what blocking CDNs does. I&#39;ve been browsing that way for a while now. I can access plenty of other OCSPs that aren&#39;t run by unwanted middlemen.</p>
+
+<p>Just because a corporation may have some bad eggs doesn&#39;t mean everyone is bad. The people you know, you yourself, may all be very well intentioned and goodhearted folk, and I would not be the least bit surprised. However, I have no comfort level with my traffic being intercepted. Intention has nothing to do with it.</p>
+
+<p>I know how to clean my OS. You keep making suggestions that I knew 20 years ago. I don&#39;t care to clean my OS, because I don&#39;t need to. I have successfully and happily isolated my computer from unwanted traffic, and a clean OS isn&#39;t going to make me undo that.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-7 op" data-depth="7" data-id="dkqf4dg">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>Selling a service isn&#39;t the same thing as selling a domain name. Every service provider I&#39;ve dealt with has other domains they are willing to let you use their procs on, but not their primary web site.</p>
+
+<p>That would be like getting a domain that ends in godaddy.com because godaddy sells domain names.</p>
+
+<p>I know how my browser was compromised. It was not an overt attack on me personally. It was simply a web site that exploited my browser.</p>
+
+<p>If there is someone intending on monitoring my traffic, they will most likely succeed no matter what I do. That&#39;s not my concern. What I am doing is blocking the bots.</p>
+
+<p>I&#39;m aware of what blocking CDNs does. I&#39;ve been browsing that way for a while now. I can access plenty of other OCSPs that aren&#39;t run by unwanted middlemen. I did a DNS on every OCSP there is, and only roughly half of them use CDNs.</p>
+
+<p>Don&#39;t get me wrong though. Just because a corporation may have some bad eggs doesn&#39;t mean everyone is bad. The people you know, you yourself, may all be very well intentioned and goodhearted folk, and I would not be the least bit surprised. However, I have no comfort level with my traffic being intercepted. Intention has nothing to do with it. Heck, the company I work for could be worse, but we all have bills to pay, and there are good people who rely on us. Somebody has to do the work to keep society going.</p>
+
+<p>I don&#39;t care to clean my OS, because I don&#39;t need to. I have successfully and happily isolated my computer from unwanted traffic, and a clean OS isn&#39;t going to make me undo that.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="di2gnu6">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/yinmnblues.html">yinmnblues</a> 2017-05-26</p>
+    <div class="md"><p>Very interesting post.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="di2hnow">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/samswung.html">samswung</a> 2017-05-26</p>
+    <div class="md"><p>Dyslexic here please someone tldr </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="diaz68c">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>A good portion of all internet content is served up through 3rd party intermediaries. This opens more doors for man in the middle attacks.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="di2iy51">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Ive_gone_guano.html">Ive_gone_guano</a> 2017-05-26</p>
+    <div class="md"><p>Are you using Windows? </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="di2j8ab">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/WippleDippleDoo.html">WippleDippleDoo</a> 2017-05-26</p>
+    <div class="md"><p>Not to discredit the idea of mass survelliance, but you should learn about networking first.</p>
+
+<p>Start with network+ and work your way up to the cisco networking learning material.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="diaxp9h">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>Jokes on you. I had a network+ before reddit was a thing. I used to program Cisco routers and have a degree in networking, even though it&#39;s not my current career choice.</p>
+
+<p>Me thinks you&#39;ve been drinking the kool-aid.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="diaxx61">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>Admittedly, I haven&#39;t been certified in Network+ for over 15 years so I am a bit rusty. As I recall, it was an entry level course.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="diay2vx">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>Admittedly, I haven&#39;t been certified in Network+ in over a decade so I am a bit rusty. It was an entry level course, OSI model basics. Cisco router programming was a bit more complicated, but conceptually nothing earth shattering.</p>
+
+<p>I don&#39;t think you&#39;re on the mark here, and I don&#39;t see any substantiation to your opinion. I suspect you are fishing for information by going after my ego.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="diayaux">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>Are you trying to insult me, or are you fishing for information? You are so far off the mark, it&#39;s hard to take seriously.</p>
+
+<p>I haven&#39;t been certified in Network+ in over a decade, but I doubt it&#39;s much different today.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="di2kjlv">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/CivilianConsumer.html">CivilianConsumer</a> 2017-05-26</p>
+    <div class="md"><p>I ran into similar results last time I checked into this </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="di32gcv">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/MetroMountainMale.html">MetroMountainMale</a> 2017-05-26</p>
+    <div class="md"><p>I posted something about this a couple of weeks ago and got busy so I haven&#39;t re-visited it yet.  I will have time this weekend however.  I am in the process of blocking all outbound and inbound communications from these IPs.  I would be willing to share my PCAP from a fresh windows 10 instance about a month ago.  Would people like to see this?  There are additional IP addresses that are not referenced in the post that my box was picking up.  </p>
+
+<p>134.170.115.56
+131.253.61.96</p>
+
+<p>I have a full VMware \ Cisco \ Dell environment at home, so if anyone would like me to test something and report back, please let me know.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="diaxni6">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>I&#39;m definitely interested if you know of any gaps in my block list. I found one the other day at 72.246.0.0 - 72.247.255.255.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="di3q6xi">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/wreck_a_nice_beach.html">wreck_a_nice_beach</a> 2017-05-26</p>
+    <div class="md"><p>I believe you.</p>
+
+<p>If I was NSA, Akamai would be one of my first targets that I totally pwnd because of their reach. If you hit the biggest CDN on the Internet, you have access to everyone. Akamai is certainly a PRISM partner. And NSA certainly double crossed them like everyone else, on multiple levels. Feed the Akami Execs a line of bullshit about them helping the mission. Then pay them hundreds of millions per year in off the books revenue for their cooperation. Then infiltrate them with CORE SECRETS moles to collect it all. Then hack their asses once you&#39;re inside just to make sure they don&#39;t wiggle out of complying with PRISM.</p>
+
+<p>The only web browser I can recommend that is more NSA-proof than anything else is this:</p>
+
+<p><a href="https://github.com/Eloston/ungoogled-chromium">https://github.com/Eloston/ungoogled-chromium</a></p>
+
+<p>Even if you don&#39;t plan to use it, at least read its README to see how many dozens of ways Chrome phones home to Google. That project tries to remove every trace of Google. I was stunned when I saw all of the ways that Google spies on us. Do not trust Chrome for shit. The whole thing is one giant spyware virus.</p>
+
+<p>Unfortunately, every other browser is worse. Including Firefox. Maybe the spooks actively make the web suck and help the monopolists at Google and Apple and Microsoft by bloating it up so that no indies can even make a web browser, because a web browser is too perfect of a spy weapon.</p>
+
+<p>The ungoogled-chromium is extremely hard to compile yourself. Thanks to Google over-engineering by design.
+It will take even skilled programmers a week just to figure out how to build it.</p>
+
+<p>But if you really care about being NSA-proof, that is your best bet until something better comes along.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="diaxluz">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TimeBandit88.html">TimeBandit88</a> 2017-05-26</p>
+    <div class="md"><p>Someone else mentioned Tails browser as a viable alternative. I don&#39;t touch anything Google. Their privacy policy is a joke. Ironically it seems like Microsoft is the least invasive of the bunch, notwithstanding the OS that is.</p>
+</div>
+</div>
+
+      </div>
+    </main>
+    <footer class="container-fluid">
+      <a class="to-top mt-1 mb-1 btn btn-lg btn-primary" href="#top">top of page</a>
+      <p class="small mb-0">data archived 2017-06-11. <a href="https://github.com/libertysoft3/reddit-html-archiver">source code</a>.</p>
+    </footer>
+    <script src="../../../../../../../../static/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../../../../../../../static/js/bootstrap.min.js"></script>
+    <script src="../../../../../../../../static/js/archive-comments.js"></script>
+  </body>
+</html>

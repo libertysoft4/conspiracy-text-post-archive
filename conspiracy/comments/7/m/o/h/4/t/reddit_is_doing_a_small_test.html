@@ -1,0 +1,983 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../../../../../../../../static/css/lato.css">
+    <link rel="stylesheet" href="../../../../../../../../static/css/bootstrap-superhero.min.css">
+    <link rel="stylesheet" href="../../../../../../../../static/css/archive.css">
+    <title>r/conspiracy: Reddit Is Doing "A Small Test"</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+        <a class="navbar-brand" href="../../../../../../../../conspiracy/index.html">r/conspiracy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index.html">score</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index-comments/index.html">comments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index-date/index.html">date</a>
+            </li>
+            <li class="nav-item ###URL_SEARCH_CSS###">
+              <a class="nav-link" href="../../../../../../../../conspiracy/search.html">search</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">subreddits</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="../../../../../../../../index.html">All</a>
+                <a class="dropdown-item" href="../../../../../../../../conspiracy/index.html">conspiracy</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main role="main" class="container-fluid">
+      <div class="submission pt-3" data-id="7moh4t">
+        <h3 class="title">Reddit Is Doing "A Small Test"</h3>
+        <p><span class="badge badge-primary">1246</span>&nbsp;&nbsp;2017-12-28 by <a class="author" href="../../../../../../../../user/hotdogsfromchicago.html">hotdogsfromchicago</a></p>
+        <div class="card bg-dark mb-3"><div class="card-body md"><p>I&#39;m writing this because I started noticing parameters at the end of certain post URLs on Reddit, which seem to get added in a sneaky way. This makes me think it is a sneaky tracking mechanism, for what purpose I can only speculate...</p>
+
+<p>Here&#39;s what happens - I find a post on <a href="/r/conspiracy">/r/conspiracy</a> front page I want to read, so I click the link to the comments and it opens the full post. In the browser address bar I notice two parameters at the end of the URL that should not be there - st and sh. I say they should not be there because the comments link does not contain those parameters when I hover the mouse over the link. It seems that the parameters get added on click (via Javascript), and the parameters appear to be randomized each time you click the link. This is similar to phishing tactics. It&#39;s rather sneaky they are doing this sort of URL manipulation, but in the age of advertisements and analytics and tracking, this is par for the course. So far.</p>
+
+<p>Here&#39;s the problem I have with this.</p>
+
+<p>Assume you now decide to copy the URL and send it to a friend, or paste it into a Tor browser. <em>You just exposed your anonymity.</em> That URL, with the unique st and sh parameters, has now been visited by two people (or two web browsers), and they can link those two together easily with the st and sh, creating a group of both identified and anonymous users. If they wanted to identify the anonymous user they could ask/investigate one of the identified users in the group.</p>
+
+<p>I&#39;m not saying Reddit is doing this to expose hidden user groups and Tor users, but it is possible to exploit this in such a way in my opinion.</p>
+
+<p>Researching this issue I found the following post which includes a statement from a Reddit admin:</p>
+
+<p><a href="https://np.reddit.com/r/help/comments/4qbtd1/why_reddit_recently_started_adding_parameters_at/">https://np.reddit.com/r/help/comments/4qbtd1/why_reddit_recently_started_adding_parameters_at/</a></p>
+
+<p>(Funny thing is, the URL above had the st and sh parameters when I pasted the link and I almost forgot to remove them)</p>
+
+<p>So according to that post, Reddit was &quot;running a small test&quot;. <em>But that was a year ago...</em></p>
+
+<p>Further down the comments you will find a user struggling to disable this behavior. He includes a user script (Javascript) that may be useful to some people. Anyhow, moving on...</p>
+
+<p>The admin included a link which explains the test:</p>
+
+<p><a href="https://www.reddit.com/live/x3ckzbsj6myw/updates/81c57a78-3cb5-11e6-84fb-0e395ea06b87">https://www.reddit.com/live/x3ckzbsj6myw/updates/81c57a78-3cb5-11e6-84fb-0e395ea06b87</a></p>
+
+<p>Pretty vague. Keep in mind this was a year ago. What was the result of the test? Why is the test still in place? Will the test ever end?</p>
+
+<p>Then this part:</p>
+
+<blockquote>
+<p>When viewing a link&#39;s comment pages, a small percentage of users will notice a short parameter appended to the URL. This will allow us to understand what happens after the link is shared somewhere</p>
+</blockquote>
+
+<p>To understand what happens? Well that&#39;s vague. I can tell you what happens, the link gets clicked by people. So why do they need to &quot;understand what happens&quot;? And why is this done only to a small percentage of users? Why does this happen even when the user has tracking turned off in preferences? What the hell is going on here?</p>
+
+<hr/>
+
+<p>TLDR; Reddit is using stealth tracking on some users, even when tracking is turned off in preferences. This theoretically could be used by an engineer or analytics algorithm to reveal hidden user groups and expose anonymous users.</p>
+</div></div>
+      </div>
+      <div class="comments">
+        <h5>144 comments</h5>
+        <div class="comment mb-3 ml-0" data-depth="0" data-id="drvfplj">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/oxfouzer.html">oxfouzer</a> 2017-12-28</p>
+    <div class="md"><p>Legitimate questions...</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drwm73k">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/100_percent_diesel.html">100_percent_diesel</a> 2017-12-28</p>
+    <div class="md"><p>Can anyone else confirm this doesn&#39;t happen if you use the old school .compact version of Reddit? I&#39;ve been on that for years and prefer it. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="drwur6m">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/mymuse100.html">mymuse100</a> 2017-12-28</p>
+    <div class="md"><p>Are u using ad blockers   <a href="https://www.yahoo.com/news/thousands-websites-quietly-fighting-ad-053300698.html">https://www.yahoo.com/news/thousands-websites-quietly-fighting-ad-053300698.html</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="drx3yu1">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/100_percent_diesel.html">100_percent_diesel</a> 2017-12-28</p>
+    <div class="md"><p>Gosh yes. I have been using them so long I actually forgot about that part.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drwuqd8">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/mymuse100.html">mymuse100</a> 2017-12-28</p>
+    <div class="md"><p><a href="https://www.yahoo.com/news/thousands-websites-quietly-fighting-ad-053300698.html">https://www.yahoo.com/news/thousands-websites-quietly-fighting-ad-053300698.html</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drvhn5i">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/LadyObstacle1.html">LadyObstacle1</a> 2017-12-28</p>
+    <div class="md"><p>For sure.. we are not free. Not even in reddit. Cellphones have gps so we are tracked constally...</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drvp59q">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/killerbake.html">killerbake</a> 2017-12-28</p>
+    <div class="md"><p>Then don’t use a cellphone lol. Oh wait they took away payphones mostly everywhere. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="drvrcip">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/McDuffBSmith.html">McDuffBSmith</a> 2017-12-28</p>
+    <div class="md"><p>And if you do, by some miracle, find one, it costs a dollar a minute.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="drvv5g5">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Popular_Prescription.html">Popular_Prescription</a> 2017-12-28</p>
+    <div class="md"><p>Yeah, called my wife when visiting mall of America from a payphone. My cell died and had no other way. Made 4 calls, the first three I couldn&#39;t hear anything on the other end. 4th call I could hear her. Got a bill for 146 dollars... This was about 5 min of time. How the duck does that make any sense. Charged that shit back.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="drw6isr">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/manfly.html">manfly</a> 2017-12-28</p>
+    <div class="md"><p>I&#39;ll take &quot;made up bullshit for 600,&quot; Alex!</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="drwd6jp">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Popular_Prescription.html">Popular_Prescription</a> 2017-12-28</p>
+    <div class="md"><p>Why the fuck would I lie about that. Trust me, I nearly had a heart attack and thought my card got skimmed. It was a payphone with a credit card reader and didn&#39;t have the posted rates. For some reason the &quot;fee&quot; to use a credit card was stupid expensive (I called them...) It&#39;s brilliant on their part. Phones are in a noisy ass place and you can&#39;t hear the rates being stated at the beginning of the call. They refused to refund my money so I did a charge back on my amex. So no, not made up bullshit. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="drvvlwv">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/SushiBarExam.html">SushiBarExam</a> 2017-12-28</p>
+    <div class="md"><p>Most major cities I&#39;ve been to offer free phone services near tourist kiosks 🤷</p>
+
+<p>New York, Orlando, Sacramento, and New Orleans at least.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="drw4r48">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/RagingSatyr.html">RagingSatyr</a> 2017-12-28</p>
+    <div class="md"><p>Lol I usually just borrow some sympathetic person&#39;s phone. Advantages of looking like a kid. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drvu8ux">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/athural.html">athural</a> 2017-12-28</p>
+    <div class="md"><p>and they don&#39;t even try to hide it. I went out with my girlfriend last week, Wednesday, and on Monday i was asking her &quot;what day did we go out&quot; and she didn&#39;t know. So i went until google maps and tracked it back. The worst part is it seems most people are still unaware of this tracking, she certainly wasn&#39;t </p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="drvwomq">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/MrHara.html">MrHara</a> 2017-12-28</p>
+    <div class="md"><p>While it could be used maliciously, it&#39;s mostly just handy.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="drw08om">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DogSnoggins.html">DogSnoggins</a> 2017-12-28</p>
+    <div class="md"><p>You can disable this on your phone. But, disabling all the available selections relating to tracking doesn&#39;t stop your phone from tracking you anyway and storing the info where you can&#39;t get to it.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drvzytu">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DogSnoggins.html">DogSnoggins</a> 2017-12-28</p>
+    <div class="md"><p>Put your phone in a Faraday sleeve when you want to go stealth.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="drw5cf3">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/murtokala.html">murtokala</a> 2017-12-28</p>
+    <div class="md"><p>That plus something that insulates sound too. Then there are the rest of the sensors that can still monitor movement. And then hope everyone else does the same.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="drw5i2h">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DogSnoggins.html">DogSnoggins</a> 2017-12-28</p>
+    <div class="md"><p>Oh, yes, all that, too. It&#39;s hopeless ; )</p>
+
+<p>Roll up your sleeve for the chip and get it over with.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="drw5yu1">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/CG28.html">CG28</a> 2017-12-28</p>
+    <div class="md"><p>lol they&#39;ll just inject it in you while you&#39;re an infant</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drvj9m9">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Dizzymo.html">Dizzymo</a> 2017-12-28</p>
+    <div class="md"><p>I&#39;m guessing they want to understand how links are shared and used, so they can justify charging x amount of dollars for a sponsored post by showing how often it was clicked</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drvowln">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/pepperonihotdog.html">pepperonihotdog</a> 2017-12-28</p>
+    <div class="md"><p>$$$$$ </p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="drwjqd3">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/the_phantom_2099.html">the_phantom_2099</a> 2017-12-28</p>
+    <div class="md"><p>Dollar dollar hills yall</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="drwr57e">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/pepperonihotdog.html">pepperonihotdog</a> 2017-12-28</p>
+    <div class="md"><p>Cash rules every thing around me. Get the money</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drvx891">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/theybuyortheydie.html">theybuyortheydie</a> 2017-12-28</p>
+    <div class="md"><p>This is correct. Every platform with a substantial amount of traffic begins to optimize how much revenue it can generate from user data. It&#39;s so natural for a company to do this that I would definite it as an organic process. </p>
+
+<p>Even though the original post points to all of the potential negatives, and they are totally possible, that&#39;s just worst case scenario. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drvx936">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/IAmTheColorTheft.html">IAmTheColorTheft</a> 2017-12-28</p>
+    <div class="md"><p>Yes. This is just A/B testing. Email marketing campaigns do the same thing. You split an email that’s being sent out to masses into different batches/groups. Each group is then compared to each other. Could be one group reviewed the email at 2pm and another at 6pm. Sometimes the emails have slightly different content. This helps determine what contents performs better. </p>
+
+<p>In this case it’s unlikely that the user has the suffix tied to their username. More likely a wide group of users see the same suffix. Realistically though, you would be placed into a group because of information/data they already have on you.</p>
+
+<p><em>jim and joe are from the Midwest and both upvoted this cat video.</em> <strong>Group A</strong></p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="drw0lnp">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DogSnoggins.html">DogSnoggins</a> 2017-12-28</p>
+    <div class="md"><p>I wouldn&#39;t count on it being quite so simple. There&#39;s great value in amassing as much personal information as can be collected on an individual user. I don&#39;t believe that they would waste the opportunity to glean as much data as is made available by this identifier.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="drw9izb">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/canipaybycheck.html">canipaybycheck</a> 2017-12-28</p>
+    <div class="md"><p>As the CEO said, they know things about their users that other sites don&#39;t know.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="drwa5fx">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DogSnoggins.html">DogSnoggins</a> 2017-12-28</p>
+    <div class="md"><p>Exactly. And he&#39;s an ass, anyway.</p>
+
+<p>Trust but certify. ; )</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drwq85x">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/toxic_banana.html">toxic_banana</a> 2017-12-28</p>
+    <div class="md"><p>Never attribute to malice that which is adequately explained by greed.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drwushb">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/mymuse100.html">mymuse100</a> 2017-12-28</p>
+    <div class="md"><p><a href="https://www.yahoo.com/news/thousands-websites-quietly-fighting-ad-053300698.html">https://www.yahoo.com/news/thousands-websites-quietly-fighting-ad-053300698.html</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drz40r4">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/AlpacaSean801.html">AlpacaSean801</a> 2017-12-28</p>
+    <div class="md"><p>Makes sense!</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drvk7lk">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/RagingSatyr.html">RagingSatyr</a> 2017-12-28</p>
+    <div class="md"><p>Does this happen even after you disable all the privacy shit in settings? </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drvkq5z">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DeerSpotter.html">DeerSpotter</a> 2017-12-28</p>
+    <div class="md"><p>What I had to disable privacy shit? I thought this was a website and that&#39;s all. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="drvl48p">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/RagingSatyr.html">RagingSatyr</a> 2017-12-28</p>
+    <div class="md"><p>Nah there&#39;s a bunch of settings you gotta fuck with for max privacy. I&#39;m on mobile so I can&#39;t check rn. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="drydfn9">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Mineracc.html">Mineracc</a> 2017-12-28</p>
+    <div class="md"><p>Implying that&#39;s not just a placebo lul</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="dryecuz">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/RagingSatyr.html">RagingSatyr</a> 2017-12-28</p>
+    <div class="md"><p>It&#39;s a range of effectiveness. There&#39;s nothing you can do against high level government and corporations but lower level shit can be stopped. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="drvo57x">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Ieuan1996.html">Ieuan1996</a> 2017-12-28</p>
+    <div class="md"><p>It used to be like that. Now they track every user and it&#39;s your responsibility to disable tracking if you don&#39;t want that. (but it&#39;s not like spez would tell you that obviously) </p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="drw3bux">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/LarryHolmes.html">LarryHolmes</a> 2017-12-28</p>
+    <div class="md"><p>I still use Alien Blue. Can they track me through that?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="drw9hac">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/canipaybycheck.html">canipaybycheck</a> 2017-12-28</p>
+    <div class="md"><p>Yes. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drvrcok">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/gnrlysrs.html">gnrlysrs</a> 2017-12-28</p>
+    <div class="md"><p>Every time reddit does an update on the apps, it resets those preferences. Make sure you double check if you update.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="drvres8">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/RagingSatyr.html">RagingSatyr</a> 2017-12-28</p>
+    <div class="md"><p>I use a 3rd party app, does that prevent it? </p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="drvrjy0">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/gnrlysrs.html">gnrlysrs</a> 2017-12-28</p>
+    <div class="md"><p>log in on a computer and check your settings, they can&#39;t be changed on the app I use. I&#39;ve unchecked &quot;allow reddit to log my outbound clicks for personalization&quot; dozens of times.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="drvrnxt">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/RagingSatyr.html">RagingSatyr</a> 2017-12-28</p>
+    <div class="md"><p>I&#39;m good for rn. The app I use has a shortcut to get to reddit preferences which is handy. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="drw7fa6">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/cutol.html">cutol</a> 2017-12-28</p>
+    <div class="md"><p>I hear that a lot but mine have not changed since I joined reddit years ago. I keep checking though, as y&#39;all make me paranoid. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drw2ld6">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DogSnoggins.html">DogSnoggins</a> 2017-12-28</p>
+    <div class="md"><blockquote>
+<p>privacy shit</p>
+</blockquote>
+
+<p>Really, adjusting your privacy settings is somewhat useless in the big picture.</p>
+
+<p>Here&#39;s <a href="https://www.howtogeek.com/115483/htg-explains-learn-how-websites-are-tracking-you-online/">one article</a> that just touches on how we&#39;re tracked (2016). There are more unique identifiers and tracking systems that have and are being developed and it will continue. As soon as we are able to foil one, sure as shit, a more complex system/method prevails. </p>
+
+<p>Imagine all your FB messages/posts, phone texts, emails, doctor visits, tax issues, reddit posts, search inquiries, sites visited, text (comments, personal data, whatever) typed into some text box but then deleted or abandoned, anything you&#39;ve browsed or entered online. Words spoken around your devices, things visually done in range of your device camera lens (oh!). Imagine it&#39;s all in the process of being captured and eventually fully aggregated under your unique user id.  </p>
+
+<p>The only way to reduce the continued leaking of your private information/habits/contacts is to quit using your computer, phone and any other &#39;smart&#39; devices. Not even a VPN or TOR is failsafe. Not saying it doesn&#39;t make sense to initiate any precautions you can right now.</p>
+
+<p>However, since 99.9% of every entity we do some sort of business with is already spewing all your personal data out to the online world, well, we&#39;ve all already been pretty much exposed and there&#39;s really no going back.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="drw3xub">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/RagingSatyr.html">RagingSatyr</a> 2017-12-28</p>
+    <div class="md"><p>Yeah I try to limit it as much as possible but I&#39;m sure I still leak a lot. But less than an average person though. I&#39;d hope so for all the extensions and privacy permissions shit I fuck with. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="drw4s19">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DogSnoggins.html">DogSnoggins</a> 2017-12-28</p>
+    <div class="md"><p>Yeah, me, too, lol. But I always have the thought in the back of my mind that it&#39;s all &quot;for show&quot; and someone, somewhere, is laughing at me. ; )</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="drw59zu">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/RagingSatyr.html">RagingSatyr</a> 2017-12-28</p>
+    <div class="md"><p>Nah at the very least this shit  keeps info from all the lower level leaky ass data miners. While the DoD and big 4 still have your shit, at least they&#39;re somewhat more competent than most other companies getting your data. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="drw5p5b">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DogSnoggins.html">DogSnoggins</a> 2017-12-28</p>
+    <div class="md"><p>Some, I suppose. The owners of the sites, however, have access to a lot of information that browser &amp; proffered site privacy settings can&#39;t control.</p>
+
+<p>However, yes, I still toggle all the settings anyway. Some of it has to be be useful somehow, and that&#39;s worth something. If just to make me feel a <em>little</em> better.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="drw66kl">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/RagingSatyr.html">RagingSatyr</a> 2017-12-28</p>
+    <div class="md"><p>Gotta extension the fuck out too, otherwise you get raped by Google analytics and AWS. Get like Privacy Badger and Disconnect. And Ublock origin, HTTPS everywhere, Cookie autodelete and Decentraleyes. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-7" data-depth="7" data-id="drw78mv">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DogSnoggins.html">DogSnoggins</a> 2017-12-28</p>
+    <div class="md"><p>haha, right!  I have most all those plus overkill with Ghostery, AdBlock+ and a couple non-browser scripts for deeper protection.</p>
+
+<p>I&#39;ll check into Decentraleyes and Disconnect. So far my browser hasn&#39;t screamer &quot;Mercy&quot; yet, but those two may tip the scales, lol.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="8" data-id="drw7p73">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/RagingSatyr.html">RagingSatyr</a> 2017-12-28</p>
+    <div class="md"><p>Get rid of ghostery and abp. Replace with everything I mentioned above. Those two collect data of their own and whitelist sites that pay them off. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="9" data-id="drw8764">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DogSnoggins.html">DogSnoggins</a> 2017-12-28</p>
+    <div class="md"><p>Ohhh. I&#39;ll check that out for sure, good to know, thanks!</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="drwjvm3">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/stupidfuckingtroll.html">stupidfuckingtroll</a> 2017-12-28</p>
+    <div class="md"><p>What extensions do you use?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="drwpau1">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/RagingSatyr.html">RagingSatyr</a> 2017-12-28</p>
+    <div class="md"><p>HTTPS Everywhere, privacy Badger, disconnect, Decentraleyes, Cookie autodelete, ublock origin </p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="drx1inh">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/stupidfuckingtroll.html">stupidfuckingtroll</a> 2017-12-28</p>
+    <div class="md"><p>Check out uMatrix, from the creator of uBlock Origin</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="drx2cux">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/RagingSatyr.html">RagingSatyr</a> 2017-12-28</p>
+    <div class="md"><p>Too much work, it&#39;s basically noscript but harder to set up. I&#39;m done with all the noscript type shit. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="drw4n5h">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/murtokala.html">murtokala</a> 2017-12-28</p>
+    <div class="md"><blockquote>
+<p>well, we&#39;ve all already been pretty much exposed and there&#39;s really no going back.</p>
+</blockquote>
+
+<p>Indeed. I have though maybe the &quot;way out&quot; would be to spill the data openly to the public. Give up on the idea of privacy and make it all public. Obviously nobody is going to do that when they have everything to gain from said data, but just aswell as &quot;they&quot; can monitor us, there&#39;s a lot we could monitor too.</p>
+
+<p>As an example, only a few people per a small city participating using software defined radios to monitor &amp; triangulating signals could give away the locations of people. Would need to be correlated with some other data to make sense who&#39;s who, but doable nonetheless.</p>
+
+<p>Unfortunately that&#39;s illegal in many places or if not in everywhere. But so should be this one sided data collection too.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drx5twt">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/PhreakerX.html">PhreakerX</a> 2017-12-28</p>
+    <div class="md"><p>Can&#39;t speak for reddit settings but with privacy badger, scriptsafe and https everywhere I don&#39;t get any of this.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drvl8bp">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/PM_ME_UR_GLIPGLOPS.html">PM_ME_UR_GLIPGLOPS</a> 2017-12-28</p>
+    <div class="md"><p>Good work! Prepare to be banned though :/</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drw0iu8">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/n0mar.html">n0mar</a> 2017-12-28</p>
+    <div class="md"><p>What you said surely has to be a joke?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="drw5d1o">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/PM_ME_UR_GLIPGLOPS.html">PM_ME_UR_GLIPGLOPS</a> 2017-12-28</p>
+    <div class="md"><p>Yes, I&#39;m of no importance lol.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drvl8hm">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/PM_ME_UR_GLIPGLOPS.html">PM_ME_UR_GLIPGLOPS</a> 2017-12-28</p>
+    <div class="md"><p>Good work! Prepare to be banned though :/</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drvlq3k">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/financial-cowboy.html">financial-cowboy</a> 2017-12-28</p>
+    <div class="md"><p>Are there differences in the pages at all? This sounds like it could be standard A/B testing for new features, etc.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drvlx14">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/MissType.html">MissType</a> 2017-12-28</p>
+    <div class="md"><p>They’re probably doing it to track brigading. If they know a particular link’s been shared by a specific sub they’ll be able to track how often it was visited.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drvr27y">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Iworshiplemons.html">Iworshiplemons</a> 2017-12-28</p>
+    <div class="md"><p>They could also feasibly track it back to the original (re)poster / meme patient zero. Imagine getting criminal charges because some nutjob saw what you shared and killed someone.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drvmrbr">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/swanzola.html">swanzola</a> 2017-12-28</p>
+    <div class="md"><p>If you are using an account to browse, you can go to the settings and disable click tracking and other things that interfere with your privacy. I don&#39;t know if that works, but it is an option.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="drvojbn">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hotdogsfromchicago.html">hotdogsfromchicago</a> 2017-12-28</p>
+    <div class="md"><p>Want more privacy? Create an account! Heh heh</p>
+
+<p>With an account they get to track every device and browser you log in from, your authenticated email address, etc etc.</p>
+
+<p>So imagine logging into your account on computer A with Chrome, then logging into the same account on computer B with Tor browser. Now they know who you are :) They got your IP address, location, device, and all those other lovely user fingerprints from that one time you logged in with Chrome. You don&#39;t even need computer B for this to happen. Log into computer A with Chrome and then with Tor browser. Hello this user likes to use Tor browser and we know a lot about him/her based on that time they logged in with Chrome.</p>
+
+<p>Take this a step further. Say you&#39;re browsing <a href="/r/conspiracy">/r/conspiracy</a> in Chrome while logged out. Then you find a post where you want to comment. You open up Tor browser and log into your Reddit account. You copy and paste the link from Chrome, which happens to contain those random st and sh parameters. BOOM you just blew your anonymity.</p>
+
+<p>So why is Reddit doing this? Is it for their advertisers? Is it to prevent brigading? Is it to identify anonymous users? Maybe a bit of everything?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="drvp17y">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/swanzola.html">swanzola</a> 2017-12-28</p>
+    <div class="md"><p>Truth</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="drvqx89">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/HansShotGlass.html">HansShotGlass</a> 2017-12-28</p>
+    <div class="md"><p>You are correct, but I don&#39;t think reddit is the place for anyone too concerned about tracking. If you ever really get a piece of conspiracy theory that could threaten your life, under no circumstances post it here. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drvmvl8">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/zenmasterzen3.html">zenmasterzen3</a> 2017-12-28</p>
+    <div class="md"><p>Yeah I was wondering when doing private browsing in firefox why i was still getting what appear to be targetted ads (rare medical condition).</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drvsn24">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/unicorntrash.html">unicorntrash</a> 2017-12-28</p>
+    <div class="md"><p>To my understanding, if other tracking methods fail they just use the IP which then again links back to your last profile.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="drvueim">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hotdogsfromchicago.html">hotdogsfromchicago</a> 2017-12-28</p>
+    <div class="md"><p>Private browsing gives you some privacy when you have multiple users on the same computer, but it doesn&#39;t do much to protect your privacy on the web, you can still be tracked because that&#39;s not what it&#39;s meant for.</p>
+
+<p>Even if they can&#39;t get your IP address, they can get the capability of your computer through HTML5 canvas font rendering and other JavaScript techniques. Add all this info together and it creates a unique identity which can be used to track you across the web, even if you are dumping all your cache and cookies and browsing history. Or you could get socially engineered into opening a PDF link, which might open Adobe Acrobat, which bypasses your web browser&#39;s security sandbox. Inside that PDF would be a little JavaScript code that reports your IP address to someone. There are plenty of ways. These are things Tor browser users are aware of, and work to avoid. But now we have Reddit stamping links with unique tokens which can be used to correlate and identify anonymous users and it has been going on for at least a year without much explanation. It&#39;s rather curious.</p>
+
+<p>There is a constant battle raging for businesses to deliver targeted ads. This is done by tracking people. They can only do that by defeating your anonymity. So it&#39;s kind of a big problem.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="drwehrv">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/zenmasterzen3.html">zenmasterzen3</a> 2017-12-28</p>
+    <div class="md"><p>I made a mistake I double checked and using the private browser the ads go away, logging out they don&#39;t. My bad.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="drwg07a">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/RandomePerson.html">RandomePerson</a> 2017-12-28</p>
+    <div class="md"><p>Try Epic browser</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="drwvx3q">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/mymuse100.html">mymuse100</a> 2017-12-28</p>
+    <div class="md"><p>This is true. Could  this be <a href="https://www.yahoo.com/news/thousands-websites-quietly-fighting-ad-053300698.html">https://www.yahoo.com/news/thousands-websites-quietly-fighting-ad-053300698.html</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="drwwr88">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hotdogsfromchicago.html">hotdogsfromchicago</a> 2017-12-28</p>
+    <div class="md"><p>Yeah that&#39;s a decent article.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drvrfb0">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Pyronic_Chaos.html">Pyronic_Chaos</a> 2017-12-28</p>
+    <div class="md"><p>Good sleuthing OP, some things they might be doing with this... &#39;subtle&#39; tracking feature:</p>
+
+<ul>
+<li>Brigade tracking, seeing when a link is bringing in a bunch of users from different subs to sway the opinion of a sub (down/upvote). Makes it easier to ID the &#39;problem&#39; subs.</li>
+<li>Bot tracking, similar to brigading, the bots swarm on a post from a central link. Easy to track down the whole net and ban them.</li>
+<li>User tracking, association of alts with mains</li>
+<li>Origin tracking, having a more solid grasp of userbases and demographics</li>
+</ul>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drvsn09">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/mconeone.html">mconeone</a> 2017-12-28</p>
+    <div class="md"><p>If it&#39;s done through JavaScript, chances are bots will bypass that. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="drw6xj2">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/HeyLetsThinkAbout.html">HeyLetsThinkAbout</a> 2017-12-28</p>
+    <div class="md"><p>Not necessarily, many include JavaScript into their bots because they need to to load up CloudFlare </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drwck70">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/CelineHagbard.html">CelineHagbard</a> 2017-12-28</p>
+    <div class="md"><p>Based on literally any time we get hit by a TMOR brigade and we&#39;ve tried to ask the admins for help, they don&#39;t care about brigades, at least not directed at this sub. There&#39;s no way they don&#39;t have the tools to detect them either.</p>
+
+<p>They have been somewhat helpful with ban evaders, sometimes.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drvtkew">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Aye_or_Nay.html">Aye_or_Nay</a> 2017-12-28</p>
+    <div class="md"><p>Anyone who thinks that these social media sites are not doing everything in their power to track and exploit their users is a naive dumb ass.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drvvfax">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Domenicaxx66xx.html">Domenicaxx66xx</a> 2017-12-28</p>
+    <div class="md"><p>I think about that with Trumps T witter account, I can&#39;t imagine there is no one from T witter who can access his account if they want.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="drvvv1f">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Aye_or_Nay.html">Aye_or_Nay</a> 2017-12-28</p>
+    <div class="md"><p>I thought the very same thing. Is there not anyone on his staff with the balls to tell him to stay the hell off of social media?</p>
+
+<p>I don&#39;t read twerps, tweets, or spacebook for that very reason. Totally unreliable sources.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drw97x4">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/FullBodyHairnet.html">FullBodyHairnet</a> 2017-12-28</p>
+    <div class="md"><p>Yeah, but they use cookies for it. It&#39;s a pop-up on the front page. It&#39;s more thorough and less noticeable than this stuff that OP&#39;s talking about. </p>
+
+<p>If I turn off an add blocker I get the same ads at home as I do at work - never logged in to my personal email at work, or any social media, or Google account. I can tell what my wife shops for online at home because I gets ads for it at work. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="drwcvwu">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Aye_or_Nay.html">Aye_or_Nay</a> 2017-12-28</p>
+    <div class="md"><p>You are right...</p>
+
+<p>We can run, but we can&#39;t hide.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="drwlkkf">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/FullBodyHairnet.html">FullBodyHairnet</a> 2017-12-28</p>
+    <div class="md"><p>You misunderstand...</p>
+
+<p>OP is trying to find meaning in the china pattern on the RMS Titanic, positing that the pattern was so expensive that it must mean that corners were cut in construction. </p>
+
+<p>OP wonders this in a dining room ankle-deep in freezing cold sea water. OP is angry that  the sounds of panicked passengers trying to throw women and children into life boats that have already launched is distracting them from the thought that maybe some aspect of this ship won&#39;t make it as seaworthy long term as was first touted.</p>
+
+<p>It&#39;s not a &quot;we can run but we can&#39;t hide&quot; thing at all - it&#39;s that OP is wondering about tracking when Reddit has been tracking all of us for <em>years</em>, and literally tells you this when you go to the website for the first time. This is about people doing some amateur hour navel contemplation and if we&#39;re all supposed to be here clapping for them while they do it because other people weren&#39;t even that observant. It&#39;s common on Reddit - <a href="/r/moviedetails">/r/moviedetails</a> is a prime example. People get buckets of upvotes for noticing things like <em>the point of the plot</em>. Why waste all these resources on circle-jerking when you&#39;ve become desensitized to the reality that&#39;s worse?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="drxgoof">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Aye_or_Nay.html">Aye_or_Nay</a> 2017-12-28</p>
+    <div class="md"><p>That was such an excellent analogy, I only had to read it once to understand your concise point.</p>
+
+<p>My &quot;run but not hide&quot; comment was a generalization. Of course the cow was out of the barn long ago.</p>
+
+<p>There are a myriad of ways that agencies and other entities can track, obfuscate and manipulate online activities.</p>
+
+<p>I was telling people about it 30 years ago and when I got to trying to explain Alice Springs, people&#39;s eye&#39;s glazed over, right before they spewed, &quot;well, if I&#39;m not doing anything wrong.&quot;</p>
+
+<p>I did not &quot;misunderstand&quot; I was making a generalization directly relating to the futility of attempts to circumvent privacy intrusions.</p>
+
+<p>Thank you.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drvtney">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Werewolf35b.html">Werewolf35b</a> 2017-12-28</p>
+    <div class="md"><p>Finally something real. Usually these end up being dumb rants or technical misunderstandings.</p>
+
+<p>This reminds me of North Korea. They use a custom linux OS called red star I think. It adds a traceable watermark to any document you make in the word processor.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drvuua7">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/RenaKunisaki.html">RenaKunisaki</a> 2017-12-28</p>
+    <div class="md"><p>And printers worldwide add such a watermark to every page.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="drvwl93">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/kjahzge.html">kjahzge</a> 2017-12-28</p>
+    <div class="md"><p>Can you show me what you are talking about?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="drvwx0p">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/ijustwantanfingname.html">ijustwantanfingname</a> 2017-12-28</p>
+    <div class="md"><p><a href="https://en.wikipedia.org/wiki/Printer_steganography">https://en.wikipedia.org/wiki/Printer_steganography</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="drvx1hq">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/RenaKunisaki.html">RenaKunisaki</a> 2017-12-28</p>
+    <div class="md"><p>^ That.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="drvx2dc">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/funknut.html">funknut</a> 2017-12-28</p>
+    <div class="md"><p>I&#39;ve heard this before, but I&#39;m not aware of the veracity. I wonder if it&#39;s a misinterpretation of the fact that each print exhibits signature traits that are often traceable to the model of printer from which they originate.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="drw0m31">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/jamvanderloeff.html">jamvanderloeff</a> 2017-12-28</p>
+    <div class="md"><p>Most colour laser printer do it, adding small yellow dots usually encoding a printer serial, sometimes timestamp. Was started in fear of people using them for high quality banknote forgery. <a href="https://en.m.wikipedia.org/wiki/Printer_steganography">https://en.m.wikipedia.org/wiki/Printer_steganography</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="drw0m7f">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/HelperBot_.html">HelperBot_</a> 2017-12-28</p>
+    <div class="md"><p>Non-Mobile link: <a href="https://en.wikipedia.org/wiki/Printer_steganography">https://en.wikipedia.org/wiki/Printer_steganography</a></p>
+
+<hr/>
+
+<p><sup>HelperBot</sup> <sup>v1.1</sup> <sup><a href="/r/HelperBot_">/r/HelperBot_</a></sup> <sup>I</sup> <sup>am</sup> <sup>a</sup> <sup>bot.</sup> <sup>Please</sup> <sup>message</sup> <sup><a href="/u/swim1929">/u/swim1929</a></sup> <sup>with</sup> <sup>any</sup> <sup>feedback</sup> <sup>and/or</sup> <sup>hate.</sup> <sup>Counter:</sup> <sup>132465</sup></p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="drwco82">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/CelineHagbard.html">CelineHagbard</a> 2017-12-28</p>
+    <div class="md"><p>That was the reason they gave us, and it might have even been true at the time, but most color laser printers couldn&#39;t give you a realistic enough bill anyway. This is for tracking purposes at this point. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="drwechr">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/jamvanderloeff.html">jamvanderloeff</a> 2017-12-28</p>
+    <div class="md"><p>Modern laser printing is more than good enough to produce a passable paper note if you can source the proper paper, which is part of why most countries are switching to plastic notes.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drvus0k">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/AlienRooster.html">AlienRooster</a> 2017-12-28</p>
+    <div class="md"><p>Wouldn&#39;t a captcha test filter out all the bots? Why do we need the statement to prove you are human?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drvuy78">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/webster_warrior.html">webster_warrior</a> 2017-12-28</p>
+    <div class="md"><p>Don&#39;t post anything you would not want the<br/>
+whole world to know you posted.  </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drvwcod">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/BradyToMoss07.html">BradyToMoss07</a> 2017-12-28</p>
+    <div class="md"><p>There are better ways for the spooks to de-anonymize users (web-rc, owning 2/3 of public tor nodes, etc...). More likely that they&#39;re trying to quantify grassroots/AstroTurfing phenomena in order to use &#39;artificial intelligence&#39; and &#39;machine learning&#39; to optimize the spreading of their fake pro-clinton news. Trying to follow the life cycle of a link to their site as it spreads around groups of people. Lets go back to getting dirt on podesta the molestah. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drvwz83">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Imsomniland.html">Imsomniland</a> 2017-12-28</p>
+    <div class="md"><p>Reddit is mostly free for users and there&#39;s no such thing as a free lunch. </p>
+
+<p>We&#39;re using this website for free and we are the products. That&#39;s not a conspiracy, that&#39;s reality.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drwu72y">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/SaxonWitch.html">SaxonWitch</a> 2017-12-28</p>
+    <div class="md"><p>We are also 100% content providers and as such do have some say in things. Without us, no reddit.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="drx1xlu">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Imsomniland.html">Imsomniland</a> 2017-12-28</p>
+    <div class="md"><p>I agree with your logic...it&#39;s the same reasoning used for the creation of labor unions. And we all know how well corporate america respects that sort of thinking :( </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drvxjob">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/BrotherRay.html">BrotherRay</a> 2017-12-28</p>
+    <div class="md"><p>The mystery of what happens to shared links is finally being unraveled by science. Let&#39;s not be petty and get in the way of progress.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drvyjsr">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/logan-mountstuart.html">logan-mountstuart</a> 2017-12-28</p>
+    <div class="md"><p>Oh fuck... watch out, Reddit is getting RESTful... must be a conspiracy to deliver better content. By far the dumbest shit I’ve seen yet.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drvyv2o">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/angellus.html">angellus</a> 2017-12-28</p>
+    <div class="md"><p>I have noticed something that is even more nefarious related to this. In my browser, reddit is injecting Googla Analytics marketing GET parameters into URL when I click somewhere and then removing them from the URL via Javascript before the page finishes loading so I do not even notice them unless I am looking.</p>
+
+<p>Here is what I mean: <a href="https://imgur.com/a/ZRupN">https://imgur.com/a/ZRupN</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drww63d">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/mymuse100.html">mymuse100</a> 2017-12-28</p>
+    <div class="md"><p><a href="https://www.yahoo.com/news/thousands-websites-quietly-fighting-ad-053300698.html">https://www.yahoo.com/news/thousands-websites-quietly-fighting-ad-053300698.html</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drvyvf2">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TerribleTherapist.html">TerribleTherapist</a> 2017-12-28</p>
+    <div class="md"><p>Not saying this is for marketing purposes, but things like this are used in order to test multiple marketing campaigns by splitting them across your user base and seeing which ones perform better.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drvzh1k">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/monkeyfang.html">monkeyfang</a> 2017-12-28</p>
+    <div class="md"><p>The real issue OP is Portillos, Gene and Jude’s, or the Weiners circle?  </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drw0anw">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/somethingdangerzone.html">somethingdangerzone</a> 2017-12-28</p>
+    <div class="md"><p>BTW this post is hidden on the front of <a href="/r/conspiracy">/r/conspiracy</a>. Can&#39;t find it unless it&#39;s linked elsewhere. Something is afoot!</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drwcvps">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/CelineHagbard.html">CelineHagbard</a> 2017-12-28</p>
+    <div class="md"><p>Screenshot? Shows up fine for me.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drw32jc">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/straix01.html">straix01</a> 2017-12-28</p>
+    <div class="md"><p>Reddit will do everything it is told to do by them cunts that&#39;s ruining the life on earth. The only difference is in methods of how they do it. Be sure this thread is closely monitored. Wouldn&#39;t surprised if this post gets deleted or something. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drw5u33">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/magikian.html">magikian</a> 2017-12-28</p>
+    <div class="md"><p>so i dont get how you can say only 2 users have ever clicked on <a href="http://www.link.reddit.com/link.htmstorsh">www.link.reddit.com/link.htmstorsh</a></p>
+
+<p>wouldnt everyone get st or sh in the link??</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drw7is2">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/ToksikCap.html">ToksikCap</a> 2017-12-28</p>
+    <div class="md"><p>My app has been sketchy since the update. It crashes often and will consistently freeze up for about a minute every time I try to post a comment.. </p>
+
+<p>There&#39;s not a way to undo this, is there??</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drw8n9f">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/stuntaneous.html">stuntaneous</a> 2017-12-28</p>
+    <div class="md"><p>When in doubt, assume Reddit does not have your interests in mind. They are far from the company of last decade.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drw8xwj">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/iseeyoubruh.html">iseeyoubruh</a> 2017-12-28</p>
+    <div class="md"><p>There are tools out there that are already match your so called anonymous to various profile charateristics. Have a smartphone? You are already sharing a bunch of location data that says a lot about you. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drw8zmt">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/GirlsGetGoats.html">GirlsGetGoats</a> 2017-12-28</p>
+    <div class="md"><p>I don&#39;t get it. Why do people here STILL not get that if you are not paying for something you are the product not the consumer. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drw979c">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/quickie_ss.html">quickie_ss</a> 2017-12-28</p>
+    <div class="md"><p>Could be trying to get a handle on the bots and paid trolls that have been pouring in as well.  There doesn&#39;t always have to be a nefarious motive behind this kind of tracking.  Still, i see your point. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drw98n9">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/intermittentinternet.html">intermittentinternet</a> 2017-12-28</p>
+    <div class="md"><p>Here&#39;s a couple of big changes to Reddit from this month that haven&#39;t been mentioned in <a href="/r/announcements">/r/announcements</a> or <a href="/r/blog">/r/blog</a> as far as I know. </p>
+
+<p><a href="http://mashable.com/2017/12/07/reddit-sprinklr-sold-its-soul-to-brand-engagement-customer-care/">Reddit partners with brand engagement platform Sprinklr</a>. From the <a href="https://www.sprinklr.com/pr/sprinklr-announces-strategic-partnership-drive-customer-engagement-care-reddit/">presser</a>  </p>
+
+<blockquote>
+<p>Sprinklr, the most complete social platform for managing customer experiences at scale, today announced an expanded partnership with Reddit, allowing brands to access historical and real-time Reddit data, send and receive private messages and publish to any subreddit all within Sprinklr’s platform. Global companies can now use Sprinklr to listen to what customers are saying, analyze trending topics and manage Reddit customer care directly through the Sprinklr platform.  </p>
+</blockquote>
+
+<p><a href="https://techcrunch.com/2017/12/13/microsoft-looks-to-make-bing-results-smarter-with-a-little-help-from-reddit/">Microsoft looks to make Bing results smarter with new AI-powered features and Reddit partnership</a>. To quote, </p>
+
+<blockquote>
+<p>Additionally, the company announced a partnership with Reddit to surface results from the site more effectively. Reddit co-founder Alexis Ohanian announced that the two were collaborating to integrate Reddit content more directly into Bing search results, funneling info from Reddit crowd-sourced AMAs and other posts into Bing. You can ask Bing things like, “How accurate is HBO’s Band of Brothers?” and highly up-voted responses will be right there for users on Bing.  </p>
+</blockquote>
+
+<p>... </p>
+
+<blockquote>
+<p>The partnership is also focused on taking the detailed, highly-localized info from Reddit posts and funneling it into Bing searches so that users with similar prompts can be given more nuanced answers. Reddit’s UI is famously not that great on desktop, so Microsoft distilling the wall of text in a more effective manner is pretty essential.</p>
+</blockquote>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drwbazi">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/ChaosIs0rder.html">ChaosIs0rder</a> 2017-12-28</p>
+    <div class="md"><p>You people still believe there is &quot;privacy&quot;? And that governments etc are really interested what you are doing? 
+Damn, I see people going to toilets with phones and facebook apps open, not to mention that the phone is iPhone... what are you, nuts?!</p>
+
+<p>1) invent your own internet 2) write your own codes and laws 3) try to keep your new open, free and 100% anonym net shit working and not hacked etc. </p>
+
+<p>You guys really believe that you have &quot;some rights&quot; here in internet that you have not invented, funded, helped or anything else.
+You wanna be &quot;free&quot;? Run to the jungle where no wifi can reach. Or get buried into Russian Gulag where nobody cares. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drwbj9r">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TheMercDeadpool.html">TheMercDeadpool</a> 2017-12-28</p>
+    <div class="md"><p>I&#39;ve been stripping unneeded parameters from query strings for years. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drwcx2r">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/01314150.html">01314150</a> 2017-12-28</p>
+    <div class="md"><p>OK so immediate &#39;escalation association&#39; for me is to think of the reddit logo. The alien. I&#39;m not kidding here, but maybe reddit has to be under certain level of control by deep state/TPTB... and since reddit cannot make a handsign (devil&#39;s horns, mason sign etc)... they need some other logo.... </p>
+
+<p>alien logo = &quot;everything is under control... we are in line with the hidden offworld allies that no insider can expose&quot;. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drwe178">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Afrobean.html">Afrobean</a> 2017-12-28</p>
+    <div class="md"><blockquote>
+<p>This theoretically could be used by an engineer or analytics algorithm to reveal hidden user groups</p>
+</blockquote>
+
+<p>Maybe Reddit admins have decided to enforce their ToS against people who use the site for organized PR campaigns? Probably not all of them, of course, since certain organizations clearly have implicit permission to operate on the site, but maybe they&#39;re going to use this kind of tracking to identify unwanted shill organizations to shut them down? </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drwfar7">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/chidelDali.html">chidelDali</a> 2017-12-28</p>
+    <div class="md"><p>&quot;How many users arrive via shares? Are they new to reddit? What types of posts are being shared?&quot; - <a href="https://www.reddit.com/live/x3ckzbsj6myw/updates/81c57a78-3cb5-11e6-84fb-0e395ea06b87">https://www.reddit.com/live/x3ckzbsj6myw/updates/81c57a78-3cb5-11e6-84fb-0e395ea06b87</a></p>
+
+<p>It&#39;s very good marketing material and would be useful for knowing what users want.</p>
+
+<p>It&#39;s pretty suspicious though, they would have done a little more talking in the post about what they&#39;re doing with the material if they weren&#39;t being shady.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drwm8ms">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DrP-DrPapa.html">DrP-DrPapa</a> 2017-12-28</p>
+    <div class="md"><p>I was using the official Reddit app for mobile, until the spyware made it unusable. After I subscribed to this sub and commented and viewed the post about the Vegas shooting being tied to Saudi Arabia, the record/body sensor light on my phone kept turning on for no reason. The app started slowing down, then started mixing up links that I clicked on. Finally the app refused to load most everything and drained my battery within minutes of use. After I deleted the app and started using a third party, everything stopped, the sensor doesn&#39;t go off randomly anymore either. Be careful out there. Don&#39;t draw too much attention, or they will re-assess your metadata.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drwqvrh">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/RPmatrix.html">RPmatrix</a> 2017-12-28</p>
+    <div class="md"><p>Yep, there are Google Ananlytics and Amazon scripts running on all Reddit&#39;s pages, so to stop them,</p>
+
+<p>Use NoScript .. an addon for Firefox and Chrome, which allows you to decide which scripts can run =&gt; you can ban the Google stuff and only allow the Reddit stuff .. whichisn&#39;t much, but it&#39;s a start</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drwtk8g">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/activow.html">activow</a> 2017-12-28</p>
+    <div class="md"><p>My friend, as a software engineer and web developer I can tell you that this tactics have been done now for over a decade.  URL is one technique but cookies are another. Here is what makes your browser activity unique to us even if you block cookies and ads.  Browser window size, OS, browser, browser version, location, region, ISP, DNS, IP, even the hops you make. </p>
+
+<p>People have predictable browsing patterns that can be tracked even without cookies. You just have to track everything and you will start to see patters.</p>
+
+<p>url params are usually used as a way to track back the link in order to pay out the refer. Those IDs st and sh are probably the affiliate IDs and a some unique identifier to track the link hopping activity. </p>
+
+<p>What you need to understand is this. If you click on a link it is stored somehwere with all the details I have specified above and even more data that you probably would not even think of, but they track it. Not because they are actively tracking you, but because they will eventually use it to find patterns and trends for advertising reasons or what ever they like to do with it. There is no way around it, unless you are doing things to keep them from doing that.  Which I will say, it is also tracked as a pattern. If you go out of your way to stop these tracking mechanism, that activity is also tracked and stored as a pattern.</p>
+
+<p>If you log in with a VPN, tracked, if you block cookies, tracked, if you have an ad blocker, tracked, if you block cookies, tracked, all of those &quot;security measures&quot; create a profile on you as well.</p>
+
+<p>There is no place to hide, the only way to hide is in plain sight.</p>
+
+<p><strong>What is the purpose of the movie V for Vendetta?  If Everyone is V then he is truly anonymous.</strong></p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="dryikvl">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DNM_Reviews_R_Us.html">DNM_Reviews_R_Us</a> 2017-12-28</p>
+    <div class="md"><p>YES. much agreed</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drwu1bc">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/mymuse100.html">mymuse100</a> 2017-12-28</p>
+    <div class="md"><p><a href="https://www.yahoo.com/news/thousands-major-sites-taking-silent-212908424.html">https://www.yahoo.com/news/thousands-major-sites-taking-silent-212908424.html</a>                    javascript rewriteen to get ad blockers </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drwupyr">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/mymuse100.html">mymuse100</a> 2017-12-28</p>
+    <div class="md"><p><a href="https://www.yahoo.com/news/thousands-websites-quietly-fighting-ad-053300698.html">https://www.yahoo.com/news/thousands-websites-quietly-fighting-ad-053300698.html</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drwzlws">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/ajaygrov.html">ajaygrov</a> 2017-12-28</p>
+    <div class="md"><p>I Think a chrome extension would resolve this by removing unwanted parameters before sending them to the server or even exactly before navigation. I would make one if I get enough upvotes. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drx67vp">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/RagingSatyr.html">RagingSatyr</a> 2017-12-28</p>
+    <div class="md"><p><a href="/u/ccrama">/u/ccrama</a> does this stuff also happen on slide? Is there a way to check? </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drygpv0">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/ccrama.html">ccrama</a> 2017-12-28</p>
+    <div class="md"><p>It is only on the web browser</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="drygsso">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/RagingSatyr.html">RagingSatyr</a> 2017-12-28</p>
+    <div class="md"><p>Thanks man. Great that you&#39;re the one dev that responds anytime anywhere on Reddit. Really appreciate it. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="ds3hjxu">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/ccrama.html">ccrama</a> 2017-12-28</p>
+    <div class="md"><p>You&#39;re welcome! Glad to answer any questions especially regarding privacy </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drxcges">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/LBNorris219.html">LBNorris219</a> 2017-12-28</p>
+    <div class="md"><p>As a digital marketing professional, I could definitely see why they&#39;re doing this test. We do this a lot to track user behavior, which I could see them wanting to do to improve the user experience for their app, or tracking behavior differences between desktop, mobile, and tablet users. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drxituh">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/macd2point0.html">macd2point0</a> 2017-12-28</p>
+    <div class="md"><p>When sharing a link, I only copy the part to the left of the ? in the URL, in most cases, this links to the article without any identifying information.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drxo5dr">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Feather_Toes.html">Feather_Toes</a> 2017-12-28</p>
+    <div class="md"><p>*tests it out*</p>
+
+<p>So, I went to <a href="/r/all">/r/all</a> and clicked on <a href="https://www.reddit.com/r/pics/comments/7mwcoo/buddy_of_mine_took_this_amazing_picture_in_south/">https://www.reddit.com/r/pics/comments/7mwcoo/buddy_of_mine_took_this_amazing_picture_in_south/</a> , and it changed the link to <a href="https://www.reddit.com/r/pics/comments/7mwcoo/buddy_of_mine_took_this_amazing_picture_in_south/?utm_content=comments&amp;amp;utm_medium=hot&amp;amp;utm_source=reddit&amp;amp;utm_name=all">https://www.reddit.com/r/pics/comments/7mwcoo/buddy_of_mine_took_this_amazing_picture_in_south/?utm_content=comments&amp;amp;utm_medium=hot&amp;amp;utm_source=reddit&amp;amp;utm_name=all</a> . After the page loaded, the url in the title bar switched back to <a href="https://www.reddit.com/r/pics/comments/7mwcoo/buddy_of_mine_took_this_amazing_picture_in_south/">https://www.reddit.com/r/pics/comments/7mwcoo/buddy_of_mine_took_this_amazing_picture_in_south/</a> . Because it kept erasing the parameters, I had to re-click on the page a bunch of times trying different ways to capture the whole url before the tail of it vanished. I finally got it with ctrl-A ctrl-C.</p>
+
+<p>So... whatever you&#39;re seeing is not happening on my account.</p>
+
+<p>I have seen what you&#39;re describing happen on other websites, though. I&#39;ll be on some website, and it&#39;ll add ?=29fsauifyhv9 or whatever at the end. So I test it a few times to see if the link works without that bit, and it does. So, the extra bit must be for tracking who came from which link posted by who. I always strip it off at the end - even if I didn&#39;t care about tracking, it just makes the link look ugly and unnecessarily long. But I think if I see that again, I just won&#39;t link to those sites.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="drxo5dw">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/AutoModerator.html">AutoModerator</a> 2017-12-28</p>
+    <div class="md"><p>While not required, you are requested to use the NP (No Participation) domain of reddit when crossposting. This helps to protect both your account, and the accounts of other users, from administrative shadowbans. The NP domain can be accessed by replacing the &quot;www&quot; in your reddit link with &quot;np&quot;.</p>
+
+<p><em>I am a bot, and this action was performed automatically. Please <a href="/message/compose/?to=/r/conspiracy">contact the moderators of this subreddit</a> if you have any questions or concerns.</em></p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="drxoa4m">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Feather_Toes.html">Feather_Toes</a> 2017-12-28</p>
+    <div class="md"><p>Shush.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="drxr2zp">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Whdjee.html">Whdjee</a> 2017-12-28</p>
+    <div class="md"><p>Probably happens on in r/conspiracy the joos that run Reddit have to keep any eye on those crazy Republican klan members </p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="drw0m7f">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/HelperBot_.html">HelperBot_</a> 2017-12-28</p>
+    <div class="md"><p>Non-Mobile link: <a href="https://en.wikipedia.org/wiki/Printer_steganography">https://en.wikipedia.org/wiki/Printer_steganography</a></p>
+
+<hr/>
+
+<p><sup>HelperBot</sup> <sup>v1.1</sup> <sup><a href="/r/HelperBot_">/r/HelperBot_</a></sup> <sup>I</sup> <sup>am</sup> <sup>a</sup> <sup>bot.</sup> <sup>Please</sup> <sup>message</sup> <sup><a href="/u/swim1929">/u/swim1929</a></sup> <sup>with</sup> <sup>any</sup> <sup>feedback</sup> <sup>and/or</sup> <sup>hate.</sup> <sup>Counter:</sup> <sup>132465</sup></p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="drwco82">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/CelineHagbard.html">CelineHagbard</a> 2017-12-28</p>
+    <div class="md"><p>That was the reason they gave us, and it might have even been true at the time, but most color laser printers couldn&#39;t give you a realistic enough bill anyway. This is for tracking purposes at this point. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="drx1inh">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/stupidfuckingtroll.html">stupidfuckingtroll</a> 2017-12-28</p>
+    <div class="md"><p>Check out uMatrix, from the creator of uBlock Origin</p>
+</div>
+</div>
+
+      </div>
+    </main>
+    <footer class="container-fluid">
+      <a class="to-top mt-1 mb-1 btn btn-lg btn-primary" href="#top">top of page</a>
+      <p class="small mb-0">data archived 2017-12-29. <a href="https://github.com/libertysoft3/reddit-html-archiver">source code</a>.</p>
+    </footer>
+    <script src="../../../../../../../../static/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../../../../../../../static/js/bootstrap.min.js"></script>
+    <script src="../../../../../../../../static/js/archive-comments.js"></script>
+  </body>
+</html>

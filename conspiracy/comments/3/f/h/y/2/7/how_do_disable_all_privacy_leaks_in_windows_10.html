@@ -1,0 +1,2008 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../../../../../../../../static/css/lato.css">
+    <link rel="stylesheet" href="../../../../../../../../static/css/bootstrap-superhero.min.css">
+    <link rel="stylesheet" href="../../../../../../../../static/css/archive.css">
+    <title>r/conspiracy: How do disable all privacy "leaks" in windows 10</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+        <a class="navbar-brand" href="../../../../../../../../conspiracy/index.html">r/conspiracy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index.html">score</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index-comments/index.html">comments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index-date/index.html">date</a>
+            </li>
+            <li class="nav-item ###URL_SEARCH_CSS###">
+              <a class="nav-link" href="../../../../../../../../conspiracy/search.html">search</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">subreddits</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="../../../../../../../../index.html">All</a>
+                <a class="dropdown-item" href="../../../../../../../../conspiracy/index.html">conspiracy</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main role="main" class="container-fluid">
+      <div class="submission pt-3" data-id="3fhy27">
+        <h3 class="title">How do disable all privacy "leaks" in windows 10</h3>
+        <p><span class="badge badge-primary">714</span>&nbsp;&nbsp;2015-08-02 by <a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a></p>
+        <div class="card bg-dark mb-3"><div class="card-body md"><p><a href="http://pastebin.com/BGrcKUJE">This is simply a repost for people who missed it during the whole windows 10 scare posts, all credit goes to the original poster (I don&#39;t know who he is, please manifest yourself for credit, or repost and I&#39;ll delete this, whatever)</a>. </p>
+
+<p>u/lordfiSh has created a <a href="https://wiiare.in/windows-10-privacy-fixer/">small tool that automates part of these steps</a>, you will need something like <a href="https://www.autoitscript.com/site/autoit/downloads/">this</a> to run it as it is in autoIt sccript v3 (.au3 file extension). 
+It is work a in progress and open sourced on github, so I&#39;m assuming all help is welcome.</p>
+
+<p>All the options are &quot;easily&quot; deactivated, even to a layman it will take much less than an hour to complete this guide, to someone even vaguely familiar with windows and common tweaks, this will take 10 to 15 minutes.</p>
+
+<p>As u/aDeadSoul pointed out, some of these fixes are overkill, if you are not sure what to do only stick to the &quot;before installation&quot; and &quot;after installation&quot; parts. DON&#39;T start mucking about with the powershell or the registry editor if you don&#39;t have at least a good idea of what you are doing. Also DON&#39;T disable windows updates if you are not 100% sure that is what you want to do, there are probably quite a bit of security flaws that will be fixed in later updates, disabling updates leaves you vulnerable to yet undiscovered security holes.</p>
+
+<p>----Before/During Installation----</p>
+
+<p>Do not use Express Settings. Hit Customize, and make sure everything is turned off.
+It&#39;s strongly preferred that you use a local account with Windows 10.</p>
+
+<p>----After Installation----</p>
+
+<p>Head to Settings &gt; Privacy, and disable everything, unless there are some things you really need.</p>
+
+<p>While within the Privacy page, go to Feedback, select Never in the first box, and Basic in the second box.</p>
+
+<p>Head to Settings &gt; Update and Security &gt; Advanced Options &gt; Choose how updates are delivered, and turn the first switch off.</p>
+
+<p>Disable Cortana by right clicking the Search bar/icon.</p>
+
+<p>(Optional) Disable web search in Search by going to Settings, and turning off Search online and include web results.</p>
+
+<p>----Slightly Complex----</p>
+
+<p>Open up the Command Prompt by launching cmd as an administrator (hit windows key or click start menu button, type &quot;cmd&quot; then right click on the command prompt icon at the top of the list and select &quot;run as administrator&quot;), and enter the following:</p>
+
+<blockquote>
+<p>sc delete DiagTrack</p>
+
+<p>sc delete dmwappushservice</p>
+
+<p>echo &quot;&quot; &gt; C:\ProgramData\Microsoft\Diagnosis ETLLogsAutoLogger\AutoLogger-Diagtrack-Listener.etl</p>
+</blockquote>
+
+<p>Open up the Group Policy Editor by launching gpedit.msc as an administrator (same method as cmd). </p>
+
+<p>Go through Computer Configuration &gt; Administrative Templates &gt; Windows Components &gt; Data Collection and Preview Builds. Double click Telemetry, hit Disabled, then apply. </p>
+
+<p>NOTE: This only truly works in the Enterprise edition, but the final step provides a decent enough workaround for Pro users.</p>
+
+<p>While still in the Group Policy Editor, go through Computer Configuration &gt; Administrative Templates &gt; Windows Components &gt; OneDrive, double click Prevent the usage of OneDrive for file storage, hit Enabled, then apply.</p>
+
+<p>Open up the Registry Editor by launching regedit as an administrator (yet again same method as cmd). </p>
+
+<p>Go through HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection, select AllowTelemetry, change its value to 0, then apply.</p>
+
+<p>!WARNING! editing hosts file may cause problems with steam overlay !WARNING!</p>
+
+<p>First, download the Take Ownership tweak[<a href="http://www.howtogeek.com/howto/windows-vista/add-take-ownership-to-explorer-right-click-menu-in-vista/">http://www.howtogeek.com/howto/windows-vista/add-take-ownership-to-explorer-right-click-menu-in-vista/</a>] and enable it. </p>
+
+<p>Then, head to the Hosts File by going through C:\Windows\System32\Drivers\Etc, take ownership of the hosts file, and add the following IPs into it (using notepad or whatever equivalent you prefer).</p>
+
+<blockquote>
+<p>127.0.0.1 vortex.data.microsoft.com</p>
+
+<p>127.0.0.1 vortex-win.data.microsoft.com</p>
+
+<p>127.0.0.1 telecommand.telemetry.microsoft.com</p>
+
+<p>127.0.0.1 telecommand.telemetry.microsoft.com.nsatc.net</p>
+
+<p>127.0.0.1 oca.telemetry.microsoft.com</p>
+
+<p>127.0.0.1 oca.telemetry.microsoft.com.nsatc.net</p>
+
+<p>127.0.0.1 sqm.telemetry.microsoft.com</p>
+
+<p>127.0.0.1 sqm.telemetry.microsoft.com.nsatc.net</p>
+
+<p>127.0.0.1 watson.telemetry.microsoft.com</p>
+
+<p>127.0.0.1 watson.telemetry.microsoft.com.nsatc.net</p>
+
+<p>127.0.0.1 redir.metaservices.microsoft.com</p>
+
+<p>127.0.0.1 choice.microsoft.com</p>
+
+<p>127.0.0.1 choice.microsoft.com.nsatc.net</p>
+
+<p>127.0.0.1 df.telemetry.microsoft.com</p>
+
+<p>127.0.0.1 reports.wes.df.telemetry.microsoft.com</p>
+
+<p>127.0.0.1 services.wes.df.telemetry.microsoft.com</p>
+
+<p>127.0.0.1 sqm.df.telemetry.microsoft.com</p>
+
+<p>127.0.0.1 telemetry.microsoft.com</p>
+
+<p>127.0.0.1 watson.ppe.telemetry.microsoft.com</p>
+
+<p>127.0.0.1 telemetry.appex.bing.net</p>
+
+<p>127.0.0.1 telemetry.urs.microsoft.com</p>
+
+<p>127.0.0.1 telemetry.appex.bing.net:443</p>
+
+<p>127.0.0.1 settings-sandbox.data.microsoft.com</p>
+
+<p>127.0.0.1 vortex-sandbox.data.microsoft.com</p>
+
+<p>127.0.0.1 telemetry.*</p>
+</blockquote>
+
+<p>----Up To You----</p>
+
+<p>Replace Microsoft Edge/Internet Explorer with Firefox, Chromium, or any forks/variations of them (if you install chrome you&#39;re just choosing to have your data stolen by google instead of microsoft).
+Replace Windows Media Player with VLC or MPC-HC
+Replace Groove Music with Foobar2000, Winamp, or MusicBee.
+Replace Photos/Windows Photo Viewer with ImageGlass or IrfanView.</p>
+
+<p>----Get rid of &quot;APPS&quot;----</p>
+
+<pre><code>    Open PowerShell with Admin privileges (yet again, same method as cmd), enter:
+</code></pre>
+
+<blockquote>
+<p>Get-AppxPackage -AllUsers | Remove-AppxPackage</p>
+</blockquote>
+
+<pre><code>    -OR- for full debloat (all on one line)
+</code></pre>
+
+<blockquote>
+<p>Get-AppxPackage -AllUsers | where {$<em>.name -notlike &quot;<em>calc</em>&quot; -AND
+$</em>.name -notlike &quot;<em>store</em>&quot; -AND $<em>.name -notlike &quot;<em>onenote</em>&quot; -AND
+$</em>.name -notlike &quot;<em>NET.</em>&quot; -AND $<em>.name -notlike &quot;<em>VCLibs</em>&quot; -AND
+$</em>.name -notlike &quot;<em>Host</em>&quot; -AND $_.name -notlike &quot;<em>AccountsControl</em>&quot;} | Remove-AppxPackage</p>
+</blockquote>
+
+<p>----Get rid of OneDrive----
+        Use this batch file, run it.</p>
+
+<blockquote>
+<p><a href="http://www62.zippyshare.com/d/IfLGZv7J/339/OneDrive%20Uninstaller%20v0.4.cmd">http://www62.zippyshare.com/d/IfLGZv7J/339/OneDrive%20Uninstaller%20v0.4.cmd</a></p>
+</blockquote>
+
+<p>----Disabled automatic Windows Updates----</p>
+
+<p>(again, I wouldn&#39;t recommend this step for most users, updates are essential to fixing security holes yet to be discovered)</p>
+
+<p>Open Admin Command Prompt and type: gpedit.msc</p>
+
+<p>Maneuver to: Computer Configuration -&gt; Administrative Templates -&gt; Windows Components -&gt; Windows Update
+Select it and select disable, apply and ok.</p>
+
+<p>----&quot;Something Happened&quot; error----</p>
+
+<p>Change your language to English (US).
+Control Panel -&gt; Clock, Language, and Region -&gt; Region -&gt; Administrative -&gt; Change system locale</p>
+
+<p>----Disable Hybrid Sleep----</p>
+
+<p>(save on your HDD/SSD/PCI-E SSD TB write amount)</p>
+
+<p>Open cmd.exe as admin, type in:</p>
+
+<blockquote>
+<p>powercfg -h off</p>
+</blockquote>
+
+<p>----extras added from r/pcmasterrace <a href="https://www.np.reddit.com/r/pcmasterrace/comments/3f10k0/things_to_removedisable_in_windows_10/">guide</a>----</p>
+
+<p>thanks to u/mtndewaddict for pointing this out</p>
+
+<p>!WARNING! editing hosts file may cause problems with steam overlay !WARNING!</p>
+
+<p>If you want to use the windows app store but don&#39;t want ads, simply add <a href="http://winhelp2002.mvps.org/hosts.txt">this list</a> to your hosts file in c:/windows/system32/drivers/etc</p>
+
+<p><a href="http://www.intowindows.com/how-to-disable-windows-defender-permanently-in-windows-10/">here</a> is a quick guide to disabling windows defender. This step is not recommended for anyone UNLESS it is to install a better anti-virus program (it is not recommended to have more than one anti virus program on any machine at any given time as the programs will most likely interfere with each other).</p>
+
+<p>----windows 10 home edition users and gpedit.msc----</p>
+
+<p><a href="http://www.askvg.com/how-to-enable-group-policy-editor-gpedit-msc-in-windows-7-home-premium-home-basic-and-starter-editions/">this guide</a> for windows 7 and 8 home edition uses a 3rd party tool to install the group policies editor tool, 10 is the same architecture as 8 so I&#39;m going to assume this workaround works, please keep me updated if this doesn&#39;t fix it.</p>
+
+<p>ps: damn, only now noticed the title typo, sorry for all the OCD people out there.</p>
+</div></div>
+      </div>
+      <div class="comments">
+        <h5>252 comments</h5>
+        <div class="comment mb-3 ml-0" data-depth="0" data-id="ctosslz">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">77</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/CredAndBercuses.html">CredAndBercuses</a> 2015-08-02</p>
+    <div class="md"><p>I was JUST thinking &quot;how long will it be until there&#39;s a quick method to restore Windows 10 privacy?&quot; and here you are reposting a guide for me, so thanks!</p>
+
+<p>Now how long will it be until there&#39;s a batch file that does all this in a double-click?</p>
+
+<p>Also, I love the hosts file usage... something about it seems ironic to me. Sad that you need a third-party Take Ownership tool now.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="ctoytu0">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/cerveza1980.html">cerveza1980</a> 2015-08-02</p>
+    <div class="md"><p>Can you explain to me what that app does &quot;take ownership&quot;?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctozxuj">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">8</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/klayderpus.html">klayderpus</a> 2015-08-02</p>
+    <div class="md"><p>It changes the permissions on the file or folder you right click so that you have complete control (read/write/delete/etc) over it. Some files by default only allow the SYSTEM user access to them, for example, and using this tool would grant you the same access. Normally you&#39;d have to click through a few things to do it, this tool lets you do it in one click.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="ctp3se5">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">7</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/cerveza1980.html">cerveza1980</a> 2015-08-02</p>
+    <div class="md"><p>Just open notepad as admin then open the document from there. Gives you read/write privileges. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="ctsf3db">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/CredAndBercuses.html">CredAndBercuses</a> 2015-08-02</p>
+    <div class="md"><p>You can also shift+right click in the directory for &quot;Open command window here&quot; and I believe it&#39;s elevated. If not I think there&#39;s a registry key that makes it so.</p>
+
+<p>edit: <a href="http://www.sevenforums.com/tutorials/47415-open-command-window-here-administrator.html">bingo</a> Now I feel old because I remember the days sevenforums was fresh and 7 wasn&#39;t outdated.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="ctp21ua">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/mtndewaddict.html">mtndewaddict</a> 2015-08-02</p>
+    <div class="md"><p>I&#39;m surprised it took you guys this long to find it.  On PCMR we had 4 mega threads about everything to turn off .  Also the day it came out we had the main thread referenced on how to turn everything off along with what the things did.  If anyone wants a read <a href="https://www.np.reddit.com/r/pcmasterrace/comments/3f10k0/things_to_removedisable_in_windows_10/">here</a> you go.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2 op" data-depth="2" data-id="ctp32nv">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>damn, thanks a lot. I browse that sub regularly but managed to miss this whole thread, I&#39;ll be checking through it to see if I can add anything. be sure to point stuff out if you want it added here.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctp6k2y">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Focker_.html">Focker_</a> 2015-08-02</p>
+    <div class="md"><p>I saw a couple others but missed this on pcmr. If it wasnt stickied, i missed it, and so did a lot of people.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="ctp6puf">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/mtndewaddict.html">mtndewaddict</a> 2015-08-02</p>
+    <div class="md"><p>Did you not read the mega threads? It&#39;s still stickied and in the header...</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="ctp3g1z">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/nukem170.html">nukem170</a> 2015-08-02</p>
+    <div class="md"><p>&quot;If you have nothing to hide, you have nothing to fear&quot;.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctuceqv">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/dirtydave71.html">dirtydave71</a> 2015-08-02</p>
+    <div class="md"><p>So you&#39;re ok with some random corporation setting up webcams all over your house, including your bedrooms?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctownpo">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">53</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/IIIIIIIIIIlIl.html">IIIIIIIIIIlIl</a> 2015-08-02</p>
+    <div class="md"><p>Step 1: Don&#39;t install Windows 10</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="ctozgwp">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">11</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/godiebiel.html">godiebiel</a> 2015-08-02</p>
+    <div class="md"><p>The problem begins when DX12 becomes obligatory !!</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctozsqg">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">10</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/redsteakraw.html">redsteakraw</a> 2015-08-02</p>
+    <div class="md"><p>Game devs could just use Vulkan instead.  </p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="ctp13zw">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">4</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Teethpasta.html">Teethpasta</a> 2015-08-02</p>
+    <div class="md"><p>They won&#39;t</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="ctp1w7j">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/redsteakraw.html">redsteakraw</a> 2015-08-02</p>
+    <div class="md"><p>Well if they do they get cross platform access (even game consoles) and possible mobile platform access for free.  If they want to spend the same amount of development money to reach less customers and make less potential earnings that is their problem.  </p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="ctp27gc">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Teethpasta.html">Teethpasta</a> 2015-08-02</p>
+    <div class="md"><p>Xbone does not run anything but Microsoft proprietary shit. And the ps4 has not yet been said to support vulkan</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="ctowrj8">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-4</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/koji8123.html">koji8123</a> 2015-08-02</p>
+    <div class="md"><p>Although I&#39;ve heard some decent things about Windows 10 (about being a pretty good compromise between Windows 7 and 8.1)</p>
+
+<p>I still won&#39;t be downloading it anytime soon for the fact it&#39;ll undoubtedly have bugs, as well as I don&#39;t want to be unable to play Fallout 3 GOTY. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctoyagi">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">4</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/thummel.html">thummel</a> 2015-08-02</p>
+    <div class="md"><p>I&#39;ve had Windows 10 for months now (As a windows insider) and been able to play fallout and any other games with no issues. Just need the display drivers FOR windows 10...</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="ctoyc1i">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/koji8123.html">koji8123</a> 2015-08-02</p>
+    <div class="md"><p>That makes me feel a bit better. It&#39;s a struggle to get older games working on Windows 7-8.1 as it is.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4 op" data-depth="4" data-id="ctp0e9m">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>yeah if that&#39;s your only worry about windows 10 you really don&#39;t need to. I&#39;ve been running all my games on windows 10 since insider preview became accessible. got about 10 GoG games, 500 steam games (including both fallout 3 and new vegas in goty with mods and sweefx) that work fine, quite a few emulators also. everything is running fine compared to windows 7. </p>
+
+<p>can&#39;t talk about windows 8 though, never tested that thing.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctucjfm">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/dirtydave71.html">dirtydave71</a> 2015-08-02</p>
+    <div class="md"><blockquote>
+<p>..I&#39;ve heard some decent things about Windows 10 (about being a pretty good compromise between Windows 7 and 8.1)</p>
+</blockquote>
+
+<p>Then why leave windows 7? It is still supported until <a href="http://windows.microsoft.com/en-us/windows/lifecycle">October of 2020</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctozso0">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/snoplow.html">snoplow</a> 2015-08-02</p>
+    <div class="md"><p>i haVE WINDOWS 10 AN fallout 3 goty plays just fine</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctoxhsd">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">47</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/shillbabyshill.html">shillbabyshill</a> 2015-08-02</p>
+    <div class="md"><p>I will be working on a powershell script next week to do all of this.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="ctp01jd">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">6</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>that would be amazing, thanks in advance for all the newbies.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="ctp1w1q">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">5</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Sarah_Connor.html">Sarah_Connor</a> 2015-08-02</p>
+    <div class="md"><p>Post it on github</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="ctozjqz">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/godiebiel.html">godiebiel</a> 2015-08-02</p>
+    <div class="md"><p>Thank you. Well I&#39;m not getting the update for non of my machines (either enterprise or outright pirate it, if they make enterprise hell to buy) but thanks anyway.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctp4cdw">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/pompousrompus.html">pompousrompus</a> 2015-08-02</p>
+    <div class="md"><p>Enterprise licensing is done differently, if you have it through your workplace you&#39;ll need to talk to IT.  If it&#39;s pirated, I&#39;m sure there&#39;s a way to do it with KMSpico.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="ctp0gqp">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/ColinFeely.html">ColinFeely</a> 2015-08-02</p>
+    <div class="md"><p>Would you kind letting me know when you finish?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctp5tx0">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/shillbabyshill.html">shillbabyshill</a> 2015-08-02</p>
+    <div class="md"><p>Yes... I will do it at work, and it will be a work-related project.  Weekends are family time, but I will start tomorrow morning.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="ctp8ytq">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/ColinFeely.html">ColinFeely</a> 2015-08-02</p>
+    <div class="md"><p>Awesome</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="ctpasur">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/xXTowelieXx.html">xXTowelieXx</a> 2015-08-02</p>
+    <div class="md"><p>Mind reminding me as well?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="ctpdb69">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/shillbabyshill.html">shillbabyshill</a> 2015-08-02</p>
+    <div class="md"><p>Sure</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="ctpto6n">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Bandoola.html">Bandoola</a> 2015-08-02</p>
+    <div class="md"><p>Me too kind sir!</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="ctvsp1o">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/chaotic2050.html">chaotic2050</a> 2015-08-02</p>
+    <div class="md"><p>RemindMe! One Week &quot;Windows 10 Privacy Fix&quot;</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctvsp83">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/RemindMeBot.html">RemindMeBot</a> 2015-08-02</p>
+    <div class="md"><p>Messaging you on <a href="http://www.wolframalpha.com/input/?i=2015-08-15%2010:29:03%20UTC%20To%20Local%20Time"><strong>2015-08-15 10:29:03 UTC</strong></a> to remind you of <a href="https://www.reddit.com/r/conspiracy/comments/3fhy27/how_do_disable_all_privacy_leaks_in_windows_10/ctvsp1o"><strong>this comment.</strong></a></p>
+
+<p><a href="http://www.reddit.com/message/compose/?to=RemindMeBot&amp;amp;subject=Reminder&amp;amp;message=%5Bhttps://www.reddit.com/r/conspiracy/comments/3fhy27/how_do_disable_all_privacy_leaks_in_windows_10/ctvsp1o%5D%0A%0ARemindMe!%20%20One%20Week"><strong>CLICK THIS LINK</strong></a> to send a PM to also be reminded and to reduce spam.</p>
+
+<hr/>
+
+<p><a href="http://www.reddit.com/r/RemindMeBot/comments/24duzp/remindmebot_info/"><sup>[FAQs]</sup></a> <sup>|</sup> <a href="http://www.reddit.com/message/compose/?to=RemindMeBot&amp;amp;subject=Reminder&amp;amp;message=%5BLINK%20INSIDE%20SQUARE%20BRACKETS%20else%20default%20to%20FAQs%5D%0A%0ANOTE:%20Don&#x27;t%20forget%20to%20add%20the%20time%20options%20after%20the%20command.%0A%0ARemindMe!"><sup>[Custom Reminder]</sup></a> <sup>|</sup> <a href="http://www.reddit.com/message/compose/?to=RemindMeBotWrangler&amp;amp;subject=Feedback"><sup>[Feedback]</sup></a> <sup>|</sup> <a href="https://github.com/SIlver--/remindmebot-reddit"><sup>[Code]</sup></a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="cuewa2f">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/LeGemBot.html">LeGemBot</a> 2015-08-02</p>
+    <div class="md"><p>How&#39;s that script coming along?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="cuexerh">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/shillbabyshill.html">shillbabyshill</a> 2015-08-02</p>
+    <div class="md"><p>Unfortunately not too well. Not all of the settings can be made in PowerShell, and I am NOT finding all of the necessary changes in registry.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="cuexfjn">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/shillbabyshill.html">shillbabyshill</a> 2015-08-02</p>
+    <div class="md"><p>I thought about standing up a 2016 domain to see if there are new Group Policy settings that address all of the settings. We are a small IT shop, and there are a lot of projects going on right now. I&#39;m sorry I haven&#39;t posted anything. I guess it is another case of op not delivering</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctovjux">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">18</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/FelterSnatch2.html">FelterSnatch2</a> 2015-08-02</p>
+    <div class="md"><p>Or Just dont get windows 10 </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="ctox8ok">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">6</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Homer_Simpson_Doh.html">Homer_Simpson_Doh</a> 2015-08-02</p>
+    <div class="md"><p>Came here to say this as well.  With all those spy features does disabling all those buttons really deactivate all that stuff?  Cause most of those buttons say stuff like &quot;If you turn this off, Microsoft will turn it on for you automatically as a convenience.......&quot;</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctoz0gr">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">8</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Chaotix.html">Chaotix</a> 2015-08-02</p>
+    <div class="md"><p>Exactly.   I won&#39;t be satisfied until someone who supposedly has everything &#39;off&#39; scrapes their net traffic and shares their findings with the world.  If no data escapes, only then will I be satisfied.  Even then though, a periodic test every month or so would seem like something people would need to do.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="ctq3fo3">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">6</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/verdantmiles.html">verdantmiles</a> 2015-08-02</p>
+    <div class="md"><p>It&#39;s already confirmed that for most of the settings, outside of the enterprise version, &quot;off&quot; actually means &quot;minimal&quot;...what ever the fuck that means. So factually for most users, Microsoft does not even honor the configurations requested because their right to spy on you is greater than your right to privacy.</p>
+
+<p>The fact this doesn&#39;t mention this fact is pretty strange given where this was posted.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctucnaw">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/dirtydave71.html">dirtydave71</a> 2015-08-02</p>
+    <div class="md"><blockquote>
+<p>Microsoft will turn it on for you automatically as a convenience.......&quot;</p>
+</blockquote>
+
+<p>Every time windows updates, all this shit gets turned back on. Although the group policy parts will turn SOME of it back off.</p>
+
+<p>It&#39;s only a matter of time till they issue an update that resets local group policies though.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctov2sr">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">17</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/youfuckingslaves.html">youfuckingslaves</a> 2015-08-02</p>
+    <div class="md"><p>Step 1 install linux.
+Step 2 done.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="ctovd0t">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">7</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>Absolutely true, and I&#39;d recommend this to anyone with the knowledge or the time to learn linux. </p>
+
+<p>But the average user will never want or have the time to learn how to use a new OS that has some particularities that windows simplifies (installing programs, file ownership,...) </p>
+
+<p>And of course a lot of people are gamers and/or multimedia artists/content producers and Linux still doesn&#39;t have an equivalent library of games/programs available (sadly).</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctow1z1">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">17</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/happinessmachine.html">happinessmachine</a> 2015-08-02</p>
+    <div class="md"><p>Installing Linux is actually easier than the instructions you just posted.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="ctow5g5">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>absolutely, and if you can manage with what linux has to offer I wholeheartedly encourage the use of linux, more users will mean in the long run more programs supported and a better choice for all.</p>
+
+<p>At this point in time though I can&#39;t say to my friends who are either gamers or music producers that they can do everything they do on windows in a linux environment. emulation is simply not an option when you&#39;re already maxing out the capabilities of your computer in it&#39;s native environment.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="ctoxcf3">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">4</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/apothecary1796.html">apothecary1796</a> 2015-08-02</p>
+    <div class="md"><p>Just stick with windows 7? What gamer switches over to a new and buggy operating system rather than stick with whats tried and true. There&#39;s not even any programs or games using DX12 so why the hell would you switch anyways??</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="ctoxnby">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/thegr8rambino13.html">thegr8rambino13</a> 2015-08-02</p>
+    <div class="md"><p>Because its new and cool duuuuude! /s lol</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="ctp2m65">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/morganml.html">morganml</a> 2015-08-02</p>
+    <div class="md"><p>i did, i kinda like it so far. only bug I&#39;ve seen so far had more to do with Geforce software than win10.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="ctp02b6">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/youfuckingslaves.html">youfuckingslaves</a> 2015-08-02</p>
+    <div class="md"><p>I have produced music on my Linux box, Audacity actually runs better in Linux 3x faster for converting than Mac Osx or windows. The last game I played was Bioshock Infinite as well. Gamers have to suffer yes but there is nothing that cannot be done in linux. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-5 op" data-depth="5" data-id="ctp08um">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>yes, but I can&#39;t simply say to one of my friends who&#39;s been doing music on ableton live for nearly 10 years now to simply install linux and find a replacement.</p>
+
+<p>you CAN do everything on linux, it&#39;s simply much easier on windows for most people I know at this point, mostly because everyone has learnt to use windows and windows programs.</p>
+
+<p>also a lot of people simply don&#39;t care about their privacy.</p>
+
+<p>not saying either way is good or bad, simply stating that this is how the world is now and we&#39;ve got to work with what we have.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="ctpvteb">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/happinessmachine.html">happinessmachine</a> 2015-08-02</p>
+    <div class="md"><p>That&#39;s a very specialized use case there.  For the average conspiracy browsing redditor, Linux will do everything they want and more.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-7 op" data-depth="7" data-id="ctpvxvh">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>yeah probably, as long as you don&#39;t need a specific windows program there&#39;s no need for windows. and some can be emulated through wine so there&#39;s that too.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-7" data-depth="7" data-id="ctudbue">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/dirtydave71.html">dirtydave71</a> 2015-08-02</p>
+    <div class="md"><p>This, Debian has over 40,000 software packages available, for free.  It is super simple to install software compared to Windows. This is why MS, Apple, and Google introduced &quot;App Stores&quot;. Except those are proprietary so you don&#39;t know &#39;for sure&#39; that they do exactly what they say.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctovfuo">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">6</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/neurofluxation.html">neurofluxation</a> 2015-08-02</p>
+    <div class="md"><p>The average user can install Linux Mint and use it right out of the box with no issues - the only thing they would have to &quot;learn&quot; would be how to use Wine to emulate Windows when they want to run Photoshop or a game of some kind.   </p>
+
+<p>I switched to Linux Mint and haven&#39;t used Windows since.   </p>
+
+<p>Edit: PlayOnLinux makes Windows games easier to install.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="cu6r670">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Datdeso.html">Datdeso</a> 2015-08-02</p>
+    <div class="md"><p>Not all games will work though. You can install them but it runs the risk of being super laggy or buggy</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctovgzd">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">6</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/AMidgetAndAClub.html">AMidgetAndAClub</a> 2015-08-02</p>
+    <div class="md"><p>I&#39;m actually considering moving to Linux. I&#39;ve never played with any of their desktops. And have just started getting into Linux through my work.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="ctovodk">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>if you&#39;ve got a bit of spare time to muck about with it, it&#39;s clearly worth the investment in my opinion. Especially if you&#39;re using it for work, there&#39;s nothing like knowing more than you should to get an edge in the work place :)</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="ctovs95">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/AMidgetAndAClub.html">AMidgetAndAClub</a> 2015-08-02</p>
+    <div class="md"><p>Anything based off of Debian I am pretty proficient with when it comes to standard everyday commands. But RedHat, Cent, etc I am still learning. </p>
+
+<p>I plan on doing some research into WINE which should allow me to play any Steam games I have now.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="ctudith">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/dirtydave71.html">dirtydave71</a> 2015-08-02</p>
+    <div class="md"><p>Redhat or CentOS based Linux is definitely different. Lots of people swear by them for Enterprise stuff. I&#39;ve found that Debian is at least as stable. RedHat has unified support, so that&#39;s good for businesses that don&#39;t want to fully commit to Linux training for their IT staff.</p>
+
+<p>I&#39;m probably a bit biased, I&#39;ve had some experience with RedHat, but many times more with Debian and Linux Mint.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctowrzy">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/koji8123.html">koji8123</a> 2015-08-02</p>
+    <div class="md"><p>Ubuntu for life :D</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctpcpmi">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Orvy.html">Orvy</a> 2015-08-02</p>
+    <div class="md"><p>If you&#39;ve ever used something like Ubuntu, you&#39;d know how much simpler it is. All the complicated stuff is burried behind nice GUIs.</p>
+
+<p>I don&#39;t see why people insist on using Windows. I swear it&#39;s like battered wife syndrome, the title of this post might as well have been &quot;my husband smokes crack and beats me up, how do I fix this without leaving him?&quot;</p>
+
+<p>If a product is giving you trouble, man up and try something else. Gee.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="ctsbkb8">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Teh_Super_Pickle.html">Teh_Super_Pickle</a> 2015-08-02</p>
+    <div class="md"><p><a href="https://www.reddit.com/r/conspiracy/comments/3fhy27/how_do_disable_all_privacy_leaks_in_windows_10/ctsau29">See this post.</a></p>
+
+<p>Comparing operating systems to domestic abuse is bordering on violation by Godwin&#39;s Law. Don&#39;t trivialize abuse. There are legitimate reasons to stay on Windows, and using an operating system you don&#39;t like is a small inconvenience, especially when compared to being routinely physically beaten.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="ctudkkp">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/dirtydave71.html">dirtydave71</a> 2015-08-02</p>
+    <div class="md"><blockquote>
+<p>Comparing operating systems to domestic abuse is bordering on violation by Godwin&#39;s Law.</p>
+</blockquote>
+
+<p>While I agree, its really not much of a stretch considering all the bullshit MS has pulled over the years.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctud1lb">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/dirtydave71.html">dirtydave71</a> 2015-08-02</p>
+    <div class="md"><blockquote>
+<p>and I&#39;d recommend this to anyone with the knowledge or the time to learn linux. </p>
+</blockquote>
+
+<p>Its not hard. With the current state of Windows, I use the console in Linux LESS than I use the CMD prompt in Windows. Besides I find Linux simpler and less annoying. Its also been proven to be faster on the same hardware .. at least in comparison to XP or 7.</p>
+
+<p>I&#39;d suggest <a href="http://www.linuxmint.com/">Linux Mint</a> (slightly more &#39;consumer oriented&#39;), or <a href="https://www.debian.org/CD/">Debian</a> if anyone wants to give it a spin.</p>
+
+<p>Linux Mint is already a live CD with the option to install, that means you can check it out without changing your computer or altering the files on your hard drive. <a href="https://www.debian.org/CD/live/">Debain offers live CDs as well</a> with a slightly different approach, but still quite easy.</p>
+
+<p>Cheers :)</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="ctp6pf1">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">4</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/App1e5auce.html">App1e5auce</a> 2015-08-02</p>
+    <div class="md"><p>Step 3 tell everyone you can that you use Linux</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctpkotw">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">4</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/youfuckingslaves.html">youfuckingslaves</a> 2015-08-02</p>
+    <div class="md"><p>$locate humor | grep funny</p>
+
+<p>$</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="ctoxm25">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/thegr8rambino13.html">thegr8rambino13</a> 2015-08-02</p>
+    <div class="md"><p>He posted something about windows, not linux</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctpeh69">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/creq.html">creq</a> 2015-08-02</p>
+    <div class="md"><p>Right, but if I&#39;m sitting there with a Windows 10 computer and I&#39;d like to make it private his instructions are exactly what I would follow.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="ctpff74">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/thegr8rambino13.html">thegr8rambino13</a> 2015-08-02</p>
+    <div class="md"><p>Who&#39;s?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="ctpl9dt">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/creq.html">creq</a> 2015-08-02</p>
+    <div class="md"><p><a href="https://www.reddit.com/r/conspiracy/comments/3fhy27/how_do_disable_all_privacy_leaks_in_windows_10/ctov2sr">https://www.reddit.com/r/conspiracy/comments/3fhy27/how_do_disable_all_privacy_leaks_in_windows_10/ctov2sr</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctott29">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">11</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/HawkEy3.html">HawkEy3</a> 2015-08-02</p>
+    <div class="md"><p>But what about <a href="https://www.reddit.com/r/conspiracy/comments/3feqsr/4chan_sums_up_windows_10s_privacy_settings/">this</a>?</p>
+
+<p>Telemetry Data can only be fully disabled by Windows Enterprise version.</p>
+
+<p>And the Windows Defender can only be temporarily disabled... etc.</p>
+
+<p>I wish there was a none-free version that is no privacy horror.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="ctov11z">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">9</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>you can bypass the entreprise &quot;exclusive&quot; thing by rerouting microsoft IP&#39;s to basically go round in a circle, that&#39;s the &quot;hosts&quot; file modification part.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctoxm10">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">4</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/turdovski.html">turdovski</a> 2015-08-02</p>
+    <div class="md"><p>Unless Microsoft somehow secretly made it so adding Microsoft urls to hosts file doesn&#39;t block them. <em>cue scary music</em> Dunn dunnn duunnnn</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="ctp0jbf">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">4</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/truh.html">truh</a> 2015-08-02</p>
+    <div class="md"><p>It&#39;s not feasible to harden Windows against hostility by Microsoft.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="ctp93ai">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Mylon.html">Mylon</a> 2015-08-02</p>
+    <div class="md"><p>You could run Windows in a VM and inspect outgoing traffic.  Would give some interesting insight into what Windows tells you its doing and what it actually is doing.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="ctp9pp3">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/truh.html">truh</a> 2015-08-02</p>
+    <div class="md"><p>It&#39;s easy for an OS to detect that it is executed in a VM.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="ctpe1mp">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Mylon.html">Mylon</a> 2015-08-02</p>
+    <div class="md"><p>Most VMs aren&#39;t trying to fool software.  If a VM properly emulated some (possibly rudimentary for the sake of speed) hardware, would the software notice?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-7" data-depth="7" data-id="ctpr9yx">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/truh.html">truh</a> 2015-08-02</p>
+    <div class="md"><p>It would be possible. The software could choose not to execute it&#39;s routines on that specific hardware or disguise the malicious traffic as part of wanted traffic. For example you don&#39;t really want to leave your windows without updates, you could send information as part of the update requests, even if they are only started manually. It&#39;s an arms race.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="ctue3bp">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/dirtydave71.html">dirtydave71</a> 2015-08-02</p>
+    <div class="md"><p>That would be pretty easy when you think of all the other shit they did.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctoxzaz">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">4</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/shadowofashadow.html">shadowofashadow</a> 2015-08-02</p>
+    <div class="md"><p>Why 127.0.0.1 and not just 0.0.0.0?</p>
+
+<p>I found this site with some similar suggestions.</p>
+
+<p><a href="https://rbt.asia/g/thread/S49344553">https://rbt.asia/g/thread/S49344553</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="ctozz3k">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>same thing, anything from 127.0.0.1 to 127.255.255.254 are loopback addresses that refer to something on the local computer.</p>
+
+<p>0.0.0.0 simply means &quot;all the addresses on this machine&quot;, so it includes all the possible loopback IP addresses.</p>
+
+<p>The end result is exactly the same.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="ctp1ys0">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">7</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Sarah_Connor.html">Sarah_Connor</a> 2015-08-02</p>
+    <div class="md"><p>Not the same 0 is everything... Basically the default route.</p>
+
+<p>127.0.0.1 is always the actual local host.</p>
+
+<p>With security, always be as explicit as possible.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5 op" data-depth="5" data-id="ctp2267">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">4</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>thanks, I&#39;m just pulling stuff from what I remember of a short course I got in school, I am absolutely not an expert on networking or windows and am very happy for the corrections.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctue4ie">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/dirtydave71.html">dirtydave71</a> 2015-08-02</p>
+    <div class="md"><p>Now I&#39;m thinking switching to and learning Linux is <strong>much</strong> easier than all this spy vs spy shit.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctovq55">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">8</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Shotine.html">Shotine</a> 2015-08-02</p>
+    <div class="md"><p>Or just stay with windows 7</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="ctow5x9">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/newfulluser.html">newfulluser</a> 2015-08-02</p>
+    <div class="md"><p>How do I go back without having to format?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctowuwt">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">9</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/duhlishus.html">duhlishus</a> 2015-08-02</p>
+    <div class="md"><p>The recovery menu in settings. There is an option to go back to 7.</p>
+
+<p>But what specifically about windows 10 makes you want to switch back? ALL versions of Windows are NSA compromised, so you might as well continue using the smoothest windows OS to date. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="ctoygfm">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">4</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/JaggedOne.html">JaggedOne</a> 2015-08-02</p>
+    <div class="md"><p>This. Windows 10 privacy sucks, but I haven&#39;t expected privacy on a Windows machine (or Mac or Android for that matter) for a long time now. Unless you take specific steps to protect your data, (run Linux, use encryption, offline only hardware) it is visible to those that would look.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="ctp0pc1">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/brownestrabbit.html">brownestrabbit</a> 2015-08-02</p>
+    <div class="md"><p>This is all especially true if you are running a pirated version.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctoyu7a">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">8</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Independentthought0.html">Independentthought0</a> 2015-08-02</p>
+    <div class="md"><p>Easier solution, don&#39;t use the piece of shit.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctot1qy">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">7</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/dealnix.html">dealnix</a> 2015-08-02</p>
+    <div class="md"><p>Thank you for posting this. Even if it&#39;s a repost, it&#39;s still handy to have. How does one change from an email sign in to a local account? I have seen the recommendation from several sources. I&#39;m just not sure how to do it. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="ctov672">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>if you&#39;re talking about using a local account from the get go (when installing windows) there is a small blue text along the lines of &quot;use a non microsoft account&quot; under the boxes used to either sign in with your microsoft account or create a microsoft account.</p>
+
+<p>I&#39;m not 100% sure about this but if you&#39;ve installed with a microsoft account I don&#39;t know of (but also haven&#39;t looked for) a way to remove that account and use a local only account.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctowbcx">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/dealnix.html">dealnix</a> 2015-08-02</p>
+    <div class="md"><p>Thanks. I&#39;m sure there is some way to do it. I will play around with it and figure it out. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="cupdtvq">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>just in case you didn&#39;t find the option, it&#39;s under: start menu &gt; settings &gt; accounts &gt; sign in with a local account instead.</p>
+
+<p>then you can delete the microsoft account under the &quot;other accounts you use&quot; menu</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="cupm160">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/dealnix.html">dealnix</a> 2015-08-02</p>
+    <div class="md"><p>Thanks! I got the first part. But not the second. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctotdva">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">7</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/MK_Ultrex.html">MK_Ultrex</a> 2015-08-02</p>
+    <div class="md"><p>You think that securing millions of lines of code is as simple as following a &quot;how to&quot;? That&#39;s completely delusional and creates a false sense of safety. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="ctouhj7">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">15</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/everydaymotherfucker.html">everydaymotherfucker</a> 2015-08-02</p>
+    <div class="md"><p>No, but it most definitely helps... What are you doing to help? Nothing? That&#39;s what I thought. Apart from this, so far, your only alternative is to use a different operating system. I dual boot linux, but I also play games sometimes, and Windows is by far the best option for gaming. Thank you OP for the great guide.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctudo36">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/dirtydave71.html">dirtydave71</a> 2015-08-02</p>
+    <div class="md"><p>So yeah, after this its &#39;mostly&#39; private .. sort of.</p>
+
+<p>Its probably <em>Billions</em> of lines of code BTW.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctouq7q">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-12</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/MK_Ultrex.html">MK_Ultrex</a> 2015-08-02</p>
+    <div class="md"><p>Some problems don&#39;t have a solution, ever thought about that. I can&#39;t do anything to help and OP can&#39;t either. So you wanna play your games, cool. But your machine remains compromised.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="ctout7i">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">11</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/everydaymotherfucker.html">everydaymotherfucker</a> 2015-08-02</p>
+    <div class="md"><blockquote>
+<p>Some problems don&#39;t have a solution, ever thought about that.</p>
+</blockquote>
+
+<p>The solution is what was provided by OP, unless Microsoft is secretly sending data to itself. And if they are, people will find out eventually, and they will be digging themselves a hole. There are a LOT of hackers digging into the OS to determine how it operates and to see if there are any nasty things hidden away, given how controversial all of their privacy settings have been. Regardless, this is a good interim solution if you have don&#39;t have a better choice, and it&#39;s by far better than doing nothing, so I&#39;m not sure what you&#39;re crying about. Do you always get mad at people for trying to help others?</p>
+
+<p>Your attitude to me is on par with getting mad at a doctor for giving a dying cancer patient pain meds. &quot;They&#39;re just going to die anyway doc, why would you bother! You should only be giving them a cure, and if there isn&#39;t one then just let them die in agony!&quot;</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="ctov4sq">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-6</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/MK_Ultrex.html">MK_Ultrex</a> 2015-08-02</p>
+    <div class="md"><p>So you don&#39;t trust Microsoft but you trust them enough to believe that they allow people to easily tinker with their OS and you are confident that &quot;hackers&quot; will comb over millions of lines of code (which they can&#39;t do because it is closed source anyway) and find all possible vulnerabilities. You also say that this is an interim measure as if windows is some kind of inevitable and necessary for life device. You are delusional and you understand very little of how computers work. Just read some Snowden interviews to get an idea about how safe is corporate software. </p>
+
+<p>It is your choice to believe that anonymous hackers will make windows a safe OS but it is as likely as me travelling to alpha centauri. </p>
+
+<p>Your medical analogy is also wrong. Because this is a yes/no situation. Your OS is either secure or it is not. There is no half secure. </p>
+
+<p>Obviously you place your games above your privacy and that&#39;s fine as long as you understand what you are giving away.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="ctovn9u">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">7</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/KillerKowalski1.html">KillerKowalski1</a> 2015-08-02</p>
+    <div class="md"><p>*Posted from your iPhone</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="ctp26i6">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/mtndewaddict.html">mtndewaddict</a> 2015-08-02</p>
+    <div class="md"><p>Not to mention Android has the similar options to turn off.  Everyone is getting worked up when this has been happening on phones for a while.  I wonder how many people here just give permissions whenever they want an app on their android device.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="ctovuk7">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">4</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/everydaymotherfucker.html">everydaymotherfucker</a> 2015-08-02</p>
+    <div class="md"><blockquote>
+<p>So you don&#39;t trust Microsoft but you trust them enough to believe that they allow people to easily tinker with their OS and you are confident that &quot;hackers&quot; will comb over millions of lines of code (which they can&#39;t do because it is closed source anyway) and find all possible vulnerabilities.</p>
+</blockquote>
+
+<p>You don&#39;t comb over every line of code in the operating system, you monitor the system for behaviour and reverse engineer specific parts using a debugger and a disassembler, among other not-retarded tactics.</p>
+
+<blockquote>
+<p>You also say that this is an interim measure as if windows is some kind of inevitable and necessary for life device. You are delusional and you understand very little of how computers work. </p>
+</blockquote>
+
+<p>I&#39;ve been a software developer for 15 years, it is you who understands very little of how computers work. What experience do you have?</p>
+
+<blockquote>
+<p>It is your choice to believe that anonymous hackers will make windows a safe OS but it is as likely as me travelling to alpha centauri.</p>
+</blockquote>
+
+<p>Straw man. </p>
+
+<blockquote>
+<p>You also say that this is an interim measure as if windows is some kind of inevitable and necessary for life device</p>
+</blockquote>
+
+<p>It is for many, especially those in a restricted corporate environment. </p>
+
+<blockquote>
+<p>Your medical analogy is also wrong. Because this is a yes/no situation. Your OS is either secure or it is not. There is no half secure.</p>
+</blockquote>
+
+<p>It&#39;s you who is wrong. There is most certainly differing levels of secure. A system vulnerable to one 0day exploit is by far more secure than a system vulnerable to 10 well known exploits. </p>
+
+<p>By the way, if you think Linux is entirely secure then you should guess again. The only REAL way to TRULY protect yourself is just never access the internet again. I suggest you do that, for your own safety.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="ctox2ga">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-5</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/MK_Ultrex.html">MK_Ultrex</a> 2015-08-02</p>
+    <div class="md"><p>OK people on restricted corporate environment will be allowed to tweak their machines. Cool story. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-7" data-depth="7" data-id="ctp2qu9">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/morganml.html">morganml</a> 2015-08-02</p>
+    <div class="md"><p>Your dumb, it is hurting me.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-7" data-depth="7" data-id="ctp0jjb">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/brownestrabbit.html">brownestrabbit</a> 2015-08-02</p>
+    <div class="md"><p>People on restricted corporate environments shouldn&#39;t expect full privacy or security on their corporate-provided devices/machines.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-7" data-depth="7" data-id="ctpbi2k">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/aybrah.html">aybrah</a> 2015-08-02</p>
+    <div class="md"><p>There&#39;s a time to concede the merit in the other person&#39;s argument, that point has definitely come.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="8" data-id="ctpc57a">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/MK_Ultrex.html">MK_Ultrex</a> 2015-08-02</p>
+    <div class="md"><p>You know what&#39;s the sad thing? Ten years ago there  were people talking about how both software and hardware sold by major companies was compromised by the government. People laughed at them  or offered half assed measures like the ones in this post. Self proclaimed experts wrote essays about how it was impossible to listen to every single phone call or to monitor every Internet connection. Then came books like the shadow factory and still the &quot;experts&quot; were saying that it&#39;s not that bad and it is possible to protect  yourself with simple methods without sacrificing your habits. Then came Snowden and we know for a fact that the big software companies are in bed with the three letter agencies and that they give back doors freely. And still there are people that will believe anything and close  their eyes to the proven truth in order to keep their convenience. So no, I don&#39;t see merit to the argument. I see wishful thinking and denial. Sorry. All major software companies are not to be trusted at all and should be treated always as compromised. I understand the need to use some products and I have to use some for my work but I am not deluding myself that are secure and I try to minimize their use as much as possible, even sacrificing some amenities. Feel free to ignore everything but don&#39;t bitch and cry when the next inevitable scandal comes along.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="9" data-id="ctpfjch">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Connarhea.html">Connarhea</a> 2015-08-02</p>
+    <div class="md"><p>Did you eat a bowlfull of crazy this morning or are you always this fucked up?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="10" data-id="ctq9zoe">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/MK_Ultrex.html">MK_Ultrex</a> 2015-08-02</p>
+    <div class="md"><p>MS EULA:</p>
+
+<p>&quot;We will access, disclose and preserve personal data, including your content (such as the content of your emails, other private communications or files in private folders), when we have a good faith belief that doing so is necessary to”, for example, “protect their customers” or “enforce the terms governing the use of the services”.</p>
+
+<p><a href="https://edri.org/microsofts-new-small-print-how-your-personal-data-abused/">https://edri.org/microsofts-new-small-print-how-your-personal-data-abused/</a></p>
+
+<p>Yep, I am the the fucked up one. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="11" data-id="ctqyim2">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Connarhea.html">Connarhea</a> 2015-08-02</p>
+    <div class="md"><p>There&#39;s nothing wrong with that. If they state it and you agree then so be it. What can&#39;t you get about that?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="12" data-id="ctqzlow">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/MK_Ultrex.html">MK_Ultrex</a> 2015-08-02</p>
+    <div class="md"><p>I am confused. Why the fuck do you bother with this guide then? You accept that your data will be accessed and shared then you try to block that? WTF.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="13" data-id="ctr5o07">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Connarhea.html">Connarhea</a> 2015-08-02</p>
+    <div class="md"><p>You must be confused, because I never said I bothered with this guide.  Besides that point, I was saying from their side not from the consumer.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="ctotire">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">5</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Syntax_Inc.html">Syntax_Inc</a> 2015-08-02</p>
+    <div class="md"><p>I completely agree, thinking a simple check-box disables the only purpose of an entire operating-system, is just pathetic.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctoxg4x">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/battle.html">battle</a> 2015-08-02</p>
+    <div class="md"><p>Yeah, I think the best course of action here is not using 10 at all.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctp0k7f">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/brownestrabbit.html">brownestrabbit</a> 2015-08-02</p>
+    <div class="md"><p>This tutorial offers more than just check boxes.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="ctotqs0">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/davidtoni.html">davidtoni</a> 2015-08-02</p>
+    <div class="md"><p>You are correct, of course, but posts like this spread awareness and at least do SOMETHING.</p>
+
+<p>That &quot;something&quot; is NOT deleting all of the anti-privacy functions in Windows 10 sadly. Most of them though.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctue1yt">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/dirtydave71.html">dirtydave71</a> 2015-08-02</p>
+    <div class="md"><p>As <a href="https://i.imgur.com/9DoVoix.jpg">another thread mentioned</a> most of this stuff will re-enable itself &#39;after a while&#39;. Also unless you have the Enterprise version, most of these settings aren&#39;t &#39;off&#39; they are &#39;basic&#39; or &#39;minimal&#39;.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctotxpc">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/MK_Ultrex.html">MK_Ultrex</a> 2015-08-02</p>
+    <div class="md"><p>Something equals to nothing in this case.  It&#39;s like having cancer and taking aspirin. Raising awareness is fine but the real or realistic solutions don&#39;t sell. The only real solution to this is to abandon windows completely or to use it for completely unavoidable reasons in a controlled environment. If you care about your privacy you should have a Linux box and learn some crypto basics for your personal computing needs. No amount of tinkering will make windows or macOS or commercial Android safe.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="ctudrdt">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/dirtydave71.html">dirtydave71</a> 2015-08-02</p>
+    <div class="md"><p>This is EXACTLY what people need to know.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctouuzd">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">7</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/holocauster-ride.html">holocauster-ride</a> 2015-08-02</p>
+    <div class="md"><p>Don&#39;t put sensitive information on computers.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="ctov2pz">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>or use reliable encryption and storage :)</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctovi0p">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">9</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/holocauster-ride.html">holocauster-ride</a> 2015-08-02</p>
+    <div class="md"><p>There is no such thing. Even the NSA couldn&#39;t prevent a catastrophic loss of data.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="ctowg12">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">8</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/ifactor.html">ifactor</a> 2015-08-02</p>
+    <div class="md"><p>There&#39;s definitely such a thing. For a corporation as big as the NSA where thousands of people need different levels of access to all their information there&#39;s a lot more room for error. If you just personally need some files encrypted on a flash drive nobody else can read it&#39;s very easy to do.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="ctoxob2">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/SnoopKittyCat.html">SnoopKittyCat</a> 2015-08-02</p>
+    <div class="md"><p>How do you do that ? Any link ?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="ctoye8r">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/ifactor.html">ifactor</a> 2015-08-02</p>
+    <div class="md"><p>I&#39;m still in the school of thought that the latest releases of Truecrypt are still unbroken and they just canaried themselves out of installing back-doors into it. There are alternatives if you do some looking into it but again I still trust the original, I think all the fuss about it was because they want people to think it&#39;s insecure.</p>
+
+<p>If I wanted to go the extra step I would something use like AES crypt or similar on top of the Truecrypt.</p>
+
+<p>edit: grammar</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="ctp6pos">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/jebba.html">jebba</a> 2015-08-02</p>
+    <div class="md"><p>How are you generating random numbers? :)</p>
+</div>
+</div>
+<div class="comment mb-3 ml-7" data-depth="7" data-id="ctpgim5">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/jangley.html">jangley</a> 2015-08-02</p>
+    <div class="md"><p><a href="http://gamestation.net/d16-hexidice.html">http://gamestation.net/d16-hexidice.html</a></p>
+
+<p>:)</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="ctqydki">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/nysepho_andar.html">nysepho_andar</a> 2015-08-02</p>
+    <div class="md"><p><code>dm-crypt</code> is a good Linux alternative to TrueCrypt that&#39;s open source and maintained. You can create <a href="http://elephly.net/posts/2013-10-01-dm-crypt.html">encrypted containers with it</a> as well.</p>
+
+<p>You&#39;re right though, TrueCrypt is <a href="http://istruecryptauditedyet.com/">still okay to use</a>.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="ctoyg53">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/holocauster-ride.html">holocauster-ride</a> 2015-08-02</p>
+    <div class="md"><p>Not if I torture or imprison you until you give me the password.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="ctoylle">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/ifactor.html">ifactor</a> 2015-08-02</p>
+    <div class="md"><p>You can setup double passwords so one password opens one set of files and the other opens a different set of files and they can&#39;t tell that there&#39;s another. If they know what they are looking for that won&#39;t help but I can&#39;t imagine I&#39;d ever be in that situation and if I was the files on my hard drive would be the least of my worries.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="ctoyqnr">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/holocauster-ride.html">holocauster-ride</a> 2015-08-02</p>
+    <div class="md"><p>The problem is that the most sensitive information is probably your location, network of friends, and who you are having an affair with. Which we know if you use a cellphone.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-7" data-depth="7" data-id="ctp08cv">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/ifactor.html">ifactor</a> 2015-08-02</p>
+    <div class="md"><p>That&#39;s a different problem than securing data, and still something possible to some extent if you really wanted.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctpgb0v">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/jefffrey32.html">jefffrey32</a> 2015-08-02</p>
+    <div class="md"><p>This only protects data at rest, if your PC is on it&#39;s just as vulnerable as an unencrypted machine.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="ctp7doa">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/bloodandsunshine.html">bloodandsunshine</a> 2015-08-02</p>
+    <div class="md"><p>totally. I don&#39;t give a shit about W10 privacy settings because its like putting a bandaid on the titanic. If you&#39;re doing something you need to keep private in windows 10, you shouldn&#39;t be doing private stuff.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctp2wen">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">7</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/davidpbrown.html">davidpbrown</a> 2015-08-02</p>
+    <div class="md"><p>Opening Windows is the antithesis of privacy.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctp1712">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">6</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/[deleted].html">[deleted]</a> 2015-08-02</p>
+    <div class="md"><p>C:\Sc delete DiagTrack</p>
+
+<p>[SC] OpenService FAILED 5:</p>
+
+<p>Access is denied</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="ctp1bsr">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>are you sure you ran cmd with administrator rights? also when I ran it it was from &quot;c:/windows/system32&quot;.</p>
+
+<p>not sure if it changes anything though, &quot;sc delete&quot; is just a command to delete a subkey in the registry.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctp2ux7">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/[deleted].html">[deleted]</a> 2015-08-02</p>
+    <div class="md"><p>Yep. From system 32</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="ctp4g6k">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>from a quick google search I found <a href="https://answers.microsoft.com/en-us/windows/forum/windows_vista-windows_programs/scexe-create-causes-access-denied-error/9369af3f-7966-4557-b9a5-ffe53cf40ca5?auth=1">this</a> possible fix, it is intended for windows vista but the system remains the same so it &quot;should&quot; work. hope this helps, if not post again here and I or someone else will try to find a better fix.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctpdrkp">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">6</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/angryRake.html">angryRake</a> 2015-08-02</p>
+    <div class="md"><p>rm -rf /mnt/windows</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="ctpfqi1">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/5triangles1pentagon.html">5triangles1pentagon</a> 2015-08-02</p>
+    <div class="md"><p>hehehe</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctptwt4">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">4</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/angryRake.html">angryRake</a> 2015-08-02</p>
+    <div class="md"><p>Honestly,  what a fucking mess.  Why do people insist on clinging on? It&#39;s just sad and desperate.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="ctsau29">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Teh_Super_Pickle.html">Teh_Super_Pickle</a> 2015-08-02</p>
+    <div class="md"><p>Because the vast majority of my games don&#39;t work on windows, and there are a fairly substantial amount of programs that I use on a semi-frequent basis that do not have comparable options on *nix.</p>
+
+<p>Because some people are given laptops for business, and those laptops will have windows 10 on them.</p>
+
+<p>Because eventually, the life support cycle will run out, and people will either update or be open to huge security flaws.</p>
+
+<p>Also, &quot;clinging on&quot; seems like the wrong phrase <a href="http://netmarketshare.com/operating-system-market-share.aspx">when windows has &gt; 90% desktop market share</a>. Seriously, Windows XP has well over double the market share of OSX, and Windows <em>vista</em> has more market share than Linux.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="ctswovw">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/angryRake.html">angryRake</a> 2015-08-02</p>
+    <div class="md"><p>Only because it&#39;s shoved in people&#39;s faces. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="ctt7sb0">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Teh_Super_Pickle.html">Teh_Super_Pickle</a> 2015-08-02</p>
+    <div class="md"><p>Explain how vista was shoved in people&#39;s faces. Microsoft has been telling everyone to avoid vista like the plague. Also, tell me how apple products <em>aren&#39;t</em> shoved in people&#39;s faces.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="ctthzah">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/angryRake.html">angryRake</a> 2015-08-02</p>
+    <div class="md"><p>So you&#39;re saying that windows doesn&#39;t come pre-installed in 95% of desktop machines? It doesn&#39;t matter what version it is - all Windows products get pushed like that. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="ctpwc54">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/sudo-tleilaxu.html">sudo-tleilaxu</a> 2015-08-02</p>
+    <div class="md"><p> </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctovfh9">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">5</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/STI-ylin.html">STI-ylin</a> 2015-08-02</p>
+    <div class="md"><p>What I would like to know is if people think this is only in Win10? Who&#39;s to say this hasn&#39;t been going on since...say...win ME?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="ctovkv4">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>hum, I think most people know this has been going on for a long time. the whole &quot;privacy&quot; conversation exploded with snowden and wikileaks, but it was FAR from the start of it.</p>
+
+<p>I myself believe snowden and wikileaks are just limited hangouts, presenting the &quot;acceptable&quot; side of intelligence activities (you can justify mass spying by yelling &quot;terrorism!!!&quot;, you can&#39;t justify political assassinations). so NSA and CIA leak themselves the &quot;good&quot; stories so that stories about financing revolutions and terrorism in Syria and Libya can be discredited as not being revealed by the &quot;approved&quot; leakers (snowden, assange).</p>
+
+<p>the whole privacy story, for me, exploded in 1999 with the whole echelon scandal, even being immortalized at the time in hollywood movies like &quot;enemy of the state&quot;.</p>
+
+<p>At that time it was already commonly accepted that intelligence agencies had the capability to monitor any sort of telecommunication. And microsoft has been known for quite a long time to connive with the NSA in particular (_NSAKEY story).</p>
+
+<p>I really don&#39;t understand how the whole snowden/assange leaks are considered by some the beginning of this story.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctovsvb">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/STI-ylin.html">STI-ylin</a> 2015-08-02</p>
+    <div class="md"><p>This was my generations (gen Y/millennial) wake up call. Every generation gets one. By and large however, people either A. Ignored it, B. Never heard about it. C. Questioned it but has since moved on, or D. Keeps it in the back of their mind at all times. No one has truly done anything to stop this daily creep on our privacy. My generation has been fully captured by the Internet, computers/tech to the point that our govt can mold, shape and manipulate the undeveloped human mind to fit their needs. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="ctp1lxs">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/ZionistJews_Did_911.html">ZionistJews_Did_911</a> 2015-08-02</p>
+    <div class="md"><p>It has been going on without your consent. This time they try to get your consent. When you disable all the leaks in the settings, they will still spy on you anyways without your consent. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctowmur">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/yyhhggt.html">yyhhggt</a> 2015-08-02</p>
+    <div class="md"><p>That is what they want you to think. Windows 10 can not be trusted and must be banned.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctoxtf7">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/munchmills.html">munchmills</a> 2015-08-02</p>
+    <div class="md"><p>It&#39;s all bullshit. How can you be sure that those settings do work? Windows is closed source. You won&#39;t see what is going on under the hood. NSA etc. have secret backdoors in all of the commercial proprietary software/hardware. It&#39;s not just your phones. So why bother? Just don&#39;t use it.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="ctoyuu1">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DronePuppet.html">DronePuppet</a> 2015-08-02</p>
+    <div class="md"><p>You can always get a better firewall that closes all the outgoing PORTS. Without the ports being open the computer WILL NOT send anything to the outside world. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctp0fe1">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skibble.html">skibble</a> 2015-08-02</p>
+    <div class="md"><p>Good idea, I&#39;ll block 443 in and outbound.  That&#39;ll stop &#39;em!</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="ctp3hpv">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DronePuppet.html">DronePuppet</a> 2015-08-02</p>
+    <div class="md"><p>You do the opposite. Block all and open only the ones you need. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="ctp3xvf">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skibble.html">skibble</a> 2015-08-02</p>
+    <div class="md"><p>And Microsoft isn&#39;t sharing on the ones you need, got it.</p>
+
+<p>(I&#39;ll stop with the snark and say what I mean:  this is not a solution.)</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="ctp46gx">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DronePuppet.html">DronePuppet</a> 2015-08-02</p>
+    <div class="md"><p>Does not matter what they tell you. If you want to use that product that is one way to protect yourself. I do the same on all platforms. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="ctp4b35">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skibble.html">skibble</a> 2015-08-02</p>
+    <div class="md"><p>You are fooling yourself, brother. Yes, a deny-first firewall policy is an important part of defense in depth. Yes, you should block all and allow only ports you need. But if you are allowing even 80 and 443 out (or even 443) you are <em>not</em> protected from Microsoft&#39;s voyeurism. And if you aren&#39;t, you might as well cancel your internet.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-7" data-depth="7" data-id="ctp4nye">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DronePuppet.html">DronePuppet</a> 2015-08-02</p>
+    <div class="md"><p>Hehe. You have no idea who you discussing this with. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="8" data-id="ctp4q54">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skibble.html">skibble</a> 2015-08-02</p>
+    <div class="md"><p>Okay man.  I&#39;m not an Internet Security SME with 19 years professional experience or anything, myself. If you think what I&#39;m saying is incorrect, please hit me with some facts and practices.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="9" data-id="ctp4v5g">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DronePuppet.html">DronePuppet</a> 2015-08-02</p>
+    <div class="md"><p>Hehe sure. I run and operate large banks of servers in data centers and responsible for protecting / securing high level clients. Im not saying MS products are the best, I&#39;m just saying if you know what you are doing you can lock that shit down. </p>
+
+<p>We protect down to the application level. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="10" data-id="ctp5936">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skibble.html">skibble</a> 2015-08-02</p>
+    <div class="md"><p>And that&#39;s good!  And necessary.  All I was saying is my original point, that firewalling ports you don&#39;t use isn&#39;t enough.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="11" data-id="ctp5kww">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DronePuppet.html">DronePuppet</a> 2015-08-02</p>
+    <div class="md"><p>Yes but it&#39;s a start for the not so tecky folk. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="12" data-id="ctpcbn9">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/nlofe.html">nlofe</a> 2015-08-02</p>
+    <div class="md"><p>So wait, why would Microsoft not use something like port 80 for their sneaky hidden communications? It seems like the most rational decision since most people couldn&#39;t do without it.</p>
+
+<p>Also, couldn&#39;t someone try running Windows 10 in a VM with all the stuff turned off as explained in the OP, then using Wireshark or the like to see what M$ is still sending?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="ctp04fo">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>computers are not arcane magic, it is possible to monitor what goes in and out from a given computer on your network, therefore working out if there are any &quot;hidden&quot; packets being sent out. unless you&#39;ve learnt enough about networking to do this and show me the proof, I have to assume that these fixes do the job required.</p>
+
+<p>unless you&#39;ve got proof of what you say, you&#39;re simply scaremongering. with how much this happens on this sub though, I have to admit you&#39;re the norm.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctp1tnb">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/morganml.html">morganml</a> 2015-08-02</p>
+    <div class="md"><p>packets be packets, yo.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctp1np5">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/aDeadSoul.html">aDeadSoul</a> 2015-08-02</p>
+    <div class="md"><p>I think a number of things in this guide are a bit of overkill. It&#39;s still a great guide though.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="ctp1rqm">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>yes absolutely, I&#39;m kind of assuming that people will pick and choose what they want to deactivate though.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctp2u43">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/aDeadSoul.html">aDeadSoul</a> 2015-08-02</p>
+    <div class="md"><p>Yup. That&#39;s my plan too.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctovqvn">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Pvt_Hudson_.html">Pvt_Hudson_</a> 2015-08-02</p>
+    <div class="md"><p>Thanks, this is super handy. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctp0k60">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/assistedSUICIDE.html">assistedSUICIDE</a> 2015-08-02</p>
+    <div class="md"><p>Nice info!</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctp1sxx">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Sarah_Connor.html">Sarah_Connor</a> 2015-08-02</p>
+    <div class="md"><p>FYI, you should be able to set a block to telemetry.* in your hosts file.</p>
+
+<p>Sure some external shit might break (like telemetry.com) but who cares</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="ctp1wvv">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>thanks, added it to the list.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctp28m2">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Lonecrow66.html">Lonecrow66</a> 2015-08-02</p>
+    <div class="md"><p>There are no ways to get around the embedded kernel software that can be &quot;enabled&quot; on any windows machine since Windows 95.  This is just the above board stuff.  </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctp2n4x">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/sh2003.html">sh2003</a> 2015-08-02</p>
+    <div class="md"><p>I wonder if they will release Microsoft updates that will essentially undo these changes every now and then</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="ctp2qlk">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>It&#39;s always a possibility. I can only say that I&#39;ve been using windows 10 since the technical preview became available and none of the tweaks I applied got removed up to now. I guess time will tell.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctq750k">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/HierophantGreen.html">HierophantGreen</a> 2015-08-02</p>
+    <div class="md"><p>Do you check for your outgoing packets with wireshark?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="ctqeao6">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>no, I don&#39;t really know much about that.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="ctqw61j">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/HierophantGreen.html">HierophantGreen</a> 2015-08-02</p>
+    <div class="md"><p>It&#39;s just a software that scans all the Internet traffic, you could eventually see if WIndows is sending data to an IP.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5 op" data-depth="5" data-id="ctqx25v">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>Yes I know of it and I know how to use it, I have no clue what to do with the results though. I know how to sniff the packets, I don&#39;t know how to analyze them. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="ctq6vo1">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/HierophantGreen.html">HierophantGreen</a> 2015-08-02</p>
+    <div class="md"><p>Of course they will, you should not update any patch afterwards</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctp4kbd">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/jimragan.html">jimragan</a> 2015-08-02</p>
+    <div class="md"><p>Good info.  Thanks.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctp5imm">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Alcorr.html">Alcorr</a> 2015-08-02</p>
+    <div class="md"><p>I hope you guys realize that the NSA backdoors work perfectly find regardless of whether you go through these steps or not. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctp6j09">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Focker_.html">Focker_</a> 2015-08-02</p>
+    <div class="md"><p>I missed this the first time. Thanks.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctp7j6y">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Dice_for_Death_.html">Dice_for_Death_</a> 2015-08-02</p>
+    <div class="md"><p>Nice guide! Unbelievably ludicrous that it needs to exist to address a far more fundamental problem, but nice all the same. Unfortunately, as this is MS behind the wheel ultimately, I wonder if there&#39;s a giant &quot;undo&quot; lever they can pull to restore whatever intended default settings they so will... Because that&#39;s a very real possibility. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctp8lx3">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Harbltron.html">Harbltron</a> 2015-08-02</p>
+    <div class="md"><p>Step 1: don&#39;t install Windows 10.</p>
+
+<p>There are no other steps.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctp9lei">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/jafbm.html">jafbm</a> 2015-08-02</p>
+    <div class="md"><p>Better yet, don&#39;t install Windows 10</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctq3p3m">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/lordfiSh.html">lordfiSh</a> 2015-08-02</p>
+    <div class="md"><p>started a little autoit script do to some of the things, very basic till now (10 min work): <a href="https://wiiare.in/windows-10-privacy-fixer">https://wiiare.in/windows-10-privacy-fixer</a>
+if you guys have interest in this I will continue work on this, code is on github</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="cui91p2">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/mataleo.html">mataleo</a> 2015-08-02</p>
+    <div class="md"><p>heres automatic tool that does it all for you</p>
+
+<p><a href="https://github.com/10se1ucgo/DisableWinTracking">https://github.com/10se1ucgo/DisableWinTracking</a></p>
+
+<p>:)</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctowxtm">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/KsiaN.html">KsiaN</a> 2015-08-02</p>
+    <div class="md"><p>Thanks for the list, it will surely come in handy later!</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctoxq9c">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/thegr8rambino13.html">thegr8rambino13</a> 2015-08-02</p>
+    <div class="md"><p>Thank you sir! You are awesome! Ignore the naysayers and those who say just install Linux. You posted something about windows, not Linux! Of course I still haven&#39;t gotten my notification to upgrade yet, which is strange, and I&#39;m still debating whether or not I even should</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="ctp00u9">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>thanks for the kind words, even though this is not my creation, simply collected what could be found into a thread. simply glad it helps some people.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctoyuif">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Mrcheez211.html">Mrcheez211</a> 2015-08-02</p>
+    <div class="md"><p>Ok once it starts actually fuckin working, I&#39;ll do this</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctp0unn">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/squeaksme.html">squeaksme</a> 2015-08-02</p>
+    <div class="md"><p>gggggggggggf</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctp0vcx">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/squeaksme.html">squeaksme</a> 2015-08-02</p>
+    <div class="md"><p>d</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctp25w1">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Pigbristle.html">Pigbristle</a> 2015-08-02</p>
+    <div class="md"><p>When I right click Host file &amp; click take ownership, I just get a flash of a window before it goes off again........... anybody else?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="ctp2agh">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>you should simply get a popup asking you to authorize the action, then a powershell will popup and disappear instantly, yes.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctp2tvm">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Pigbristle.html">Pigbristle</a> 2015-08-02</p>
+    <div class="md"><p>I think you misunderstood me.  I installed the &#39;take ownership&#39; its the Host file that doesent open up, so that I can paste the IP&#39;s into it?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="ctp2z10">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>oh, my bad. did you try to right click on the file and use &quot;open with&quot; (use notepad or something similar)? </p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="ctp39oq">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Pigbristle.html">Pigbristle</a> 2015-08-02</p>
+    <div class="md"><p>Yes, I can open with notepad.  Will that work?  I thought the ip&#39;s had to have # in front?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5 op" data-depth="5" data-id="ctp3t49">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>no it&#39;s fine, the format is:</p>
+
+<blockquote>
+<p>IPAddress DomainName</p>
+</blockquote>
+
+<p>nothing else needed</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="ctp3xrm">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Pigbristle.html">Pigbristle</a> 2015-08-02</p>
+    <div class="md"><p>Ok, thanks for the help &amp; the post, it&#39;s really appreciated.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-7 op" data-depth="7" data-id="ctp49ia">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>absolutely no problem.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="8" data-id="ctrst0e">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Paacs.html">Paacs</a> 2015-08-02</p>
+    <div class="md"><p>I took ownership of &quot;Hosts&quot; posted the IP&#39;s but when I try to save, I don&#39;t have permission...What did I do wrong?</p>
+
+<p>EDIT: Never mind, unchecked read only and it let me save. Rechecked read only after I saved :)</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctp2fcc">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Zaloias.html">Zaloias</a> 2015-08-02</p>
+    <div class="md"><p>Easy. Just torrent windows 7.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctp4cm3">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/[deleted].html">[deleted]</a> 2015-08-02</p>
+    <div class="md"><p>[deleted]</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="ctp4rzs">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>absolutely, but on the other hand I&#39;m pretty sure that backdoors are only used when needed as you risk them being detected if they are permanently active.</p>
+
+<p>these are fixes for everyday users who simply don&#39;t want their personal tastes being sold to advertisers. </p>
+
+<p>If you are doing work of a sensitive nature, or are privy to valuable state or industrial secrets, you&#39;d be mad to use windows or mac OS or any other non open source OS.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctp53og">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TheUltimateSalesman.html">TheUltimateSalesman</a> 2015-08-02</p>
+    <div class="md"><p>Just switch to ubuntu....I know it&#39;s not a perfect solution, but windows is done.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctp61jw">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/kingram99.html">kingram99</a> 2015-08-02</p>
+    <div class="md"><p>I&#39;m just sticking with Windows 8.</p>
+
+<p>Too much of a hassle, and I&#39;d rather not be spied on.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="ctp7s1m">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/onelovedg.html">onelovedg</a> 2015-08-02</p>
+    <div class="md"><p>I too will stick Win8 but will move towards Ubuntu soon.  Shit like this might help Microsoft in the short term, but in the long term, they are losing customers.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctpb58r">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/cyph3rpunk.html">cyph3rpunk</a> 2015-08-02</p>
+    <div class="md"><p>Install Linux </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctpcntn">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Boris2k.html">Boris2k</a> 2015-08-02</p>
+    <div class="md"><p>Or you could wait a week for a proper version to be released on piratebay.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="ctpfrtd">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/5triangles1pentagon.html">5triangles1pentagon</a> 2015-08-02</p>
+    <div class="md"><p>Or you could wait a few months to let proper security experts take a crack at it, and release a version entirely devoid of call home programs.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctptdb6">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Boris2k.html">Boris2k</a> 2015-08-02</p>
+    <div class="md"><p>Seriously?! If it&#39;s not the creator cracking it, then it&#39;s someone smarter. We&#39;re well beyond Enigma.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctpda5h">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/theFute.html">theFute</a> 2015-08-02</p>
+    <div class="md"><p>So what if we already went through express installation and want to disable the keylogger?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctpdmm5">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/theFute.html">theFute</a> 2015-08-02</p>
+    <div class="md"><blockquote>
+<p>echo &quot;&quot; &gt; C:\ProgramData\Microsoft\Diagnosis ETLLogsAutoLogger\AutoLogger-Diagtrack-Listener.etl</p>
+</blockquote>
+
+<p>When disabling the keylogger, this line gives me an &quot;access is denied&quot; message while the first two commands work, and yes I&#39;m running it as admin. what&#39;s wrong?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="ctpv77p">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>I had a look around but couldn&#39;t find anything on this error. If you&#39;re not too far into having your new windows 10 machine fully installed and running you might want to try reinstalling from scratch using the custom install options.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="culbnr9">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Imidazole0.html">Imidazole0</a> 2015-08-02</p>
+    <div class="md"><p>The path is incorrect</p>
+
+<p>It should be -  C:\ProgramData\Microsoft\Diagnosis\ETLLogs\AutoLogger\AutoLogger-Diagtrack-Listener.etl</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="culqn9g">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>fixed, thanks</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="culbnh1">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Imidazole0.html">Imidazole0</a> 2015-08-02</p>
+    <div class="md"><p>The path is incorrect</p>
+
+<p>It should be -  C:\ProgramData\Microsoft\Diagnosis\ETLLogs\AutoLogger\AutoLogger-Diagtrack-Listener.etl</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctpgtvi">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/pholourie.html">pholourie</a> 2015-08-02</p>
+    <div class="md"><p>Does OSX have any of these privacy &quot;leaks&quot;? </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="ctpnsj7">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p><a href="http://lifehacker.com/lets-talk-about-apples-privacy-issues-1655944758">yep</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctpojcc">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/stygge.html">stygge</a> 2015-08-02</p>
+    <div class="md"><p>Thanks for this excellent post.  Have an upvote </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctpoqbn">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/showmeurboobsplznthx.html">showmeurboobsplznthx</a> 2015-08-02</p>
+    <div class="md"><p>Will they change it because of this post?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="ctpp2xk">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>Most of these fixes have been functioning for close to a year, this post is simply a regroupment of various tricks, nothing new here. I doubt anything will happen because of this post but at the same time there&#39;s no guaranty microsoft won&#39;t change the behavior of some of these options. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctpp72i">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/x_Genesis_x.html">x_Genesis_x</a> 2015-08-02</p>
+    <div class="md"><blockquote>
+<p>----extras added from r/pcmasterrace[5] guide[6] ----</p>
+</blockquote>
+
+<p>Pressed <a href="https://www.np.reddit.com/r/pcmasterrace/comments/3f10k0/things_to_removedisable_in_windows_10/">guide</a> and got a <a href="http://imgur.com/c2V1HSL">warning</a> from the link. Weirdness ensued. Oh well.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="ctpqkuf">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>Yeah the domain name np.reddit does weird stuff I don&#39;t know why. I&#39;ll fix as soon as I can get on a desktop. </p>
+
+<p>edit: the post can be deleted if it&#39;s not using the np domain for cross linking in reddit so I&#39;ll just leave it like that.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctpuzd9">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/AutoModerator.html">AutoModerator</a> 2015-08-02</p>
+    <div class="md"><p>While not required, you are requested to use the NP domain of reddit when crossposting. This helps to protect both your account, and the accounts of other users, from administrative shadowbans. The NP domain can be accessed by prefacing your reddit link with np.reddit.com.</p>
+
+<p><em>I am a bot, and this action was performed automatically. Please <a href="/message/compose/?to=/r/conspiracy">contact the moderators of this subreddit</a> if you have any questions or concerns.</em></p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctpwo4n">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/sudo-tleilaxu.html">sudo-tleilaxu</a> 2015-08-02</p>
+    <div class="md"><p> </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctq2cww">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Focker_.html">Focker_</a> 2015-08-02</p>
+    <div class="md"><p>Here is my error message when I try to copy paste the &quot;full debloat (all on one line)&quot;  </p>
+
+<p>$.name : The term &#39;$.name&#39; is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name,
+or if a path was included, verify that the path is correct and try again.
+At line:1 char:36
++ Get-AppxPackage -AllUsers | where {$.name -notlike &quot;calc&quot; -AND $.name ...
++                                    ~~~~~~
+    + CategoryInfo          : ObjectNotFound: ($.name:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctqdp0k">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/missdingdong.html">missdingdong</a> 2015-08-02</p>
+    <div class="md"><p>echo &quot;&quot; &gt; C:\ProgramData\Microsoft\Diagnosis ETLLogsAutoLogger\AutoLogger-Diagtrack-Listener.etl</p>
+
+<p>Access is denied.</p>
+
+<p>C:\ProgramData\Microsoft\Diagnosis: unable to change permissions.  </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="culbmry">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Imidazole0.html">Imidazole0</a> 2015-08-02</p>
+    <div class="md"><p>The path is incorrect</p>
+
+<p>It should be -  C:\ProgramData\Microsoft\Diagnosis\ETLLogs\AutoLogger\AutoLogger-Diagtrack-Listener.etl</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="culebxb">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/missdingdong.html">missdingdong</a> 2015-08-02</p>
+    <div class="md"><p>Thanks. I missed a back slash.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctqfdoc">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Jiro_T.html">Jiro_T</a> 2015-08-02</p>
+    <div class="md"><p>Windows Home doesn&#39;t have gpedit.msc.  This guide needs to be updated with direct registry settings for everything that recommends using gpedit.msc.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="ctqxucz">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>I&#39;ll look into this tonight. Thanks </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="ctrbqff">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>found <a href="http://www.askvg.com/how-to-enable-group-policy-editor-gpedit-msc-in-windows-7-home-premium-home-basic-and-starter-editions/">this guide</a> for windows 7 and 8 home edition users, 10 is the same architecture as 8 so I&#39;m going to assume this workaround works, please keep me updated if this doesn&#39;t fix it.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctru7us">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Paacs.html">Paacs</a> 2015-08-02</p>
+    <div class="md"><p>What is &quot;echo &quot;&quot; &gt; C:\ProgramData\Microsoft\Diagnosis ETLLogsAutoLogger\AutoLogger-Diagtrack-Listener.etl&quot; doing when I type it in command? I keep getting access denied..Is there a manual way to do this? And yes, I opened command as admin. Please help :(</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="cts387k">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>I&#39;m pretty sure this only happens if you didn&#39;t install windows through the custom install option using a local account. I don&#39;t know of any quick fix at this point except reinstalling through the &quot;proper&quot; procedure, sorry.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="cts3hl5">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Paacs.html">Paacs</a> 2015-08-02</p>
+    <div class="md"><p>Aw okay. Is it a huge deal? Should I start over? And I did do custom install. Turned it all off :/. I&#39;m not sure what s local account is. I never made a new one. It just used my windows 7 account. If the echo thing is a huge deal I&#39;ll re do the steps. Can you confirm if it is or not? Thanks again for the guide and your help keeping us all private :)</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="cts7rwe">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>The echo command relates to the keylogger so yeah it&#39;s kind of central to the whole process. I&#39;m on a phone so I&#39;ll post something more detailed tonight </p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="cuj57s1">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Vovo86.html">Vovo86</a> 2015-08-02</p>
+    <div class="md"><p>I had the access denied issue too, despite being on a local admin account.  To fix this, you have to open the folders manually in file explorer.  </p>
+
+<p>Now, instead of an access deny error, I get &quot;The process cannot access the file because it is being used by another process.&quot; </p>
+
+<p>Any ideas on how to end this process?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctu98hd">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/leetercola.html">leetercola</a> 2015-08-02</p>
+    <div class="md"><p>I see directions everywhere for hosts edit but what about router config to block the traffic entirely?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctvlx79">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/AR12.html">AR12</a> 2015-08-02</p>
+    <div class="md"><p>I just updated today and when I tried to run the </p>
+
+<blockquote>
+<p>echo &quot;&quot; &gt; C:\ProgramData\Microsoft\Diagnosis ETLLogsAutoLogger\AutoLogger-Diagtrack-Listener.etl</p>
+</blockquote>
+
+<p>it said acess was denied. I tried to enable the administrator account in the vista help settings and run it through the console there and was still denied. any tips? </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="ctvtqpl">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>Not really, sorry. I tried looking around but the only hint i found was that it could have to do with installing windows with a microsoft live account and/or using express instead of custom install to deactivate the keylogger before installation </p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctw10c5">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/AR12.html">AR12</a> 2015-08-02</p>
+    <div class="md"><p>I appreciate you looking, thank you.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctw5a9f">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/ATerribleLie.html">ATerribleLie</a> 2015-08-02</p>
+    <div class="md"><p>Hey, it seems I do not have the Group Policy Editor file in my system 32 folder, is there something I&#39;m missing?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="ctxsrkx">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>If you&#39;re running home edition that&#39;s normal, there&#39;s a fix intended for windows vista home edition users for installing manually the group policy editor that &quot;should&quot; work with win10, on my phone so can&#39;t link it, sorry. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="cty758q">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/liverpoolwin.html">liverpoolwin</a> 2015-08-02</p>
+    <div class="md"><p><a href="https://np.reddit.com/r/conspiracy/comments/3ghkly/one_of_the_worlds_top_freemasons_warns_of_windows/">https://np.reddit.com/r/conspiracy/comments/3ghkly/one_of_the_worlds_top_freemasons_warns_of_windows/</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="cu6r938">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Datdeso.html">Datdeso</a> 2015-08-02</p>
+    <div class="md"><p>So the only way to get Windows 10 like Windows 7 in terms of making it private is to buy the enterprise edition...... Thanks Microsoft ._.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="cu758qd">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/rudolf323.html">rudolf323</a> 2015-08-02</p>
+    <div class="md"><p>Windows 10 is now spying on all your software. They are going to search for pirated games and other software.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="cuxpn1l">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Gamma_G.html">Gamma_G</a> 2015-08-02</p>
+    <div class="md"><p>IMPORTANT I found out if you use the owership tweak on the host file windows does ignore it! Don&#39;t do it! 
+Better write a .bat file with:
+C:\Windows\system32\notepad.exe C:\Windows\System32\drivers\etc\hosts
+and start as admin, works as good as the owership tweak for host</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="cuy258e">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>how did you find this out? would you mind sharing the logs? this is the first time I&#39;ve heard of this.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="cuyzi9c">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Gamma_G.html">Gamma_G</a> 2015-08-02</p>
+    <div class="md"><p>Well I don&#39;t really have a log for that, but I will tell how I found out.
+For work I had to use a DNS for opening a preview system running on a linux vm via the ip. So I edited the host file to use the server dns. Didn&#39;t work, searched for a while why. 
+I had several entries there and tried to ping them, every time unknow host.
+I changed the current host with owership back to an backup host file I had and surprise ping did work again as well as the other suff. The reason was Host file was ignored after using the tweak.</p>
+
+<p>I did it with a second pc as well for testing propose and same behaviour. After I used the backup everything worked fine again. </p>
+
+<p>If you want to see for yourself write 
+127.0.0.1 google.de
+in your file and try to ping it after using the tweak. If something other than 127.0.0.1 is the ping goal you see it.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="cvg5o5a">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/danger_russ.html">danger_russ</a> 2015-08-02</p>
+    <div class="md"><p>anyone can confirm?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="cvotl18">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Gamma_G.html">Gamma_G</a> 2015-08-02</p>
+    <div class="md"><p>test for yourself make a copy of your old host, then use the tweak on the active one and write something like 127.0.0.1 google.com in it.
+Then cmd - 
+ipconfig /release 
+ipconfig /flushdns
+ipconfig /renew</p>
+
+<p>and try to ping google.com - if ping goal is not 127.0.0.1 host file is ignored.  </p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="cw7kau0">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/danger_russ.html">danger_russ</a> 2015-08-02</p>
+    <div class="md"><p>Cool! Thanks Gamma_G, 
+I did just that and it seems to be working perfectly, might it be possible for microsoft to have built in a rule that <a href="http://www.xxxxxx.com">www.xxxxxx.com</a> cannot be &quot;local hosted&quot;?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="cw8o7yd">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Gamma_G.html">Gamma_G</a> 2015-08-02</p>
+    <div class="md"><p>nah I think more host file has &quot;system&quot; as default owner.
+If that is changed my guess is it does a workaround because &quot;host file seems corrupt&quot; or something.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="cvg5qsi">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/danger_russ.html">danger_russ</a> 2015-08-02</p>
+    <div class="md"><p>can you confirm this? if so is there a workaround.. I can&#39;t imagine editing the ownership renders the hosts file useless... as I have other programs &quot;local hosted&quot; and they still work fine.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="cvgq4jy">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>honestly I haven&#39;t spent more than a couple minutes on this so take my opinion with a pinch of salt, but from what I&#39;ve seen the host file still functions as intended and as it has always done.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="cvotef2">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Gamma_G.html">Gamma_G</a> 2015-08-02</p>
+    <div class="md"><p>Well if you hadn&#39;t had the problem ok, but I did. So I thought is something one should know about. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-5 op" data-depth="5" data-id="cvpz66a">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>Sure and thanks for sharing, but I&#39;m afraid the problem might be on your end. Maybe a faulty windows installation, maybe the take ownership tool didn&#39;t work. I can&#39;t really say because I&#39;ve never come across this problem before. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="cwb5e4d">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/singe.html">singe</a> 2015-08-02</p>
+    <div class="md"><p>Hmm, MW Vista is not looking so bad anymore. (o;</p>
+
+<p>Here is a short list of recommendations for current users of M-Windows:</p>
+
+<p>= Use Firefox with security extensions (e.g. Request Policy, Self-Destructing Cookies, Better Privacy)</p>
+
+<p>= Run this batch file to stop the leaks, but don&#39;t use
+it unless you understand it: &quot;<a href="http://pastebin.com/K8Ww4j8z#">http://pastebin.com/K8Ww4j8z#</a>&quot;</p>
+
+<p>= Windows Firewall Notifier: <a href="https://wfn.codeplex.com/">https://wfn.codeplex.com/</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="cwkst70">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TheConquistaa.html">TheConquistaa</a> 2015-08-02</p>
+    <div class="md"><p>Well, Microsoft actually seems to have forgotten that you can use Firewall to block servers too. <a href="http://winaero.com/blog/stop-windows-10-spying-on-you-using-just-windows-firewall/">Just like that</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="cxa0p35">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/needchr.html">needchr</a> 2015-08-02</p>
+    <div class="md"><p>excellent thanks, this looks like a list that has been vetted, the older list I used of localghost had 3rd party domains and was blocking tech preview builds, this seems just the telemetry blocking. :)</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="cxf6cpd">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Thameus.html">Thameus</a> 2015-08-02</p>
+    <div class="md"><p>[...]  </p>
+
+<blockquote>
+<p>127.0.0.1 telemetry.appex.bing.net:443<br/>
+127.0.0.1 settings-sandbox.data.microsoft.com<br/>
+127.0.0.1 vortex-sandbox.data.microsoft.com  </p>
+</blockquote>
+
+<p>[...]  </p>
+
+<p>Also here are their IP numbers to block in your router:  </p>
+
+<p>65.55.44.109<br/>
+65.55.252.92<br/>
+191.232.139.254<br/>
+65.55.252.92<br/>
+65.55.252.63<br/>
+65.55.252.93<br/>
+65.52.108.29<br/>
+195.135.255.32<br/>
+195.138.255.34<br/>
+157.56.91.77<br/>
+65.52.100.7<br/>
+65.52.100.91<br/>
+65.52.100.92<br/>
+65.52.100.94<br/>
+65.52.100.9<br/>
+65.52.100.11<br/>
+168.61.24.141<br/>
+131.253.40.109<br/>
+111.221.29.177<br/>
+64.4.54.32  </p>
+
+<p>Note: this could have unintended consequences, and Microsoft will probably move their services around to evade blocks of this type.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctp1a7w">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/ZionistJews_Did_911.html">ZionistJews_Did_911</a> 2015-08-02</p>
+    <div class="md"><p>Microsoft paid a lot of money for this post and for all the upvotes and for all the troll comments. 
+<a href="https://monsieurratkovic.files.wordpress.com/2015/02/scissors-cut-cable-connected-to-laptop-isolation-whi-disconnecting-internet-scissor-41842372.jpg">How do disable all privacy &quot;leaks&quot; in windows 10?</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="ctp1ckj">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>really? can I get some of it then? it would help quite a bit.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="ctp5oog">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/1337Gandalf.html">1337Gandalf</a> 2015-08-02</p>
+    <div class="md"><p>You&#39;re misinformed if you think you can actually disable that shit,</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctovfuo">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">6</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/neurofluxation.html">neurofluxation</a> 2015-08-02</p>
+    <div class="md"><p>The average user can install Linux Mint and use it right out of the box with no issues - the only thing they would have to &quot;learn&quot; would be how to use Wine to emulate Windows when they want to run Photoshop or a game of some kind.   </p>
+
+<p>I switched to Linux Mint and haven&#39;t used Windows since.   </p>
+
+<p>Edit: PlayOnLinux makes Windows games easier to install.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctovgzd">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">6</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/AMidgetAndAClub.html">AMidgetAndAClub</a> 2015-08-02</p>
+    <div class="md"><p>I&#39;m actually considering moving to Linux. I&#39;ve never played with any of their desktops. And have just started getting into Linux through my work.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctow1z1">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">17</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/happinessmachine.html">happinessmachine</a> 2015-08-02</p>
+    <div class="md"><p>Installing Linux is actually easier than the instructions you just posted.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="ctow5g5">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>absolutely, and if you can manage with what linux has to offer I wholeheartedly encourage the use of linux, more users will mean in the long run more programs supported and a better choice for all.</p>
+
+<p>At this point in time though I can&#39;t say to my friends who are either gamers or music producers that they can do everything they do on windows in a linux environment. emulation is simply not an option when you&#39;re already maxing out the capabilities of your computer in it&#39;s native environment.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctowrzy">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/koji8123.html">koji8123</a> 2015-08-02</p>
+    <div class="md"><p>Ubuntu for life :D</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="ctoygfm">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">4</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/JaggedOne.html">JaggedOne</a> 2015-08-02</p>
+    <div class="md"><p>This. Windows 10 privacy sucks, but I haven&#39;t expected privacy on a Windows machine (or Mac or Android for that matter) for a long time now. Unless you take specific steps to protect your data, (run Linux, use encryption, offline only hardware) it is visible to those that would look.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctp0fe1">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skibble.html">skibble</a> 2015-08-02</p>
+    <div class="md"><p>Good idea, I&#39;ll block 443 in and outbound.  That&#39;ll stop &#39;em!</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="ctp2agh">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hazehk.html">hazehk</a> 2015-08-02</p>
+    <div class="md"><p>you should simply get a popup asking you to authorize the action, then a powershell will popup and disappear instantly, yes.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="ctp3hpv">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DronePuppet.html">DronePuppet</a> 2015-08-02</p>
+    <div class="md"><p>You do the opposite. Block all and open only the ones you need. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctpcpmi">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Orvy.html">Orvy</a> 2015-08-02</p>
+    <div class="md"><p>If you&#39;ve ever used something like Ubuntu, you&#39;d know how much simpler it is. All the complicated stuff is burried behind nice GUIs.</p>
+
+<p>I don&#39;t see why people insist on using Windows. I swear it&#39;s like battered wife syndrome, the title of this post might as well have been &quot;my husband smokes crack and beats me up, how do I fix this without leaving him?&quot;</p>
+
+<p>If a product is giving you trouble, man up and try something else. Gee.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctpkotw">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">4</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/youfuckingslaves.html">youfuckingslaves</a> 2015-08-02</p>
+    <div class="md"><p>$locate humor | grep funny</p>
+
+<p>$</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctptwt4">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">4</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/angryRake.html">angryRake</a> 2015-08-02</p>
+    <div class="md"><p>Honestly,  what a fucking mess.  Why do people insist on clinging on? It&#39;s just sad and desperate.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="ctud1lb">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/dirtydave71.html">dirtydave71</a> 2015-08-02</p>
+    <div class="md"><blockquote>
+<p>and I&#39;d recommend this to anyone with the knowledge or the time to learn linux. </p>
+</blockquote>
+
+<p>Its not hard. With the current state of Windows, I use the console in Linux LESS than I use the CMD prompt in Windows. Besides I find Linux simpler and less annoying. Its also been proven to be faster on the same hardware .. at least in comparison to XP or 7.</p>
+
+<p>I&#39;d suggest <a href="http://www.linuxmint.com/">Linux Mint</a> (slightly more &#39;consumer oriented&#39;), or <a href="https://www.debian.org/CD/">Debian</a> if anyone wants to give it a spin.</p>
+
+<p>Linux Mint is already a live CD with the option to install, that means you can check it out without changing your computer or altering the files on your hard drive. <a href="https://www.debian.org/CD/live/">Debain offers live CDs as well</a> with a slightly different approach, but still quite easy.</p>
+
+<p>Cheers :)</p>
+</div>
+</div>
+
+      </div>
+    </main>
+    <footer class="container-fluid">
+      <a class="to-top mt-1 mb-1 btn btn-lg btn-primary" href="#top">top of page</a>
+      <p class="small mb-0">data archived 2015-08-26. <a href="https://github.com/libertysoft3/reddit-html-archiver">source code</a>.</p>
+    </footer>
+    <script src="../../../../../../../../static/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../../../../../../../static/js/bootstrap.min.js"></script>
+    <script src="../../../../../../../../static/js/archive-comments.js"></script>
+  </body>
+</html>

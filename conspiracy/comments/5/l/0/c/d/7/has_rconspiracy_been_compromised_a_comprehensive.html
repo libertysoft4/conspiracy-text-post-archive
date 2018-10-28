@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../../../../../../../../static/css/lato.css">
+    <link rel="stylesheet" href="../../../../../../../../static/css/bootstrap-superhero.min.css">
+    <link rel="stylesheet" href="../../../../../../../../static/css/archive.css">
+    <title>r/conspiracy: Has r/conspiracy been compromised? a comprehensive, data-driven suggestion to find out.</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+        <a class="navbar-brand" href="../../../../../../../../conspiracy/index.html">r/conspiracy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index.html">score</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index-comments/index.html">comments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index-date/index.html">date</a>
+            </li>
+            <li class="nav-item ###URL_SEARCH_CSS###">
+              <a class="nav-link" href="../../../../../../../../conspiracy/search.html">search</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">subreddits</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="../../../../../../../../index.html">All</a>
+                <a class="dropdown-item" href="../../../../../../../../conspiracy/index.html">conspiracy</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main role="main" class="container-fluid">
+      <div class="submission pt-3" data-id="5l0cd7">
+        <h3 class="title">Has r/conspiracy been compromised? a comprehensive, data-driven suggestion to find out.</h3>
+        <p><span class="badge badge-primary">109</span>&nbsp;&nbsp;2016-12-30 by <a class="author" href="../../../../../../../../user/a9832941.html">a9832941</a></p>
+        <div class="card bg-dark mb-3"><div class="card-body md"><p>pretty frequently there&#39;s mention of up/downvote bots (which i think is entirely possible) or that certain ideas/groups have muddied the waters in this sub to push or defeat certain viewpoints. my idea is that we create a github (maybe private, maybe personal) and do constant querying via the reddit api of:</p>
+
+<ol>
+<li>the types of stories that receive up/downvotes on this sub</li>
+<li>the speed at which certain stories/links receive up/downvotes</li>
+<li>whether or not certain commentators are being swarmed with up/downvotes</li>
+<li>whether or not bot-esque behavior (votes switching outside of the normal fuzzing range within a certain period of time, etc.) is influencing the sub</li>
+</ol>
+
+<p>i propose that we write a script/program that would monitor this sub and collect data on the above 4 questions using the reddit API.  if there&#39;s any interest in this, I&#39;d write the initial part and then we could kinda treat it like an open source project going forward where people could make tweaks/changes as needed.  what do you all think?</p>
+
+<p>edit: the response from the voting pattern seems to be positive so I&#39;m going to create a github repo for this and post the link here. Then, I&#39;ll write the initial logic for monitoring and grabbing posts from r/conspiracy and it can just kind of go wherever it&#39;s going to go from there.</p>
+
+<p>edit #2 - <a href="https://github.com/a893249121321/r_conspiracy_crawler">https://github.com/a893249121321/r_conspiracy_crawler</a></p>
+
+<p>edit #3 - realized that if I post my code to the github ppl could easily post shit from my account. luckily I realized this before I uploaded the files with my actual keys. so, if you want this code to work on your end machine, you&#39;ll have to create an app on reddit by going to preferences and clicking apps. </p>
+
+<p>edit #4 - kk been working on this on and off for the past couple hours, what we have now is something that will, when ran, scrape this subreddit&#39;s new posts and collect the data into an mysql db. i imagine a script workflow something like this:
+script grabs initial new posts and writes to the db
+for each post in the db, each minute (30 seconds? different timescale maybe?) we check that post again and collect info on up and down votes
+for each post not in the db, add it to the db and then monitor it like above</p>
+
+<p>it looks like reddit&#39;s API doesn&#39;t give downvote data so we&#39;ll just have to work off upvote for now, though. Please let me know if you have any thoughts or comments on this.</p>
+</div></div>
+      </div>
+      <div class="comments">
+        <h5>31 comments</h5>
+        <div class="comment mb-3 ml-0" data-depth="0" data-id="dbs3xb3">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">38</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/gaseouspartdeux.html">gaseouspartdeux</a> 2016-12-30</p>
+    <div class="md"><p>Pfffttt...all of Reddit is compromised. Especially when you have a Reddit CEO that goes into accounts and edits comments.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="dbs5bee">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">21</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/twofaceHill_16.html">twofaceHill_16</a> 2016-12-30</p>
+    <div class="md"><p>And alters the algorithms so many times people forget and can&#39;t comprehend the voting system anymore..</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="dbs7m6k">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/SethVermin.html">SethVermin</a> 2016-12-30</p>
+    <div class="md"><p>What really??</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="dbs924i">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">16</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/cakes_and_pies.html">cakes_and_pies</a> 2016-12-30</p>
+    <div class="md"><p>Spez was caught editing a comment he didn&#39;t like. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="dbshzjd">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">6</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/8n0n.html">8n0n</a> 2016-12-30</p>
+    <div class="md"><blockquote>
+<p>Spez was caught editing a comment he didn&#39;t like. </p>
+</blockquote>
+
+<p>A few actually, I &#39;member it every time I post.</p>
+
+<p><sup><sup><sup><sup>Read</sup></sup></sup></sup> <sup><sup><sup><sup>this</sup></sup></sup></sup> <sup><sup><sup><sup>post</sup></sup></sup></sup> <sup><sup><sup><sup>at</sup></sup></sup></sup> <sup><sup><sup><sup>own</sup></sup></sup></sup> <sup><sup><sup><sup>risk</sup></sup></sup></sup> <sup><sup><sup><sup>and</sup></sup></sup></sup> <sup><sup><sup><sup>presume</sup></sup></sup></sup> <sup><sup><sup><sup>this</sup></sup></sup></sup> <sup><sup><sup><sup>has</sup></sup></sup></sup> <sup><sup><sup><sup>been</sup></sup></sup></sup> <sup><sup><sup><sup>modified</sup></sup></sup></sup> <sup><sup><sup><sup>by</sup></sup></sup></sup> <sup><sup><sup><sup>Reddit</sup></sup></sup></sup> <sup><sup><sup><sup>Inc.</sup></sup></sup></sup></p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dbs028x">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">9</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/rippleffect81.html">rippleffect81</a> 2016-12-30</p>
+    <div class="md"><p>I would LOVE to see these results! would confirm what a lot of us humans here have been suspecting.  </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="dbs5a7l">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">5</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/twofaceHill_16.html">twofaceHill_16</a> 2016-12-30</p>
+    <div class="md"><p>Yes. Thanks for doing this..</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="dbsoe2a">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/throwaway000000017.html">throwaway000000017</a> 2016-12-30</p>
+    <div class="md"><p>Double thanks - can&#39;t wait to see the results!</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dbs89f0">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">8</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/HillarysPizzaParty.html">HillarysPizzaParty</a> 2016-12-30</p>
+    <div class="md"><p>I suspect it&#39;s humans with upvote/downvote capability. There are also shills pushing certain narratives.</p>
+
+<p><a href="https://en.wikipedia.org/wiki/Operation_Earnest_Voice">https://en.wikipedia.org/wiki/Operation_Earnest_Voice</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="dbsjhwm">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/NoNameForSteve.html">NoNameForSteve</a> 2016-12-30</p>
+    <div class="md"><p>And spying on its own citizens is illegal! But you know, it&#39;s cool if we invite some friends over to the States to watch... then they can just like, tell us. I spy for you if you spy for me!</p>
+
+<p>It&#39;s like that 4 year old kid on the playground, inches from your face pointing that finger at you <em>I&#39;m not touching you, can&#39;t get mad. Still not touching you, can&#39;t get mad!</em> </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dbs0zqj">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">5</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/echarded.html">echarded</a> 2016-12-30</p>
+    <div class="md"><p>It was me that Downvote you. :) </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dbrzuhr">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">4</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Exec99.html">Exec99</a> 2016-12-30</p>
+    <div class="md"><p>Fuck it. Lets co-opt it </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dbs4b1s">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Casey_fckn_ryback.html">Casey_fckn_ryback</a> 2016-12-30</p>
+    <div class="md"><p>Definitely.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dbsdjs6">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/awful_website.html">awful_website</a> 2016-12-30</p>
+    <div class="md"><p>Lol, of course it is.  Every forum on reddit is compromised, the fucking CEO of reddit edits posts, for the love of God, why even ask this question?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dbsa4v3">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/jonnywut.html">jonnywut</a> 2016-12-30</p>
+    <div class="md"><p>If someone with the resources wanted me to program a down vote bot army I would use the following method.</p>
+
+<ol>
+<li>Standard ddos botnet.</li>
+<li>(Optional) General purpose chat bot to farm reputation for bots.</li>
+<li>Sentiment analysis (the kind marketed to marketers to track if people on social media are saying positive or negative things about your brand) to direct the votes appropriately. </li>
+</ol>
+
+<p>I think the primary weakness of such a system would be the controversial filter, but demonstrating that lots of anti subject X stuff ends up in the controversial list is hardly sufficient evidence of a bot conspiracy because the topics are actually controversial. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dbs0lmx">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Exec99.html">Exec99</a> 2016-12-30</p>
+    <div class="md"><p>Anyone here a Yeti? </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="dbs5xaq">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Exec99.html">Exec99</a> 2016-12-30</p>
+    <div class="md"><p>Whom downvote the Yeti</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="dbs9wbd">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/JamesStrangefellow.html">JamesStrangefellow</a> 2016-12-30</p>
+    <div class="md"><p>Not yeti.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dbsbppx">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Wuped.html">Wuped</a> 2016-12-30</p>
+    <div class="md"><p>I think a study like this for r/politics on when it changed in the middle of the democratic primary to be super super pro-Bernie/anti-Hillary to overnight being suddenly pro-Hillary/anti-Bernie would be more blatant.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="dbscuuf">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/This_hand_is_my_hand.html">This_hand_is_my_hand</a> 2016-12-30</p>
+    <div class="md"><p>Then back to pro-Bernie/anti-Hillary mere moments after the election was called. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="dbsdbw2">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Wuped.html">Wuped</a> 2016-12-30</p>
+    <div class="md"><p>To me it seemed like organic content for one day then since it&#39;s been 100% Trump-hate/should&#39;ve been Hillary/This is all the Russians fault/people who believe in pizzagate are crazy posts with very nearly no mention or acknolwegement of how bad the DNC fucked up</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="dbsdjdn">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/This_hand_is_my_hand.html">This_hand_is_my_hand</a> 2016-12-30</p>
+    <div class="md"><blockquote>
+<p>To me it seemed like organic content for one day </p>
+</blockquote>
+
+<p>I could be more generous but it felt like organic content for about half a week. Then it devolved back to business as usual (i.e. before mid-2015).</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="dbsbvxq">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Clivepwnens.html">Clivepwnens</a> 2016-12-30</p>
+    <div class="md"><p>Are you trying to suggest that a large group of people with strong ideology didn&#39;t just completely reverse their thinking over night?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dbsdjeo">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/capitan_canaidia.html">capitan_canaidia</a> 2016-12-30</p>
+    <div class="md"><p>I want to halp.</p>
+
+<p>30 seconds? Your data will scale to high to fast, I think. I would do 5 or 10 minutes, but make it configurable should you need to change it easily :).</p>
+
+<p>Idea: Semantic Analysis and Topic based Quantification of Posts </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dbsthzp">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/snowmandan.html">snowmandan</a> 2016-12-30</p>
+    <div class="md"><p>The easily disproven and clickbait bullshit posts that make it to r/all every week doesn&#39;t tell you already? Posts with big claims and lack of evidence are regularly manipulated to r/all and heavily brigaded by shills attacking any attempt for a reasonable discussion. Welcome to 1984, man. </p>
+
+<p>Edit: I mean the one right now with over 2k votes is a good example. It&#39;s a good post with one caveat that the money is going to Amazon, so everyone uses that to discredit the entire argument. That then gives an impression that the sub as a whole is the same. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dbsx6b6">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DataPhreak.html">DataPhreak</a> 2016-12-30</p>
+    <div class="md"><p>Can you host the DB and allow read access? would also recommend a delete check, and caching the OP text as well as OP username. Once that&#39;s done, automated graph generation and the ability to request that be posted by the bot similar to RemindMe. Finally, shill track. Reply to comment with !shill  to flag them. Too many flags, and the bot replies to all users comments on the sub with a list of all other comments that have been previously flagged.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0 op" data-depth="0" data-id="dbx16o6">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/a9832941.html">a9832941</a> 2016-12-30</p>
+    <div class="md"><p>hey guys, sorry I haven&#39;t been able to update this yet - got a shitload of work.  But I didn&#39;t forget!</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dc48zq7">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/HardKnocksAlum.html">HardKnocksAlum</a> 2016-12-30</p>
+    <div class="md"><p>Yes. I just googled it because I&#39;ve noticed it too. Something is fucky. Definitely shilled and brigaded all the time.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dbs33vy">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Ninjakick666.html">Ninjakick666</a> 2016-12-30</p>
+    <div class="md"><p>Sounds like you have been reading some of my posts over the last couple weeks... Haha... I&#39;ve been chatty about this for a while... I notice patterns... Theres also a website that lets you track upvotes and downvotes in real time... I got 250plus upvotes in short time for calling this out earlier... That&#39;s why I think yer on FrontPage now.... Bot on bot warfare and yer a pawn for one side....</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="dbs5e22">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/twofaceHill_16.html">twofaceHill_16</a> 2016-12-30</p>
+    <div class="md"><p>Feels like whenever I visit a post.. the total upvotes goes down by one instantly. Back out and go into post again.. and the votes go down by one every time I visit a post.</p>
+
+<p>Down-vote bots on my account?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="dbscrsj">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/This_hand_is_my_hand.html">This_hand_is_my_hand</a> 2016-12-30</p>
+    <div class="md"><p>More like unreliable voting systems caused by vote fuzzing implemented <em>years</em> ago. </p>
+</div>
+</div>
+
+      </div>
+    </main>
+    <footer class="container-fluid">
+      <a class="to-top mt-1 mb-1 btn btn-lg btn-primary" href="#top">top of page</a>
+      <p class="small mb-0">data archived 2017-01-15. <a href="https://github.com/libertysoft3/reddit-html-archiver">source code</a>.</p>
+    </footer>
+    <script src="../../../../../../../../static/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../../../../../../../static/js/bootstrap.min.js"></script>
+    <script src="../../../../../../../../static/js/archive-comments.js"></script>
+  </body>
+</html>

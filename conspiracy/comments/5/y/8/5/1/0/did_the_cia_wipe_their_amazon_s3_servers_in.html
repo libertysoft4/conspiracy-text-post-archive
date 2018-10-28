@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../../../../../../../../static/css/lato.css">
+    <link rel="stylesheet" href="../../../../../../../../static/css/bootstrap-superhero.min.css">
+    <link rel="stylesheet" href="../../../../../../../../static/css/archive.css">
+    <title>r/conspiracy: Did the CIA wipe their Amazon S3 servers in Northern Virginia a week before WikiLeaks released Vault 7?</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+        <a class="navbar-brand" href="../../../../../../../../conspiracy/index.html">r/conspiracy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index.html">score</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index-comments/index.html">comments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index-date/index.html">date</a>
+            </li>
+            <li class="nav-item ###URL_SEARCH_CSS###">
+              <a class="nav-link" href="../../../../../../../../conspiracy/search.html">search</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">subreddits</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="../../../../../../../../index.html">All</a>
+                <a class="dropdown-item" href="../../../../../../../../conspiracy/index.html">conspiracy</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main role="main" class="container-fluid">
+      <div class="submission pt-3" data-id="5y8510">
+        <h3 class="title">Did the CIA wipe their Amazon S3 servers in Northern Virginia a week before WikiLeaks released Vault 7?</h3>
+        <p><span class="badge badge-primary">136</span>&nbsp;&nbsp;2017-03-08 by <a class="author" href="../../../../../../../../user/o_O_0_O_o_O_0_O_o.html">o_O_0_O_o_O_0_O_o</a></p>
+        <div class="card bg-dark mb-3"><div class="card-body md"><p>As some of you may remember there was a large internet outage a week ago caused by <a href="https://aws.amazon.com/s3/">Amazon S3</a> (<em>Simple Storage Service</em>) going down. <a href="https://np.reddit.com/r/conspiracy/comments/5wqnrn/amazon_web_services_northern_virginia_servers/"><em>Previous thread detailing the outage.</em></a></p>
+
+<p>Most news sites reported on this explaining which companies and websites were affected by the outage. I haven&#39;t found any that mentioned how the outage impacted the CIA and other federal departments that use the Northern Virginia Amazon S3 servers for their storage. Here&#39;s an interesting article from The Atlantic called <a href="https://www.theatlantic.com/technology/archive/2016/01/amazon-web-services-data-center/423147/?">&quot;Why Amazon&#39;s Data Centers Are Hidden in Spy Country&quot;</a> that is definitely worth a brief read before you continue researching.</p>
+
+<p>Now that WikiLeaks has released <a href="https://wikileaks.org/ciav7p1/">Vault 7</a> detailing the CIA&#39;s global covert hacking program this Amazon outage starts to look like a bit more than a mistake made by a highly trained &quot;authorized S3 team member&quot; as Amazon explains in their <a href="https://aws.amazon.com/message/41926/">&#39;Summary of the Amazon S3 Service Disruption in the Northern Virginia (US-EAST-1) Region&#39;</a> - <a href="http://archive.is/Fp4Qo"><em>archive</em></a></p>
+
+<p>Here is some of that <a href="https://aws.amazon.com/message/41926/">report</a> (<em>emphasis mine</em>):</p>
+
+<blockquote>
+<p>We’d like to give you some additional information about the service disruption that occurred in the <strong>Northern Virginia</strong> (US-EAST-1) Region on the morning of February 28th. The Amazon Simple Storage Service (S3) team was debugging an issue... At 9:37AM PST, <strong>an authorized S3 team member</strong> using an <strong>established playbook</strong> executed a command which was intended to remove a small number of servers for one of the S3 subsystems... Unfortunately, one of the inputs to the command was <strong>entered incorrectly</strong> and a <strong>larger set of servers</strong> was removed than intended. The servers that were inadvertently removed supported two other S3 subsystems.  One of these subsystems, <strong>the index subsystem</strong>, manages the <strong>metadata</strong> and <strong>location information</strong> of <strong>all S3 objects in the region</strong>. This subsystem is necessary to serve all GET, LIST, PUT, and <strong>DELETE requests</strong>. The second subsystem, the placement subsystem, manages allocation of new storage and requires the index subsystem to be functioning properly to correctly operate. The placement subsystem is used during PUT requests to allocate storage for new objects. Removing a significant portion of the capacity caused each of these systems to <strong>require a full restart</strong>. While these subsystems were being restarted, S3 was <strong>unable to service requests</strong>. Other AWS services in the US-EAST-1 Region that rely on S3 for storage, including the S3 console, Amazon Elastic Compute Cloud (EC2) new instance launches, Amazon Elastic Block Store (EBS) volumes (when data was needed from a S3 snapshot), and AWS Lambda were also impacted while the S3 APIs were unavailable.  </p>
+
+<p>S3 subsystems are designed to support the <strong>removal or failure</strong> of <strong>significant capacity</strong> with <strong>little or no</strong> customer impact. We build our systems with the assumption that things will occasionally fail, and we rely on the ability to remove and replace capacity as one of our core operational processes. While this is an operation that we have relied on to maintain our systems <strong>since the launch of S3</strong>, we have not completely restarted the index subsystem or the placement subsystem in our larger regions for <strong>many years</strong>... By 12:26PM PST, the index subsystem had activated enough capacity to begin servicing S3 GET, LIST, and DELETE requests. By 1:18PM PST, the index subsystem was fully recovered and GET, LIST, and DELETE APIs were functioning normally.  The S3 PUT API also required the placement subsystem. The placement subsystem began recovery when the index subsystem was functional and finished recovery at 1:54PM PST. At this point, S3 was operating normally. Other AWS services that were impacted by this event began recovering.</p>
+</blockquote>
+
+<p>So what <em>really</em> happened from 10:00AM to 2:00PM?</p>
+
+<p>Did the CIA or other players know the contents of the pending <a href="https://wikileaks.org/ciav7p1/">WikiLeaks publication</a> and decide to cover their tracks in fear of a future investigation?</p>
+
+<p>Or is it a coincidence that this system failed for the first time in years just 7 days before WikiLeaks released these documents?</p>
+
+<p>What do you think about this outage or Amazon&#39;s ties to the CIA? Post any information you find below.</p>
+</div></div>
+      </div>
+      <div class="comments">
+        <h5>18 comments</h5>
+        <div class="comment mb-3 ml-0" data-depth="0" data-id="deo178e">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/bluew200.html">bluew200</a> 2017-03-08</p>
+    <div class="md"><p>Whoever commented, you are shadowbanned.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="deo29mw">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/91jetsfan.html">91jetsfan</a> 2017-03-08</p>
+    <div class="md"><p>Amazon is in open competition with IBM for cia cloud competing contract </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="deowe7q">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/o_O_0_O_o_O_0_O_o.html">o_O_0_O_o_O_0_O_o</a> 2017-03-08</p>
+    <div class="md"><p>How do you think IBM is involved? </p>
+
+<p>Commercial sabotage against Amazon? </p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="depffk5">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/saurongetti.html">saurongetti</a> 2017-03-08</p>
+    <div class="md"><p>He means CIA contract for Amazon <a href="https://www.salon.com/2013/03/21/amazon_to_build_cia_cloud/">https://www.salon.com/2013/03/21/amazon_to_build_cia_cloud/</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="deq33bn">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/91jetsfan.html">91jetsfan</a> 2017-03-08</p>
+    <div class="md"><p>CIA will compete with amazon for IBM cloud servers</p>
+
+<p>Oh woops, I switched the acronyms up. It doesn&#39;t actually matter in this case. Ya dig?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="deo7sbl">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/klondike1412.html">klondike1412</a> 2017-03-08</p>
+    <div class="md"><p>Oh shit, they found out the IP list was in the open and had to wipe the network logs for anything getting routed in. If anyone investigated, they would be able to trace those IPs directly to S3 servers. That IP list was the most important part that Wikileaks should have released, <em>guaranteed</em> that is why S3 in Virginia was shitting their pants. These &quot;listening posts&quot; being hosted by Amazon would be a MASSIVE scandal. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="deodrkt">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/ChillyWillster.html">ChillyWillster</a> 2017-03-08</p>
+    <div class="md"><p>Now this is something we can sink our teeth into and hopefully something wiki leaks accounted for and will be explaining in future leaks. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="deowcri">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/o_O_0_O_o_O_0_O_o.html">o_O_0_O_o_O_0_O_o</a> 2017-03-08</p>
+    <div class="md"><p>That&#39;s what it looks like. </p>
+
+<p>They had to physically go to the sites and shutdown these subsystems in order to remove hardware. </p>
+
+<p>Removing the logs and files remotely would not be sufficient to cover their tracks completely. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="depcge3">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/heyjammo.html">heyjammo</a> 2017-03-08</p>
+    <div class="md"><p>That makes zero sense. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="deoa00e">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/frankthecrank1.html">frankthecrank1</a> 2017-03-08</p>
+    <div class="md"><p>Well, from the Vault 7 release we know the CIA placed operatives in tech companies to create backdoors, we can assume they also had people in companies where they could pull servers down if compromised</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="deowtnf">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/o_O_0_O_o_O_0_O_o.html">o_O_0_O_o_O_0_O_o</a> 2017-03-08</p>
+    <div class="md"><p>An Amazon operative working for the CIA seems highly plausible. They could then enter these incorrect commands on purpose if they need it to go completely offline. </p>
+
+<p>I just don&#39;t buy the story that some Amazon tech accidentally entered the wrong command into one of the most important systems in the world.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="depfi6i">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/saurongetti.html">saurongetti</a> 2017-03-08</p>
+    <div class="md"><p>Amazon is building CIA cloud, it is entirely possible <a href="https://www.salon.com/2013/03/21/amazon_to_build_cia_cloud/">https://www.salon.com/2013/03/21/amazon_to_build_cia_cloud/</a></p>
+
+<p>The official explanation seems fishy too.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="depkt5j">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/frankthecrank1.html">frankthecrank1</a> 2017-03-08</p>
+    <div class="md"><p>I agree completely....on both points.  &quot;Whoops...accidntally hit the wrong button and brought the entire cloud down&quot;</p>
+
+<p>NOPE</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="deoabiz">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/damn_this_is_hard.html">damn_this_is_hard</a> 2017-03-08</p>
+    <div class="md"><p>Bezos is scum. He might as well just rename Amazon and WaPo</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="deoc3h4">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/mz23.html">mz23</a> 2017-03-08</p>
+    <div class="md"><p>We should boycott anything he&#39;s involved in. Including Amazon </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="deowilw">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/o_O_0_O_o_O_0_O_o.html">o_O_0_O_o_O_0_O_o</a> 2017-03-08</p>
+    <div class="md"><p>Any good ideas for names? </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="deoiac4">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hawkeemunkee22.html">hawkeemunkee22</a> 2017-03-08</p>
+    <div class="md"><p>Like, with a cloth!? </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dep7z7u">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Shiftyze.html">Shiftyze</a> 2017-03-08</p>
+    <div class="md"><p>I think Microsoft did the same thing. All services for Microsoft were down. Xbox, Outlook, Email. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="depivnm">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/buzzlite.html">buzzlite</a> 2017-03-08</p>
+    <div class="md"><p>Highly suspicious and I believe there was talk of those notorious russian haxxors.</p>
+</div>
+</div>
+
+      </div>
+    </main>
+    <footer class="container-fluid">
+      <a class="to-top mt-1 mb-1 btn btn-lg btn-primary" href="#top">top of page</a>
+      <p class="small mb-0">data archived 2017-04-17. <a href="https://github.com/libertysoft3/reddit-html-archiver">source code</a>.</p>
+    </footer>
+    <script src="../../../../../../../../static/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../../../../../../../static/js/bootstrap.min.js"></script>
+    <script src="../../../../../../../../static/js/archive-comments.js"></script>
+  </body>
+</html>

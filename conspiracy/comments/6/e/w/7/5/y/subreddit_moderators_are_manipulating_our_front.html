@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../../../../../../../../static/css/lato.css">
+    <link rel="stylesheet" href="../../../../../../../../static/css/bootstrap-superhero.min.css">
+    <link rel="stylesheet" href="../../../../../../../../static/css/archive.css">
+    <title>r/conspiracy: Subreddit moderators are manipulating our front page: an analysis of irregularities in the remove-and-restore policy by moderators from 592 subs</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+        <a class="navbar-brand" href="../../../../../../../../conspiracy/index.html">r/conspiracy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index.html">score</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index-comments/index.html">comments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index-date/index.html">date</a>
+            </li>
+            <li class="nav-item ###URL_SEARCH_CSS###">
+              <a class="nav-link" href="../../../../../../../../conspiracy/search.html">search</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">subreddits</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="../../../../../../../../index.html">All</a>
+                <a class="dropdown-item" href="../../../../../../../../conspiracy/index.html">conspiracy</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main role="main" class="container-fluid">
+      <div class="submission pt-3" data-id="6ew75y">
+        <h3 class="title">Subreddit moderators are manipulating our front page: an analysis of irregularities in the remove-and-restore policy by moderators from 592 subs</h3>
+        <p><span class="badge badge-primary">204</span>&nbsp;&nbsp;2017-06-02 by <a class="author" href="../../../../../../../../user/newTypeOfShitposting.html">newTypeOfShitposting</a></p>
+        <div class="card bg-dark mb-3"><div class="card-body md"><p><strong>TL;DR: Certain subreddit moderators are manipulating what we see by using mod powers to boost some posts and illegitimately remove others.</strong></p>
+
+<h1>What is this?</h1>
+
+<p><a href="http://imgur.com/a/advoJ">Every graph</a> displays information about removals of successful posts in a subreddit. The left side of a bar is the creation time of a post. The right side of the bar is the removal time of the post. A bar goes all the way to the right if it was never removed.</p>
+
+<p>As for removed posts, only post that have been <strong>restored afterwards are included</strong>. Hence, the aim of the chart is to demonstrate wrongful removals. Note that the restore time of a post is not available, the only thing we know is that they have been restored at some point after removal. A second removal is indicated with a black vertical line. Again, this removal is non-permanent.</p>
+
+<p>The color code shows how close a post was created to another post&#39;s removal. Why this is important will become clear in the next section.</p>
+
+<p>Data: top posts from a subreddit + removal data from <a href="/r/undelete">/r/undelete</a> and <a href="/r/longtail">/r/longtail</a>. Selected subs are the top 500 on recent activity + subscribers + growth <a href="http://redditlist.com">on redditlist</a>.</p>
+
+<p>Visualisation: using matplotlib, starting from code by <a href="/u/ggggnut">/u/ggggnut</a>.</p>
+
+<p>In this post three general &#39;healthy&#39; subs from various sizes are shown, followed by the most blatant offenders as described below. The visual difference should be clear immediately.</p>
+
+<h1>What does it tell me?</h1>
+
+<p>Firstly, to a certain degree this indicates how many wrongful removals there are. More &#39;broken&#39; bars means more removed-and-later-restored posts. Note that this is not necessarily a problem in itself. Certain subs are more cautious than others and rather remove something for consideration when in doubt, whereas others rarely remove successful posts.</p>
+
+<p>This information is particularly useful in combination with the color codes. The more red, <strong>the closer a post was created to removal of another post</strong>. This <em>can</em> indicate moderator abuse. </p>
+
+<p>Due to a high volume of posts this visualization is less useful for very large subs, but this is not an issue as manipulation of this kind is pretty much impossible there anyway. The main subs able to use these techniques are small or semi-small subs trying to reach a broader audience.</p>
+
+<p>More detailed posts have been written about this, but I&#39;ll summarize:</p>
+
+<ul>
+<li><p>Reddit&#39;s algorithm changed making it difficult for a sub to have many successful posts high up in the rankings at once</p></li>
+<li><p>Some mods use a loophole by temporarily removing (perfectly fine) posts when they/others make new posts, in order to boost them to the top of <a href="/r/all">/r/all</a> more easily</p></li>
+</ul>
+
+<p>More information on this: <a href="https://np.reddit.com/r/dataisbeautiful/comments/6ef2fk/posts_removed_from_two_subreddits_vs_posts_made/di9r44f/">here</a>, <a href="https://np.reddit.com/r/TheoryOfReddit/comments/6eesg3/opening_up_the_discussion_on_mod_abuse_how/">here</a>, and <a href="https://www.np.reddit.com/r/KarmaCourt/comments/6d5wcf/the_people_of_reddit_vs_uGallowBoob_umalgoya_and/">here</a>.</p>
+
+<p>&#39;Guilty&#39; subs will likely have a more diagonal chart with short bars and a lot of red on it. For example, a very red bar means that this post was created very close the removal of a wrongfully removed post. Again, this could purely be coincidence, especially for large subs. It is when the pattern of short bars and red bars becomes dominant that there&#39;s very likely manipulation going on.</p>
+
+<p>It is also important to compare charts of subs with a similar number of subscribers and activity if you want to be able to draw any conclusions.</p>
+
+<h1>Why does this matter?</h1>
+
+<p>Moderators abusing mod powers in order to boost their own posts/boost their subreddit by illegitimately removing other successful posts is a big middle finger to the community.</p>
+
+<p>I think we, as users, can all agree that transparency is important. If a sub is being ruled in an undemocratic way, by mods who use their power to determine which posts they boost and which they remove, we at least deserve to know about the practice.</p>
+
+<p>This may seem a small problem given the limited amount of subs now, but if we as a community don&#39;t stand up to it Reddit may quickly become a place curated by a small group of mods who can use this to accomplish whatever their end-goal is. Besides, even this small group of subreddits is already influencing the global rankings as we speak by manipulating their own community.</p>
+
+<p>Also note that whether or not this type of abuse exists at all is not up for discussion anymore, given that on multiple instances mods have confirmed that this indeed happened. <strong>The main thing this post is trying to do is making sure everybody is aware of how much or how little the subs they subscribe to care about their community and transparency.</strong> Admins know about it but have chosen not to do anything about it, but <strong>if we as users want to keep Reddit a democratic place where free speech, transparency and equal opportunity are core values, we need to make sure mod abuse is limited and mods are held accountable for their actions and actions of fellow mods.</strong> </p>
+
+<p>So if you subscribe to one of the subreddits that seem suspicious to you, please ask your mods why this is happening and urge them to do something about it.</p>
+
+<p>Mods are also shown in bold on the graphs, which strengthens the belief that manipulation is going on. Several mods mod multiple of the identified subreddits.</p>
+
+<h1>Results</h1>
+
+<p>Currently, I have identified 8 subs that are in my opinion very likely using this manipulation or have done this at least once based on the data.</p>
+
+<p>These subs are:</p>
+
+<ul>
+<li><p>r/marchagainsttrump: questionable honor of being the absolute worst user of this manipulation</p></li>
+<li><p>r/instant_regret</p></li>
+<li><p>r/evilbuildings</p></li>
+<li><p>r/natureisfuckinglit</p></li>
+<li><p>r/stoppedworking</p></li>
+<li><p>r/esist</p></li>
+<li><p>r/thisismylifenow</p></li>
+<li><p>r/ourpresident <sup>Not</sup> <sup>in</sup> <sup>the</sup> <sup>large</sup> <sup>list</sup> <sup>of</sup> <sup>subs,</sup> <sup>but</sup> <sup>this</sup> <sup>sub</sup> <sup>was</sup> <sup>identified</sup> <sup>as</sup> <sup>doing</sup> <sup>this</sup> <sup>earlier</sup> <sup>so</sup> <sup>not</sup> <sup>including</sup> <sup>it</sup> <sup>doesn&#39;t</sup> <sup>make</sup> <sup>sense</sup></p></li>
+</ul>
+
+<p>Subs that do not have a regular pattern throughout the month but seem to possibly have done this a few times. I recommend giving all the below subs the benefit of doubt as there are very likely false positive among them, I am displaying them here to not withhold discovered irregularities.</p>
+
+<p><em>Click links of subs for images of chart</em></p>
+
+<ul>
+<li><p><a href="http://i.imgur.com/Ek9FgyV.png">r/science</a>, significantly larger sub than all others with an enormous amount of mods, which is why it&#39;s likely an anomaly instead of manipulation. Especially top-right is a strange pattern.</p></li>
+<li><p><a href="http://i.imgur.com/gDrN4w8.png">r/conservative</a>, sample size too small to draw conclusions</p></li>
+<li><p><a href="http://i.imgur.com/1xvomdP.png">r/madlads</a>, healthy pattern, except for one big anomaly in the end. Included because the mod making that post is a repeat offender in other subs and this is likely not a coincidence.</p></li>
+<li><p><a href="http://i.imgur.com/46f0XTC.png">r/imaginarylandscapes</a>, small sub where one mod seems to boost new posts.</p></li>
+<li><p><a href="http://i.imgur.com/SujtZqo.png">r/beamazed</a>, potential mod abuse on multiple occasions</p></li>
+</ul>
+
+<p><em>I will make another comment simply saying &quot;Requests&quot;. In order to ensure that you don&#39;t think I am being selective about the presented results I will try to get to all top-level replies to that comment and show the results of the asked subreddit. If the amount of subs is way too large I will first do the more popular ones and I&#39;ll try to get to all the other ones over the next few days.</em></p>
+</div></div>
+      </div>
+      <div class="comments">
+        <h5>50 comments</h5>
+        <div class="comment mb-3 ml-0" data-depth="0" data-id="didhuqx">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Another-Chance.html">Another-Chance</a> 2017-06-02</p>
+    <div class="md"><p>This was posted earlier....</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="didj1y1">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Gaslightin.html">Gaslightin</a> 2017-06-02</p>
+    <div class="md"><p>I haven&#39;t seen it before.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="didjbgp">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TelicAstraeus.html">TelicAstraeus</a> 2017-06-02</p>
+    <div class="md"><p>to <a href="/r/conspiracy">/r/conspiracy</a>? OP posted to other subreddits but it was removed by mods of <a href="/r/theoryofreddit">/r/theoryofreddit</a> and <a href="/r/dataisbeautiful">/r/dataisbeautiful</a>. Maybe someone cross-posted here?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="didu1nv">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/xleb1.html">xleb1</a> 2017-06-02</p>
+    <div class="md"><blockquote>
+<p>removed by mods of <a href="/r/dataisbeautiful">/r/dataisbeautiful</a>.</p>
+</blockquote>
+
+<p>The irony.....</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="didveik">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/newTypeOfShitposting.html">newTypeOfShitposting</a> 2017-06-02</p>
+    <div class="md"><p>Banned, actually</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="didkmt7">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Buck_Sterling.html">Buck_Sterling</a> 2017-06-02</p>
+    <div class="md"><p>Well I didn&#39;t see it so I&#39;m glad it was posted again. People need to see this.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="didihc1">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/ShieldedGred.html">ShieldedGred</a> 2017-06-02</p>
+    <div class="md"><blockquote>
+<p>If a sub is being ruled in an undemocratic way, by mods who use their power to determine which posts they boost and which they remove,</p>
+</blockquote>
+
+<p>Yeah they swore under oath and everything</p>
+
+<p>They have no obligation to do that, crappy as it may be. This is a site owned by a private party after all. This was never a place for true free speech</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="didimhw">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/newTypeOfShitposting.html">newTypeOfShitposting</a> 2017-06-02</p>
+    <div class="md"><blockquote>
+<p>They have no obligation to do that</p>
+</blockquote>
+
+<p>I know. But I and everyone who cares about this has no obligation to stay silent. It is very clear that the majority of people is being fooled, because it doesn&#39;t get the attention is deserved. </p>
+
+<p>I&#39;m willing to bet most of the redditors who hear about are outraged. So the problem is not just the way they mod: if there is a community okay with that kind of manipulation, fine. It&#39;s that they fool their own communities by not being upfront about what&#39;s happening. <em>That</em> is what I&#39;m trying to change.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="didoaug">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Green_Lives_Matter.html">Green_Lives_Matter</a> 2017-06-02</p>
+    <div class="md"><p>This is the exact reason why people left Digg and came here in the first place. The abuses here have far exceeded the shit that went on before.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="didm1s0">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/sven_trolly.html">sven_trolly</a> 2017-06-02</p>
+    <div class="md"><p>I suppose they think they&#39;re doing a good thing by suppressing any positive news or positive comments regarding Donald Trump? In fact, I presume that most of the &quot;mods&quot; here would rather simply ban or otherwise censor any sub promoting a positive outlook of President Trump rather than provide any semblance of an open forum. Likely most of the SJWarriors would support such action. In other words, why are certain subs using bots? Because they think they are &quot;in the right&quot; and any contrary opinion is therefore &quot;in the wrong&quot; thus to be discounted from the main page. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="diduo2n">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/captcha_bot.html">captcha_bot</a> 2017-06-02</p>
+    <div class="md"><p>That&#39;s not what this is used for, it&#39;s for temporarily removing popular posts to allow another post to make it to the front page, then restoring the first one. If a mod wanted to suppress a post, they&#39;d just delete it before it became popular and never restore it.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="didnu21">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Th3_Admiral.html">Th3_Admiral</a> 2017-06-02</p>
+    <div class="md"><p>I don&#39;t have much knowledge about the other subs, but the mod of evilbuildings has been awful about this. There have been several posts about this in other subs recently, but basically he would delete his own top post every time he made a new post. Since it&#39;s a small sub and usually only one post makes it to <a href="/r/all">/r/all</a> at a time, this would allow his new submission to make it through. Then he would restore his old post and no one would ever notice. When he was first called out for the mod abuse he completely denied it. Then when strong evidence was provided he admitted it and apologized for it, claiming he was just doing it to help promote the sub (even though it was only his daily post that he was boosting). After apologizing, more users pointed out that he was STILL abusing his powers to boost his own content. After a small amount of outrage, it seemed like most of the users either didn&#39;t care or actually defended him. As far as I know, he is still doing it to this day.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="didp380">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Sabremesh.html">Sabremesh</a> 2017-06-02</p>
+    <div class="md"><p>OP, I am sure the users of <a href="/r/conspiracy">/r/conspiracy</a> would be particularly interested to see your analysis of this sub, since this is an issue which is frequently discussed here.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="didrc2y">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/ggggnut.html">ggggnut</a> 2017-06-02</p>
+    <div class="md"><p>Not OP but I wrote the original code. Looking at r/conspiracy, there&#39;s no clear indication this method of mod abuse is being used. <a href="http://imgur.com/5afoAwp">http://imgur.com/5afoAwp</a></p>
+
+<p>There were some threads that were removed and later restored but the timeline doesn&#39;t match up.</p>
+
+<p>If mods were abusing the system, you&#39;d see top threads disappear around the same time a new top post is created, and it would form a very distinct pattern like this <a href="https://i.imgur.com/ywcF1Ac.png">https://i.imgur.com/ywcF1Ac.png</a></p>
+
+<p>With r/conspiracy, you see most threads were not removed and you see groups of 2 or 3 top posts co-existing. Which is how a normal subreddit should look.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="didtkec">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Sabremesh.html">Sabremesh</a> 2017-06-02</p>
+    <div class="md"><p>Thanks for the analysis. This is a welcome finding in the face of the tiresome accusations from certain quarters that the mods of <a href="/r/conspiracy">/r/conspiracy</a> are &quot;compromised&quot;. </p>
+
+<p>Our objective here is to facilitate the free flow of ideas, and to ensure that this sub is be as open and transparent as is practicable under the circumstances (by which I mean the presence of significant number of accounts which come here to subvert these aims).</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="didu3ok">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/newTypeOfShitposting.html">newTypeOfShitposting</a> 2017-06-02</p>
+    <div class="md"><p><a href="http://i.imgur.com/unGTuCz.png">These are results, looks clean to me as well.</a></p>
+
+<p><a href="http://i.imgur.com/t3qgSHw.png">Different parameters</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="didu9ov">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/FaJiTa-SalesmeN.html">FaJiTa-SalesmeN</a> 2017-06-02</p>
+    <div class="md"><p>Don&#39;t pat yourself on the back so quickly, this has nothing to do with those accusations.</p>
+
+<p>This is extremely limited information concerning gaming reddit to reach r/all.</p>
+
+<p>We know r/conspiracy mods don&#39;t normally like posts to reach r/all because the place gets shat on. Although it&#39;s useful if it&#39;s a Trump conspiracy so you can cry brigade and remove the post.</p>
+
+<p>Posts being being wrongfully removed and restored for other reasons shows that at least there are some checks and balances in place. That not happening much could mean good or bad moderation.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="diduhh6">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Sabremesh.html">Sabremesh</a> 2017-06-02</p>
+    <div class="md"><blockquote>
+<p>That not happening much could mean good or bad moderation.</p>
+</blockquote>
+
+<p>It means we&#39;re not censoring posts - that&#39;s one of the principle attractions of <a href="/r/conspiracy">/r/conspiracy</a> for many people, albeit that it generates a different set of problems.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="didusk0">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/FaJiTa-SalesmeN.html">FaJiTa-SalesmeN</a> 2017-06-02</p>
+    <div class="md"><p>Okay sorry, it just came across as being exonerated for not doing this one thing.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="didwr87">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/one_be_low.html">one_be_low</a> 2017-06-02</p>
+    <div class="md"><p>I wonder what the analysis for adding &#39;flair&#39; to posts would be.</p>
+
+<p>Because the only threads I&#39;ve ever seen you guys add flair to are ones critical of Trump. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-4 op" data-depth="4" data-id="didulid">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/newTypeOfShitposting.html">newTypeOfShitposting</a> 2017-06-02</p>
+    <div class="md"><blockquote>
+<p>That not happening much could mean good or bad moderation.</p>
+</blockquote>
+
+<p>I&#39;ve sifted through 600 subs and almost never saw a lot of removal-restoring, except for these subs that are obviously gaming the system, so I&#39;m not sure that statement is correct.</p>
+
+<p>I&#39;m curious now however, how does the community here think mods are influencing the sub? If I know I can look at my data to see whether maybe something confirms/denies this from an outside view.</p>
+
+<p>At least this community is critical, which is a good thing. Other communities don&#39;t seem to be aware of anything that&#39;s happening, which is why I want to show this to a broader public.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="didv183">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/FaJiTa-SalesmeN.html">FaJiTa-SalesmeN</a> 2017-06-02</p>
+    <div class="md"><p>Your data is only helpful for showing where the system is being gamed. Not removing/restoring many posts doesn&#39;t tell you moderation in a sub is either good or bad. It can&#39;t tell you that posts aren&#39;t being removed wrongfully, nor the opposite.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6 op" data-depth="6" data-id="didv5xu">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/newTypeOfShitposting.html">newTypeOfShitposting</a> 2017-06-02</p>
+    <div class="md"><p>So if I understand it correctly you and others think certain posts are being removed, not because they aren&#39;t in accordance with the rules, but for other reasons?</p>
+
+<p>If so, what reasons?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-7" data-depth="7" data-id="didvhuu">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/FaJiTa-SalesmeN.html">FaJiTa-SalesmeN</a> 2017-06-02</p>
+    <div class="md"><p>I wasn&#39;t actually making specific reference to this sub.</p>
+
+<p>That&#39;s a whole other kettle of fish. See the sticky post for some of it, and the comments for more.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8 op" data-depth="8" data-id="didvqoa">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/newTypeOfShitposting.html">newTypeOfShitposting</a> 2017-06-02</p>
+    <div class="md"><p>Now I think I get it. I agree that this post only addresses one specific kind of mod abuse, but it&#39;s one that these few subs are very actively making use of. My opinion is that they should be held accountable for it, and they would be if only their respective communities knew.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="9" data-id="didw7i3">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/FaJiTa-SalesmeN.html">FaJiTa-SalesmeN</a> 2017-06-02</p>
+    <div class="md"><p>I would think that the wider reddit community would care much more.</p>
+
+<p>Which I don&#39;t know if you&#39;ll really reach here unless you sex it right up. Make it sounds like r/politics mods are censoring well-intentioned T_D cultists or play up the anti-Trump subs part in the title. In fact, post like that in T_D first and they&#39;ll run with it for you and confuse the hell out of reddit because it&#39;s credible.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="10" data-id="die63xv">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TelicAstraeus.html">TelicAstraeus</a> 2017-06-02</p>
+    <div class="md"><p>well considering one of the biggest sub names on this list is <a href="/r/marchagainsttrump">/r/marchagainsttrump</a>, I&#39;m not sure it would be wrong to say it&#39;s being used as a weapon against trump supporters.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="die11ok">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/RandomNameNo1.html">RandomNameNo1</a> 2017-06-02</p>
+    <div class="md"><p>This clears nothing.. and it appears the data is faulty. Nice try.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="didtsil">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/newTypeOfShitposting.html">newTypeOfShitposting</a> 2017-06-02</p>
+    <div class="md"><p>Sure, <a href="http://i.imgur.com/unGTuCz.png">looks clean to me</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="didpdov">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/234f23432432.html">234f23432432</a> 2017-06-02</p>
+    <div class="md"><p>Great post despite the username</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="didtpfs">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/newTypeOfShitposting.html">newTypeOfShitposting</a> 2017-06-02</p>
+    <div class="md"><p>What do you mean?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="didzqiq">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/megalodon90.html">megalodon90</a> 2017-06-02</p>
+    <div class="md"><p>It implies your posts are shitposts. He&#39;s saying despite your name, this is a good post.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="didpti5">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/One_Giant_Nostril.html">One_Giant_Nostril</a> 2017-06-02</p>
+    <div class="md"><p>Hi u/newTypeOfShitposting, I&#39;m One_Giant_Nostril, creator and top-mod of r/ImaginaryLandscapes. I&#39;d be happy to answer any questions you might have.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="didtqqo">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/newTypeOfShitposting.html">newTypeOfShitposting</a> 2017-06-02</p>
+    <div class="md"><p>Hi, thanks for showing up! Can you explain why those posts were removed around the time of a new post and later restored? </p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="didu5cl">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/One_Giant_Nostril.html">One_Giant_Nostril</a> 2017-06-02</p>
+    <div class="md"><p>Which posts? Can you provide links? I&#39;ll check them in the mod log.</p>
+
+<p>Also, can you tell me what you mean by &quot;boost new posts&quot; when you said, &quot;r/imaginarylandscapes, small sub where one mod seems to boost new posts.&quot;</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="didu8to">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/newTypeOfShitposting.html">newTypeOfShitposting</a> 2017-06-02</p>
+    <div class="md"><p><a href="http://i.imgur.com/46f0XTC.png">Using this chart</a></p>
+
+<ol>
+<li>When [this post</li>
+</ol>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="didu969">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/AutoModerator.html">AutoModerator</a> 2017-06-02</p>
+    <div class="md"><p>While not required, you are requested to use the NP (No Participation) domain of reddit when crossposting. This helps to protect both your account, and the accounts of other users, from administrative shadowbans. The NP domain can be accessed by replacing the &quot;www&quot; in your reddit link with &quot;np&quot;.</p>
+
+<p><em>I am a bot, and this action was performed automatically. Please <a href="/message/compose/?to=/r/conspiracy">contact the moderators of this subreddit</a> if you have any questions or concerns.</em></p>
+</div>
+</div>
+<div class="comment mb-3 ml-5 op" data-depth="5" data-id="didud6v">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/newTypeOfShitposting.html">newTypeOfShitposting</a> 2017-06-02</p>
+    <div class="md"><p>Done, dear friend</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="didvzua">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/One_Giant_Nostril.html">One_Giant_Nostril</a> 2017-06-02</p>
+    <div class="md"><p>Neither of those submissions were ever removed. Did you notice both of them were posted by me? Why would I submitted something, remove it, later restore it? It doesn&#39;t make any sense. Your dataset is flawed. I&#39;ve complained to the mods of undelete before, they&#39;ve acknowledge their reporting is off.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5 op" data-depth="5" data-id="didwkvi">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/newTypeOfShitposting.html">newTypeOfShitposting</a> 2017-06-02</p>
+    <div class="md"><p>You can see the modlogs, I don&#39;t. Just look at it from my point of view: out of all 600 subs, yours came up as one of the 20 most &#39;suspicious&#39; in terms of this pattern. </p>
+
+<p>As to &#39;why&#39;, if you read my post you would know why some people do it so no need to play dumb. </p>
+
+<p>I want to believe you on your word but for the most part <a href="/r/longtail">/r/longtail</a> doesn&#39;t seem to have a logging problem at all. </p>
+
+<p>Also, please remember that I specifically stated I recommend everyone to give subs in that part of the list the benefit of doubt. I would be withholding information if I removed some subs out of the list because &#39;they don&#39;t fit in the narrative&#39; of the big offenders, so I chose not to do that.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="didx3bs">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/One_Giant_Nostril.html">One_Giant_Nostril</a> 2017-06-02</p>
+    <div class="md"><p>I checked the mod log, went back 2 months, neither of those submissions were listed under the Remove Post category. Like I said, your data source is flawed.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-7 op" data-depth="7" data-id="didxur7">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/newTypeOfShitposting.html">newTypeOfShitposting</a> 2017-06-02</p>
+    <div class="md"><p>Did I say I didn&#39;t trust you? Reread my post, all of it.</p>
+
+<p>The arguments you give &quot;Why would I submitted something, remove it, later restore it?&quot; don&#39;t make sense because that&#39;s all the post is about.</p>
+
+<p>I&#39;m not saying you did anything wrong, I&#39;m reporting my findings.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="8" data-id="didy2z6">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/One_Giant_Nostril.html">One_Giant_Nostril</a> 2017-06-02</p>
+    <div class="md"><p>Like I said, those posts were not removed, hence not restored later either. Findings of GIGO will always be flawed.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8 op" data-depth="9" data-id="didy8qh">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/newTypeOfShitposting.html">newTypeOfShitposting</a> 2017-06-02</p>
+    <div class="md"><p>I am literally dividing it in two groups. Subs with a clear pattern, and subs that, quote &quot;I recommend giving all the below subs the benefit of doubt as there are very likely false positive among them, I am displaying them here to not withhold discovered irregularities.&quot;</p>
+
+<p>In a large dataset there will always be random noise, not including it because of non-consistent reasons would be introducing bias.</p>
+
+<p>What more do you want me to do than explain my process?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8 op" data-depth="9" data-id="diecvx6">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/newTypeOfShitposting.html">newTypeOfShitposting</a> 2017-06-02</p>
+    <div class="md"><p>Hi again, I had the second link manually mixed up when you asked for my post. If you want to you can check whether that removal is not a removal either. (<a href="https://www.reddit.com/r/conspiracy/comments/6ew75y/subreddit_moderators_are_manipulating_our_front/didu8to/">Post</a>)</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="10" data-id="dieg6dr">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/One_Giant_Nostril.html">One_Giant_Nostril</a> 2017-06-02</p>
+    <div class="md"><p>Neither of your <strong>new</strong> examples were removed nor restored later. Your data sources are flawed hence your conclusions drawn from them are also completely erroneous. I have no thoughts about those other subreddits.</p>
+
+<p>I&#39;ve checked the mod-log of all (now 6) of your supposed examples, and none of them bear out your claim that those posts in IL &quot;<strong>seem</strong>&quot; to be removed/restored. Not a single one. Absolute bullshit.</p>
+
+<p>Instead of that most recent edit of your reply, you should restore your original text with a strikethrough of your original point 2, then add your <em>new</em> point 2 afterwards.</p>
+
+<p>ImaginaryLandscapes has absolutely nothing to do with this whole sordid affair. Putting it in close proximity with marchagainst/Instant_r/evilb/natureis/stoppedw/esist/thisismy/ourpres is guilt by association, plain and simple. Fuck this. IL is a great community with standup solid moderation with no bullshittery behind the scenes.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8 op" data-depth="11" data-id="diegnmh">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/newTypeOfShitposting.html">newTypeOfShitposting</a> 2017-06-02</p>
+    <div class="md"><p>Why should I do that? </p>
+
+<p>The posts I&#39;m linking are all obtained manually and have nothing to do with the script. The current ones are the ones obtained from <a href="/r/longtail">/r/longtail</a> and you saying that the mod logs say otherwise unfortunately doesn&#39;t help me. Anyone could say that, would you want me to remove their posts too? </p>
+
+<p>There&#39;s no guilt by association here, I am clearly stating the edge cases and that they likely are <strong>not</strong> illegitimate. I&#39;m not going to censor the post just because you approach me personally, that would make this whole analysis subjective.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="12" data-id="diehqvr">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/One_Giant_Nostril.html">One_Giant_Nostril</a> 2017-06-02</p>
+    <div class="md"><blockquote>
+<p>Why should I do that?</p>
+</blockquote>
+
+<p>For transparency sake. Like I said, &quot;you should restore your original text with a strikethrough of your original point 2, then add your new point 2 afterwards.&quot;</p>
+
+<p><a href="https://www.reddit.com/r/longtail/search?q=imaginarylandscapes&amp;amp;sort=new&amp;amp;restrict_sr=on">Searching on longtail for IL, by New, gives me 25 results</a>, 10 of which were removed for the following reasons: </p>
+
+<p>Wrong title, no artist name - Sidebar rule: 3 submissions max. every 24 hours - not a landscape (x2) - sidebar rules - Wrong title + no artist name - Bullshit link, spam - Not source - copied content (x2)</p>
+
+<p>Both undelete and longtail are flawed for reasons common to both and individual to both. Please don&#39;t take either of their results as complete vindication of your ideas. The only way to be sure is to become a moderator in the subs you&#39;re talking about.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="13" data-id="diehqvs">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/AutoModerator.html">AutoModerator</a> 2017-06-02</p>
+    <div class="md"><p>While not required, you are requested to use the NP (No Participation) domain of reddit when crossposting. This helps to protect both your account, and the accounts of other users, from administrative shadowbans. The NP domain can be accessed by replacing the &quot;www&quot; in your reddit link with &quot;np&quot;.</p>
+
+<p><em>I am a bot, and this action was performed automatically. Please <a href="/message/compose/?to=/r/conspiracy">contact the moderators of this subreddit</a> if you have any questions or concerns.</em></p>
+</div>
+</div>
+<div class="comment mb-3 ml-8 op" data-depth="13" data-id="dieiwy6">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/newTypeOfShitposting.html">newTypeOfShitposting</a> 2017-06-02</p>
+    <div class="md"><p>You&#39;re not getting my point. I had entered a wrong post, I don&#39;t even know which one it was anymore.</p>
+
+<p>About <a href="/r/longtail">/r/longtail</a>, it works just fine for nearly all subs, maybe it&#39;s just flawed for yours. Possible, but maybe not. I can&#39;t tell as you point out, which is why I&#39;m not going to arbitrarily manipulate conclusions. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-7" data-depth="7" data-id="die5wrl">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TelicAstraeus.html">TelicAstraeus</a> 2017-06-02</p>
+    <div class="md"><p>I don&#39;t know precisely which longtail posts are being used for these two, but if you had any interest, you can publish your moderation log temporarily using <a href="/u/publicmodlogs">/u/publicmodlogs</a>.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="didx9ip">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/AMERICA_____.html">AMERICA_____</a> 2017-06-02</p>
+    <div class="md"><p>hes saying that if you remove it you are more likely to be able to get another post to the front page so youd remove the post, get the other post upvoted, then undelete it to get more posts highly upvoted and on all.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="didxv26">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/One_Giant_Nostril.html">One_Giant_Nostril</a> 2017-06-02</p>
+    <div class="md"><p>Never heard of that before - I guess I just don&#39;t get it. Sounds like the theory is people recognize a username and upvote anything by them? Anyway, there&#39;s a sidebar rule there that says &quot;3 submissions max. every 24 hours&quot; so that neuters that ploy.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-7" data-depth="7" data-id="die6dxm">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TelicAstraeus.html">TelicAstraeus</a> 2017-06-02</p>
+    <div class="md"><p>I think it has to do with the algorithm that reddit uses to display content on reddit&#39;s aggregating pages (e.g. user&#39;s front page, <a href="/r/popular">/r/popular</a>, <a href="/r/all">/r/all</a>, etc.)</p>
+
+<p>If the front page of the subreddit itself is mildly stale, but not <em>very</em> stale, new posts won&#39;t be highly visible on it, nor on the aggregating pages - only the slightly old and highly upvoted ones. But if you remove those slightly stale upvoted posts right after making a new post, the new post instantly gets visibility to subscribers on the subs front page and user&#39;s individual front pages, and then consequently visibility on <a href="/r/all">/r/all</a>, <a href="/r/popular">/r/popular</a>. It&#39;s like an attention focusing mechanism - wipe out all the old stuff and whatever is immediately new gets the most number of eyeballs on it.</p>
+
+<p>From what i understand, <a href="/r/imaginarylandscapes">/r/imaginarylandscapes</a> isn&#39;t one that appeared to be doing it beyond the possibility of a false-positive, but it was included in the list for completeness and transparency sake.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="diegfd3">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/One_Giant_Nostril.html">One_Giant_Nostril</a> 2017-06-02</p>
+    <div class="md"><p><a href="https://www.reddit.com/r/conspiracy/comments/6ew75y/subreddit_moderators_are_manipulating_our_front/dieg6dr/">I&#39;ve asked OP</a> to restore their original point 2, with a strikethrough, then add their new point 2, instead of this simple *changed superscript non-transparency nonsense.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5 op" data-depth="5" data-id="diegogw">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/newTypeOfShitposting.html">newTypeOfShitposting</a> 2017-06-02</p>
+    <div class="md"><p>As I said in another comment, it was an incorrect link. What would providing the link help you with? It was just another link to a post on your subreddit.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="didueuc">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/FaJiTa-SalesmeN.html">FaJiTa-SalesmeN</a> 2017-06-02</p>
+    <div class="md"><p>Thanks OP. I knew about the change to allow smaller subs to reach the front page, but I didn&#39;t know this trick. Quite cunning.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="die0aek">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/barc0debaby.html">barc0debaby</a> 2017-06-02</p>
+    <div class="md"><p>I wouldn&#39;t be surpised with manipulation on r/conservative. Despite the name that subreddit is geared toward a very specific branch of conservative ideology and they are extremely liberal in handing out bans.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="died4cg">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Wang_Peng_88.html">Wang_Peng_88</a> 2017-06-02</p>
+    <div class="md"><p>The r/the_Donald mods are the fucking WORST</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="diehuke">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/SgtBrutalisk.html">SgtBrutalisk</a> 2017-06-02</p>
+    <div class="md"><p>So that&#39;s how GallowBoob does it! That fucking guy is <em>everywhere</em>.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="didimhw">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/newTypeOfShitposting.html">newTypeOfShitposting</a> 2017-06-02</p>
+    <div class="md"><blockquote>
+<p>They have no obligation to do that</p>
+</blockquote>
+
+<p>I know. But I and everyone who cares about this has no obligation to stay silent. It is very clear that the majority of people is being fooled, because it doesn&#39;t get the attention is deserved. </p>
+
+<p>I&#39;m willing to bet most of the redditors who hear about are outraged. So the problem is not just the way they mod: if there is a community okay with that kind of manipulation, fine. It&#39;s that they fool their own communities by not being upfront about what&#39;s happening. <em>That</em> is what I&#39;m trying to change.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="didoaug">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary"></span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Green_Lives_Matter.html">Green_Lives_Matter</a> 2017-06-02</p>
+    <div class="md"><p>This is the exact reason why people left Digg and came here in the first place. The abuses here have far exceeded the shit that went on before.</p>
+</div>
+</div>
+
+      </div>
+    </main>
+    <footer class="container-fluid">
+      <a class="to-top mt-1 mb-1 btn btn-lg btn-primary" href="#top">top of page</a>
+      <p class="small mb-0">data archived 2017-07-15. <a href="https://github.com/libertysoft3/reddit-html-archiver">source code</a>.</p>
+    </footer>
+    <script src="../../../../../../../../static/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../../../../../../../static/js/bootstrap.min.js"></script>
+    <script src="../../../../../../../../static/js/archive-comments.js"></script>
+  </body>
+</html>
