@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../../../../../../../../static/css/lato.css">
+    <link rel="stylesheet" href="../../../../../../../../static/css/bootstrap-superhero.min.css">
+    <link rel="stylesheet" href="../../../../../../../../static/css/archive.css">
+    <title>r/conspiracy: One guys problem with visibility range. (r/conspiratard)</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+        <a class="navbar-brand" href="../../../../../../../../conspiracy/index.html">r/conspiracy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index.html">score</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index-comments/index.html">comments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index-date/index.html">date</a>
+            </li>
+            <li class="nav-item ###URL_SEARCH_CSS###">
+              <a class="nav-link" href="../../../../../../../../conspiracy/search.html">search</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">subreddits</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="../../../../../../../../index.html">All</a>
+                <a class="dropdown-item" href="../../../../../../../../conspiracy/index.html">conspiracy</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main role="main" class="container-fluid">
+      <div class="submission pt-3" data-id="2c8epy">
+        <h3 class="title">One guys problem with visibility range. (r/conspiratard)</h3>
+        <p><span class="badge badge-primary">0</span>&nbsp;&nbsp;2014-07-31 by <a class="author" href="../../../../../../../../user/skycentrism.html">skycentrism</a></p>
+        <div class="card bg-dark mb-3"><div class="card-body md"><p>We have two points (A and B) located on a flat terrain (5000 m above sea level) Elevation of point A is 5000 m above sea level. Elevation of point B is also 5000 m above seal level. We stand in point A, our height is 2 m. What is the distance between point A and B ? </p>
+
+<p><a href="http://upload.wikimedia.org/wikipedia/commons/5/5a/HorizonDistance.png">http://upload.wikimedia.org/wikipedia/commons/5/5a/HorizonDistance.png</a></p>
+
+<p><a href="http://members.home.nl/7seas/radcalc.htm">http://members.home.nl/7seas/radcalc.htm</a></p>
+
+<p>Let&#39;s have this photo to illustrate this situation:</p>
+
+<p><a href="http://i.imgur.com/1y5i7VS.jpg?1">http://i.imgur.com/1y5i7VS.jpg?1</a></p>
+
+<p>How far is point B ? (The furthest visible point on the horizon)</p>
+
+<p>You can&#39;t just put 5002 m as h1 and 5000 m as h2 in the calculator :)</p>
+
+<p>Because:</p>
+
+<p><a href="http://i.imgur.com/Q6Kr4u6.png?1">http://i.imgur.com/Q6Kr4u6.png?1</a></p>
+</div></div>
+      </div>
+      <div class="comments">
+        <h5>67 comments</h5>
+        <div class="comment mb-3 ml-0" data-depth="0" data-id="cjd5o1a">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DBrickShaw.html">DBrickShaw</a> 2014-07-31</p>
+    <div class="md"><blockquote>
+<p><a href="http://i.imgur.com/Q6Kr4u6.png">http://i.imgur.com/Q6Kr4u6.png</a></p>
+
+<p>Everytime you simply put two heights here, the tangent drops downs to..sea level.</p>
+</blockquote>
+
+<p>Yes, the formula you posted calculates the maximum line of sight over the sea, and that&#39;s exactly what it is designed to calculate (notice that the provided image is measuring visibility from a ship at sea to a landmark on the shore). If you want to calculate the visibility range between two landmarks with elevated ground between them, the formula does need to be modified, but not in the way you&#39;ve described.</p>
+
+<p>Rather than adjusting the height of your landmarks, what you actually want to adjust is the radius of the Earth. In <a href="http://upload.wikimedia.org/wikipedia/commons/5/5a/HorizonDistance.png">the formula you provided</a>, you can see that the R term represents the radius of the Earth at sea level. There&#39;s an error in units there, as the radius is claimed to be in Mm, but in order for the formula to be correct the radius must be provided in kilometers (the radius of the Earth is ~6378 km at sea level). With the units corrected, the formula should read as follows (with the result and all variables given in km):</p>
+
+<p>Visibility Distance = Dl + Db = (sqrt(2 * R) * sqrt(hl)) + (sqrt(2 * R) * sqrt(hb)) = sqrt(2 * 6378) * (sqrt(hl) + sqrt(hb))</p>
+
+<p>With the formula corrected, you&#39;ll see that the results match the <a href="http://members.home.nl/7seas/radcalc.htm">visibility range calculator</a> you provided ([edit] The calculator actually uses a radius of 6378.155 km).</p>
+
+<p>Now, to account for elevated ground between the two landmarks, you need to add the ground elevation to the radius of the Earth at sea level. You also need to make sure that the two heights of your landmarks are measured from the elevated ground level.</p>
+
+<p>For example, let&#39;s say your two landmarks are two towers of height 400m and 600m (above ground level), and your ground level is 200 meters above sea level.</p>
+
+<p>In this case, your calculation becomes:</p>
+
+<p>hl = 0.4 km</p>
+
+<p>hb = 0.6 km</p>
+
+<p>R = (6378 + 0.2) km</p>
+
+<p>Visibility Distance = sqrt(2 * R) * (sqrt(hl) + sqrt(hb)) = sqrt(2 * 6378.2) * (sqrt(0.4) + sqrt(0.6))</p>
+
+<p>Visibility Distance = sqrt(2 * 6378.2) * (sqrt(0.4) + sqrt(0.6)) = <strong>158.9184 km</strong></p>
+
+<p>By modifying the formula in this way, you&#39;re calculating the visibility range with the tangent dropping to ground level instead of sea level. Keep in mind that accounting for ground elevation doesn&#39;t actually make much of a difference, as the elevation of the ground above sea level is tiny compared to the radius of the Earth. For example, the most elevated city in the world (<a href="http://en.wikipedia.org/wiki/List_of_tallest_towers_in_the_world">El Alto</a>) is at an elevation of 4.15 km, which is only 0.065% of the radius of the Earth at sea level. Also keep in mind that this calculation does not account for refraction of light in the atmosphere, and in reality refraction allows for greater visibility ranges than a straight line tangent.</p>
+
+<p>I hope this helps.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="cjd62nt">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/WadeWilsonforPope.html">WadeWilsonforPope</a> 2014-07-31</p>
+    <div class="md"><p>I sincerely hope that <a href="/u/skycentrism">/u/skycentrism</a> replies to this post. He seems more interested in forcing people to defend their position than he is in defending his. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="cjd69uw">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/CatholicCockTard.html">CatholicCockTard</a> 2014-07-31</p>
+    <div class="md"><p>He won&#39;t. Whenever he&#39;s proven wrong, he just leaves. Then he&#39;ll wait another month and make another scientifically-illiterate post. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="cjd6qim">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/WadeWilsonforPope.html">WadeWilsonforPope</a> 2014-07-31</p>
+    <div class="md"><p>lol I posted <a href="/u/DBrickShaw">/u/DBrickShaw</a> s post onto the the sticky into skycentrisms sub</p>
+
+<p><a href="http://www.np.reddit.com/r/Skycentrism/comments/28yxzi/this_subreddit_has_50_submissions_to_see_all_of/">http://www.np.reddit.com/r/Skycentrism/comments/28yxzi/this_subreddit_has_50_submissions_to_see_all_of/</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="cjd6qqn">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/AutoModerator.html">AutoModerator</a> 2014-07-31</p>
+    <div class="md"><p>While not required, you are requested to use the NP domain of reddit when crossposting. This helps to protect both your account, and the accounts of other users, from administrative shadowbans. The NP domain can be accessed by prefacing your reddit link with np.reddit.com.</p>
+
+<p><em><a href="/r/AutoModerator/comments/q11pu/what_is_automoderator/">I am a bot</a>, and this action was performed automatically. Please <a href="/message/compose?to=%2Fr%2Fconspiracy">contact the moderators of this subreddit</a> if you have any questions or concerns.</em></p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="cjd70hy">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skycentrism.html">skycentrism</a> 2014-07-31</p>
+    <div class="md"><p>Count the example I posted</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="cjd7pdn">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DBrickShaw.html">DBrickShaw</a> 2014-07-31</p>
+    <div class="md"><blockquote>
+<p>We have two points (A and B) located on a flat terrain (5000 m above sea level) Elevation of point A is 5000 m above sea level. Elevation of point B is also 5000 m above seal level. We stand in point A, our height is 2 m. What is the distance between point A and B ?</p>
+</blockquote>
+
+<p>Since the elevations are provided above sea level, and the ground is 5000m above sea level, I subtract 5000m from each height to obtain height above ground level.</p>
+
+<p>Ha = Height of viewpoint A relative to ground level = (5000m + 2m) - 5000m =  0.002 km</p>
+
+<p>Hb = Height of target B relative to ground level = 5000m - 5000m = 0 km</p>
+
+<p>Now, I add the ground level (5km) to the radius of the Earth at sea level:</p>
+
+<p>R = Radius of Earth at ground level = (6378 + 5) km = 6383 km</p>
+
+<p>Visibility Distance = sqrt(2 * R) * (sqrt(Ha) + sqrt(Hb))</p>
+
+<p>Visibility Distance = sqrt(2 * 6383) * (sqrt(0.002) + sqrt(0)) = <strong>5.0529 km</strong></p>
+
+<p>The formula you&#39;re attempting to disprove agrees with your result, when it is applied correctly.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="cjd9auy">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skycentrism.html">skycentrism</a> 2014-07-31</p>
+    <div class="md"><p>Good :) But you should have also subtracted in your previous example :)</p>
+
+<p>hl = 0.4 km
+hb = 0.6 km</p>
+
+<p>600 m - 400 m = 200 m so the elevation above the ground is 200 m :)</p>
+
+<p>Now, we have 200 m and 0 m.</p>
+
+<p>So the visibility distance is <strong>50 km</strong> </p>
+
+<p>Oh and:</p>
+
+<blockquote>
+<p>If you want to calculate the visibility range between two landmarks with elevated ground between them, the formula does need to be modified, but not in the way you&#39;ve described.</p>
+</blockquote>
+
+<p>And you did the very same thing I did.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="cjdab7h">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DBrickShaw.html">DBrickShaw</a> 2014-07-31</p>
+    <div class="md"><blockquote>
+<p>But you should have also subtracted in your previous example :)</p>
+
+<p>hl = 0.4 km hb = 0.6 km</p>
+
+<p>600 m - 400 m = 200 m so the elevation above the ground is 200 m :)</p>
+</blockquote>
+
+<p>No. If the height of your objects are given relative to sea level, you subtract the ground elevation from both values to get their height relative to ground level. In my example the heights were already given relative to ground level. There is no need to subtract one height from the other.</p>
+
+<blockquote>
+<p>And you did the very same thing I did.</p>
+</blockquote>
+
+<p>Your calculation works out to be almost the same as mine in the special case where one of your objects is exactly at ground level. Even in that case, you are not actually accounting for the increased radius of the Earth at ground level correctly, although the difference in results is insignificant. In all other cases where both objects are elevated above the ground, your method does not correctly apply the provided formula. This is why I gave you a different example than the one you provided.</p>
+
+<p>Let&#39;s modify your example to demostrate:</p>
+
+<blockquote>
+<p>We have two points (A and B) located on a flat terrain (5000 m above sea level) Elevation of point A is 5000 m above sea level. Elevation of point B is also 5000 m above seal level. We stand in point A, our height is 2 m. What is the distance between point A and B ?</p>
+</blockquote>
+
+<p>We both agree that the answer to this problem is <strong>5.05 km</strong>. Now, what happens if we put a post 1m high at point B, and calculate the distance at which it can be seen by the 2m tall observer at point A?</p>
+
+<p>Using my method (exactly the same calculation as before, except Hb is now 0.001 km):</p>
+
+<p>Visibility Distance = sqrt(2 * 6383) * (sqrt(0.002) + sqrt(0.001)) = <strong>8.626 km</strong></p>
+
+<p>The result is larger, as should be expected since the object being viewed is taller. Now, applying your method of subtracting the two values, and using the sea level radius of the Earth:</p>
+
+<p>R = 6378 km</p>
+
+<p>Ha = 2m - 1m = 0.001 km</p>
+
+<p>Hb = 0 km</p>
+
+<p>Visibility Distance = sqrt(2 * 6378) * (sqrt(0.001) + sqrt(0.000)) = <strong>3.571 km</strong></p>
+
+<p>According to your method, the visibility distance went down. Does it make sense that a point on the ground can be viewed from farther away than a 1m tall post? No.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="cjde92c">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/CatholicCockTard.html">CatholicCockTard</a> 2014-07-31</p>
+    <div class="md"><p>According to him, if I climbed a mountain, I wouldn&#39;t be able to see any further than I could from the ground. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-6 op" data-depth="6" data-id="cjdre0s">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skycentrism.html">skycentrism</a> 2014-07-31</p>
+    <div class="md"><p>Your guru claims the same :)</p>
+
+<p><a href="http://www.reddit.com/r/conspiracy/comments/2c8epy/one_guys_problem_with_visibility_range/cjdpf1h">http://www.reddit.com/r/conspiracy/comments/2c8epy/one_guys_problem_with_visibility_range/cjdpf1h</a></p>
+
+<blockquote>
+<p>Since neither point A or B are moved, the distance between them remains 5.05 km.</p>
+</blockquote>
+
+<p>He&#39;s a little bit confused now</p>
+</div>
+</div>
+<div class="comment mb-3 ml-7" data-depth="7" data-id="cjdre1x">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/AutoModerator.html">AutoModerator</a> 2014-07-31</p>
+    <div class="md"><p>While not required, you are requested to use the NP domain of reddit when crossposting. This helps to protect both your account, and the accounts of other users, from administrative shadowbans. The NP domain can be accessed by prefacing your reddit link with np.reddit.com.</p>
+
+<p><em><a href="/r/AutoModerator/comments/q11pu/what_is_automoderator/">I am a bot</a>, and this action was performed automatically. Please <a href="/message/compose?to=%2Fr%2Fconspiracy">contact the moderators of this subreddit</a> if you have any questions or concerns.</em></p>
+</div>
+</div>
+<div class="comment mb-3 ml-5 op" data-depth="5" data-id="cjdpf1h">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skycentrism.html">skycentrism</a> 2014-07-31</p>
+    <div class="md"><p>So, if the viewpoint A is 5000 m above sea level and we stand in point A (our height is 2 m) and look at the target B (5000 m above sea level) but <strong>there is no ground in  between, just sea</strong> What is the visibility range ?
+We stand at the edge of a cliff and look at another cliff in the distance. Imagine we got rid of all the ground from the plateau.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="cjdprm9">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DBrickShaw.html">DBrickShaw</a> 2014-07-31</p>
+    <div class="md"><blockquote>
+<p>So, if the viewpoint A is 5000 m above sea level and we stand in point A (our height is 2 m) and look at the target B (5000 m above sea level) but there is no ground in between, just sea What is the visibility range ? We stand at the edge of a cliff and look at another cliff in the distance. Imagine we got rid of all the ground from the plateau.</p>
+</blockquote>
+
+<p>R = 6378 km = Radius of Earth at sea level</p>
+
+<p>Ha = 5.002 km = Elevation of viewpoint relative to sea level</p>
+
+<p>Hb = 5 km = Elevation of point B relative to sea level</p>
+
+<p>Visibility Distance = sqrt(2 * 6378) * (sqrt(5.002) + sqrt(5)) = <strong>505.14 km</strong></p>
+</div>
+</div>
+<div class="comment mb-3 ml-7 op" data-depth="7" data-id="cjdpw0n">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skycentrism.html">skycentrism</a> 2014-07-31</p>
+    <div class="md"><p>Really ?:)</p>
+
+<p><a href="http://i.imgur.com/1y5i7VS.jpg?1">http://i.imgur.com/1y5i7VS.jpg?1</a></p>
+
+<p>Point B is the furthest point we see on the horizon, like on the above photo.</p>
+
+<p>But we get rid of all the land from where we stand toward point B. You want to say that the horizon moved away 100 times ? Point B is still where it was.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="8" data-id="cjdq68z">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DBrickShaw.html">DBrickShaw</a> 2014-07-31</p>
+    <div class="md"><p>That&#39;s not the question you asked. You asked for the maximum visibility range between two viewpoints of height 5000m and 5002m across the open sea, and the answer is 505.14 km. </p>
+
+<p>To address your new question:</p>
+
+<blockquote>
+<p>Point B is the furthest point we see on the horizon, like on the above photo.</p>
+</blockquote>
+
+<p>Ok, and we&#39;ve agreed this point is 5.05 km away from a 2m tall observer at point A.</p>
+
+<blockquote>
+<p>But we get rid of all the land from where we stand toward point B. </p>
+</blockquote>
+
+<p>Since neither point A or B are moved, the distance between them remains 5.05 km.</p>
+
+<blockquote>
+<p>Point B is still where it was.</p>
+</blockquote>
+
+<p>Yes, it is. What is this example supposed to demonstrate?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8 op" data-depth="9" data-id="cjdq8r5">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skycentrism.html">skycentrism</a> 2014-07-31</p>
+    <div class="md"><blockquote>
+<p>That&#39;s not the question you asked.</p>
+</blockquote>
+
+<p>In fact it was :)
+The line of our sight doesn&#39;t change :) Why isn&#39;t it tangent to sea surface in my example then ? </p>
+</div>
+</div>
+<div class="comment mb-3 ml-8 op" data-depth="9" data-id="cjdqbg0">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skycentrism.html">skycentrism</a> 2014-07-31</p>
+    <div class="md"><blockquote>
+<p>That&#39;s not the question you asked. You asked for the <strong>maximum visibility range</strong> between two viewpoints of height 5000m and 5002m <strong>across the open sea</strong> and the answer is 505.14 km.</p>
+</blockquote>
+
+<p>Exactly as in my example :) across the open sea.</p>
+
+<blockquote>
+<p>Since neither point A or B are moved, the distance between them remains 5.05 km.</p>
+</blockquote>
+
+<p>Correct :)</p>
+
+<blockquote>
+<p>What is this example supposed to demonstrate?</p>
+</blockquote>
+
+<p>That it doesn&#39;t matter if there is ground or sea between. If there is ground it doesn&#39;t matter what its elevation is. Thank you.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="10" data-id="cjdqg4r">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DBrickShaw.html">DBrickShaw</a> 2014-07-31</p>
+    <div class="md"><blockquote>
+<p>Exactly as in my example :) across the open sea.</p>
+</blockquote>
+
+<p>No. In your new example you&#39;ve fixed the position of point B at a distance of 5.05 km. The maximum range at which it would be visible over open sea therefore has no impact on its distance from point A (which is obviously 5.05 km).</p>
+
+<blockquote>
+<p>That it doesn&#39;t matter if there is ground or sea between. If there is ground it doesn&#39;t matter what its elevation is. Thank you.</p>
+</blockquote>
+
+<p>Yes, if you set two points at fixed positions, the distance between them doesn&#39;t depend on the material in the space between them. That has nothing to do with what you originally wanted to discuss, which was maximum visibility range of landmarks over the horizon. You seem to be confused about what exactly you&#39;re trying to calculate.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8 op" data-depth="11" data-id="cjdqhpb">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skycentrism.html">skycentrism</a> 2014-07-31</p>
+    <div class="md"><p>You seem to be more confused :) Why doesn&#39;t the tangent drop down to sea level ?</p>
+
+<p>All the data is the same. Elevation of two points, and the fact that there is only sea between. Is your formula useless ? :)</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="cjd7cck">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skycentrism.html">skycentrism</a> 2014-07-31</p>
+    <div class="md"><p>You didn&#39;t modify anything, you just put the values into the calculator :) </p>
+
+<blockquote>
+<p>By modifying the formula in this way, you&#39;re calculating the visibility range with the tangent dropping to ground level instead of sea level.</p>
+</blockquote>
+
+<p>Lie :) You&#39;re calculating with the tangent dropping to sea level.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="cjd7wff">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/eat_shit_and_live.html">eat_shit_and_live</a> 2014-07-31</p>
+    <div class="md"><blockquote>
+<p>You&#39;re calculating with the tangent dropping to sea level.</p>
+</blockquote>
+
+<p>Isnt that the point? </p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="cjdekrv">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/CatholicCockTard.html">CatholicCockTard</a> 2014-07-31</p>
+    <div class="md"><p>Yes. It&#39;s the definition of a &quot;tangent line&quot;. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="cjcxl1x">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/WadeWilsonforPope.html">WadeWilsonforPope</a> 2014-07-31</p>
+    <div class="md"><p>Could you give me an ELI5?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="cjcxmpw">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skycentrism.html">skycentrism</a> 2014-07-31</p>
+    <div class="md"><p>Simple question. How far can you see in this example ? On 505 km or 5,05 km ?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="cjcy9at">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/WadeWilsonforPope.html">WadeWilsonforPope</a> 2014-07-31</p>
+    <div class="md"><p>Im just a bit confused. The ships mast is 5 kilometers high... while we stand at 2 meters, and the lighthouse is as tall as Everest.  </p>
+
+<p>I guess (And its been a while since High school math...So be gentle If Im fucking this up) if we are at 5002m and point B is 5000m then we have are ~500 km from point B. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="cjcyatu">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skycentrism.html">skycentrism</a> 2014-07-31</p>
+    <div class="md"><p><a href="http://i.imgur.com/Q6Kr4u6.png?1">http://i.imgur.com/Q6Kr4u6.png?1</a></p>
+
+<p>Do we see like the red line shows ? Or like the black one ?</p>
+
+<p>If you count as for the red line, that&#39;s why you get 505 km.
+<a href="http://i.imgur.com/1y5i7VS.jpg?1">http://i.imgur.com/1y5i7VS.jpg?1</a></p>
+
+<p>Is the horizon 505 km away here ?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="cjcyjdz">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/WadeWilsonforPope.html">WadeWilsonforPope</a> 2014-07-31</p>
+    <div class="md"><p>~257km? If we are h1 at 2m and h2 at 5000m... Right?</p>
+
+<p>Or would it be H1 is 2m and H2 is 0M giving us 5.05km?</p>
+
+<p>Its still very early for me, and the coffee hasnt kicked in can you explain why this belongs in this sub?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="cjcyr8j">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/CatholicCockTard.html">CatholicCockTard</a> 2014-07-31</p>
+    <div class="md"><p>You&#39;re right. What he&#39;s doing is setting up one problem where you have two vantage points that are 5000 m tall, but then he solves a problem where one height is 2 m and the other is 0 m. He&#39;s confused himself quite terribly. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="cjcyvn0">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/WadeWilsonforPope.html">WadeWilsonforPope</a> 2014-07-31</p>
+    <div class="md"><p>Thats what I figured, I just dont understand what he is trying to prove...</p>
+</div>
+</div>
+<div class="comment mb-3 ml-7" data-depth="7" data-id="cjcyz98">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/shadowofashadow.html">shadowofashadow</a> 2014-07-31</p>
+    <div class="md"><p>I&#39;ve given skycentrism&#39;s posts a chance every time and I never, ever understand the point he is trying to make.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="8" data-id="cjczoaa">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/CatholicCockTard.html">CatholicCockTard</a> 2014-07-31</p>
+    <div class="md"><p>It&#39;s because he talks in circles while ignoring basic math, physics and reality. Every time he &quot;proves&quot; something, he proves himself wrong, but then claims he&#39;s right for some reason. It&#39;s beyond bizarre. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="8" data-id="cjczouo">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/fnordtastic.html">fnordtastic</a> 2014-07-31</p>
+    <div class="md"><p>I feeling it has to do with some sort of hollow earth or flat earth theory, but it&#39;s always so vague.  Wish they&#39;d just get to the point already.  If I had to wager a guess, it&#39;s a troll.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="9" data-id="cjczqey">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/shadowofashadow.html">shadowofashadow</a> 2014-07-31</p>
+    <div class="md"><p>Yeah I think it&#39;s the hollow earth theory. What I don&#39;t get is that if our earth is not a sphere and is actually concave, why is there a horizon at all?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="10" data-id="cjd01y2">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/fnordtastic.html">fnordtastic</a> 2014-07-31</p>
+    <div class="md"><p>Whoa whoa, don&#39;t start dragging logic into this.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="11" data-id="cjd0io5">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/WadeWilsonforPope.html">WadeWilsonforPope</a> 2014-07-31</p>
+    <div class="md"><p>You dont bring logic to a crazy fight</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="12" data-id="cjd1fpv">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/fnordtastic.html">fnordtastic</a> 2014-07-31</p>
+    <div class="md"><p>But sometimes it&#39;s fun to bring crazy to a logic fight.  Hail Eris!!</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6 op" data-depth="6" data-id="cjd9gh4">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skycentrism.html">skycentrism</a> 2014-07-31</p>
+    <div class="md"><p><a href="http://www.reddit.com/r/conspiracy/comments/2c8epy/one_guys_problem_with_visibility_range/cjd7pdn">http://www.reddit.com/r/conspiracy/comments/2c8epy/one_guys_problem_with_visibility_range/cjd7pdn</a></p>
+
+<p>:)</p>
+</div>
+</div>
+<div class="comment mb-3 ml-7" data-depth="7" data-id="cjdb2jx">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/CatholicCockTard.html">CatholicCockTard</a> 2014-07-31</p>
+    <div class="md"><p>So you see where you were wrong, now ? :)</p>
+</div>
+</div>
+<div class="comment mb-3 ml-7" data-depth="7" data-id="cjd9gox">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/AutoModerator.html">AutoModerator</a> 2014-07-31</p>
+    <div class="md"><p>While not required, you are requested to use the NP domain of reddit when crossposting. This helps to protect both your account, and the accounts of other users, from administrative shadowbans. The NP domain can be accessed by prefacing your reddit link with np.reddit.com.</p>
+
+<p><em><a href="/r/AutoModerator/comments/q11pu/what_is_automoderator/">I am a bot</a>, and this action was performed automatically. Please <a href="/message/compose?to=%2Fr%2Fconspiracy">contact the moderators of this subreddit</a> if you have any questions or concerns.</em></p>
+</div>
+</div>
+<div class="comment mb-3 ml-5 op" data-depth="5" data-id="cjd0wzm">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skycentrism.html">skycentrism</a> 2014-07-31</p>
+    <div class="md"><p>Which do you think is correct ?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="cjd10fu">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/WadeWilsonforPope.html">WadeWilsonforPope</a> 2014-07-31</p>
+    <div class="md"><p>Both are... right? Could you please just explain yourself?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-7 op" data-depth="7" data-id="cjd10zq">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skycentrism.html">skycentrism</a> 2014-07-31</p>
+    <div class="md"><p>Both can&#39;t be right :) You either see on 505 km or on 5,05 km.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="8" data-id="cjd13rm">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/WadeWilsonforPope.html">WadeWilsonforPope</a> 2014-07-31</p>
+    <div class="md"><p>5.05km then but again geometry was never my strong point. Can you please explain yourself and why you think that this belongs in this sub?</p>
+
+<p>If a person is viewing the horizon from 2m then you should be able to see 5.05km. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="cjczoec">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/ARTIFICIAL_SAPIENCE.html">ARTIFICIAL_SAPIENCE</a> 2014-07-31</p>
+    <div class="md"><p>Approximately 5 km.</p>
+
+<p>Sea level is virtually irrelevant in this example. You&#39;re not looking out over the sea. H1 is 2m and H2 is 0.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="cjd11r4">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skycentrism.html">skycentrism</a> 2014-07-31</p>
+    <div class="md"><p>Sea level is never relevant. It&#39;s a mathematical formula.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="cjd1b3c">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/ARTIFICIAL_SAPIENCE.html">ARTIFICIAL_SAPIENCE</a> 2014-07-31</p>
+    <div class="md"><p>With inputs for height, not distance from sea level. Unless at sea, then the two are the same.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="cjd1w5n">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/CatholicCockTard.html">CatholicCockTard</a> 2014-07-31</p>
+    <div class="md"><blockquote>
+<p>Sea level is never relevant.</p>
+</blockquote>
+
+<p>So what&#39;s height measured from in your example?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="cjd2e3z">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skycentrism.html">skycentrism</a> 2014-07-31</p>
+    <div class="md"><p>from the ground.</p>
+
+<p><a href="http://members.home.nl/7seas/radcalc.htm">http://members.home.nl/7seas/radcalc.htm</a></p>
+
+<p>Everytime you simply put two heights here, the tangent drops downs to..sea level. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="cjd2ry7">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/CatholicCockTard.html">CatholicCockTard</a> 2014-07-31</p>
+    <div class="md"><blockquote>
+<p>Everytime you simply put two heights here, the tangent drops downs to..sea level.</p>
+</blockquote>
+
+<p>Right. That&#39;s the definition of a tangent in this example. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-5 op" data-depth="5" data-id="cjd35vh">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skycentrism.html">skycentrism</a> 2014-07-31</p>
+    <div class="md"><p><a href="http://www.dalekieobserwacje.eu/gory-ignis-i-gutai-ro-z-tarnicy/">http://www.dalekieobserwacje.eu/gory-ignis-i-gutai-ro-z-tarnicy/</a></p>
+
+<p>Is this view possible then ?</p>
+
+<p>Elevation of Tarnica is 1346 m above sea level.
+Elevation of Varful Ignis is 1307 m above sea level.</p>
+
+<p>Distance from Tarnica to Varful Ignis is 165 km</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="cjd3e0i">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/CatholicCockTard.html">CatholicCockTard</a> 2014-07-31</p>
+    <div class="md"><p>According to <a href="http://members.home.nl/7seas/radcalc.htm">your link</a>, the visual horizon is 260 km. Since 260 is bigger than 165 km, that means it can be seen!</p>
+</div>
+</div>
+<div class="comment mb-3 ml-7 op" data-depth="7" data-id="cjd3f9b">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skycentrism.html">skycentrism</a> 2014-07-31</p>
+    <div class="md"><p>The tangent drops down to sea level. Come on, don&#39;t you understand ? You even wrote this. You can&#39;t simply put the two values.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-7 op" data-depth="7" data-id="cjd3lyu">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skycentrism.html">skycentrism</a> 2014-07-31</p>
+    <div class="md"><p>Read my post from this submission again.
+Point B is 5,05 km away, not 505 km.</p>
+
+<p>You can&#39;t put 5002 m as h1 and 5000 m as h2. Same with Tarnica example.
+The tangent always drops to sea level. Wake up, come on ! lol</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="8" data-id="cjd3qwg">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/WadeWilsonforPope.html">WadeWilsonforPope</a> 2014-07-31</p>
+    <div class="md"><p>Dude, seriously explain yourself. Ive asked several times. What are you trying to prove? </p>
+</div>
+</div>
+<div class="comment mb-3 ml-8 op" data-depth="9" data-id="cjd3sqt">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skycentrism.html">skycentrism</a> 2014-07-31</p>
+    <div class="md"><p>Answer my question: in what distance is point B in my submission post ? 5 or 500 km away ?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="10" data-id="cjd3tjx">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/WadeWilsonforPope.html">WadeWilsonforPope</a> 2014-07-31</p>
+    <div class="md"><p>Ive already answered it. A person viewing the horizon from 2 meters will be able to see about 5km to the horizon. And this is sea level horizon. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-8 op" data-depth="11" data-id="cjd3uul">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skycentrism.html">skycentrism</a> 2014-07-31</p>
+    <div class="md"><p>So how can you simply put the heights of Tarnica and Ignis into the calculator ?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="12" data-id="cjd46ad">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/WadeWilsonforPope.html">WadeWilsonforPope</a> 2014-07-31</p>
+    <div class="md"><p>Again... Im not seeing what you are asking. A person standing at the top of Tarnica at 1346m should be able to see the top of Ignis which is 1307m... with room to spare. Ive got the distance at 260km... Please dude explain what you are trying to accomplish. If you keep avoiding answering the question Im going to tag you as a troll and move on, you are several hundred karma in the negative. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="12" data-id="cjd4kb3">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/CatholicCockTard.html">CatholicCockTard</a> 2014-07-31</p>
+    <div class="md"><p>Because that&#39;s what you asked for. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="8" data-id="cjd3vmg">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/CatholicCockTard.html">CatholicCockTard</a> 2014-07-31</p>
+    <div class="md"><blockquote>
+<p>The tangent always drops to sea level.</p>
+</blockquote>
+
+<p>Yeah, that&#39;s the point.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8 op" data-depth="9" data-id="cjd3weg">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skycentrism.html">skycentrism</a> 2014-07-31</p>
+    <div class="md"><p>You say this 2nd time and still don&#39;t understand ?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="10" data-id="cjd47r0">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/CatholicCockTard.html">CatholicCockTard</a> 2014-07-31</p>
+    <div class="md"><p>How can a tangent NOT be at sea level when you&#39;re measuring height from sea level? </p>
+</div>
+</div>
+<div class="comment mb-3 ml-8 op" data-depth="11" data-id="cjd728v">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skycentrism.html">skycentrism</a> 2014-07-31</p>
+    <div class="md"><p>This means your sight drops down from 5002 m to 0 m. Kapeesh ? Your sight cuts land like laser.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="12" data-id="cjdae8o">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/CatholicCockTard.html">CatholicCockTard</a> 2014-07-31</p>
+    <div class="md"><p>What land?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8 op" data-depth="9" data-id="cjd44dz">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skycentrism.html">skycentrism</a> 2014-07-31</p>
+    <div class="md"><p>I&#39;m waiting for the answer: why do you simply put the height of Tarnica and Ignis when the tangent drops down to sea level.</p>
+
+<p>Again: <a href="http://i.imgur.com/Q6Kr4u6.png?1">http://i.imgur.com/Q6Kr4u6.png?1</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="10" data-id="cjd5nhd">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/CatholicCockTard.html">CatholicCockTard</a> 2014-07-31</p>
+    <div class="md"><p>Because you always measure elevation from sea level, unless specified otherwise. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="cjcyatu">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skycentrism.html">skycentrism</a> 2014-07-31</p>
+    <div class="md"><p><a href="http://i.imgur.com/Q6Kr4u6.png?1">http://i.imgur.com/Q6Kr4u6.png?1</a></p>
+
+<p>Do we see like the red line shows ? Or like the black one ?</p>
+
+<p>If you count as for the red line, that&#39;s why you get 505 km.
+<a href="http://i.imgur.com/1y5i7VS.jpg?1">http://i.imgur.com/1y5i7VS.jpg?1</a></p>
+
+<p>Is the horizon 505 km away here ?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="10" data-id="cjd3tjx">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/WadeWilsonforPope.html">WadeWilsonforPope</a> 2014-07-31</p>
+    <div class="md"><p>Ive already answered it. A person viewing the horizon from 2 meters will be able to see about 5km to the horizon. And this is sea level horizon. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="cjd69uw">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/CatholicCockTard.html">CatholicCockTard</a> 2014-07-31</p>
+    <div class="md"><p>He won&#39;t. Whenever he&#39;s proven wrong, he just leaves. Then he&#39;ll wait another month and make another scientifically-illiterate post. </p>
+</div>
+</div>
+
+      </div>
+    </main>
+    <footer class="container-fluid">
+      <a class="to-top mt-1 mb-1 btn btn-lg btn-primary" href="#top">top of page</a>
+      <p class="small mb-0">data archived 2015-09-03. <a href="https://github.com/libertysoft3/reddit-html-archiver">source code</a>.</p>
+    </footer>
+    <script src="../../../../../../../../static/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../../../../../../../static/js/bootstrap.min.js"></script>
+    <script src="../../../../../../../../static/js/archive-comments.js"></script>
+  </body>
+</html>

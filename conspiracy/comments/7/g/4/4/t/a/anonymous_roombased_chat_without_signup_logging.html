@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../../../../../../../../static/css/lato.css">
+    <link rel="stylesheet" href="../../../../../../../../static/css/bootstrap-superhero.min.css">
+    <link rel="stylesheet" href="../../../../../../../../static/css/archive.css">
+    <title>r/conspiracy: Anonymous room-based chat without signup, logging or tracking</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+        <a class="navbar-brand" href="../../../../../../../../conspiracy/index.html">r/conspiracy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index.html">score</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index-comments/index.html">comments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index-date/index.html">date</a>
+            </li>
+            <li class="nav-item ###URL_SEARCH_CSS###">
+              <a class="nav-link" href="../../../../../../../../conspiracy/search.html">search</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">subreddits</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="../../../../../../../../index.html">All</a>
+                <a class="dropdown-item" href="../../../../../../../../conspiracy/index.html">conspiracy</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main role="main" class="container-fluid">
+      <div class="submission pt-3" data-id="7g44ta">
+        <h3 class="title">Anonymous room-based chat without signup, logging or tracking</h3>
+        <p><span class="badge badge-primary">10</span>&nbsp;&nbsp;2017-11-28 by <a class="author" href="../../../../../../../../user/Dellitsni.html">Dellitsni</a></p>
+        <div class="card bg-dark mb-3"><div class="card-body md"><p>I made a minimalistic, simple chat application, for communicating without getting tracked, and without your chat history being saved. </p>
+
+<p>You join a room and choose a username, and that&#39;s it. Everything you write in the room can only be seen by those active in the room. Anyone joining later will not be able to see earlier messages. If a room goes empty, it will be completely deleted, and will be created again once a new user joins the room.</p>
+
+<p>There is no analytics, no tracking, no advertising and no registration. Of course it&#39;s free to use too. There&#39;s probably still some bugs hiding here and there, and there&#39;s very few features, but the core should work perfectly fine. You can also tag other users in the room with @. If the name contains a space &quot;Odins Son&quot;, tag them without the space &quot;@odinsson&quot;.</p>
+
+<p>It&#39;ll be online until December 28th. If i see enough interest in this project, i&#39;ll probably buy a real domain to keep it online.</p>
+
+<p><em>important edit:</em><br/>
+As a student, i don&#39;t have a budget for hobby projects. I&#39;m currently using free hosting (!), so be aware that the hosting service might be logging things such as your IP address. Use TOR or other anonymity services to go about this. I&#39;ve also not implemented SSL yet (!) because it&#39;s really difficult with my current free hosting provider. Obviously, Indstil should be considered early beta. Don&#39;t rely too much on it for now, but feel free to use it for easy chatting that doesn&#39;t involve sharing stolen CIA files or planning assassination plots on the bankers. I&#39;ll be open sourcing soon, which hopefully will give the project a good kick.</p>
+
+<h1><a href="http://indstil.eu-4.evennode.com">INDSTIL</a></h1>
+
+<p>edit 2:<br/>
+<a href="https://github.com/dellitsni/indstil">GitHub</a></p>
+</div></div>
+      </div>
+      <div class="comments">
+        <h5>34 comments</h5>
+        <div class="comment mb-3 ml-0" data-depth="0" data-id="dqgbylj">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Mamalado.html">Mamalado</a> 2017-11-28</p>
+    <div class="md"><p>I don&#39;t trust you.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="dqgc8zo">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Dellitsni.html">Dellitsni</a> 2017-11-28</p>
+    <div class="md"><p>That&#39;s completely up to you. I&#39;m thinking about releasing the source code for skeptics, but i&#39;m worried about it being exploited.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="dqgflj3">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/birdman5000.html">birdman5000</a> 2017-11-28</p>
+    <div class="md"><p>put the source code up pls.  more eyes on it the better.  if you put it on github you&#39;ll be able to enlist more help.</p>
+
+<p>you mentioned using SSL.  you could self-sign and implement TLS that way.  the other thing you may want to enable on your app is secure chat between 2 users.  instead of using SSL/TLS here i&#39;d recommend a one-time pad type of approach.  either have the users pre-agree to a pad to share, and let them upload it to the client side, or generate a common pad that&#39;s shared on a secure channel.  do all the encoding client side.  have users be able to see the javascript libraries.  implementing a pad for encryption/decryption is an almost trivial bit of code.  but at least the users will be able to see what&#39;s running on their client.   </p>
+
+<p>i&#39;m of the opinion that both symmetric and public key encryption is broken but the exploits haven&#39;t reached the public domain.  that&#39;s why i&#39;m suggesting an OTP.  the reason i think these approaches are broken is that the math is predicated on factoring primes.  there&#39;s a bit of nutty math out there that&#39;s called &quot;vortex math&quot; or &quot;tesla math&quot; that shows the repeated symbolic smells of certain operations and operands.  google it if you&#39;re not familiar, it&#39;s fascinating.  anyway this math which isn&#39;t well known enables, imo, fast heuristic techniques at reducing the set of possible factors.  and thus i reckon crypto is ultimately backdoored.  the use of one-time-pads or just pads in general enables a more ambiguous and thus harder to exploit crypto.  </p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="dqgfvjr">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/SchticksAndScones.html">SchticksAndScones</a> 2017-11-28</p>
+    <div class="md"><p>Well, duh.. <em>everyone</em> knows that. :p</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="dqgg9rj">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Dellitsni.html">Dellitsni</a> 2017-11-28</p>
+    <div class="md"><p>I was thinking of using PGP if i ever made a user-to-user chat, but i&#39;ll take a look at your suggestion. I don&#39;t think i&#39;ll implement that in the near future though.</p>
+
+<p>SSL will be implemented when i move away from crappy free NodeJS hosting. Right now it&#39;s too messy.</p>
+
+<p>I will for sure move to open source very soon, i just gotta find out exactly how to go about it and clean up in my code.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="dqgh8ob">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/birdman5000.html">birdman5000</a> 2017-11-28</p>
+    <div class="md"><p>yeah i wouldn&#39;t touch pgp, gpg or any of that for the crypto concerns i indicated.  </p>
+
+<p>you can run self-signed certs on node.  i&#39;d suggest staying on node as your server framework.  it&#39;s what i&#39;m doing my dev on now - it&#39;s a very available platform for people to hack on.  </p>
+
+<p>re: clean up.  my suggestion is this.  have all of your client code be easily auditable and dirt simple.  toss out jquery, lodash or any of the typical client pieces you&#39;d use.  do whatever you want on the server but on the client piece have users be able to know exactly what&#39;s there.  all you&#39;d need are some encoding libraries, and i presume some websocket client code for the chat.  that&#39;s pretty much dirt simple which is good.  </p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="dqgllnq">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Dellitsni.html">Dellitsni</a> 2017-11-28</p>
+    <div class="md"><p><a href="https://github.com/dellitsni/indstil">Source code is on GitHub!</a>. </p>
+
+<p>Be warned, though, I&#39;ve steered clear of the open source community so far, so it&#39;s all new to me. I might have made some rookie mistakes. The code itself is commented, but is probably a mess too. </p>
+
+<p>Good luck with it!</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="dqgfxpt">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/watchwhatsnext.html">watchwhatsnext</a> 2017-11-28</p>
+    <div class="md"><p>Your signature at the bottom goes to a doubleclick ad script.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="dqgg3r4">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Dellitsni.html">Dellitsni</a> 2017-11-28</p>
+    <div class="md"><p>Holy crap, that&#39;s an embarassing mistake. I moved my personal website off of free hosting long ago, while i was working on this site locally. I&#39;ll fix it immidiately, thanks.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="dqglhfr">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Dellitsni.html">Dellitsni</a> 2017-11-28</p>
+    <div class="md"><p>It&#39;s on GitHub! <a href="https://github.com/dellitsni/indstil">Take a look</a>.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dqgbz1o">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/pilgrimboy.html">pilgrimboy</a> 2017-11-28</p>
+    <div class="md"><p>A  bar. </p>
+
+<p>Honestly, anything digital is probably tracked somewhere. It goes through too many channels to not be. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="dqgc6j2">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Dellitsni.html">Dellitsni</a> 2017-11-28</p>
+    <div class="md"><p>It&#39;s not tracked on my server. Your ISP might track you, but i could always implement encryption and SSL. I can&#39;t guarantee that it&#39;s not being tracked elsewhere, but at least it&#39;s not tracked on the server-side, and i&#39;m not using any &quot;middle man&quot; services that could potentially read sent messages. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dqgbzsp">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TruthHammerOfJustice.html">TruthHammerOfJustice</a> 2017-11-28</p>
+    <div class="md"><p>Nice try NSA...</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="dqglhy5">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Dellitsni.html">Dellitsni</a> 2017-11-28</p>
+    <div class="md"><p>Source code <a href="https://github.com/dellitsni/indstil">here</a>.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dqgc1qq">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/mastigia.html">mastigia</a> 2017-11-28</p>
+    <div class="md"><p>This is really cool. So, you can just make up a channel and tell people to hop on? When the last person leaves, the channel poofs?</p>
+
+<p>Can you see what chat rooms/names are currently/historically in use? Any logging or database going on here? Everything uses database in some way, I get it. But I&#39;m curious how you are using it here?</p>
+
+<p>You could call it hashtag chat or something and just latch onto twitters userbase.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="dqgcf7n">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Dellitsni.html">Dellitsni</a> 2017-11-28</p>
+    <div class="md"><p>Yep, exactly. </p>
+
+<p>No, there is no way to see active rooms (except for brute force, but that&#39;s not really viable). </p>
+
+<p>There is no logging and no permanent database. Once sent by the user, the server broadcasts the message to everyone in that room. A copy of the message is stored by every active user in that channel, and logging out will destroy that users copy of the chat log. A user could leech onto the chat room and log messages if he wanted to, i&#39;m thinking about kicking a user if he has been active more than X hours.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="dqgd0vk">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/mastigia.html">mastigia</a> 2017-11-28</p>
+    <div class="md"><p>I dig it man, the simplicity and impermanence is great. Having something come behind and blow out the cached conversations periodically would be great if it left the channels intact too, in addition to your logout method to kill leaches. Kinda like a 4chan chat room. I love discord, but it feels like I&#39;m being handed a lot of rope.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dqgccg2">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/brock_lee.html">brock_lee</a> 2017-11-28</p>
+    <div class="md"><p>If you create a name, join a room, leave that page and come back, its done. All errors from then on.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="dqgci0v">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Dellitsni.html">Dellitsni</a> 2017-11-28</p>
+    <div class="md"><p>Really? Oh man, it worked perfectly when i hosted it locally. Thanks for reporting, I&#39;ll see what i can do.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="dqgcxu1">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/brock_lee.html">brock_lee</a> 2017-11-28</p>
+    <div class="md"><p>If you enter a name and a room, enter the room, and hit Back, you get an error about loading a room. I&#39;m on android.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="dqgd04d">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Dellitsni.html">Dellitsni</a> 2017-11-28</p>
+    <div class="md"><p>Got it, i&#39;ll fix that ASAP. As a temporary fix, just delete /room from the URL.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="dqgk8u4">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/IntellisaurDinoAlien.html">IntellisaurDinoAlien</a> 2017-11-28</p>
+    <div class="md"><blockquote>
+<p>Make sure that you&#39;ve enabled cookies and aren&#39;t running NoScript</p>
+</blockquote>
+
+<p>This allied to the lack of HTTPS means I can&#39;t possibly get behind this, nice idea but it needs a lot of work to be truly trustworthy.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="dqgkiok">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Dellitsni.html">Dellitsni</a> 2017-11-28</p>
+    <div class="md"><p>I&#39;m working on making it open source as we speak, with the help of the community the project will move much faster. </p>
+
+<p>I&#39;m also working on removing the stupid cookies. It is a Node.JS project though, so i doubt i&#39;ll be able to remove client-side javascript.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="dqgklzl">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/IntellisaurDinoAlien.html">IntellisaurDinoAlien</a> 2017-11-28</p>
+    <div class="md"><p>Fair enough man, sorry to be nitpicky and best of luck with it, as I said it&#39;s a damn good idea. <a href="https://letsencrypt.org/">https://letsencrypt.org/</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-5 op" data-depth="5" data-id="dqgldyh">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Dellitsni.html">Dellitsni</a> 2017-11-28</p>
+    <div class="md"><p>I really appreciate the feedback! I actually just uploaded everything to GitHub with a license and comments, now we just gotta hope that there&#39;s people willing to work on it.</p>
+
+<p>It&#39;s <a href="https://github.com/dellitsni/indstil">here</a> if you wanna take a look.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="dqglys9">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/IntellisaurDinoAlien.html">IntellisaurDinoAlien</a> 2017-11-28</p>
+    <div class="md"><p>Thank you for making your work open to assessment, that&#39;s an important step in trust on the modern internet. I really don&#39;t have the time (or talent) for assessing the code but I&#39;d recommend asking at <a href="/r/linuxquestions">/r/linuxquestions</a> for further ideas/criticisms or maybe even someone willing to assess it. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dqgcp5c">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Irishconspiracy.html">Irishconspiracy</a> 2017-11-28</p>
+    <div class="md"><p>Once you buy a domain isnt THAT going to be tracked? What about the websites that screenshot other websites to make an archive? 
+No expert here </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="dqgcxtj">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Dellitsni.html">Dellitsni</a> 2017-11-28</p>
+    <div class="md"><p>The archive websites would have to brute-force through rooms until they find all active rooms (which isn&#39;t really viable IMO), then join the room and finally take screenshots every minute. That&#39;s not a possibility.</p>
+
+<p>The domain hoster could track you, but i&#39;ll of course make sure to choose a hosting service that promises not to do so in their ToC. There&#39;s also the more extreme possibility of setting up my own server to be 100% of the safe side, but that&#39;s too pricy for a hobby project that doesn&#39;t generate any income.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="dqgd162">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Irishconspiracy.html">Irishconspiracy</a> 2017-11-28</p>
+    <div class="md"><p>Hmm interesting. I like the idea of this, be sure  to keep this sub posted on any updates to your plans</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dqgcx5r">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/brock_lee.html">brock_lee</a> 2017-11-28</p>
+    <div class="md"><p>If you enter a name and a room, enter the room, and hit Back, you get an error about loading a room.  I&#39;m on android.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dqgd5fk">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/mcmacsonstein.html">mcmacsonstein</a> 2017-11-28</p>
+    <div class="md"><p>This is cool. It&#39;s surprising that stuff like this doesn&#39;t exist or isn&#39;t mainstream already. IRC comes to mind, but certain rooms have moderators that can kick people out.</p>
+
+<p>Does the @ feature send something like a private message so that users could make a coordinated move to a different chat room?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="dqgd9vd">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Dellitsni.html">Dellitsni</a> 2017-11-28</p>
+    <div class="md"><p>Yeah, I really don&#39;t get why somebody else haven&#39;t created a better version of this yet. </p>
+
+<p>Currently, the @ just plays a little &quot;ding&quot; for the tagged user. Private messages is a good idea, that&#39;s on my to-do list for sure.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dqgdwte">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/mcmacsonstein.html">mcmacsonstein</a> 2017-11-28</p>
+    <div class="md"><p>I&#39;ll be in the #conspiracy room for a while.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dqgmwa4">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/indiadamjones.html">indiadamjones</a> 2017-11-28</p>
+    <div class="md"><p>Cool!  Put it on a LAMP stack over at DO or small orange, or vultr.  Still though, I don&#39;t see this working without somekind of decentralized hosting.  Taken some of the same efforts myself, and what I found.  Most people too unorganized or technaphobic to appreciate this kind of effort.  They tend to look at this as enabling a criminal element, though I see an effort for legitimate privacy.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dqgst45">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/cjluthy.html">cjluthy</a> 2017-11-28</p>
+    <div class="md"><p>Why not just prevent spaces and special characters in usernames, rather than making your users guess at how to message someone?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="dqgd04d">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Dellitsni.html">Dellitsni</a> 2017-11-28</p>
+    <div class="md"><p>Got it, i&#39;ll fix that ASAP. As a temporary fix, just delete /room from the URL.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="dqgg3r4">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Dellitsni.html">Dellitsni</a> 2017-11-28</p>
+    <div class="md"><p>Holy crap, that&#39;s an embarassing mistake. I moved my personal website off of free hosting long ago, while i was working on this site locally. I&#39;ll fix it immidiately, thanks.</p>
+</div>
+</div>
+
+      </div>
+    </main>
+    <footer class="container-fluid">
+      <a class="to-top mt-1 mb-1 btn btn-lg btn-primary" href="#top">top of page</a>
+      <p class="small mb-0">data archived 2017-11-29. <a href="https://github.com/libertysoft3/reddit-html-archiver">source code</a>.</p>
+    </footer>
+    <script src="../../../../../../../../static/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../../../../../../../static/js/bootstrap.min.js"></script>
+    <script src="../../../../../../../../static/js/archive-comments.js"></script>
+  </body>
+</html>

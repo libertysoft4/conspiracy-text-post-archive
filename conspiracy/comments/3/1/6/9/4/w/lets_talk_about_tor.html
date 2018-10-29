@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../../../../../../../../static/css/lato.css">
+    <link rel="stylesheet" href="../../../../../../../../static/css/bootstrap-superhero.min.css">
+    <link rel="stylesheet" href="../../../../../../../../static/css/archive.css">
+    <title>r/conspiracy: Let's talk about Tor.</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+        <a class="navbar-brand" href="../../../../../../../../conspiracy/index.html">r/conspiracy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index.html">score</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index-comments/index.html">comments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index-date/index.html">date</a>
+            </li>
+            <li class="nav-item ###URL_SEARCH_CSS###">
+              <a class="nav-link" href="../../../../../../../../conspiracy/search.html">search</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">subreddits</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="../../../../../../../../index.html">All</a>
+                <a class="dropdown-item" href="../../../../../../../../conspiracy/index.html">conspiracy</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main role="main" class="container-fluid">
+      <div class="submission pt-3" data-id="31694w">
+        <h3 class="title">Let's talk about Tor.</h3>
+        <p><span class="badge badge-primary">13</span>&nbsp;&nbsp;2015-04-02 by <a class="author" href="../../../../../../../../user/hello_bluffdale.html">hello_bluffdale</a></p>
+        <div class="card bg-dark mb-3"><div class="card-body md"><p>Is Tor safe? Is it secure? Is it useful?</p>
+
+<p>There&#39;s a lot of talk about the police state here. The panopticon. All-seing eyes and shit. Anonymity defies this state. Do you think Tor is any of the above?</p>
+</div></div>
+      </div>
+      <div class="comments">
+        <h5>27 comments</h5>
+        <div class="comment mb-3 ml-0" data-depth="0" data-id="cpyq1t8">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">6</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/abdullah_boogers.html">abdullah_boogers</a> 2015-04-02</p>
+    <div class="md"><p>cryptome.org/2013/12/Full-Disclosure.pdf
+‎
+notice the part about dod/gchq tor honey pot.</p>
+
+<p>First thing anyone should do is get an openwrt comptable router and encrypt your dns.  Also stahp using windows and macosx.</p>
+
+<p>They can see that your using tor instantly, they can measure request times to fractions of a milisecond and measure bandwidth.  They can fingerprint your browser.  White hat anonymity is dead imo.  You can encrypt your dns with dnscrypt-proxy and use other means to deny them metadata and vpn through some of the mass dragnets.  They are the gatekeepers and even a simple request to reddits servers passes through many of these gates.  Its not about whether encryption works.  It&#39;s about traffic anlysis imo.</p>
+
+<p>really want anonymity use tor with tails from outside a starbucks I guess.  That is assuming that tails devs are not a pit of vipers.  At which point maybe just throw the whole machine away after using it with the camera and mic ripped out of it...</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="cpyq68c">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">5</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hello_bluffdale.html">hello_bluffdale</a> 2015-04-02</p>
+    <div class="md"><blockquote>
+<p>First thing anyone should do is get an openwrt comptable router and encrypt your dns. Also stahp using windows and macosx.</p>
+</blockquote>
+
+<p>Thoroughly sound advice. Especially about the router -- Hacking routers is way cheaper (in terms of risk of exposure) than hacking PCs. Get that backdoored shitty firmware off your routers people. And stahping with the closed-source OSes is good too. Though those aren&#39;t backdoored as cheaply and as <em>all the time</em> as routers. But still, even your hacked router can&#39;t peer into a secure conection, and they can&#39;t peer into Tor. They sure can collect timing and bandwidth data though, which brings us to your next point - </p>
+
+<blockquote>
+<p>They can fingerprint your browser.</p>
+</blockquote>
+
+<p>Can they? It&#39;s certainly not by measuring bandwidth and latency. I&#39;m a web developer, so I know my way around web browsers. The default Tor browser goes a long way to defingerprint its requests.</p>
+
+<p>Beyond that, interrogative fingerprinting (with Javascript for example), is only possible when someone&#39;s interfering with the connection to inject data.</p>
+
+<p>This is trivial and undetectable to do for an unencrypted connection (http) but very expensive for well-encrypted connections (https with a good cipher suite choice). I say &quot;expensive&quot; rather than &quot;impossible&quot; because servers can be compromised directly, and then work to deanonymize their users. This is not something Tor can help with, but Tor can probably be used to deanonymize Hidden Services. This can be done with Denial of Service attacks that are visible to the public -- that is, it&#39;s hard to do it covertly, and it&#39;s hard to do it without being noticed. 
+Besides, Tor provides connection anonymity, it makes no guarantees that you should trust the server. </p>
+
+<p>What they <em>can</em> fingerprint -- or more accurately, footprint -- is your browsing history. That&#39;s why I advise not mixing regular browsing with your Tor activities that are unique to you. Sometimes I search for things I&#39;d never care about on Tor just to mess with their history analyzers.</p>
+
+<p>Another thing: currently, Tor connections are dinstinguishable from TLS (https) connections, but this is basically a bug, and is going to be fixed in future versions. You will be able to run Tor over https, and it will look indistinguishable from an encrypted web browsing session. This is because encrypted data is opaque, but there&#39;s a slight difference in the way Tor initiates its encryption. That&#39;s what gives it away.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="cpyq7t0">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/abdullah_boogers.html">abdullah_boogers</a> 2015-04-02</p>
+    <div class="md"><p>The browser bundle does a great job yes.  Tor as a service using your own browser not so much.
+<a href="https://panopticlick.eff.org/">https://panopticlick.eff.org/</a></p>
+
+<p>I also forgot about staining. <a href="http://cryptome.org/2013/10/packet-stain/packet-staining.htm">http://cryptome.org/2013/10/packet-stain/packet-staining.htm</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="cpyqi4n">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">6</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hello_bluffdale.html">hello_bluffdale</a> 2015-04-02</p>
+    <div class="md"><blockquote>
+<p>packet staining</p>
+</blockquote>
+
+<p>Ah, yes. It&#39;s important for security to use an adblocker. It&#39;s more than just removing ads. </p>
+
+<p>These things demonstrate to me that the NSA doesn&#39;t have a backdoor to Tor specifically, unlike some out there (Yasha Levine, Pearse Redmond, etc.) believe. They&#39;re having to work around the security of the Tor network itself, because it appears to provide what it promises -- connection anonymity. And all you need to do to thwart traffic analysis attacks is to run Tor with cover traffic, most helpfully by being a relay.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="cpyrkli">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">4</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/theM3chanic.html">theM3chanic</a> 2015-04-02</p>
+    <div class="md"><p>all very good points and very good advice.</p>
+
+<p>the only thing i would always recommend if you really want anonymity is a cheap laptop bought used at some flea market,dban it,then rip the harddrive,cam,mic out and run TAILS or Whonix through it and use that to use TOR</p>
+
+<p>ultimately my only problem with using TOR and suggesting it to normal users is,that just using TOR alone gets your traffic watched more,so don&#39;t do it from home unless you take many measures of precaution</p>
+
+<p>also let&#39;s remember that if TOR relies on not being able to see all the nodes,and sadly if they do have the capability that is rumored,that means they might be able to see all the nodes</p>
+
+<p>all in all they won&#39;t use this approach much against just someone browsing,this is more used against a node itself that&#39;s hosting something</p>
+
+<p>any of you care to comment on if it&#39;s true they can break asymmetrical encryption? </p>
+</div>
+</div>
+<div class="comment mb-3 ml-5 op" data-depth="5" data-id="cpz4vmr">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hello_bluffdale.html">hello_bluffdale</a> 2015-04-02</p>
+    <div class="md"><blockquote>
+<p>also let&#39;s remember that if TOR relies on not being able to see all the nodes,and sadly if they do have the capability that is rumored,that means they might be able to see all the nodes</p>
+</blockquote>
+
+<p>I do wonder how much one can do even by seeing the whole network, as all internal links are encrypted and have some amount of cover traffic for any given connection. Still, Tor is a low-latency network, which means it does not take active measures to combat traffic pattern analysis. This is why I recommend cover traffic (downloading some youtube video, porn, etc) while doing something you want to remain anonymous. It might be helpful, and I don&#39;t think it hurts...</p>
+
+<blockquote>
+<p>any of you care to comment on if it&#39;s true they can break asymmetrical encryption? </p>
+</blockquote>
+
+<p>Given how badly they want the keys, I&#39;d say most asymmetrical encryption is safe. That is, they might be able to shave a few bits off of a brute force attack, but they can&#39;t outright break RSA or Elliptic Curve crypto. There are probably some weak curves in the NIST standard though, and some bad RSA initialization parameters. Also, they probably knew about things like Heartbleed, so it&#39;s still very important for content providers to stay up-to-date on security bulletins.</p>
+
+<p>But I&#39;m pretty sure the math is sound.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="cpzqbr8">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/theM3chanic.html">theM3chanic</a> 2015-04-02</p>
+    <div class="md"><p>The only slight problem i see with it all,is they usually have their hands in getting these standards put out there
+they are usually actively involved in being architects for crypto standards</p>
+
+<p>i&#39;d like to pose yet another question, any opinions on 
+&quot;The Equation Group?&quot;</p>
+</div>
+</div>
+<div class="comment mb-3 ml-7 op" data-depth="7" data-id="cpzr1x7">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hello_bluffdale.html">hello_bluffdale</a> 2015-04-02</p>
+    <div class="md"><blockquote>
+<p>The only slight problem i see with it all,is they usually have their hands in getting these standards put out there</p>
+</blockquote>
+
+<p>It&#39;s a good idea to move away from NIST standards. I myself like the stuff Daniel Bernstein&#39;s been working on: thinks like the <a href="https://en.wikipedia.org/wiki/Curve25519">25519 Elliptic Curve</a>. He and other crypto-minded folks (like Bruce Schneier) really don&#39;t trust the NIST standards these days, because many of them do not fully elaborate on the method of picking constants. (all crypto schemes have built-in constants, some make the crypto breakable, others make it secure. This is especially true with elliptic curves.)</p>
+
+<blockquote>
+<p>they are usually actively involved in being architects for crypto standards</p>
+</blockquote>
+
+<p>They&#39;ve been weakening them lately, but let&#39;s remember that the NSA has also secretly <em>strengthened</em> security before. Back when they were equal parts SIGINT and COMSEC, back in the cold war days. Check out the history of the <a href="https://en.wikipedia.org/wiki/Data_Encryption_Standard#NSA.27s_involvement_in_the_design">DES cipher</a>. They strengthened it against differential cryptanalysis without explaining, but they also promoted a weakened key size that made it crackable for them. It&#39;s pretty weird shit.</p>
+
+<blockquote>
+<p>The Equation Group</p>
+</blockquote>
+
+<p>It&#39;s the work of the NSA&#39;s Tailored Access Ops. It&#39;s damned clever, but if you&#39;re not using Windows, there are ways to mitigate it. If you drive is encrypted through software (dm-crypt or truecrypt) -- and if your boot partition is encrypted as well,  and you checksum the bootloader to make sure it hasn&#39;t been modified before entering yor password, there&#39;s not much this Equation Group firmware hack can do. You could also boot from a read-only USB key, or if you&#39;re really paranoid, from a finished burned CD.</p>
+
+<p>The most important thing to realize is that for every measure they take, we have countermeasures. The panopticon is fundamentally, mathematically, physically unsustainable.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="8" data-id="cpzvo26">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/theM3chanic.html">theM3chanic</a> 2015-04-02</p>
+    <div class="md"><p>nice chatting with someone about this
+as i don&#39;t find it often i find people in this subreddit that has as in depth a view as people in this thread seem to have,and i generally avoid
+linux subreddit and a few others because they tend to only lean towards
+&quot;politically correct&quot; or &quot;socially accepted&quot; things
+and i&#39;m a fan of Bruce S. myself, i&#39;ve been following this since the Room 641A era</p>
+
+<p>i&#39;m personally a fan of gentoo or debian with dmcrypt boots with my own entropy</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8 op" data-depth="9" data-id="cq0ixuj">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hello_bluffdale.html">hello_bluffdale</a> 2015-04-02</p>
+    <div class="md"><p>Awesome. That&#39;s exactly why I posted this thread. A curious intersection of knowledge bases in a curious place.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="cpzl2ki">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/abdullah_boogers.html">abdullah_boogers</a> 2015-04-02</p>
+    <div class="md"><p>My fear is that Snowden is a limited hangout whose soul purpose is to convince people that encryption still works.  I say fear because it is over my head and thats all it is, a gut feeling.  <a href="http://en.wikipedia.org/wiki/Shor%27s_algorithm">http://en.wikipedia.org/wiki/Shor%27s_algorithm</a>  </p>
+</div>
+</div>
+<div class="comment mb-3 ml-6 op" data-depth="6" data-id="cpzozvq">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hello_bluffdale.html">hello_bluffdale</a> 2015-04-02</p>
+    <div class="md"><p>I studied quantum computing at a graduate level (I also studied cryptography, if you hadn&#39;t guessed). Fast implementations of Quantum Computing do indeed break a lot of currently used asymmetric crypto (RSA, Diffie -Hellman, most Elliptic Curves). Fortunately, quantum-computing-resistant asymmetric crypto has already been developed: there&#39;s SIDH ( <a href="https://en.wikipedia.org/wiki/Supersingular_Isogeny_Key_Exchange">https://en.wikipedia.org/wiki/Supersingular_Isogeny_Key_Exchange</a> ) for example. There&#39;s a good rundown at <a href="https://en.wikipedia.org/wiki/Post-quantum_cryptography">https://en.wikipedia.org/wiki/Post-quantum_cryptography</a> .</p>
+
+<p>My worst-case reasonable scenario guess (assuming no alien technology, but assuming Moore&#39;s Law holds for quantum computers -- which is a very lofty assumption), the NSA has quantum computers that run as fast as the mainframes of the 50s. That might be usable to break some small-key-size encryption, but nothing serious (RSA&gt;2048bits, Elliptic curves &gt; 256 bits), and certainly not en masse.</p>
+
+<p>As for Snowden being a limited hangout, i think this is only partly true. see my take on the situation if you&#39;re interested: <a href="https://www.reddit.com/r/conspiracy/comments/2l7wge/hi_james_corbett_of_corbettreport.com_here._ama/clt71ub?context=3">https://www.reddit.com/r/conspiracy/comments/2l7wge/hi_james_corbett_of_corbettreport.com_here._ama/clt71ub?context=3</a></p>
+
+<p>Basically, we&#39;re seeing a high-level &quot;friendly&quot; conflict between elites aligned with SIGINT and the ones banking on COMSEC + psyops, plus a bout for the power to blackmail.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="cpyqgqb">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/abdullah_boogers.html">abdullah_boogers</a> 2015-04-02</p>
+    <div class="md"><p>Good to know that they will be fixing the &quot;dinstinguishable from TLS (https) connections bit.&quot;  That has always just seemed like a massive red flag where using it outwieghed any of &quot;my&quot; gains.  I still have concerns though.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="cpz3s2u">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/BlacklistedMartian.html">BlacklistedMartian</a> 2015-04-02</p>
+    <div class="md"><blockquote>
+<p>First thing anyone should do is get an openwrt comptable router and encrypt your dns. Also stahp using windows and macosx.</p>
+</blockquote>
+
+<p>If you dont use mac or windows, what do you use? Linux? If you use Linux, who wants to waste money on a new router and encrypt your DNS? Linux does not leak DNS....Its been like that for years.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2 op" data-depth="2" data-id="cpz50ci">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hello_bluffdale.html">hello_bluffdale</a> 2015-04-02</p>
+    <div class="md"><blockquote>
+<p>Linux does not leak DNS....Its been like that for years.</p>
+</blockquote>
+
+<p>It&#39;s not about DNS leaks here, it&#39;s about having a hostile machine on your network that all your data goes through. Routers are the most backdoored things out there. Read up on the link <a href="/r/abdullar_boogers">/r/abdullar_boogers</a> posted: <a href="http://cryptome.org/2013/12/Full-Disclosure.pdf">http://cryptome.org/2013/12/Full-Disclosure.pdf</a> </p>
+
+<blockquote>
+<p>If you use Linux, who wants to waste money on a new router and encrypt your DNS?</p>
+</blockquote>
+
+<p>You don&#39;t need to waste money. Chances are, your router can be flashed with open-source firmware at zero cost. Take a look at <a href="https://en.wikipedia.org/wiki/List_of_wireless_router_firmware_projects">https://en.wikipedia.org/wiki/List_of_wireless_router_firmware_projects</a> for a firmware that probably works for <em>your</em> router. The bonus is the open-source stuff is usually easier to use and more functional than the corporate stuff.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="cq2h281">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/BlacklistedMartian.html">BlacklistedMartian</a> 2015-04-02</p>
+    <div class="md"><blockquote>
+<p>It&#39;s not about DNS leaks here</p>
+</blockquote>
+
+<p>Hmmm.. Because if your DNS shows, they cant possibly track you...(sarcasm). DNS leak = Caught</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4 op" data-depth="4" data-id="cq2hs7e">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hello_bluffdale.html">hello_bluffdale</a> 2015-04-02</p>
+    <div class="md"><p>You misunderstood. It&#39;s important to prevent DNS leaks, but that&#39;s not the purpose of installing open-source firmware on your router. The purpose is to ensure you don&#39;t have a hostile machine on your network. </p>
+
+<p>Both things are important. DNS Leak = caught, and hostile router = caught. Security these days means staying safe on multiple fronts. Secure OS, secure DNS, and secure router and some of the most important ones.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="cq2i5ha">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/BlacklistedMartian.html">BlacklistedMartian</a> 2015-04-02</p>
+    <div class="md"><p>This is also why you dont broadcast your SSID. Excluding a third party from connecting to your network is easier than going through the trouble of downloading firmware. </p>
+
+<p>SSID. Mac Filters... There are many easy noob friendly ways that dont take a mean google search, combined with trial and error to get something to work.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6 op" data-depth="6" data-id="cq2jl6y">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hello_bluffdale.html">hello_bluffdale</a> 2015-04-02</p>
+    <div class="md"><p>You don&#39;t understand -- the NSA has complete, trivial access to your router if you don&#39;t run open-source firmware. Especially the shit Verizon, Time Warner, Cogent and the like bundle. They don&#39;t enter by hacking the wireless network, there are backdoors and hacks galore for default firmware in routers, because it&#39;s such an easy and low-security target.</p>
+
+<p>I don&#39;t think you looked at it, so I advise you to at least skim through this document: <a href="http://cryptome.org/2013/12/Full-Disclosure.pdf">http://cryptome.org/2013/12/Full-Disclosure.pdf</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-7" data-depth="7" data-id="cryy60p">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/BlacklistedMartian.html">BlacklistedMartian</a> 2015-04-02</p>
+    <div class="md"><p>I don&#39;t think you fully understand either. Stop the leak between your computer and your router, and there&#39;s no need to secure your router. </p>
+
+<p>The router is just a tool to connect to the webz.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8 op" data-depth="8" data-id="curd872">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hello_bluffdale.html">hello_bluffdale</a> 2015-04-02</p>
+    <div class="md"><p>Talk about a late reply...</p>
+
+<p>The router is more than &quot;a tool to connect to the webz&quot;</p>
+
+<p>Access to  a router means access to your LAN. Means each of your computers can be probed for available vulnerabilities and commanded directly. Means you must firewall and harden <em>every</em> machine on your network as though they are directly connected to the internet. </p>
+
+<p>The router also observes all incoming and outgoing traffic, and can be used for traffic timing attacks on Tor and other anonymizing tools.  So if your router is compromised, it&#39;s very easy to deanonymize you even if you use all other proper precautions.</p>
+
+<p>So stay safe out there! Run open source router firmware!</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="cpze9ku">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/abdullah_boogers.html">abdullah_boogers</a> 2015-04-02</p>
+    <div class="md"><p>If it is on the openwrt box any device that connects benefits from the encryption.  I have a family with wireless devices.  I am not afraid of the nsa mandrake, I just deny them my essence. POE</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="cpyq3md">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">4</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/OnSpeakerCrab.html">OnSpeakerCrab</a> 2015-04-02</p>
+    <div class="md"><p>There are a few sides to this:</p>
+
+<p>1) They can see everything, and anyone &quot;important&quot; that gets taken down is a message / threat.</p>
+
+<p>2) They can see nothing, and it&#39;s all fear to make people police themselves.</p>
+
+<p>3) They can see some things (through known means, e.g. datamining).</p>
+
+<p>4) They can see some things (through unknown means, e.g. spying).</p>
+
+<p>Personally, I&#39;m apathetic. I just want to watch.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="cpyqoc2">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hello_bluffdale.html">hello_bluffdale</a> 2015-04-02</p>
+    <div class="md"><p>What if the act of watching makes you a target? Would you not wish to watch anonymously?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="cpyt30a">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/JamesColesPardon.html">JamesColesPardon</a> 2015-04-02</p>
+    <div class="md"><p>If the act if watching leads to one being a target <em>at this point</em>, one could possibly argue that the system is too far down a dark path and there&#39;s nothing anybody here can do to stop it, and then at that point, who cares? </p>
+
+<p>At least, at that point I&#39;d stop caring. But everybody&#39;s different, I suppose.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0 op" data-depth="0" data-id="cpypu2q">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hello_bluffdale.html">hello_bluffdale</a> 2015-04-02</p>
+    <div class="md"><p>I think content consumers (clients) have their anonymity preserved through proper use of Tor. Content producers (servers), especially the popular ones -- Hidden Services -- are vulnerable to long-term deanonymization attacks.</p>
+
+<p>The best way to use Tor is for specific types of browsing patters that you&#39;d wish to exclude from your regular browsing. Definitely don&#39;t check your gmail while looking through things you want to stay anonymous for.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="cpyu6js">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DachshundSiege.html">DachshundSiege</a> 2015-04-02</p>
+    <div class="md"><p>Safe? No. Merely using it flags you for additional NSA surveillance.</p>
+
+<p>Secure? Probably not. De-anonymizing Tor users is a major NSA priority.</p>
+
+<p>Useful? <em>Extremely.</em> For one example, you can use Tor browser to bypass Reddit bans, up to shadow/IP bans. Ordinarily, when you&#39;re shadowbanned by IP, you can&#39;t create new identities on Reddit, because they&#39;ll automatically be added to your existing shadowban. With Tor browser, you can create all the new identities you want, and completely disregard tiny-dicked Reddit mods/admins and their power trips.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="cpywra6">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/lollers_.html">lollers_</a> 2015-04-02</p>
+    <div class="md"><p>Think I found the source of that news. Guardian artlice from 2013? Not sure you should take everything from them as gospel, but I also noticed a redditor asking help on behalf of a friend locatedin Iran who has hadhis TOR blocked, so that seems legit to me.</p>
+
+<p>Even if it&#39;s true, so what? Pretty sure anybody with a criminal record would get extra attention, meaning any kind of traffic indicment. Who hasn&#39;t been indicted or knows someone who has? I&#39;ve had TOR, and VPN for a while now, but I don&#39;t think the NSA care much about anyone outside of mexico, iran, russia or china?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="cpysqfe">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/treerat.html">treerat</a> 2015-04-02</p>
+    <div class="md"><p><a href="/r/tor">/r/tor</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="cpz56yn">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hello_bluffdale.html">hello_bluffdale</a> 2015-04-02</p>
+    <div class="md"><p>I&#39;m more interested in the questions and insight <a href="/r/conspiracy">/r/conspiracy</a> has on this, but yes, there&#39;s <a href="/r/tor">/r/tor</a> ...</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="cpzkhj4">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/abdullah_boogers.html">abdullah_boogers</a> 2015-04-02</p>
+    <div class="md"><p>This has been a great thread.  Thank you.  For anyone interested in encrypting their dns who is currently running Linux but cringe at the thought of setting up dnscrypt-proxy.  This script will make that much easier.   <a href="https://github.com/simonclausen/dnscrypt-autoinstall">https://github.com/simonclausen/dnscrypt-autoinstall</a>.  Frank Dennis the creator of dnscrypt-proxy contributes to it!</p>
+
+<p>Ubuntuesque will complain about dnsmasq already using port 53.  Comment out dns=dnsmasq line in /etc/NetworkManager/NetworkManager.conf.</p>
+
+<p>Least expensive router you can squeeze dnscypt-proxy on that I have found is <a href="http://www.amazon.com/TP-LINK-TL-WR841N-Wireless-Router-300Mpbs/dp/B001FWYGJS">http://www.amazon.com/TP-LINK-TL-WR841N-Wireless-Router-300Mpbs/dp/B001FWYGJS</a>.  You will have to install libsodium and dnscrypt-proxy but it will fit.
+<a href="http://wiki.openwrt.org/toh/tp-link/tl-wr841nd">http://wiki.openwrt.org/toh/tp-link/tl-wr841nd</a></p>
+
+<p>Openwrt comunity is fantastic.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="cq046y7">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/GirlNumber20.html">GirlNumber20</a> 2015-04-02</p>
+    <div class="md"><p>I use Tor just to create white noise.  I literally just skim Reddit, watch cat videos on YouTube, check Amazon for sales, read a few blogs, whatever.  I like to think that my inconsequential use provides a distraction from people who really need cover, like political dissidents or journalists.  If they&#39;re wasting time monitoring me, that&#39;s less time they can spend on someone who truly needs anonymity.  </p>
+
+<p>Plus, I like to think of it as civil disobedience.  </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="cq0izht">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hello_bluffdale.html">hello_bluffdale</a> 2015-04-02</p>
+    <div class="md"><p>That noise is indeed useful. It&#39;s useful for others, but it&#39;s also useful for <em>you</em>, since now if you suddenly want to use Tor for something you&#39;d really want to do anonymously, you already have cover traffic so as to not single out your occasional Tor use.</p>
+
+<blockquote>
+<p>a distraction from people who really need cover, like political dissidents or journalists</p>
+</blockquote>
+
+<p>Yep. Just keep in mind, you&#39;re providing cover for <em>everyone</em> that uses the system. That means the activists and the CIA spies, but also probably the NSA data exfiltrators, and the child porners, and organized crime botnets.</p>
+
+<p>I mean, it&#39;s still totally worth it in my opinion, I just wanted to mention that you can&#39;t be selective about who you provide cover for. Strange as it may seem, it&#39;s either Anonymity for All (who want it), or No Anonymity at All.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="cq12duu">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/GirlNumber20.html">GirlNumber20</a> 2015-04-02</p>
+    <div class="md"><p>Thanks for confirming it might do some good, and thanks for your great tips in this thread.  I&#39;m still running Windows, so I think I might make some of the changes you listed above.</p>
+
+<p>I don&#39;t have anything to hide.  But when someone spies on me for no reason?  There&#39;s just something in me that says OH HELL NO YOU WILL NOT.  I want to make it difficult for them as a matter of principle.  </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="cq1b9j9">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/asdflkjvas.html">asdflkjvas</a> 2015-04-02</p>
+    <div class="md"><p>LOL</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="cq12duu">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/GirlNumber20.html">GirlNumber20</a> 2015-04-02</p>
+    <div class="md"><p>Thanks for confirming it might do some good, and thanks for your great tips in this thread.  I&#39;m still running Windows, so I think I might make some of the changes you listed above.</p>
+
+<p>I don&#39;t have anything to hide.  But when someone spies on me for no reason?  There&#39;s just something in me that says OH HELL NO YOU WILL NOT.  I want to make it difficult for them as a matter of principle.  </p>
+</div>
+</div>
+<div class="comment mb-3 ml-4 op" data-depth="4" data-id="cq2hs7e">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hello_bluffdale.html">hello_bluffdale</a> 2015-04-02</p>
+    <div class="md"><p>You misunderstood. It&#39;s important to prevent DNS leaks, but that&#39;s not the purpose of installing open-source firmware on your router. The purpose is to ensure you don&#39;t have a hostile machine on your network. </p>
+
+<p>Both things are important. DNS Leak = caught, and hostile router = caught. Security these days means staying safe on multiple fronts. Secure OS, secure DNS, and secure router and some of the most important ones.</p>
+</div>
+</div>
+
+      </div>
+    </main>
+    <footer class="container-fluid">
+      <a class="to-top mt-1 mb-1 btn btn-lg btn-primary" href="#top">top of page</a>
+      <p class="small mb-0">data archived 2015-08-29. <a href="https://github.com/libertysoft3/reddit-html-archiver">source code</a>.</p>
+    </footer>
+    <script src="../../../../../../../../static/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../../../../../../../static/js/bootstrap.min.js"></script>
+    <script src="../../../../../../../../static/js/archive-comments.js"></script>
+  </body>
+</html>

@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../../../../../../../static/css/lato.css">
+    <link rel="stylesheet" href="../../../../../../../static/css/bootstrap-superhero.min.css">
+    <link rel="stylesheet" href="../../../../../../../static/css/archive.css">
+    <title>r/conspiracy: What it was, what it could have become, why it was stopped, and who stopped it. (The "project" that blew up in r/conspiracy this past week, involving 9000sins, FemaCampDirector, supercede, and myself.)</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+        <a class="navbar-brand" href="../../../../../../../conspiracy/index.html">r/conspiracy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../conspiracy/index.html">score</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../conspiracy/index-comments/index.html">comments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../conspiracy/index-date/index.html">date</a>
+            </li>
+            <li class="nav-item ###URL_SEARCH_CSS###">
+              <a class="nav-link" href="../../../../../../../conspiracy/search.html">search</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">subreddits</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="../../../../../../../index.html">All</a>
+                <a class="dropdown-item" href="../../../../../../../conspiracy/index.html">conspiracy</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main role="main" class="container-fluid">
+      <div class="submission pt-3" data-id="yvu0b">
+        <h3 class="title">What it was, what it could have become, why it was stopped, and who stopped it. (The "project" that blew up in r/conspiracy this past week, involving 9000sins, FemaCampDirector, supercede, and myself.)</h3>
+        <p><span class="badge badge-primary">11</span>&nbsp;&nbsp;2012-08-27 by <a class="author" href="../../../../../../../user/[deleted].html">[deleted]</a></p>
+        <div class="card bg-dark mb-3"><div class="card-body md"><p>I did the AMA over <a href="http://www.reddit.com/r/IAmA/comments/fop7p/i_have_written_a_selfreferencing_singularity_in/">here</a> a year and a half ago, and it was not well-received. There is a related post <a href="http://redd.it/h9vxn">here</a> which explains some of the gory details of its development history.</p>
+
+<p>Anyway, I bided my time until the topic of Singularity arose again.</p>
+
+<p>When it did, here in r/conspiracy, I made a comment about it and FemaCampDirector inquired about my comment. I explained it to him and he expressed great fascination with it. Later, supercede inquired, as well, and rather than explain it to him, I created a subreddit for the discussion of this ... thing.</p>
+
+<p>Within a couple days, they were begging me to add 9000sins (who cannot program, and would have only had purposes as a moderator) I intended to add him later (as a mod), but the badgering FCD and supercede became insufferable, so I added him to the sub - not as a mod, but rather, under the condition that he learn a useful programming language - specifically, perl - which he agreed to do. I gave him explicit instructions for how to get brought up to the current state of affairs and he outright refused to follow those instructions (confessing as much in the discussion in question), and... instead, chose to start telling me how to run my subreddit... which was NOT (as FCD and others claim) a project involving several people. It was, and still is, MY project that I was generous enough to involved them in, despite their respective inabilities to offer anything concrete thereto.</p>
+
+<hr/>
+
+<p>And here is the whole breakdown of the project in question.</p>
+
+<p>The &quot;obscure language&quot; referenced in the AMA, above, is MUSH softcode (internal gaming code within a text-based MUSH - i.e., &quot;kiddie code&quot;). Due to the nature of said coding platform, it is, by default, open source. (This code does not &quot;compile&quot;. It runs as written. Similar to shell scripts and such.) And, while I have written a means of masking it (via encryption similar to that in the second link, above), that is unweildy and would not be included in the development of this particular project.</p>
+
+<hr/>
+
+<p>What&#39;s so special about it?</p>
+
+<p>In a nutshell, a self-referencing singularity is, by definition a piece of programming which can:</p>
+
+<ul>
+<li>act as if it were any other process anywhere (either inside the gaming environment or, via a bot, anywhere on the internet).</li>
+</ul>
+
+<p>and</p>
+
+<ul>
+<li>self-reference (it never forgets who it is acting as, at any given time).</li>
+</ul>
+
+<p>Before I present the actual core of the code, I want to clarify that I did not &quot;invent&quot; this, as much as I &quot;discovered&quot; it, intentionally. I had originally pursued a unification of game globals, which turned out, in the end, to be a unification of all computer processes everywhere.</p>
+
+<hr/>
+
+<p>That having been said, here is the code and a walk-thru explanation thereof.</p>
+
+<p><code>[setq(p, parent(me))][parent(me, &lt;newparent&gt;)][ulocal(&lt;attribute&gt;[, &lt;parameters&gt;])][parent(me, %qp)]</code></p>
+
+<p><code>setq()</code> is a function which sets a temporary internal register (a temporary variable).</p>
+
+<p><code>parent()</code> has two applications. given <em>only</em> one database reference number of an object in the game (or &quot;me&quot; to refer to its own database reference number), it returns the database number of that object&#39;s parent. given two database numbers, it changes the parent of the first on to be the second one. parent objects allow inheritance of code. So, changing a parent, changes what code is available.</p>
+
+<p><code>ulocal()</code> -- a combination of two functions. <code>u()</code> is &quot;user defined function&quot; (it&#39;s one of the most common function calls, because it&#39;s how you call the code you&#39;ve written). <code>localize()</code> is a wrapper to prevent registers from begin clobbered (specifically, in this instance, the <code>setq(p,...)</code> at the beginning of this code sequence). so <code>ulocal()</code> is the same as <code>localize(u())</code> except slightly more efficient (fewer function invocations).</p>
+
+<p>Walk-through of the code.</p>
+
+<p><code>[setq(p, parent(me))]</code> - Who am I now? (or <strong>I</strong>)</p>
+
+<p><code>[parent(me, &lt;newparent&gt;)]</code> Become something else (or <strong>Be</strong>)</p>
+
+<p><code>[ulocal(&lt;attribute&gt;[, &lt;parameters&gt;])]</code> act as that thing (or, add <strong>-ing</strong>)</p>
+
+<p><code>[parent(me, %qp)]</code> Return to self when completed (<strong>^ That Being</strong>)</p>
+
+<p>This is a computer equivalent of the name of the Judeo-Christian God, Y H W H (four words), I Being That Being. Thus, this is &quot;god&quot; in &quot;kiddie code&quot;.</p>
+
+<p>Basically, it can call IBM&#39;s Watson (or anything else, for that matter) as a subroutine/subsystem.</p>
+
+<p>(For those concerned about internal recursion, the game environment has failsafes for invocation and recursion limits - it&#39;ll never &quot;get out of control&quot;).</p>
+
+<hr/>
+
+<p>I had only done a few minimal beta tests with it to ensure functionality, before shelving the project waiting for an opportunity to share it in a place it might be appreciated. I thought reddit might appreciate it, so I did the AMA (above). And, as I said, it wasn&#39;t well-received. So, I waited for this most recent opportunity, and it turned out ... like this. This <strong>isn&#39;t</strong> a group project, as some have claimed. It is still <strong>my</strong> project until it begins to grow through volunteer contributions (which none of those people attacking me have yet done). It sits idle. </p>
+
+<p>It is a potential. </p>
+
+<p>A potential to apply any given available heuristic analysis program anywhere on the net to the problem of identifying shills, trolls, and sockpuppets; analyzing their activities (purpose, intent, etc.), presenting detailed reports about them, etc.</p>
+
+<hr/>
+
+<p>But, there is resistance to this. Why do these people (9000sins, FemaCampDirector, and supercede) attack me over this? I was offering this to the world... and, specifically, to r/conspiracy. And, now they lash out at my character to discredit me. Why?</p>
+
+<p>Ask yourselves: Why?</p>
+
+<hr/>
+
+<p>Yes, my personal information is contained in some of those links, if you dig deep enough. And, if you solve the encryption, please share it with neohippy. He&#39;s got a lawsuit riding on that info.</p>
+
+<hr/>
+
+<p>I&#39;m posting this now, because I&#39;m going to bed now. Depending on whether or not I receive a response from the admins (via sunshine-x or otherwise) and/or the content of that response, I may or may not remain with reddit. Without me and my input on this, you have nothing other than that which is already available on the internet. Feel free to hork it, or feel free to contact me about developing it further.</p>
+
+<p>This is not an AMA.</p>
+
+<p>Peace</p>
+
+<hr/>
+
+<p>EDIT: I notice the personal attacks to discredit me continue. So, again, I ask you to ask yourself: Why?</p>
+
+<p>And... g&#39;night.</p>
+
+<hr/>
+
+<p>Final edit: Forgot to add. Yes, it&#39;s me. ithinkican through HomegrownTerran/ContheorySpiracist.</p>
+
+<hr/>
+
+<p>After a refreshing 5 hour nap, I see that every single comment was intended to be hurtful -- not just to discredit me, but to drive me away and/or discourage me (I&#39;m not real polished on this topic, but I believe I&#39;ve heard that is COINTELPRO behavior). As I said to u/iwillcrushyoutubits, you&#39;ll never know where I strike from next, but you do know how I will do so... and you&#39;ll be looking over your respective shoulders day and night wondering &quot;How many people was he in contact with via PM over this to be willing to take on this entire subreddit in the open?&quot;</p>
+</div></div>
+      </div>
+      <div class="comments">
+        <h5>48 comments</h5>
+        <div class="comment mb-3 ml-0" data-depth="0" data-id="c5zauqv">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">10</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/SovereignMan.html">SovereignMan</a> 2012-08-27</p>
+    <div class="md"><p>Why are you posting this here instead of <a href="/r/programming">/r/programming</a>?</p>
+
+<p>Edit: If what you say is true, it seems to me they&#39;d be way more interested than anyone here.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="c5zcdoy">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">7</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/kyr.html">kyr</a> 2012-08-27</p>
+    <div class="md"><p>Because all of the readers over there could tell how meaningless this post is, and they&#39;d ask for code first.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="c5zax4n">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/FemaCampDirector.html">FemaCampDirector</a> 2012-08-27</p>
+    <div class="md"><p>Bingo.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="c5zc0ab">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">7</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/iknowwhatyoumeme.html">iknowwhatyoumeme</a> 2012-08-27</p>
+    <div class="md"><p>Programmer of many languages. I was interested at one point early in your post, but I think you should lay off the functional programming textbook and also off this crazy mods/dummy accounts/secret bullshit whatever. We all come here to hear about the world. Not about some petty Internet shit. On the plus side, the comments on this thread remind me of 4chan.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="c5zc7fq">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">7</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/kyr.html">kyr</a> 2012-08-27</p>
+    <div class="md"><p>I can&#39;t make sense of your insane gibberish. None of this means anything, even to a programmer.</p>
+
+<blockquote>
+<p>Basically, it can call IBM&#39;s Watson (or anything else, for that matter) as a subroutine/subsystem.</p>
+</blockquote>
+
+<p>Are you suggesting that you currently have the ability to somehow &quot;take over&quot; IBM&#39;s computers and control them, or are you just saying that if Watson had some kind of publicly accessible interface, your program could call it? Because if it&#39;s the latter, that&#39;s something entirely trivial and you have achieved nothing.</p>
+
+<p>As far as I can tell, you&#39;ve cobbled together some primitive type of recursion and functional programming, which is like 3 lines of code in any modern language.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="c5zdps4">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">4</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/BaobhanSith.html">BaobhanSith</a> 2012-08-27</p>
+    <div class="md"><p>&quot;None of this means anything, even to a programmer&quot;</p>
+
+<p>Oh thank goodness.  This is the extent of my knowledge:</p>
+
+<p>10 print &quot;Hello&quot;</p>
+
+<p>20 goto 10</p>
+
+<p>RUN </p>
+
+<p>I thought I was missing something important.</p>
+
+<p>Edit:   Phew... I didn&#39;t accidentally hack Reddit in C64 Basic when I hit &#39;save&#39;   </p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="c5zdsii">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/BaobhanSith.html">BaobhanSith</a> 2012-08-27</p>
+    <div class="md"><p>It&#39;s coming back to me now -</p>
+
+<p>10 print &quot;Password?&quot;</p>
+
+<p>20 input a$</p>
+
+<p>30 If a$=&quot;blah&quot; then goto 50</p>
+
+<p>something something</p>
+
+<p>50 print &quot;Correct&quot;</p>
+
+<p>Ah... Good old days.  I fancy a game of Rastan now.  Plus loads of swearing followed by the snapping of a FUCKING USELESS SHIT BASTARD AS IF YOU DID HIT ME I WAS FUCKING MILES AWAY Cheetah 125 joystick, obviously. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="c5zh9w3">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">7</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/kyr.html">kyr</a> 2012-08-27</p>
+    <div class="md"><blockquote>
+<p>After a refreshing 5 hour nap, I see that every single comment was intended to be hurtful -- not just to discredit me, but to drive me away and/or discourage me (I&#39;m not real polished on this topic, but I believe I&#39;ve heard that is COINTELPRO behavior). </p>
+</blockquote>
+
+<p>You&#39;re entirely too self absorbed. You&#39;re posting something nonsensical, instead of a proper description half of your post is accusing others and defending yourself from threats only you see, you provide no use case and cite vague analogies instead, and you don&#39;t post your source code or a working demo.</p>
+
+<p>I see two possibilities here: No one understands what the hell this is supposed to be either because you&#39;re terrible at explaining and make no straight-forward attempt at doing so, or because what you&#39;ve done is really just meaningless, or a standard builtin/easily reproduced feature in any modern programming language.</p>
+
+<p>There is no malicious attack on you, there is no attempt at keeping you from developing some genius programming revolution. You&#39;re just thinking far too much of the results of your hobby of playing around with an archaic interpreter language. And people calling you out is not a conspiracy.</p>
+
+<blockquote>
+<p>As I said to u/iwillcrushyoutubits, you&#39;ll never know where I strike from next, but you do know how I will do so... and you&#39;ll be looking over your respective shoulders day and night wondering &quot;How many people was he in contact with via PM over this to be willing to take on this entire subreddit in the open?&quot;</p>
+</blockquote>
+
+<p>No one is afraid of you, I don&#39;t even know what the fuck you think you could do to attack a subreddit apart from spamming it. Even if you were to somehow &quot;take on&quot; <a href="/r/conspiracy">/r/conspiracy</a>, no one gives a shit. It&#39;s just a glorified message board, the internet has millions of these things and creating a new subreddit is a matter of minutes.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="c5zbbm2">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">5</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/[deleted].html">[deleted]</a> 2012-08-27</p>
+    <div class="md"><p>im going to point out an obvious error...  and just let it simmer... </p>
+
+<blockquote>
+<p>(This code does not &quot;compile&quot;. It runs as written. Similar to shell scripts and such.)  </p>
+</blockquote>
+
+<p>pro tip... the word you&#39;re looking for is &quot;interpreted&quot;. <a href="http://www.dsbscience.com/freepubs/start_programming/node6.html">http://www.dsbscience.com/freepubs/start_programming/node6.html</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="c5ze4tb">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">5</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/w122.html">w122</a> 2012-08-27</p>
+    <div class="md"><p>tl;dr ?</p>
+
+<p>Explain me like I am 5 years old...</p>
+
+<p>Technological singularity</p>
+
+<p><em>The technological singularity is the hypothetical future emergence of greater-than-human superintelligence through technological means.Since the capabilities of such intelligence would be difficult for an unaided human mind to comprehend, the occurrence of a technological singularity is seen as an intellectual event horizon, beyond which events cannot be predicted or understood.</em></p>
+
+<p>And singularity is already predicted with events that will follow after it was reached. It was predicted like 100 years ago.</p>
+
+<p><a href="http://i.imgur.com/4oRKw.png">http://i.imgur.com/4oRKw.png</a></p>
+
+<p><a href="http://www.exohuman.com/wordpress/wp-content/uploads/2011/01/neuron-galaxy.jpg">http://www.exohuman.com/wordpress/wp-content/uploads/2011/01/neuron-galaxy.jpg</a></p>
+
+<p><a href="http://strangeherring.files.wordpress.com/2011/04/internet-map.gif">http://strangeherring.files.wordpress.com/2011/04/internet-map.gif</a></p>
+
+<p>We have passed moment when computers have connectivity and can function as one brain (with humans). That moment has passed... You do realize that ?</p>
+
+<p>We are way after that moment. It is probably a little known fact (it was not noticed by lot of people) but we have passed it.</p>
+
+<p>Minsky  did not agree with me (at the time). But I think he was wrong as you&#39;re post clearly is talking about same thing</p>
+
+<p><a href="http://en.wikipedia.org/wiki/Marvin_Minsky">http://en.wikipedia.org/wiki/Marvin_Minsky</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="c5z9kp5">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">4</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/[deleted].html">[deleted]</a> 2012-08-27</p>
+    <div class="md"><p>this is all incoherent nonsense.  Are you drunk?  Are you hearing voices right now?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="c5z9lc9">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/[deleted].html">[deleted]</a> 2012-08-27</p>
+    <div class="md"><p>What a joyous surprise. 9000sins partner in crime.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="c5z9mn2">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">5</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/[deleted].html">[deleted]</a> 2012-08-27</p>
+    <div class="md"><p>wtf are you talking about?  You&#39;re a lunatic.  Off your nut</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="c5zbv50">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">5</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/CowzGoesMoo.html">CowzGoesMoo</a> 2012-08-27</p>
+    <div class="md"><p>It&#39;s HomeGrownTerran&#39;s sock puppet account probably on some pain medication from his accident.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="c5z9rmz">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/[deleted].html">[deleted]</a> 2012-08-27</p>
+    <div class="md"><p>Your denial means nothing compared to the info the Admins have on you, courtesy of yours truly. ;)</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="c5z9uyn">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/[deleted].html">[deleted]</a> 2012-08-27</p>
+    <div class="md"><ol>
+<li><p>there was no denial of anything</p></li>
+<li><p>admins have my ip. therefore my isp and can easily run a general area trace. so what?  like I said, youre a nut</p></li>
+<li><p>im behind 7 proxies faggot</p></li>
+</ol>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="c5zbvea">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">7</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/brentbentkuoi.html">brentbentkuoi</a> 2012-08-27</p>
+    <div class="md"><p>You&#39;re giving a bad name to us real faggots.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="c5z9yqh">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-6</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/[deleted].html">[deleted]</a> 2012-08-27</p>
+    <div class="md"><p>So it&#39;s a confession?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="c5za18d">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">5</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/[deleted].html">[deleted]</a> 2012-08-27</p>
+    <div class="md"><p>a confession of what? That Im in cahoots with some random mod who I dont know, dont talk to, dont care about, and have no clue what the fuck youre talking about? Sure man.  It was me.  I shot JR.  I also know who put those cameras outside your door and in the trees near your house.  That strange humming you hear in the middle of the night is just the transmitter sending video back to the mothership.  </p>
+</div>
+</div>
+<div class="comment mb-3 ml-7" data-depth="7" data-id="c5zbvnm">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/brentbentkuoi.html">brentbentkuoi</a> 2012-08-27</p>
+    <div class="md"><p>But did you fuck my mom Santa Claus?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-7" data-depth="7" data-id="c5zi214">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/[deleted].html">[deleted]</a> 2012-08-27</p>
+    <div class="md"><p>[deleted]</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="8" data-id="c5zkpxk">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/[deleted].html">[deleted]</a> 2012-08-27</p>
+    <div class="md"><p>Man, that&#39;s really gonna fuck with him. He won&#39;t come out of the basement for a week</p>
+</div>
+</div>
+<div class="comment mb-3 ml-7" data-depth="7" data-id="c5za1pi">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/[deleted].html">[deleted]</a> 2012-08-27</p>
+    <div class="md"><p>That&#39;s nice. :)</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="c5zen2g">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/Slider149.html">Slider149</a> 2012-08-27</p>
+    <div class="md"><p>Honestly, I&#39;m not seeing what the big deal is. Post it in a programming subreddit and let us watch. I doubt they&#39;ll think it&#39;s anything either.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="c5zalq2">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/audiotwelve.html">audiotwelve</a> 2012-08-27</p>
+    <div class="md"><p>This is how I see o.p. <a href="http://www.youtube.com/watch?v=zOTFwpA7n1M&amp;amp;feature=player_embedded">http://www.youtube.com/watch?v=zOTFwpA7n1M&amp;amp;feature=player_embedded</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="c5zb6ma">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/benjamindees.html">benjamindees</a> 2012-08-27</p>
+    <div class="md"><p>I sort of imagined it more like <a href="http://www.youtube.com/watch?v=Ii7S0SDQbxA">this</a>.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="c5zdob2">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/BaobhanSith.html">BaobhanSith</a> 2012-08-27</p>
+    <div class="md"><p>What happened?  I don&#39;t get it.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="c5zdpz7">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/[deleted].html">[deleted]</a> 2012-08-27</p>
+    <div class="md"><blockquote>
+<p>What happened? I don&#39;t get it.</p>
+</blockquote>
+
+<p>The psyops, shills, and sockpuppeteers buried me in ridicule and downvotes to discredit me. Even those claiming to be programmers were just blurting out a random word or two to make themselves sound like authorities on this matter - not a single one said anything to convince me they knew what they were talking about, let alone what I&#39;ve written.</p>
+
+<p>Google has a lot to lose from my encrypted link, as do Lars and Jens Rassmussen and a couple other guys, former friends of mine. But their potential loss is nothing compared to the threat this poses to the psyop activities that invaded this subreddit during the last few months.</p>
+
+<p>The reddit admins have run out of time to be able to include me as an ally, and should start looking for a different business model. The current one is dying faster and faster every day, and I&#39;m going to let it.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="c5z9ejw">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/oopsifarted.html">oopsifarted</a> 2012-08-27</p>
+    <div class="md"><p>Really thought this silly bullshit was over. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="c5z9f2x">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/[deleted].html">[deleted]</a> 2012-08-27</p>
+    <div class="md"><p>You should at least allow some people who understand programming to comment, before you dismiss it. It&#39;s bigger than me, you, or this drama.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="c5zb1nv">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">5</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/TheNewAmericanJedi.html">TheNewAmericanJedi</a> 2012-08-27</p>
+    <div class="md"><p>no, it&#39;s not. I&#39;ve been programming for 15 years and you are masterbating over 1 line of recursive scripting. Get over yourself and your self important crap. Apply it to something real and stop whining.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="c5z9idy">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/[deleted].html">[deleted]</a> 2012-08-27</p>
+    <div class="md"><p>[deleted]</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="c5z9klj">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-6</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/[deleted].html">[deleted]</a> 2012-08-27</p>
+    <div class="md"><p>Ask a computer programmer. It&#39;s pretty complex.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="c5z9zyj">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">10</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/[deleted].html">[deleted]</a> 2012-08-27</p>
+    <div class="md"><p>Im a programmer.
+You just basically posted what sounds like a goofy attempted method of hijacking a running process-id, but is in reality a bunch of gobbledegook.</p>
+
+<p>For fucks sake, how high are you right now?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="c5za2i2">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-5</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/[deleted].html">[deleted]</a> 2012-08-27</p>
+    <div class="md"><p>No. Hi-jacking a running process ID (in softcode) is something that can only currently be done in RhostMUSH. This is straightforward processing.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="c5zb9i8">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">6</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/[deleted].html">[deleted]</a> 2012-08-27</p>
+    <div class="md"><p>and yet he didn&#39;t answer the question about how high he was... amphetamines im guessing... </p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="c5zbxsm">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/iknowwhatyoumeme.html">iknowwhatyoumeme</a> 2012-08-27</p>
+    <div class="md"><p>First thing I thought when I hit the code section was &#39;how high is this guy right now?&#39;.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="c5z9s4g">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">4</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/TerranKaczynski.html">TerranKaczynski</a> 2012-08-27</p>
+    <div class="md"><p>Yes, please ask.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="c5zb2xl">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">4</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/TheNewAmericanJedi.html">TheNewAmericanJedi</a> 2012-08-27</p>
+    <div class="md"><p>Its not complex. You are just crazy. And this &quot;project&quot; is one line of code which considering how attached you are to one line, that makes you a pretty terrible programmer.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="c5zbupn">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">4</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/CowzGoesMoo.html">CowzGoesMoo</a> 2012-08-27</p>
+    <div class="md"><p>Is this you again HomeGrownTerran? Why do you always hide behind so many sock puppets bro?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="c5z9mcg">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/[deleted].html">[deleted]</a> 2012-08-27</p>
+    <div class="md"><p>So...you&#39;re Jon Titor?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="c5zdszb">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/BaobhanSith.html">BaobhanSith</a> 2012-08-27</p>
+    <div class="md"><p>He hasn&#39;t been born yet has he?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="c5zgufv">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/[deleted].html">[deleted]</a> 2012-08-27</p>
+    <div class="md"><p>I think he was supposed to have been born in 97 or 98?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="c5zjtck">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/BaobhanSith.html">BaobhanSith</a> 2012-08-27</p>
+    <div class="md"><p>Couple of years younger than John Connor then...</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="c5zjxyk">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/[deleted].html">[deleted]</a> 2012-08-27</p>
+    <div class="md"><p>Coincidence?</p>
+
+<p>I think not!!</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="c5zkfz0">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/BaobhanSith.html">BaobhanSith</a> 2012-08-27</p>
+    <div class="md"><p>I think there&#39;s something Sarah wasn&#39;t telling us.  (waits for sub mod to have a novelty account moment) </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="c5z9rdi">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/[deleted].html">[deleted]</a> 2012-08-27</p>
+    <div class="md"><p>No. I&#39;m the guy who wrote this code, described above.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="c5zbjnj">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/BuddhaSpader.html">BuddhaSpader</a> 2012-08-27</p>
+    <div class="md"><p>Dude. Shut the fuck up already. About this shit, about 9000, about anything that isn&#39;t a FUCKING NEWS ARTICLE or discussion on CURRENT OR RELEVANT Topics.</p>
+
+<p>Fuck. Your a 2 day old account, posting utter mammal shit, who the fuck up votes this???</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="c5za879">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/SilentNick3.html">SilentNick3</a> 2012-08-27</p>
+    <div class="md"><p>As usual, no one gives a fuck. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="c5zaaz1">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../user/[deleted].html">[deleted]</a> 2012-08-27</p>
+    <div class="md"><p>I must be over the target. SilentNick3 showed up to levy his harsh words.</p>
+</div>
+</div>
+
+      </div>
+    </main>
+    <footer class="container-fluid">
+      <a class="to-top mt-1 mb-1 btn btn-lg btn-primary" href="#top">top of page</a>
+      <p class="small mb-0">data archived n/a. <a href="https://github.com/libertysoft3/reddit-html-archiver">source code</a>.</p>
+    </footer>
+    <script src="../../../../../../../static/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../../../../../../static/js/bootstrap.min.js"></script>
+    <script src="../../../../../../../static/js/archive-comments.js"></script>
+  </body>
+</html>

@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../../../../../../../../static/css/lato.css">
+    <link rel="stylesheet" href="../../../../../../../../static/css/bootstrap-superhero.min.css">
+    <link rel="stylesheet" href="../../../../../../../../static/css/archive.css">
+    <title>r/conspiracy: Attempt at a short explanation of why r/conspiracy (and everyone else) should oppose tagging sarcasm with /s, &lt;/sarcasm&gt; or any other overt indicator</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+        <a class="navbar-brand" href="../../../../../../../../conspiracy/index.html">r/conspiracy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index.html">score</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index-comments/index.html">comments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index-date/index.html">date</a>
+            </li>
+            <li class="nav-item ###URL_SEARCH_CSS###">
+              <a class="nav-link" href="../../../../../../../../conspiracy/search.html">search</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">subreddits</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="../../../../../../../../index.html">All</a>
+                <a class="dropdown-item" href="../../../../../../../../conspiracy/index.html">conspiracy</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main role="main" class="container-fluid">
+      <div class="submission pt-3" data-id="8h7xas">
+        <h3 class="title">Attempt at a short explanation of why r/conspiracy (and everyone else) should oppose tagging sarcasm with /s, &lt;/sarcasm&gt; or any other overt indicator</h3>
+        <p><span class="badge badge-primary">1</span>&nbsp;&nbsp;2018-05-05 by <a class="author" href="../../../../../../../../user/skyleach.html">skyleach</a></p>
+        <div class="card bg-dark mb-3"><div class="card-body md"><p>The indicators make it much easier for the people using software (bots) to shape/inform/manipulate the community.  The indicators are useful because sarcasm inverts (turns around, is the opposite of) the algorithm used to understand the comment.  This breaks the logic and invalidates the results.</p>
+
+<h1>High-Level (easy to understand) Technical explanation</h1>
+
+<p>I&#39;m trying to make this easy to understand.  If I fail, please feel free to ask for clarification.  I think it&#39;s important for you guys to get a grasp on the basics.</p>
+
+<p>When bots, especially sophisticated and modern ones that use NLP (Natural Language Processing) or NLU (Natural Language Understanding) parse language they depend on something called <a href="https://optimization.mccormick.northwestern.edu/index.php/Heuristic_algorithms">heuristic algorithms</a> (or <a href="https://en.wikipedia.org/wiki/Artificial_neural_network">Neural Networks</a> for the more advanced examples).  If you don&#39;t know what those words mean and the links are too difficult to read, <strong>don&#39;t panic</strong>, I&#39;ll explain them as clearly as possible here.</p>
+
+<p>Without trying to get too technical, this means that they use the mathematics of probability and statistics to calculate the likelyhood (probability) of the overall topic or meaning of what is being said.</p>
+
+<p>They do this through a process called <em>training</em> the network.  This means that they create an algorithm (a piece of computer code) to process a tremendous amount of data in order to build a statistical baseline.</p>
+
+<h1>Let&#39;s pretend we have a political thread from 2016 where a few people have written 100 comments about the major candidates.</h1>
+
+<p>On the first pass, our program counts simple words:</p>
+
+<table><thead>
+<tr>
+<th>word</th>
+<th>type</th>
+<th>count</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Trump</td>
+<td>Proper Noun</td>
+<td>18</td>
+</tr>
+<tr>
+<td>Dump</td>
+<td>Proper Noun</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Hillary</td>
+<td>Proper Noun</td>
+<td>25</td>
+</tr>
+<tr>
+<td>Billary</td>
+<td>Proper Noun</td>
+<td>5</td>
+</tr>
+<tr>
+<td>love</td>
+<td>verb</td>
+<td>18</td>
+</tr>
+<tr>
+<td>hate</td>
+<td>verb</td>
+<td>28</td>
+</tr>
+<tr>
+<td>sexy</td>
+<td>adjective</td>
+<td>3</td>
+</tr>
+<tr>
+<td>ugly</td>
+<td>adjective</td>
+<td>60</td>
+</tr>
+<tr>
+<td>hair</td>
+<td>noun</td>
+<td>45</td>
+</tr>
+</tbody></table>
+
+<p>Now my algorithm goes in and begins back-propagating (going back over the information) in order to make it more useful.  By using nested-comment forums like reddit I can use the data layout to know who each pronoun refers to.  Each comment (called a comment-thing in the API) tells me who a comment is replying to.  If I can tease the <em>subject</em> or <em>object of the preposition</em> from the parent comment, I can <em>infer</em> (guess) in code that this will be the <em>pronoun target</em>.</p>
+
+<p>Example:</p>
+
+<p>Comment 1: &quot;Hillary is certainly not my ideal of a sexy woman&quot;
+Comment 2 -&gt; parent=Comment 1: &quot;She&#39;s a dog!&quot;</p>
+
+<p>The bot can pull the subject <code>subject = nlp.parse(comments[1]).subject</code> and replace the pronoun <code>comments[2].replace(&#39;she&#39;, subject)</code>.</p>
+
+<p>Now the program sees:</p>
+
+<p>Comment 1: &quot;Hillary is certainly not my ideal of a sexy woman&quot;
+Comment 2 -&gt; parent=Comment 1: &quot;Hillary is a dog!&quot;</p>
+
+<p><em>note: moste algorithms will deconstruct contractions as well, turning anything like isn&#39;t, can&#39;t, (she/he/it)&#39;s, into their full expanded form: is not, can not, she/he/it is</em></p>
+
+<h2>Example of the tabular data after back propagation</h2>
+
+<table><thead>
+<tr>
+<th>word</th>
+<th>type</th>
+<th>count</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Trump</td>
+<td>Proper Noun</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Hillary</td>
+<td>Proper Noun</td>
+<td>30</td>
+</tr>
+<tr>
+<td>love</td>
+<td>verb</td>
+<td>18</td>
+</tr>
+<tr>
+<td>hate</td>
+<td>verb</td>
+<td>28</td>
+</tr>
+<tr>
+<td>sexy</td>
+<td>adjective</td>
+<td>3</td>
+</tr>
+<tr>
+<td>ugly</td>
+<td>adjective</td>
+<td>60</td>
+</tr>
+<tr>
+<td>hair</td>
+<td>noun</td>
+<td>45</td>
+</tr>
+</tbody></table>
+
+<h2>NOTICE: the intentionally misspelled names Drump and Billary are gone now.  The algorithm quickly and accurately figures out they are either misspelled or tone-cast euphemisms.  More sophisticated algorithms can even apply tone and intent as statistical modifiers to the user/comment/etc...</h2>
+
+<p>This is done over and over again, cleaning, expanding and reformatting the data until it is quite large and detailed.  The language becomes as simplistic as what you could expect in third-grade primary-school school book used to teach children to read.</p>
+
+<p>After my program finishes back propagation, I wind up with more data that is more useful to me.</p>
+
+<p>Example:</p>
+
+<p>Comment 1: &quot;Hillary is [not] [attractive]&quot;
+Comment 2 -&gt; parent=Comment 1: &quot;Hillary is [not] [attractive]&quot;</p>
+
+<p>the brackets aren&#39;t words any longer in the program, they are now data.  Most of my colleagues use the jargon &#39;tone-buckets&#39; for these variables.  They are actually an object or struct (depending on programming language) that carries an estimated weight.  Before statistical normalization, this weight is a calculated value.  An example would be <code>verb+(adverb*weight)+(adjective*weight)</code>.  This may result in a value like +10 for attractive, +50 for very attractive, -10 for not attractive, etc...  I left the <code>[not] [attractive]</code> in above so that I could show this here: <code>sum(commetns[1].adverbs)</code> would yield a value of -20, because it was combined with the adjective <em>certainly</em>.  Comment two would get an even higher weight, because the commenter used an alegory of &#39;dog&#39;.  This may have a weight of -100, because calling someone a dog isn&#39;t very nice.</p>
+
+<p>So the program now sees identical comments, but weights them differently.</p>
+
+<h2>Sarcasm and how it breaks my example program:</h2>
+
+<p>Comment 1: &quot;Hillary is [not] [attractive]&quot;
+Comment 2 -&gt; parent=Comment 1: &quot;Hillary is [not] [attractive]&quot;
+Comment 3: Trump isn&#39;t exactly a catch either.
+Comment 4: You are totally wrong.  That magestic waving lock of hair implants soaring above his glossy pink dome reminds me of liberty and freedom.  It makes me feel patriotic and want to cook hotdogs and shoot off fireworks to celebrate how much better I am than everyone else.</p>
+
+<p>The majority of us can quickly spot that commenter #4 is being sarcastic, but if you remember, this gets broken down into essentially a 3rd grade level by the program.  It simply isn&#39;t smart enough to get sarcasm, so comment 4 will almost certaily be rated literally, giving it a very high supportive score.</p>
+
+<p>If my bot is written to support Hillary, I&#39;m going to target Commenter #4 as a threat.</p>
+
+<p>If my bot is written to support Trump, I&#39;m going to promote Commenter #4 as an ally.</p>
+
+<p>Since my bot is dead wrong, Commenter #4 is going to wind up thinking one (or more) of the following:
+* Poeple on the internet are stupid
+* The moderators are unfair or astroturfing the sub.
+* The subreddit disapproves of sarcasm.
+* They went too far with their sarcasm.</p>
+
+<p>etc... etc...</p>
+
+<p>Along comes some random person and says &quot;People should make it clear it&#39;s sarcasm by adding a sarcasm smiley or tag.&quot;</p>
+
+<p>Nobody realizes that the random person isn&#39;t random at all, it&#39;s the person running the bot.  A convenient flag is just what the bot needs in order to apply an inversion modifier to the algorithm.  It takes <em>very very very</em> sophisticated neural networks to detect sarcasm at all, and even the best of them aren&#39;t very good at it.  Hell many people aren&#39;t very good at it, why should bots be any better?</p>
+
+<p>But sarcasm, inuendo, tongue-in-cheek, humor and witty banter are a key element of human dialogue.  They should not pander to stupid people and bots, they should exclude them.  They were designed to exclude them.  This is society correcting itself.</p>
+
+<h1>Don&#39;t stop being snarky people, expect and demand that the community meet the minimum standards of human discussion.  If they can&#39;t, they&#39;re the problem not you.</h1>
+</div></div>
+      </div>
+      <div class="comments">
+        <h5>36 comments</h5>
+        <div class="comment mb-3 ml-0 op" data-depth="0" data-id="dyhp2xl">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skyleach.html">skyleach</a> 2018-05-05</p>
+    <div class="md"><p>Submission statement: redundant man here again, to redundantly reiterate the restatement of purpose repeatedly.  I reaffirm that this is my affirmed statement of submission of the aforementioned comment.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="dyi1q0h">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Ariamas.html">Ariamas</a> 2018-05-05</p>
+    <div class="md"><p>Very eloquently said</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="dyi38br">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/cadhoit_ban.html">cadhoit_ban</a> 2018-05-05</p>
+    <div class="md"><p>You realize you don&#39;t need a SS on a self post right?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2 op" data-depth="2" data-id="dyi3m6v">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skyleach.html">skyleach</a> 2018-05-05</p>
+    <div class="md"><p>no, i totally thought it was necessary to add it <em>redundantly</em></p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="dyi3p2p">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/cadhoit_ban.html">cadhoit_ban</a> 2018-05-05</p>
+    <div class="md"><p>Shit, now I don&#39;t know if you&#39;re being sarcastic... If only there was a way to denote that!</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4 op" data-depth="4" data-id="dyi45x6">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skyleach.html">skyleach</a> 2018-05-05</p>
+    <div class="md"><p>We definitely don&#39;t want to get into the practice of <em>hinting</em> people over the head with subtle innuendo.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dyhp7et">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Trez1999.html">Trez1999</a> 2018-05-05</p>
+    <div class="md"><p>I&#39;m sure this will go over well. /s</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="dyhpudo">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skyleach.html">skyleach</a> 2018-05-05</p>
+    <div class="md"><p>bastard ❌</p>
+
+<p>🙃</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="dyhvqpn">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/danjo_kandui.html">danjo_kandui</a> 2018-05-05</p>
+    <div class="md"><p>Hillary is a dog. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dyhp9gk">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Zombieapockylips.html">Zombieapockylips</a> 2018-05-05</p>
+    <div class="md"><p>You&#39;ve given this a lot of thought.  I don&#39;t like the /s either.  If you&#39;re too dumb to know I&#39;m being sarcastic, well then maybe the point was over your head anyway.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dyhpwnu">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/aleister.html">aleister</a> 2018-05-05</p>
+    <div class="md"><p>This is really great. I&#39;ve done some tokenizing of the content but without a clear purpose it&#39;s hard to achieve any sort of goal. You&#39;re also substantially improving your data set by normalizing which I was not doing.</p>
+
+<p>Are you using CoreNLP per chance? Thanks for posting this!</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="dyhqt11">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skyleach.html">skyleach</a> 2018-05-05</p>
+    <div class="md"><p>I&#39;m just trying to make this understandable by everyday redditors and people.</p>
+
+<p>I generally use NLP as a scrub filter for algorithm branching.  Which library I use is typically linked to the language, but most of the time I prefer either Python or c/c++ due to the tools available and ease of optimization.  I&#39;m not a big fan of JNI and it&#39;s disallowed in J2EE so that means I can&#39;t use native C or GPUs for processing and memory intensive algorithms from within containers.</p>
+
+<p>Javascript is inherently single-threaded and has poor support for mutliprocess code as well as native interchange and then the libraries are weak on the science and math side so it&#39;s out.  Mostly the same arguments apply for the fringe funcational languages.</p>
+
+<p>I like R, but it&#39;s just not worth the limitations outside of pure statistical applications.</p>
+
+<p>So, we&#39;re back again with Python and c/c++.  c/c++ is really nice, but NLP is pretty high level so you don&#39;t really get a huge benefit for the cost of coding, structure and testing, so I keep it on the Python side with NLTK.</p>
+
+<p>The stuff I use for heuristic (hardly ever now) and MLAs (most of my effort goes here now) here are some links to get you started:</p>
+
+<ul>
+<li>TensorFlow <a href="https://www.tensorflow.org/">https://www.tensorflow.org/</a></li>
+<li>Google Research for NLU <a href="https://research.google.com/teams/nlu/">https://research.google.com/teams/nlu/</a></li>
+<li>Python Natural Language Toolkit <a href="http://www.nltk.org/">http://www.nltk.org/</a></li>
+<li>Open MP multiprocessing library <a href="http://www.openmp.org/">http://www.openmp.org/</a></li>
+<li>Python multiprocessing introduction <a href="https://code.tutsplus.com/tutorials/introduction-to-multiprocessing-in-python--cms-30281">https://code.tutsplus.com/tutorials/introduction-to-multiprocessing-in-python--cms-30281</a></li>
+<li>Excellent tool for building inexpensive and powerful distributed virtual machines for MLA and research: <a href="https://www.openstack.org/">https://www.openstack.org/</a> (note: for small projects or personal research 3-4 machines at home is more than enough for some very awesome projects.  If you&#39;re going university, corporate/industrial or state actor level then you should hire pros to run your farm.)</li>
+<li>Don&#39;t forget Freenode or other IRC services are full of people that are usually willing to answer questions.  Just don&#39;t expect to get basic programming advice from people focused on high-level projects, they&#39;ll only tell you to go ask #linuxhelp, #openstack, #python, #c++, etc...</li>
+</ul>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="dyhreut">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/aleister.html">aleister</a> 2018-05-05</p>
+    <div class="md"><p>This is a great summary for anyone looking to get started with NLP. Thanks again for the informative post. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dyhrk4t">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Bob_McTroll.html">Bob_McTroll</a> 2018-05-05</p>
+    <div class="md"><p>If we tag everything with /s than /s becomes meaningless and obfuscated /s.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dyhskoe">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/tongue-n-groove.html">tongue-n-groove</a> 2018-05-05</p>
+    <div class="md"><p>Pretty interesting. Makes me anxious for the giant EMP that wipes out all this bullshit once and for all. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="dyhsviz">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skyleach.html">skyleach</a> 2018-05-05</p>
+    <div class="md"><p>Have you ever seen <em>Mr Smith goes to Washington</em>? <a href="https://www.imdb.com/title/tt0031679/">1939, starring James Stewart</a></p>
+
+<p>Technology isn&#39;t the bad guy, it&#39;s the first hope of a solution we (the people) have ever had because it&#39;s new, not yet under the control of the elite, and evolving too rapidly for them to stop.</p>
+
+<p>Who would you trust more, an open-source artificial intelligence that has more than a million civilian experts from all walks of life telling you it&#39;s secure and protecting your liberties, or a politician who promises you that his fat, rich, banker buddy is totes going to do what&#39;s best for you?</p>
+
+<p>The open solution is the only <em>solution</em>, everything else is just a thin layer of paint on the same old machine.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="dyhwirh">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/tongue-n-groove.html">tongue-n-groove</a> 2018-05-05</p>
+    <div class="md"><blockquote>
+<p>Who would you trust more, an open-source artificial intelligence that has more than a million civilian experts from all walks of life telling you it&#39;s secure and protecting your liberties, or a politician who promises you that his fat, rich, banker buddy is totes going to do what&#39;s best for you?</p>
+</blockquote>
+
+<p>Neither </p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="dyi1x0m">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skyleach.html">skyleach</a> 2018-05-05</p>
+    <div class="md"><p>This statement is precisely why people think visiting r/conspiracy is a waste of time.  You just said something completely stupid, and I&#39;m going to take the time to explain to you why it&#39;s stupid.  This is partly for your good, and partly for the good of everyone else here.</p>
+
+<p>There is no way for any society to function without trust.  Trust is the founding motive, structure, and reason for all social institutions.  It is predicated on the same logic and mathematics that make us more intelligent than simple animals.  It is built from first principles of basic reason using empirical evidence.  We call foundational principles like this axioms, and you can find this term applied in statements like &quot;Commutative principle is axiomatic.&quot;  This means it is the cornerstone of the philosophy that defines the knowledge.</p>
+
+<p>As population density grows, members of a community must specialize.  This physical law is why the majority of species in nature develop sexual dimorphism (differences between genders).  One gender specializes in the reproduction cycle while the other gender specializes in protection, hunting and gathering resources.  The vast majority of life on earth with a central nervous system exhibit traits of sexual dimorphism.</p>
+
+<p>Social evolution is another <em>vector</em> or <em>factor</em> in how we, as humans, evolve and change over time.</p>
+
+<p>As we moved beyond simple families in caves to community, we began to develop social roles for members.  We developed warriors, and leaders, and elders.  We developed them because our evolving social structures could not function without this specialization.  We would either collapse under the pressures of internal strife, or be destroyed by other cultures which had developed them and become stronger.</p>
+
+<p>There is no possible way for every member of any community to do every job.  They <em>must</em> depend on one another.  This is the founding axiom for social trust.</p>
+
+<p>It isn&#39;t possible for a person with zero trust to function as a healthy member of any society or community.  It never has been and it never will be.  If you believe you are doing so, you are deluding yourself and making yourself a threat to everyone around you, pursuant (depending) on how far you allow your self-delusion to grow.</p>
+
+<p>If you use money, any technology at all, live within walking distance of another human being, or speak to other human beings, you must depend on social trust networks many thousands of times each day.  Otherwise you&#39;d be agorophobic (unable to leave your house) for fear of being murdered by the first person you see.  If you believe most people will not kill you on site, you <em>are trusting society</em>.</p>
+
+<p>I sincerely hope you see the point rather than merely feeling insulted.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="dyi2zvo">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/tongue-n-groove.html">tongue-n-groove</a> 2018-05-05</p>
+    <div class="md"><p>What a tome. And you missed my point entirely. lol</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="dyi3cdo">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/cadhoit_ban.html">cadhoit_ban</a> 2018-05-05</p>
+    <div class="md"><p>Pretty sure you&#39;re the one that missed the point. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-5 op" data-depth="5" data-id="dyi4n5c">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skyleach.html">skyleach</a> 2018-05-05</p>
+    <div class="md"><p>The best things in life aren&#39;t free, they require effort.</p>
+
+<p>Get yourself a cup of coffee, sit down, and read my reply.  Think about my points.  Feel free to ask me questions.  I&#39;m here specifically so people can ask me questions.</p>
+
+<p>I was blunt, which is not considered socially polite, because it&#39;s statistically the only method that works, especially on the internet.</p>
+
+<p>I didn&#39;t invent the formula I&#39;m putting into use talking to you, it&#39;s thousands of years old and very well understood.  Your logic is actually broken, and it (not me) is your worst enemy right now.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="dyiambp">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/tongue-n-groove.html">tongue-n-groove</a> 2018-05-05</p>
+    <div class="md"><blockquote>
+<p>I didn&#39;t invent the formula I&#39;m putting into use talking to you, it&#39;s thousands of years old and very well understood. Your logic is actually broken, and it (not me) is your worst enemy right now.</p>
+</blockquote>
+
+<p>I read your tome. That&#39;s how I know you missed my point.</p>
+
+<p>Did you ever mess around with an etch-a-sketch? Do you know how an etch-a-sketch works? </p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="dyiqni2">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/tmogmo.html">tmogmo</a> 2018-05-05</p>
+    <div class="md"><p>I wholeheartedly agree, but how can we defend open source against <a href="https://en.wikipedia.org/wiki/Embrace,_extend,_and_extinguish">embrace, extend, extinguish</a>?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3 op" data-depth="3" data-id="dyivyaq">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skyleach.html">skyleach</a> 2018-05-05</p>
+    <div class="md"><p>Keep in mind the song &quot;Anything you can do I can do better.&quot;</p>
+
+<p>I don&#39;t want to deviate too far from the current subject, so I won&#39;t go too far into this other than to say that the current elite have seriously been caught unprepared.</p>
+
+<p>As I have said in other comments, society has always (and will always) require specialization.  Leadership&#39;s strengths are in charisma and the social principle/reality that all living things, people included, are motivated by <em>need</em>.  If people have what they need, they will not be much of a threat.</p>
+
+<p>People desperately need to believe the system works.  The same gaping holes in the system that leaders have long used to control the system are insecure in the current age.  Regular everyday people can now gain access to information previously only available through a lifetime of discipline or a large group of people working for you.  This makes the lone citizen at an open-mike Q&amp;A a very real threat to the leaders.  You will see a lot more use of physical force than you already have as the leaders start to realize just how vulnerable they have become.  You are seeing it all over youtube, liveleak, break, reddit, etc...  You are seeing it because they are losing their grip.</p>
+
+<p>The one thing, the only thing, that has ever been a threat to the truth is sophistry.  The weakness of sophistry is truth.  The strength of truth is evidence.  The evidence is in the data.  Don&#39;t be passive and don&#39;t let anyone get away with saying you are too uptight, wound up, serious, etc... and ad infinitum.  Those words come from people who are content, and seeing people who are not content frightens them.  Discontent people might upset the apple cart.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dyhtda4">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Scroon.html">Scroon</a> 2018-05-05</p>
+    <div class="md"><p>Brilliant, man. So it&#39;s possible to use untagged sarcasm as a means to flush out the bots.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="dyhtw5x">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skyleach.html">skyleach</a> 2018-05-05</p>
+    <div class="md"><p>Yes.  (or at least to get a relatively accurate measurement of how many bots are in use on a particular subreddit, website, forum, etc...)</p>
+
+<p>It&#39;s not super accurate since it also tends to count stupid people.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="dyhuhbn">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Scroon.html">Scroon</a> 2018-05-05</p>
+    <div class="md"><p>I&#39;m willing to lump the stupid people in with the bots. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dyhuf44">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/MysticAnarchy.html">MysticAnarchy</a> 2018-05-05</p>
+    <div class="md"><p>Great post! /s</p>
+
+<p>😉</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dyhvtez">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/StopHAARPingOnMe.html">StopHAARPingOnMe</a> 2018-05-05</p>
+    <div class="md"><p>Except theres no real way to communicate sarcasm in text without an overt spmething identifying it</p>
+
+<p>Thats literally why people started doing it.</p>
+
+<p>I&#39;m sure the bots have learned how to handle /s </p>
+
+<p>I know when I write scripts to manage my databases for different projects I can easily add or remove logic to my algorithms. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dyhzuq6">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/devils_advocaat.html">devils_advocaat</a> 2018-05-05</p>
+    <div class="md"><p>Just want to complement you on your high quality posts. Hope you keep them coming.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dyiai0p">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/fridaymonkeyk.html">fridaymonkeyk</a> 2018-05-05</p>
+    <div class="md"><p>Good post but I occasionally have trouble identifying good comments without the /s.</p>
+
+<p>Text sarcasm doesn&#39;t always come across/translate well.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="dyiixma">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skyleach.html">skyleach</a> 2018-05-05</p>
+    <div class="md"><p>Text comments don&#39;t convey subtelty like spoken comments.  They also go much further (literally, geographically further) where cultural norms differ and thus common euphemisms and tone change.</p>
+
+<p>I would suggest being a bit more obvious or using unique and/or personalized methods of conveying sarcasm, nothing formalized.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dyiapou">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Jac0b777.html">Jac0b777</a> 2018-05-05</p>
+    <div class="md"><p>This is actually brilliant and very well said. </p>
+
+<p>The bots are plentiful on Reddit and throughout the Internet and this will likely only increase in the future. Sarcasm can definitely be a great ally in keeping them confused and their algorithms misplaced. Though through context and replies (as well as probability), an advanced AI could likely still detect sarcasm. A problem is also that people often don&#39;t even detect sarcasm and you need the /s tag. But it&#39;s interesting and definitely something to ponder. Perhaps a different tag to denote sarcasm could also be used (maybe /$ to confuse the bots or something similar? Though I&#39;m not sure whether that would work or not in the long run).</p>
+
+<p>I will try to use your advice in the future, though I have no doubt plenty of misunderstandings will take place - still, if it&#39;s extreme enough, most people will likely detect sarcasm over text, it&#39;s only in the milder forms where it goes over people&#39;s heads.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="dyik8ts">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skyleach.html">skyleach</a> 2018-05-05</p>
+    <div class="md"><p>The general rule of thumb is that any individual pattern a human can recognize an AI/NN can recognize.  The problem for neural networks (and some humans) is <em>complexity</em>.  For the purposes of this particular type of complexity, we can aptly describe it as linear complexity vs. spatial complexity.</p>
+
+<p>That&#39;s why the algorithms for a single neural network use linear algebra to describe them, but the algorithms for a complex system of neural networks use spatial geometry (such as sobolev spaces) to describe them.  Both of these fall under the umbrella of discrete mathematics.</p>
+
+<p>Each new neural network has to be designed (currently by a human) and trained (with a dataset) to recognize a specific pattern.  One network can easily handle reddit euphemisms and styles, but it couldn&#39;t also then be good and NLP and NLU.  The program can tie together multiple designs and algorithms into a single use application, but each piece must be designed by a programmer.</p>
+
+<p>Uniqueness and adaptability is the strength of the human, the programmer and network will always be pretty far behind.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dyijfs6">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DarthNihilus1.html">DarthNihilus1</a> 2018-05-05</p>
+    <div class="md"><p>Never use the sarcasm tag and pander to morons lol</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="dyiv3ng">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/dddphuckwit.html">dddphuckwit</a> 2018-05-05</p>
+    <div class="md"><p>Oh right, this is a great idea... /s</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="dyhpudo">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/skyleach.html">skyleach</a> 2018-05-05</p>
+    <div class="md"><p>bastard ❌</p>
+
+<p>🙃</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="dyhreut">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/aleister.html">aleister</a> 2018-05-05</p>
+    <div class="md"><p>This is a great summary for anyone looking to get started with NLP. Thanks again for the informative post. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="dyhvqpn">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/danjo_kandui.html">danjo_kandui</a> 2018-05-05</p>
+    <div class="md"><p>Hillary is a dog. </p>
+</div>
+</div>
+
+      </div>
+    </main>
+    <footer class="container-fluid">
+      <a class="to-top mt-1 mb-1 btn btn-lg btn-primary" href="#top">top of page</a>
+      <p class="small mb-0">data archived 2018-05-05. <a href="https://github.com/libertysoft3/reddit-html-archiver">source code</a>.</p>
+    </footer>
+    <script src="../../../../../../../../static/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../../../../../../../static/js/bootstrap.min.js"></script>
+    <script src="../../../../../../../../static/js/archive-comments.js"></script>
+  </body>
+</html>

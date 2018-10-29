@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../../../../../../../../static/css/lato.css">
+    <link rel="stylesheet" href="../../../../../../../../static/css/bootstrap-superhero.min.css">
+    <link rel="stylesheet" href="../../../../../../../../static/css/archive.css">
+    <title>r/conspiracy: Anyone want to work on a clone of Wikipedia with me? Let's create a tool to document everything.</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+        <a class="navbar-brand" href="../../../../../../../../conspiracy/index.html">r/conspiracy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index.html">score</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index-comments/index.html">comments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index-date/index.html">date</a>
+            </li>
+            <li class="nav-item ###URL_SEARCH_CSS###">
+              <a class="nav-link" href="../../../../../../../../conspiracy/search.html">search</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">subreddits</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="../../../../../../../../index.html">All</a>
+                <a class="dropdown-item" href="../../../../../../../../conspiracy/index.html">conspiracy</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main role="main" class="container-fluid">
+      <div class="submission pt-3" data-id="30477f">
+        <h3 class="title">Anyone want to work on a clone of Wikipedia with me? Let's create a tool to document everything.</h3>
+        <p><span class="badge badge-primary">38</span>&nbsp;&nbsp;2015-03-24 by <a class="author" href="../../../../../../../../user/mypwiskilla.html">mypwiskilla</a></p>
+        <div class="card bg-dark mb-3"><div class="card-body md"><p>My original idea was to write a book but I thought why study every topic and write about it when the community can submit their own work on topics they specialise in. I don&#39;t think it&#39;s too much work to pull the source code from <a href="http://www.mediawiki.org/wiki/Download">WikiMedia</a> and set up a server on <a href="https://www.digitalocean.com/">DigitalOcean</a>. Does anyone have experience with this that can offer pointers? Can anyone come up with a domain name? I&#39;m looking at getting XAMPP installed on the server but struggling with SSH could someone write a short list of steps for what work has to implement a wikipedia clone?</p>
+</div></div>
+      </div>
+      <div class="comments">
+        <h5>31 comments</h5>
+        <div class="comment mb-3 ml-0 op" data-depth="0" data-id="cpoxvhd">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">7</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/mypwiskilla.html">mypwiskilla</a> 2015-03-24</p>
+    <div class="md"><p>People keep saying their going to make sites to enable citizen journalism but I don’t know if those people know how the world works and what kind of things need to be documented, so this is the best idea I have.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="cpoz2bf">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/IntellisaurDinoAlien.html">IntellisaurDinoAlien</a> 2015-03-24</p>
+    <div class="md"><p>Two words: approved submitters. Probably obvious but I had to say it.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="cpp2q4z">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/PresidentRoguebomber.html">PresidentRoguebomber</a> 2015-03-24</p>
+    <div class="md"><p>Good deal, now we need a gatekeeper to vet them.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="cpp6kcl">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DragonGT.html">DragonGT</a> 2015-03-24</p>
+    <div class="md"><p>There&#39;d need to be a gatekeeper who couldn&#39;t be paid off to look away... because that&#39;s likely what would happen if the site gained any real traction and influence.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="cppba87">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Lord_NShYH.html">Lord_NShYH</a> 2015-03-24</p>
+    <div class="md"><p>As a seasoned SysAdmin and Developer, here is a list of things to consider (from a high level):</p>
+
+<ol>
+<li><p>You don&#39;t own DigitialOcean, which means you will never have 100% guaranteed access control to your VM.  You will need a replication strategy to distribute your work.</p></li>
+<li><p>DokuWiki stores its content as files on disk, so this means syncing your site across multiple hosts is as easy as deploying with Git/source control.</p></li>
+<li><p>In today&#39;s political climate, any real traction by your site (meaning, you are starting to have real influence over millions of people), will attract adversaries from the intelligence communities.  You are not smarter than these adversaries, so distributed content is key.</p></li>
+</ol>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="cpp19am">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Crypt0An0n23.html">Crypt0An0n23</a> 2015-03-24</p>
+    <div class="md"><p>Has already been done. Here you go: <a href="http://en.metapedia.org">http://en.metapedia.org</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="cpp40eg">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/gbramaginn.html">gbramaginn</a> 2015-03-24</p>
+    <div class="md"><p>Thought I would take a look at it and found the information to be...interesting. </p>
+
+<p>For example some entries under the topic of Canada:</p>
+
+<blockquote>
+<p>At present Canada is under a Jewish police state regime, where freedoms are very limited; the regime is backed up by a cadre of Freemasons of British ancestry and Marxists of French ancestry.</p>
+</blockquote>
+
+<p>and</p>
+
+<blockquote>
+<p>Finally, Prime Minister Pierre Trudeau pushed through the patriation of the constitution from Britain, enshrining and ruining Modern Canada with the Charter of Rights and Freedoms based on individual rights in the Constitution Act of 1982, which only applies to non-white Canadians.</p>
+</blockquote>
+
+<p>As a Canadian I find this to be rather hilarious. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="cpp6uxf">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/RamblinRambo3.html">RamblinRambo3</a> 2015-03-24</p>
+    <div class="md"><p>Metapedia is as bad as wikipedia just on the other side of the spectrum.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="cpp4qpn">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Orangutan.html">Orangutan</a> 2015-03-24</p>
+    <div class="md"><p>You could also supposedly clone the website Reddit.  At one point someone was saying all the code is open source.  That could work as well.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="cppdfb0">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/ryanq-do.html">ryanq-do</a> 2015-03-24</p>
+    <div class="md"><p>Hey.  No need to go through the trouble of installing everything yourself.  We provide a <a href="https://www.digitalocean.com/features/one-click-apps/mediawiki/">pre-built MediaWiki image</a> you can use when creating your drpolet on DigitalOcean.  </p>
+
+<p>If you continue having trouble with ssh please post some details on our <a href="https://www.digitalocean.com/community/questions">Community Q&amp;A</a> and we&#39;ll help you out.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="cpp4ppu">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Orangutan.html">Orangutan</a> 2015-03-24</p>
+    <div class="md"><p>Here&#39;s one attempt: <a href="http://911encyclopedia.com/wiki/index.php/Main_Page">http://911encyclopedia.com/wiki/index.php/Main_Page</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="cppno6s">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/ct_warlock.html">ct_warlock</a> 2015-03-24</p>
+    <div class="md"><p><a href="https://dizzietech.wordpress.com/2009/10/14/wikireader-the-complete-wikipedia-in-a-handheld-device/">Just buy one of these.</a></p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="cpoymcn">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/RenegadeMinds.html">RenegadeMinds</a> 2015-03-24</p>
+    <div class="md"><blockquote>
+<p>write a short list of steps for what work has to implement a wikipedia clone?</p>
+</blockquote>
+
+<p>Get about 10 metric tonnes of money. Because that&#39;s what you need to launch a major site. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="cpoy7vl">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-12</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Drytruth.html">Drytruth</a> 2015-03-24</p>
+    <div class="md"><p>Why? Wikipedia already exists. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1 op" data-depth="1" data-id="cpoyd2w">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">6</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/mypwiskilla.html">mypwiskilla</a> 2015-03-24</p>
+    <div class="md"><p>Some of the things we need to talk about are shunned on wikipedia there are certain influences acting on wikipedia that prevent the truth from getting out. He who controls the past controls the future and i don&#39;t know why we&#39;re giving the control of information up to Wikipedia.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="cpozvk8">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">4</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/alexmtl.html">alexmtl</a> 2015-03-24</p>
+    <div class="md"><p>Anyone can edit wikipedia. Your solution is to throw away this democratization of info and just have a selected few be able to edit? Isn&#39;t that kind of ironic given your reasoning?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="cpp0wcp">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/PolishDude.html">PolishDude</a> 2015-03-24</p>
+    <div class="md"><p>Democracy has shown that people prefer the government to think for their lazy asses.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="cpp2218">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DronePuppet.html">DronePuppet</a> 2015-03-24</p>
+    <div class="md"><p>This right here is a key statement. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="cpp2k5d">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/PolishDude.html">PolishDude</a> 2015-03-24</p>
+    <div class="md"><p>If its repeated out loud enough times, hopefully people try to prove it wrong and it eventually becomes a false statement.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="cpp2o6b">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/DronePuppet.html">DronePuppet</a> 2015-03-24</p>
+    <div class="md"><p>I agree but a majority of people are government programmed and dependent on government to survive from birth. Just look at the people that resist when you tell them the truth. They get mad.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="cpoynws">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-6</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Drytruth.html">Drytruth</a> 2015-03-24</p>
+    <div class="md"><p>What, exactly, is being censored from Wikipedia?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="cpoz07b">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">5</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/__DocHopper__.html">__DocHopper__</a> 2015-03-24</p>
+    <div class="md"><p>You are aware of police departments across the country recently being caught editing Wikipedia articles, right?  Not that I don&#39;t think this guy is failing to realize the scale of his proposed undertaking, but I just want to point out that you seem to be pretty naive.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="cpoz17l">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-5</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Drytruth.html">Drytruth</a> 2015-03-24</p>
+    <div class="md"><p>You&#39;re aware those changes were reverted, right?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="cpozcck">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">5</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/__DocHopper__.html">__DocHopper__</a> 2015-03-24</p>
+    <div class="md"><p>You&#39;re aware that they happened in the first place, and realize what their intentions are, right?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-6" data-depth="6" data-id="cpozyel">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Drytruth.html">Drytruth</a> 2015-03-24</p>
+    <div class="md"><p>Of course. That&#39;s how we fought censorship. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-7" data-depth="7" data-id="cpp3bmi">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">4</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Dude_wtf_seriously.html">Dude_wtf_seriously</a> 2015-03-24</p>
+    <div class="md"><p>What&#39;s the term for someone that&#39;s sole purpose is to counter any points created in a forum.  Not to add to the discussion just to tear it down and try to make the participants seem stupid?  If there isn&#39;t a term I suggest we call it &quot;drytruth&quot; ing.  You are a very despicable human.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="8" data-id="cpp57pd">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Drytruth.html">Drytruth</a> 2015-03-24</p>
+    <div class="md"><p>I call it &quot;skepticism&quot; and &quot;free-thinking&quot;. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="9" data-id="cpp5m17">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Dude_wtf_seriously.html">Dude_wtf_seriously</a> 2015-03-24</p>
+    <div class="md"><p>Why does your sense of free thinking and skepticism require you to spend hours a day finding and shitting on post after post... Your sense of needing to share your skepticism is so strong it doesn&#39;t mind stepping all over countless people coming here for conversation with like minds.  Again you&#39;re despicable.</p>
+
+<p>Edit: after perusing your comment history again I realized this is your ONLY point for this account.   Which means you either have another account for your real interests or this is your job paid or not.  Wanna share your main account with us?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="10" data-id="cpp7r0v">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Drytruth.html">Drytruth</a> 2015-03-24</p>
+    <div class="md"><p>I like to correct disinformation. I cannot sit idly by as more people get sucked into scams and lies. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="11" data-id="cpp7yy7">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Dude_wtf_seriously.html">Dude_wtf_seriously</a> 2015-03-24</p>
+    <div class="md"><p>But you should...because your style doesn&#39;t help anyone.  You are just an irritant... Why not open yourself up for more meaningful discussions?  But you just jump in and correct people with the msm narrative and run.  You are not creating or helpin a forum with your style.  And because of that I don&#39;t believe you are just a disgruntled &quot;normal&quot; guy so pissed off by us people willing to look deeper that you spend hours and hours reading our thoughts and just throwing in small one sentence mainstream narrative crap.... If that really is you tho... Wow...sad.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-8" data-depth="12" data-id="cpp8uuq">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Drytruth.html">Drytruth</a> 2015-03-24</p>
+    <div class="md"><p>K</p>
+</div>
+</div>
+
+      </div>
+    </main>
+    <footer class="container-fluid">
+      <a class="to-top mt-1 mb-1 btn btn-lg btn-primary" href="#top">top of page</a>
+      <p class="small mb-0">data archived 2015-08-29. <a href="https://github.com/libertysoft3/reddit-html-archiver">source code</a>.</p>
+    </footer>
+    <script src="../../../../../../../../static/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../../../../../../../static/js/bootstrap.min.js"></script>
+    <script src="../../../../../../../../static/js/archive-comments.js"></script>
+  </body>
+</html>

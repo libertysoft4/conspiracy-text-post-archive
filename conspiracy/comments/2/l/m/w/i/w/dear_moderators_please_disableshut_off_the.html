@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../../../../../../../../static/css/lato.css">
+    <link rel="stylesheet" href="../../../../../../../../static/css/bootstrap-superhero.min.css">
+    <link rel="stylesheet" href="../../../../../../../../static/css/archive.css">
+    <title>r/conspiracy: DEAR MODERATORS: Please disable/shut off the AutoModerator bot.</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+        <a class="navbar-brand" href="../../../../../../../../conspiracy/index.html">r/conspiracy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index.html">score</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index-comments/index.html">comments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../../../../../../../conspiracy/index-date/index.html">date</a>
+            </li>
+            <li class="nav-item ###URL_SEARCH_CSS###">
+              <a class="nav-link" href="../../../../../../../../conspiracy/search.html">search</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">subreddits</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="../../../../../../../../index.html">All</a>
+                <a class="dropdown-item" href="../../../../../../../../conspiracy/index.html">conspiracy</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main role="main" class="container-fluid">
+      <div class="submission pt-3" data-id="2lmwiw">
+        <h3 class="title">DEAR MODERATORS: Please disable/shut off the AutoModerator bot.</h3>
+        <p><span class="badge badge-primary">68</span>&nbsp;&nbsp;2014-11-08 by <a class="author" href="../../../../../../../../user/[deleted].html">[deleted]</a></p>
+        <div class="card bg-dark mb-3"><div class="card-body md"><p>No one likes it, finds it useful, helpful, or finds any other value in it with regards to this sub. </p>
+
+<p>In nearly all instances where it shows up, it is downvoted to death because we the subscribers are sick of seeing it three times per thread sometimes, and downvoting it can at least hide it from visibility while reading down through a thread.</p>
+
+<p>That, and it apparently doesn&#39;t even work as intended, and simply latches onto any thread from within reddit whether or not the poster has included the .np or not. </p>
+
+<p>PLEASE SHUT IT OFF IMMEDIATELY.</p>
+
+<p>Thank you.</p>
+</div></div>
+      </div>
+      <div class="comments">
+        <h5>24 comments</h5>
+        <div class="comment mb-3 ml-0" data-depth="0" data-id="clwau1d">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">11</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/SovereignMan.html">SovereignMan</a> 2014-11-08</p>
+    <div class="md"><p>So our detractors can revert to accusing <a href="/r/conspiracy">/r/conspiracy</a> of promoting vote manipulation again???? </p>
+
+<p>No thanks. We&#39;ve been through that.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="clwb5cg">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/[deleted].html">[deleted]</a> 2014-11-08</p>
+    <div class="md"><p>[deleted]</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="clwd5dc">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/AssuredlyAThrowAway.html">AssuredlyAThrowAway</a> 2014-11-08</p>
+    <div class="md"><blockquote>
+<p>It may have a bug when someone uses a valid but weird <a href="http://www.np.reddit.com%5B1%5D">www.np.reddit.com[1]</a> (vs. just np.reddit.com) type URL and doesn&#39;t catch it (though maybe the post was edited, I can&#39;t remember).</p>
+</blockquote>
+
+<p>Yes, there is some wonky syntax which is causing misfires and false positive. If anyone wants to help refine the code to fix the issues it is below.</p>
+
+<pre><code>#Auto-comment on non-NP links and comments
+
+type: both
+
+url+body: [&quot;https?://(www\\.)?reddit\\.com/&quot;, &quot;https?://redd\\.it/&quot;]
+
+modifiers:
+
+    url+body: [regex, includes]
+
+comment: |
+
+    While not required, you are requested to use the NP domain of reddit when crossposting. This helps to protect both your account, and the accounts of other users, from administrative shadowbans. The NP domain can be accessed by prefacing your reddit link with np.reddit.com.
+</code></pre>
+
+<blockquote>
+<p>Also it gives the message when linking within the subreddit</p>
+</blockquote>
+
+<p>This part I have no idea how to fix. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="clwfgxr">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/[deleted].html">[deleted]</a> 2014-11-08</p>
+    <div class="md"><p>[deleted]</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="clwfif5">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/AssuredlyAThrowAway.html">AssuredlyAThrowAway</a> 2014-11-08</p>
+    <div class="md"><p>I&#39;ll try to touch base with someone who&#39;se knowledge with regards to this type of code tomorrow and see if they can suggest any improvements. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="clwj3ra">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TheGhostOfDusty.html">TheGhostOfDusty</a> 2014-11-08</p>
+    <div class="md"><p>It needs to be able to check the age of the reddit link and if it&#39;s over 6 months old then it&#39;s locked and the bot should ignore the link.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-5" data-depth="5" data-id="clwsn79">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/SovereignMan.html">SovereignMan</a> 2014-11-08</p>
+    <div class="md"><blockquote>
+<p>I&#39;ll try to touch base with someone who&#39;se knowledge with regards to this type of code tomorrow and see if they can suggest any improvements. </p>
+</blockquote>
+
+<p>I was going to suggest Weedtastic but I see he hasn&#39;t been active for a few months.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="clwbwk6">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hippylarvae.html">hippylarvae</a> 2014-11-08</p>
+    <div class="md"><p>That&#39;s cool. Roll over for them. They must be happy with the control they&#39;ve got.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="clwcybn">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Jatehews.html">Jatehews</a> 2014-11-08</p>
+    <div class="md"><p>What control? It&#39;s just a post...</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="clwfwwv">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hippylarvae.html">hippylarvae</a> 2014-11-08</p>
+    <div class="md"><blockquote>
+<p>What control?</p>
+</blockquote>
+
+<p>That the &#39;detractors&#39; have people over here so shit-scared of being called names we launch police bots all over our own threads to remind everyone 654,098 times per day not to comment somewhere else. We wouldn&#39;t want the no-life downvote battalions that live like mold on this sub to be upset with us for commenting somewhere would we. Nah, best to be <em>safe</em>. FUCK SAKE.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="clwa7z9">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">6</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Mrg13.html">Mrg13</a> 2014-11-08</p>
+    <div class="md"><p>Is it really that hard to ignore it?</p>
+
+<p>As far as not working, ever stop to think that maybe the person edited to a NP link before you got to the post? Because people edit it after it tells them to.</p>
+
+<p>It does serve a purpose to remind people not to participate on linked reddit post as that is against reddit&#39;s sites terms and can get your account banned or shadow banned.  </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="clwad92">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TominatorXX.html">TominatorXX</a> 2014-11-08</p>
+    <div class="md"><p>What does that mean? Linked reddit posts? Banned for what?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="clwag00">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Mrg13.html">Mrg13</a> 2014-11-08</p>
+    <div class="md"><p>If you follow a link on reddit to another reddit post and comment or vote in said link you can get banned as it can be seen as brigading. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="clwbe55">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/TominatorXX.html">TominatorXX</a> 2014-11-08</p>
+    <div class="md"><p>Do not understand what that means.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="clwctqy">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/JamesColesPardon.html">JamesColesPardon</a> 2014-11-08</p>
+    <div class="md"><p>You sure about that? Or so you think that threat could be used for self- censorship ?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-4" data-depth="4" data-id="clwqpwb">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/reddbullish.html">reddbullish</a> 2014-11-08</p>
+    <div class="md"><p>Yes its the sad truth..</p>
+
+<p>Reddit has gone crazy.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="clwcsui">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/obnoxious_commenter.html">obnoxious_commenter</a> 2014-11-08</p>
+    <div class="md"><p>Download RES. Ignore user.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="clwe1u0">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/cakes_and_pies.html">cakes_and_pies</a> 2014-11-08</p>
+    <div class="md"><p>This is the most logical suggestion.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="clwmyqx">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/BadgerGecko.html">BadgerGecko</a> 2014-11-08</p>
+    <div class="md"><p>It has a purpose and you could you know....ignore it?</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="clwd3ll">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-3</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/AssuredlyAThrowAway.html">AssuredlyAThrowAway</a> 2014-11-08</p>
+    <div class="md"><blockquote>
+<p>That, and it apparently doesn&#39;t even work as intended, and simply latches onto any thread from within reddit whether or not the poster has included the .np or not.</p>
+</blockquote>
+
+<p>I want to apologize for the shitty syntax that results in the false positives, it took me three months to get that part of the code up and running and I&#39;m still working on the finer details; we try our best to remove those instances. </p>
+
+<p>That said, the bot has to stay. We were seeing hundreds of submission per week that were not using the np domain and the choice is either to <em>require the use of the np domain</em> (which we do not want to do) or have the bot leave it&#39;s warnings.</p>
+
+<p>The np domain does not protect accounts from being shadowbanned, but it does help to serve as a reminder for folks who have multiple reddit tabs open in their browser to not vote on any tabs with the np domain. </p>
+
+<p>In that regard, the choice is either to ban all non np submissions or to have the bot continue to do it&#39;s thing.</p>
+
+<p>It is the view of the mods that it is favorable to have the bot leave it&#39;s reminders rather than ban all non-np submissions; but we are certainly open to a discussion about that. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="clwfvpy">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/[deleted].html">[deleted]</a> 2014-11-08</p>
+    <div class="md"><p>[deleted]</p>
+</div>
+</div>
+<div class="comment mb-3 ml-2" data-depth="2" data-id="clwfzu1">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">2</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/AssuredlyAThrowAway.html">AssuredlyAThrowAway</a> 2014-11-08</p>
+    <div class="md"><p>After yelling about <a href="https://search.wikileaks.org/gifiles/?q=antique+jetpack&amp;amp;mfrom=&amp;amp;mto=&amp;amp;title=&amp;amp;notitle=&amp;amp;date=&amp;amp;nofrom=&amp;amp;noto=&amp;amp;count=50&amp;amp;sort=0&amp;amp;file=&amp;amp;docid=&amp;amp;relid=0#searchresult">this</a> for a few years the admins don&#39;t really take very kindly to me. </p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="clwglpy">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/OWNtheNWO.html">OWNtheNWO</a> 2014-11-08</p>
+    <div class="md"><p>I remember when you came on the scene here and put a whole bunch of dirt on blast, like a boss.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="clwfyn2">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">0</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hippylarvae.html">hippylarvae</a> 2014-11-08</p>
+    <div class="md"><p>I do not agree with the moderators&#39; logic one bit but nonetheless I appreciate your detailed response.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-0" data-depth="0" data-id="clwacce">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-4</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/Fantomfart.html">Fantomfart</a> 2014-11-08</p>
+    <div class="md"><p>I like it, I find it usefull and helpfull, I rate it more than your mom. if I could bake you a bag of dick shaped cookies, I would, though I don&#39;t want your mom bringing milkshakes to the yard to wash down with said cookies. QQQQ</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="clwqoq7">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/reddbullish.html">reddbullish</a> 2014-11-08</p>
+    <div class="md"><p>His mom can bring her milkshakes to my yard.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-1" data-depth="1" data-id="clwfysj">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-danger">-1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/hippylarvae.html">hippylarvae</a> 2014-11-08</p>
+    <div class="md"><p>A&#39;ight brah.</p>
+
+<p>A&#39;ight.</p>
+</div>
+</div>
+<div class="comment mb-3 ml-3" data-depth="3" data-id="clwglpy">
+    <p class="byline text-muted mb-0"><a href="javascript:;" class="score"><span class="badge badge-secondary">1</span></a>&nbsp;&nbsp;<a class="author" href="../../../../../../../../user/OWNtheNWO.html">OWNtheNWO</a> 2014-11-08</p>
+    <div class="md"><p>I remember when you came on the scene here and put a whole bunch of dirt on blast, like a boss.</p>
+</div>
+</div>
+
+      </div>
+    </main>
+    <footer class="container-fluid">
+      <a class="to-top mt-1 mb-1 btn btn-lg btn-primary" href="#top">top of page</a>
+      <p class="small mb-0">data archived 2015-09-01. <a href="https://github.com/libertysoft3/reddit-html-archiver">source code</a>.</p>
+    </footer>
+    <script src="../../../../../../../../static/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="../../../../../../../../static/js/bootstrap.min.js"></script>
+    <script src="../../../../../../../../static/js/archive-comments.js"></script>
+  </body>
+</html>
